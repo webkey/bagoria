@@ -1,0 +1,96 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Иконки используемые на сайте",
+	"pageClass": ""
+})
+
+
+	<header class="header">
+		<a href="/">
+			<div class="logo" title="Оптовый поставщик шин и дисков в РБ. Купить автомобильные шины по безналу в Минске" alt="Шины. Диски. Аккумуляторы - СООО «Багория»">Багория</div>
+		</a>
+		<ul class="topNav"></li>
+			<li>
+				<a href="/about/">О компании</a>
+
+				<ul>
+					<li>
+						<a href="/about/history/">История</a>
+					</li>
+					<li>
+						<a href="/about/gallery/">Фотогалерея</a>
+					</li>
+					<li>
+						<a href="/about/brands/">Бренды</a>
+					</li>
+					<li>
+						<a href="/about/vakansii/">Вакансии</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/oformit-zakaz/">Оформить заказ</a>
+			</li>
+			<li>
+				<a href="/info/">Информация</a>
+
+				<ul>
+					<li>
+						<a href="/info/order/">Система заказа</a>
+					</li>
+					<li>
+						<a href="/info/catalog/">Каталоги</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/news/">Новости</a>
+			</li>
+			<li>
+				<a href="/contacts/">Контакты</a>
+
+				<ul>
+					<li>
+						<a href="/contacts/feedback">Обратная связь</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<script>
+			$(document).ready(function () {
+				$('ul.topNav a[href$="/about/"]').attr('href', '#');
+				$('ul.topNav a[href$="/info/"]').attr('href', '#');
+			});
+		</script>
+		<span class="enterLink">Вход для клиентов</span>
+		<form action="/personal/auth/" method="post" id="login_form">
+			<div class="auth">
+				<div class="column">
+					<div class="label">Электронная почта:</div>
+					<input type="email" name="email">
+				</div>
+				<div class="column">
+					<div class="label">Пароль:</div>
+					<input type="password" name="password">
+				</div>
+				<div class="column">
+					<div style="position: absolute; top: -10000px;"><input type="submit"></div>
+					<a href="javascript:void(0);" onClick="$('#login_form').submit(); return false;" class="btn">Войти</a>
+				</div>
+				<div class="clear"><!-- --></div>
+				<div class="meta">
+					<div class="links">
+						<a href="/personal/lostpassword">Забыли пароль?</a>
+						<a href="/personal/registration/">Регистрация</a>
+					</div>
+					<input type="checkbox" id="remember-me"> <label for="remember-me">Не выходить из системы</label>
+				</div>
+			</div>
+		</form>
+	</header>
+
+	<section class="content">
+		@@include("_tpl_icons-list.html")
+	</section>
+
+@@include('_tpl_layout_foot.html')

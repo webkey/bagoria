@@ -8,8 +8,37 @@ body, .wrapper
 
 /* layout end
 
+/* header
+ul.topNav
+	+media('<desk-sm')
+		& > li
+			&, &:last-child
+				margin-left: 5px
+				+padding-horizontal(5px)
+
+	+media('<tab-md')
+
+
+/* header end
+
 /* map tabs
 .mapWrap
+	background-image: url(../../i/img-map.jpg)
+	background-repeat: no-repeat
+	background-position: center
 	background-color: #bbb
+	background-size: cover
 
 /* map tabs end
+
+/* callback
+.callback-title
+	width: auto
+
+.callback-text
+	width: auto
+
+.callbackbtn
+	width: auto
+
+/* callback end

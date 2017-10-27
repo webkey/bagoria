@@ -53,9 +53,8 @@ $(document).ready(function(){
 		
 		if(chained_select[select_code] != undefined){
 			//Если выбрано значение, отличное от "Любой", то...
-			//if(active_select_val != ''){
-			if(true){
-
+			if(active_select_val != ''){
+					
 			  //Определяем действия для каждого из связанных селектов, имена которых передаются в теле страницы в переменной chained_props
 			  for (var key in chained_props[select_code]) {		  
 				
@@ -216,9 +215,8 @@ $(document).ready(function(){
 			active_select_val   = $(this).val();		
 					
 			//Если выбрано значение, отличное от "Любой", то...
-			//if(active_select_val != ''){
-			if(true){
-
+			if(active_select_val != ''){
+								
 				//Если данный тип связанных селектов относиться к последовательным, то разблокируем следующий по очереди селект
 				if($(this).hasClass("forward_select") !== false && $(this).attr('pos') !== 'last'){ 
 					
@@ -302,11 +300,11 @@ $(document).ready(function(){
 								val = first_value;
 								arr = jQuery.parseJSON($('#'+select_code+'_hidden_params').text());
 								//Проходимся по всем переданным массивам значений
-								//$.each($('input[props_code_add='+select_code+']'), function(){
-								//	 prop = $(this).attr('prop');
-								//	 subj = $(this).attr('subj');
-								//	 $(this).val(arr[subj][prop][val]);
-								//});
+								$.each($('input[props_code_add='+select_code+']'), function(){    
+									 prop = $(this).attr('prop');
+									 subj = $(this).attr('subj');
+									 $(this).val(arr[subj][prop][val]);
+								});					
 							}	
 						}
 						//Снимаем аттрибут блокировки селекта и убираем прелоадер
@@ -610,7 +608,7 @@ $(document).ready(function(){
 
 		_this = $(this);
 		_prod_id    = $(_this).attr('element_id');
-		_prod_price = parseFloat($(_this).attr('product_price'));
+		_prod_price = parseInt($(_this).attr('product_price'),10);
 		_prod_name  = $(_this).attr('product_name');
 		_prod_brand = $(_this).attr('brand_name');
 		_prod_model = $(_this).attr('product_model');
@@ -688,7 +686,7 @@ $(document).ready(function(){
 					}
 					
 					$.get("/personal/order/cart/cart_add.php", { 'product_id': _prod_id , 'product_price' : _prod_price, 'product_discount' : _prod_discount, 'product_quantity' : _prod_quantity, 'product_name' : _prod_name, 'product_brand' : _prod_brand, 'product_model' : _prod_model, 'product_diametr' : _prod_diametr, 'product_category' : _prod_category, 'product_group' : _prod_group, 'store_id' : _store_id, 'code_1c' : _code_1c, 'store_quantity_1' : _store_quantity_1, 'store_quantity_2' : _store_quantity_2, 'car_info' : car_info}, function(res) {
-						result = res.split('|');
+						result = res.split('|'); 
 						if(result[0] !== 'false'){	
 							_store_quantity = _store_quantity -_prod_quantity;
 							$('#quantity_store'+_store_id+'_'+_prod_id).val(_prod_quantity);
@@ -697,7 +695,7 @@ $(document).ready(function(){
 							$('.cart_items').text(result[0]);
 							$('.cart_items_quantity').text(result[2]); 
 							$('#cart_summ').val(result[1]);						
-							$('.cart_summ').text(number_format(result[1], 2, '.', ' '));
+							$('.cart_summ').text(number_format(result[1], 0, ',', ' '));
 							
 							if(_store_id === '1'){
 								store_summ = parseInt(result[3],10);
@@ -771,7 +769,7 @@ $(document).ready(function(){
 	$('.cartBtnAlt.cartBtnAlt').live("click", function(){
 		_this = $(this);
 		_prod_id    = $(_this).attr('element_id');
-		_prod_price = parseFloat($(_this).attr('product_price'));
+		_prod_price = parseInt($(_this).attr('product_price'),10);
 		_prod_name  = $(_this).attr('product_name');
 		_prod_brand = $(_this).attr('brand_name');
 		_prod_model = $(_this).attr('product_model');
@@ -847,7 +845,7 @@ $(document).ready(function(){
 							$('.cart_items').text(result[0]);
 							$('.cart_items_quantity').text(result[2]); 
 							$('#cart_summ').val(result[1]);						
-							$('.cart_summ').text(number_format(result[1], 2, '.', ' '));
+							$('.cart_summ').text(number_format(result[1], 0, ',', ' '));
 							
 							if(_store_id === '1'){
 								store_summ = parseInt(result[3],10);
@@ -1225,7 +1223,7 @@ $(document).ready(function(){
 		disc_summ = total_price - total_disc;
 		
 		$('#summ_'+id).val(total_price);
-		$('#summ_show_'+id).text(number_format(total_price, 2, '.', ' '));
+		$('#summ_show_'+id).text(number_format(total_price, 0, ',', ' '));
 		
 		renew_overal_summ(_store_id);
 		
@@ -1256,13 +1254,13 @@ $(document).ready(function(){
 		$('.basket_elements', _store_cart).each(function(){
 			var id = $(this).attr('element_id');
 			quantity = quantity + parseInt($('#counter_'+id, _store_cart).val(),10);
-			overal_summ = overal_summ + parseFloat($('#summ_'+id, _store_cart).val(),10);
+			overal_summ = overal_summ + parseInt($('#summ_'+id, _store_cart).val(),10);
 		});			
 		
 		$('#overall_summ_'+stores['current']).val(overal_summ);
 		$('#overall_quantity_'+stores['current']).val(quantity);
 		$('#overall_summ').val(overal_summ + parseInt($('#overall_summ_'+stores['second']).val(),10));
-		$('.amount').text(number_format(overal_summ, 2, '.', ' '));		
+		$('.amount').text(number_format(overal_summ, 0, ',', ' '));		
 		$('.quantity').text(quantity);		
 		
 		review_basket(_store_id);
@@ -1406,7 +1404,7 @@ $(document).ready(function(){
 			var RS = $('input[name=RS]').val();
 			var BANK = $('input[name=BANK]').val();		
 			var BANKCOD = $('input[name=BANKCOD]').val();
-			var DELIVERY = parseInt($('input[name=DELIVERY]:checked').val(),10);
+			var DELIVERY = parseInt($('input[name=DELIVERY]').val(),10);
 			var KONTAGENT_ID = $('input[name=1C_ID]').val();
 			
 			var PAYMENT_DEFERMENT = $("#PAYMENT_DEFERMENT").prop("checked");
@@ -1477,128 +1475,6 @@ $(document).ready(function(){
 		return false;
 		
 	});	
-
-	//Оформить заказ
-	$(document).on("click", ".order_add2", function(){ 
-		
-		var store_id = $(this).attr('store_id');
-		var limit = parseInt($('input[name=LIMIT_REST]').val(),10);
-		
-		if(store_id === '1'){
-			tab_1 = 1;
-			tab_2 = 2;
-			store = 'центральный';
-		}
-		else{
-			tab_1 = 2;
-			tab_2 = 1;
-			store = 'региональный';
-		}
-		
-		var overal_summ = parseInt($('#overall_summ_'+store_id).val(),10);
-		var overall_disc = parseInt($('#overall_disc_'+store_id).val(),10);
-
-		if(limit >= overal_summ || isNaN(limit)){ 
-
-			var deferment   = '';
-			var prepayment  = '';		
-			var LEGAL_CITY = $('input[name=LEGAL_CITY]').val();
-			var SEND_ADDRESS = $('input[name=SEND_ADDRESS]').val();
-			var CONTACT_FIO = $('input[name=CONTACT_FIO]').val();
-			var CONTACT_PHONE = $('input[name=CONTACT_PHONE]').val();
-			var CONTACT_FAX = $('input[name=CONTACT_FAX]').val();
-			var LEGAL_NAME = $('input[name=LEGAL_NAME]').val();
-			var FIO = $('input[name=FIO]').val();
-			var LEGAL_ADDRESS = $('input[name=LEGAL_ADDRESS]').val();
-			var UNP = $('input[name=UNP]').val();
-			var RS = $('input[name=RS]').val();
-			var BANK = $('input[name=BANK]').val();		
-			var BANKCOD = $('input[name=BANKCOD]').val();
-			var DELIVERY = parseInt($('input[name=DELIVERY]:checked').val(),10);
-			var KONTAGENT_ID = $('input[name=1C_ID]').val();
-			var delivery_address_np = $('#delivery_address_np').val();
-			var delivery_address_index = $('#delivery_address_index').val();
-			var delivery_address_street_type = $('#delivery_address_street_type :selected').text();
-			var delivery_address_street = $('#delivery_address_street').val();
-			var delivery_address_house = $('#delivery_address_house').val();
-			var delivery_address_house_corpus = $('#delivery_address_house_corpus').val();
-			var delivery_address_office_appart = $('#delivery_address_office_appart').val();
-			var legal_address_np = $('#legal_address_np').val();
-			var legal_address_index = $('#legal_address_index').val();
-			var legal_address_street_type = $('#legal_address_street_type :selected').text();
-			var legal_address_street = $('#legal_address_street').val();
-			var legal_address_house = $('#legal_address_house').val();
-			var legal_address_house_corpus = $('#legal_address_house_corpus').val();
-			var legal_address_office_appart = $('#legal_address_office_appart').val();
-			
-			var PAYMENT_DEFERMENT = $("#PAYMENT_DEFERMENT").prop("checked");
-			if((typeof PAYMENT_DEFERMENT !== 'undefined') && PAYMENT_DEFERMENT === true){
-				deferment = 'Есть';
-			}
-			else{
-				deferment = 'Нет';
-			}
-			
-			if($('#tab-1').length && $('#tab-2').length){
-				order_type = 'complex_order';
-			}
-			else{
-				order_type = 'simple_order';
-			}
-			
-			STORES = new Array();
-			STORES[1] = 'Барановичи';
-			STORES[2] = 'Гомель';
-			STORES[3] = 'Брест';
-			STORES[4] = 'Витебск';
-			STORES[5] = 'Гродно';
-			STORES[6] = 'Минск';
-			STORES[7] = 'Могилёв';					
-			
-			$.get("/personal/order/send_order.php", { 'price': overal_summ , 'discount' : overall_disc, 'store_id' : store_id, 'order_type' : order_type, 'PAYMENT_DEFERMENT' : deferment , 'LEGAL_CITY' : LEGAL_CITY, 'SEND_ADDRESS' : SEND_ADDRESS, 'CONTACT_FIO' : CONTACT_FIO, 'CONTACT_PHONE' : CONTACT_PHONE, 'CONTACT_FAX' : CONTACT_FAX, 'LEGAL_NAME' : LEGAL_NAME, 'FIO' : FIO, 'LEGAL_ADDRESS' : LEGAL_ADDRESS, 'UNP' : UNP, 'RS' : RS, 'BANK' : BANK, 'BANKCOD' : BANKCOD, 'DELIVERY' : DELIVERY, '1C_ID' : KONTAGENT_ID , 'delivery_address_np' : delivery_address_np, 'delivery_address_index' : delivery_address_index, 'delivery_address_street_type' : delivery_address_street_type, 'delivery_address_street' : delivery_address_street, 'delivery_address_house' : delivery_address_house, 'delivery_address_house_corpus' : delivery_address_house_corpus, 'delivery_address_office_appart' : delivery_address_office_appart, 'legal_address_np' : legal_address_np, 'legal_address_index' : legal_address_index, 'legal_address_street_type' : legal_address_street_type, 'legal_address_street' : legal_address_street, 'legal_address_house' : legal_address_house, 'legal_address_house_corpus' : legal_address_house_corpus, 'legal_address_office_appart' : legal_address_office_appart }, function(res) {
-				if(res === false){
-					infoWindow('Для заказа большего количества свяжитесь с вашим специалистом по продажам!');
-					$('#request_result').val('false');
-				}
-				else{
-					if(order_type === 'complex_order'){
-						$('#tab-'+tab_2).click();
-						$('#cart-tabs-'+tab_1).remove();
-						$('#tab-'+tab_1).remove();
-						$('input[name=LIMIT_REST]').val(limit-overal_summ);
-						
-						$("body").animate({"scrollTop":0},"slow");
-						window.scrollTo(0, 0);
-						infoWindow('Ваш заказ на '+store+' склад оформлен!');
-					}
-					else{
-						$("body").animate({"scrollTop":0},"slow");
-						window.scrollTo(0, 0);
-						$('.basket').remove();
-						$('.sendOrder').html('<div style="text-align:center;"><h1 style="color: green; padding-top:45px;">Ваш заказ оформлен целиком!</h1></div>');
-						setTimeout('window.location.href = \'/personal/order/\';', 5000);
-					}
-					$('#request_result').val('true');
-				}
-			}, "json");
-			
-			/*
-			$('.product').each(function(){
-				var _prod_id  = $(this).val();
-				var _store_id = $(this).attr('store_id');
-				$.removeCookie('quantity_store_'+_store_id+'_'+_prod_id, { path: '/' });
-			});		
-			*/
-		}
-		else{
-		
-			infoWindow('Вы превысили допустимый лимит! Уменьшите свой заказ, либо свяжитесь с менеджером для увеличения лимита.');
-		
-		}
-		
-		return false;
-		
-	});	
 	
 	// Map
 	$('#location a.mark').click(function(){
@@ -1617,7 +1493,7 @@ $(document).ready(function(){
 			} else {
 				$("#mapMainImage").hide();
 			}
-			// mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), true);
+			mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), true);
 		}else{
 			$(this).removeClass('active');
 			$(this).parent().removeClass('active');
@@ -1651,12 +1527,7 @@ $(document).ready(function(){
 	
 	$(window).resize(function(){
 		var newWidth = $('.services').width();
-		if(newWidth <= 640) {
-			$('#services').trigger('configuration', ['items.visible', 2]);
-			$('#services').trigger('configuration', ['width', newWidth]);
-			$('#services').find('li').css('width', newWidth / 2);
-			$('#services').parent().css('width', newWidth);
-		}else if(newWidth <= 780){
+		if(newWidth <= 780){
 			$('#services').trigger('configuration', ['items.visible', 3]);
 			$('#services').trigger('configuration', ['width', newWidth]);
 			$('#services').find('li').css('width', newWidth/3);
@@ -1732,23 +1603,11 @@ $(document).ready(function(){
 	
 	// Order info
 	$('.orderInfo .toggle').click(function(){
-		/*$('.orderInfo').each(function(){
+		$('.orderInfo').each(function(){
 			$(this).addClass('open');
-		});
+		});			
 		$('#send_order').show();
-		jQuery.scrollTo('#fill_order_info');*/
-		if($('#delivery_address_name').val().length < 1)
-		{
-			$('#box').show();
-		}
-		else
-		{
-			$('.orderInfo').each(function(){
-				$(this).addClass('open');
-			});
-			$('#send_order').show();
-			jQuery.scrollTo('#fill_order_info');
-		}
+		jQuery.scrollTo('#fill_order_info');
 		//window.scrollTo(0, 0);		
 		//$(this).parents('.orderInfo').addClass('open');
 	});
@@ -1764,26 +1623,10 @@ $(document).ready(function(){
 		*/
 	});
 	
-	$(document).on("click", ".order_fill2", function(){ 	
-		if($('#user_ur_oblast').val() == ''){
-			 openbox('box');
-		}
-		else{
-			document.location.href = '/personal/order/cart/index.php?order=updated#fill_order_info';	
-		}
-		/*
-		$('.orderInfo').each(function(){
-			$(this).addClass('open');
-		});			
-		$('#send_order').show();
-		jQuery.scrollTo('#fill_order_info');		
-		*/
-	});
-	
 	// Map popup
 	$('a.mapLink').click(function(){
 		$('.mapPopup, .overlay').show();
-		// mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), false);
+		mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), false);
 		return false;
 	});
 	$('.overlay, .mapPopup .close').click(function(){
@@ -1854,18 +1697,18 @@ $(document).ready(function(){
 			$(".discountChange").hide();
 			$(".changeLinkText").show();
 			infoWindow('Введенная скидка ориентировочная, уточняйте % скидки в <a href="/contacts/">отделе продаж</a>, после отправки к заказу будут применены действующие скидки!');
-			/*if($(".productsGrid").exists())
+			if($(".productsGrid").exists())
 			{
 				$(".productsGrid").wrap('<div class="content_table">');
 			} else {
 				$(".content table").wrap('<div class="content_table">');
 			}
-			$(".content_table").append('<div class="loader"></div>');*/
+			$(".content_table").append('<div class="loader"></div>');
 			$.ajax({
 			    url: "",
 			    context: document.body,
 			    success: function(s,x){
-			    	/*if($(".productsGrid").exists())
+			    	if($(".productsGrid").exists())
 					{
 						$(".productsGrid").html($(s).find(".productsGrid"));
 					} else {
@@ -1879,27 +1722,6 @@ $(document).ready(function(){
 						$(".productsGrid").unwrap();
 					} else {
 						$(".content table").unwrap();
-					}*/
-
-					if($('#currentOffer').exists())
-					{
-						$('#currentOffer').html($(s).find('#currentOffer').html());
-						if($('#allModelOffers').exists())
-						{
-							$('#allModelOffers').html($(s).find('#allModelOffers').html());
-						}
-						if($('#allSizeOffers').exists())
-						{
-							$('#allSizeOffers').html($(s).find('#allSizeOffers').html());
-						}
-					}
-					else if($('.productsGrid').exists())
-					{
-						$('.productsGrid').html($(s).find('.productsGrid').html());
-					}
-					else
-					{
-						$('.content table').html($(s).find('.content table').html());
 					}
 			    }
 			});
@@ -1936,7 +1758,7 @@ function check_basket()
 			var cart_info = res.split('|');
 			$('.cart_items').text(cart_info[0]);
 			$('.cart_items_quantity').text(cart_info[2]);
-			$('.cart_summ').text(number_format(cart_info[1], 2, '.', ' '));
+			$('.cart_summ').text(number_format(cart_info[1], 0, ',', ' '));
 			 
 			user_store = $('.user_store').val();
 			summ_main = parseInt(cart_info[3],10);
@@ -2364,15 +2186,6 @@ function check_chained_select(form_id){
 	if(!$('select[pos=last][select_code='+select_code+']').hasClass("disabled")){
 		$('#'+form_id).submit();
 	};
-}
-
-function openbox(id){
-	var display = document.getElementById(id).style.display;
-	if(display=='none'){
-		document.getElementById(id).style.display='block';
-		}else{
-		document.getElementById(id).style.display='none';
-	}
 }
 
 // увеличиваем картинку при наведении в каталоге

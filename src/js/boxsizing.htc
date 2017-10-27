@@ -1,42 +1,42 @@
 /**
 * box-sizing Polyfill
-*
+* 
 * A polyfill for box-sizing: border-box for IE6 & IE7.
-*
+* 
 * JScript
-*
+* 
 * This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Lesser General Public License as published
+* it under the terms of the GNU Lesser General Public License as published 
 * by the Free Software Foundation, either version 3 of the License, or
 * (at your option) any later version.
-*
+* 
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU Lesser General Public License for more details.
-*
+* 
 * See <http://www.gnu.org/licenses/lgpl-3.0.txt>
-*
-* @category  JScript
+* 
+* @category  JScript 
 * @package   box-sizing-polyfill
 * @author    Christian Schepp Schaefer <schaepp@gmx.de> <http://twitter.com/derSchepp>
 * @copyright 2012 Christian Schepp Schaefer
 * @license   http://www.gnu.org/copyleft/lesser.html The GNU LESSER GENERAL PUBLIC LICENSE, Version 3.0
-* @link      http://github.com/Schepp/box-sizing-polyfill
+* @link      http://github.com/Schepp/box-sizing-polyfill 
 *
 * PREFACE:
 *
-* This box-sizing polyfill is based on previous work done by Erik Arvidsson,
+* This box-sizing polyfill is based on previous work done by Erik Arvidsson, 
 * which he published in 2002 on http://webfx.eae.net/dhtml/boxsizing/boxsizing.html.
 *
 * USAGE:
-*
+* 	
 * Add the behavior/HTC after every `box-sizing: border-box;` that you assign:
-*
+* 
 * box-sizing: border-box;
 * *behavior: url(/scripts/boxsizing.htc);`
-*
-* Prefix the `behavior` property with a star, like seen above, so it will only be seen by
+* 
+* Prefix the `behavior` property with a star, like seen above, so it will only be seen by 
 * IE6 & IE7, not by IE8+ who already implement box-sizing.
 *
 * The URL to the HTC file must be relative to your HTML(!) document, not relative to your CSS.
@@ -70,7 +70,7 @@ switch(element.nodeName){
 	case 'LINK':
 	case 'META':
 	break;
-
+			
 	default:
 		apply = true;
 	break;
@@ -108,7 +108,7 @@ function restore(){
 }
 
 /*
-* init gets called once at the start and then never again,
+* init gets called once at the start and then never again, 
 * triggers box-sizing calculations and updates width and height
 */
 function init(){
@@ -119,9 +119,9 @@ function init(){
 }
 
 /*
-* checkPropertyChange gets called as soon as an element property changes
-* (see event binding at the top), it then checks if any property influencing its
-* dimensions was changed and if yes recalculates width and height
+* checkPropertyChange gets called as soon as an element property changes 
+* (see event binding at the top), it then checks if any property influencing its 
+* dimensions was changed and if yes recalculates width and height 
 */
 function checkPropertyChange(){
 	if(apply){
@@ -144,7 +144,7 @@ function checkPropertyChange(){
 			case "style.paddingRight":
 				updateBorderBoxWidth();
 			break;
-
+		
 			case "style.height":
 			case "style.minHeight":
 			case "style.maxHeight":
@@ -156,7 +156,7 @@ function checkPropertyChange(){
 			case "style.paddingBottom":
 				updateBorderBoxHeight();
 			break;
-
+		
 			case "className":
 			case "style.boxSizing":
 				updateBorderBoxWidth();
@@ -166,7 +166,7 @@ function checkPropertyChange(){
 	}
 }
 
-/*
+/* 
  * Helper function, taken from Dean Edward's IE7 framework,
  * added by Schepp on 12.06.2010.
  * http://code.google.com/p/ie7-js/
@@ -183,7 +183,7 @@ function getPixelValue(value){
 	value = parseInt(element.style.pixelLeft);
 	element.style.left = style;
 	element.runtimeStyle.left = runtimeStyle;
-
+	
 	return value;
 }
 
@@ -191,7 +191,7 @@ function getPixelWidth(object, value){
 	// For Pixel Values
 	var PIXEL = /^\d+(px)?$/i;
 	if (PIXEL.test(value)) return parseInt(value);
-
+	
 	// For Percentage Values
 	var PERCENT = /^[\d\.]+%$/i;
 	if (PERCENT.test(value)){
@@ -200,7 +200,7 @@ function getPixelWidth(object, value){
 			var parentPaddingRight = getPixelWidth(object.parentElement,object.parentElement.currentStyle.paddingRight);
 			var parentBorderLeft = getPixelWidth(object.parentElement,object.parentElement.currentStyle.borderLeft);
 			var parentBorderRight = getPixelWidth(object.parentElement,object.parentElement.currentStyle.borderRight);
-
+			
 			//var parentWidth = getPixelWidth(object.parentElement,(object.parentElement.currentStyle.width != "auto" ? object.parentElement.currentStyle.width : "100%"));
 			var parentWidth = object.parentElement.offsetWidth - parentPaddingLeft - parentPaddingRight - parentBorderLeft - parentBorderRight;
 			var value = (parseFloat(value) / 100) * parentWidth;
@@ -210,7 +210,7 @@ function getPixelWidth(object, value){
 		}
 		return parseInt(value);
 	}
-
+	
 	// For EM Values
 	var style = object.style.left;
 	var runtimeStyle = object.runtimeStyle.left;
@@ -219,7 +219,7 @@ function getPixelWidth(object, value){
 	value = parseInt(object.style.pixelLeft);
 	object.style.left = style;
 	object.runtimeStyle.left = runtimeStyle;
-
+	
 	return value;
 }
 
@@ -227,7 +227,7 @@ function getPixelHeight(object, value){
 	// For Pixel Values
 	var PIXEL = /^\d+(px)?$/i;
 	if (PIXEL.test(value)) return parseInt(value);
-
+	
 	// For Percentage Values
 	var PERCENT = /^[\d\.]+%$/i;
 	if (PERCENT.test(value)){
@@ -240,7 +240,7 @@ function getPixelHeight(object, value){
 							var parentPaddingBottom = getPixelWidth(object.parentElement,object.parentElement.currentStyle.paddingBottom);
 							var parentBorderTop = getPixelWidth(object.parentElement,object.parentElement.currentStyle.borderTop);
 							var parentBorderBottom = getPixelWidth(object.parentElement,object.parentElement.currentStyle.borderBottom);
-
+							
 							var parentHeight = object.parentElement.offsetHeight - parentPaddingTop - parentPaddingBottom - parentBorderTop - parentBorderBottom;
 							//var parentHeight = getPixelHeight(object.parentElement,object.parentElement.currentStyle.height);
 
@@ -250,7 +250,7 @@ function getPixelHeight(object, value){
 							value = "auto";
 						}
 					break;
-
+					
 					case 'HTML':
 						parentHeight = element.document.documentElement.clientHeight;
 						if(parentHeight !== "auto"){
@@ -272,7 +272,7 @@ function getPixelHeight(object, value){
 		}
 		return value;
 	}
-
+	
 	// For EM Values
 	var style = object.style.left;
 	var runtimeStyle = object.runtimeStyle.left;
@@ -281,7 +281,7 @@ function getPixelHeight(object, value){
 	value = parseInt(object.style.pixelLeft);
 	object.style.left = style;
 	object.runtimeStyle.left = runtimeStyle;
-
+	
 	return value;
 }
 
@@ -409,13 +409,13 @@ function setContentBoxMaxHeight(n){
 
 /*
  * updateBorderBoxWidth & updateBorderBoxHeight
- *
+ * 
  */
 function updateBorderBoxWidth() {
 	if(getDocumentBoxSizing() == getBoxSizing()){
 		return;
 	}
-
+	
 	var csw = element.currentStyle.width;
 	if(csw != "auto"){
 		csw = getPixelWidth(element,csw);
@@ -454,7 +454,7 @@ function updateBorderBoxHeight() {
 	if(getDocumentBoxSizing() == getBoxSizing()){
 		return;
 	}
-
+	
 	var csh = element.currentStyle.height;
 	if(csh != "auto"){
 		csh = getPixelHeight(element,csh);

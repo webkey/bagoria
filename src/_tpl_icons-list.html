@@ -1,0 +1,21 @@
+<!--icons list-->
+<!--NOT USE !!!-->
+<style>
+	.iconsList > div{
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
+	.iconsList > div svg{
+		display: inline-block;
+		vertical-align: top;
+	}
+</style>
+<!--NOT USE !!! end-->
+<div class="iconsList">
+	@@loop("_tpl_icons-list-items.html", "includes-json/icons-list-items.json")
+	<div style="display: block;"></div>
+	@@loop("_tpl_icons-list-items.html", "includes-json/icons-list-items--social.json")
+</div>
+<!--icons list end-->

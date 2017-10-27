@@ -2,11 +2,11 @@
  * Russian initialisation for the jQuery countdown extension
  * Written by Sergey K. (xslade{at}gmail.com) June 2010. */
 (function($) {
-	$.countdown.regional['ru'] = {
-		labels: ['Р›РµС‚', 'РњРµСЃСЏС†РµРІ', 'РќРµРґРµР»СЊ', 'Р”РЅРµР№', 'С‡Р°СЃРѕРІ', 'РјРёРЅСѓС‚', 'СЃРµРєСѓРЅРґ'],
-		labels1: ['Р“РѕРґ', 'РњРµСЃСЏС†', 'РќРµРґРµР»СЏ', 'Р”РµРЅСЊ', 'С‡Р°СЃ', 'РјРёРЅСѓС‚Р°', 'СЃРµРєСѓРЅРґР°'],
-		labels2: ['Р“РѕРґР°', 'РњРµСЃСЏС†Р°', 'РќРµРґРµР»Рё', 'Р”РЅСЏ', 'С‡Р°СЃР°', 'РјРёРЅСѓС‚С‹', 'СЃРµРєСѓРЅРґС‹'],
-		compactLabels: ['Р»', 'Рј', 'РЅ', 'Рґ'], compactLabels1: ['Рі', 'Рј', 'РЅ', 'Рґ'],
+        $.countdown.regional['ru'] = {
+		labels: ['Лет', 'Месяцев', 'Недель', 'Дней', 'часов', 'минут', 'секунд'],
+		labels1: ['Год', 'Месяц', 'Неделя', 'День', 'час', 'минута', 'секунда'],
+		labels2: ['Года', 'Месяца', 'Недели', 'Дня', 'часа', 'минуты', 'секунды'],
+		compactLabels: ['л', 'м', 'н', 'д'], compactLabels1: ['г', 'м', 'н', 'д'],
 		whichLabels: function(amount) {
 			var units = amount % 10;
 			var tens = Math.floor((amount % 100) / 10);

@@ -1617,7 +1617,7 @@ $(document).ready(function(){
 			} else {
 				$("#mapMainImage").hide();
 			}
-			// mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), true);
+			mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), true);
 		}else{
 			$(this).removeClass('active');
 			$(this).parent().removeClass('active');
@@ -1651,12 +1651,7 @@ $(document).ready(function(){
 	
 	$(window).resize(function(){
 		var newWidth = $('.services').width();
-		if(newWidth <= 640) {
-			$('#services').trigger('configuration', ['items.visible', 2]);
-			$('#services').trigger('configuration', ['width', newWidth]);
-			$('#services').find('li').css('width', newWidth / 2);
-			$('#services').parent().css('width', newWidth);
-		}else if(newWidth <= 780){
+		if(newWidth <= 780){
 			$('#services').trigger('configuration', ['items.visible', 3]);
 			$('#services').trigger('configuration', ['width', newWidth]);
 			$('#services').find('li').css('width', newWidth/3);
@@ -1783,7 +1778,7 @@ $(document).ready(function(){
 	// Map popup
 	$('a.mapLink').click(function(){
 		$('.mapPopup, .overlay').show();
-		// mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), false);
+		mapSetMarker($(this).attr('data-lat'), $(this).attr('data-lng'), $(this), false);
 		return false;
 	});
 	$('.overlay, .mapPopup .close').click(function(){
@@ -1854,18 +1849,18 @@ $(document).ready(function(){
 			$(".discountChange").hide();
 			$(".changeLinkText").show();
 			infoWindow('Введенная скидка ориентировочная, уточняйте % скидки в <a href="/contacts/">отделе продаж</a>, после отправки к заказу будут применены действующие скидки!');
-			/*if($(".productsGrid").exists())
+			if($(".productsGrid").exists())
 			{
 				$(".productsGrid").wrap('<div class="content_table">');
 			} else {
 				$(".content table").wrap('<div class="content_table">');
 			}
-			$(".content_table").append('<div class="loader"></div>');*/
+			$(".content_table").append('<div class="loader"></div>');
 			$.ajax({
 			    url: "",
 			    context: document.body,
 			    success: function(s,x){
-			    	/*if($(".productsGrid").exists())
+			    	if($(".productsGrid").exists())
 					{
 						$(".productsGrid").html($(s).find(".productsGrid"));
 					} else {
@@ -1879,27 +1874,6 @@ $(document).ready(function(){
 						$(".productsGrid").unwrap();
 					} else {
 						$(".content table").unwrap();
-					}*/
-
-					if($('#currentOffer').exists())
-					{
-						$('#currentOffer').html($(s).find('#currentOffer').html());
-						if($('#allModelOffers').exists())
-						{
-							$('#allModelOffers').html($(s).find('#allModelOffers').html());
-						}
-						if($('#allSizeOffers').exists())
-						{
-							$('#allSizeOffers').html($(s).find('#allSizeOffers').html());
-						}
-					}
-					else if($('.productsGrid').exists())
-					{
-						$('.productsGrid').html($(s).find('.productsGrid').html());
-					}
-					else
-					{
-						$('.content table').html($(s).find('.content table').html());
 					}
 			    }
 			});

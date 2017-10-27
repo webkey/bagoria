@@ -1,25 +1,108 @@
 <footer class="footer">
-	<div class="max-wrap layout">
-		<div class="footer__holder">
-			<!--footer bottom-->
-			<div class="footer-bottom">
-				<div class="footer-bottom__holder">
-					<div class="footer-bottom__col">
-						<span class="copyright">&copy; <a href="index.html">Project</a> 2017</span>
-					</div>
-					<div class="footer-bottom__col">
-						<!--developer-->
-						<div class="developer">
-							<a href="http://astronim.by/" target="_blank">
-								<span class="developer__label">Разработка сайта —</span>
-								<span class="developer__logo">Astronim*Support</span>
-							</a>
-						</div>
-						<!--developer end-->
-					</div>
-				</div>
-			</div>
-			<!--footer bottom end-->
-		</div>
+	<div class="copy">© Copyright 2004-2017 СООО "<a href="http://bagoria.by" style="color: #2da5da;">Багория</a>"
 	</div>
+
+	<ul class="fNav">
+		<li><a href="/about/">О компании</a></li>
+		<li><a href="/info/">Информация</a></li>
+		<li><a href="/news/">Новости</a></li>
+		<li><a href="/contacts/">Контакты</a></li>
+	</ul>
+	<form class="search" action="/search/index.php">
+		<input type="text" name="q" maxlength="50" style="color: #ccc" value="Поиск по сайту" onfocus="fS(this);" onblur="bS(this);">
+		<input type="submit" name="s" value="Искать"/>
+	</form>
+
+
+	<div class="dev">
+		<p>г.Брест, ул. Московская, 275 А</p>
+		<p><!--LiveInternet counter-->
+			<script type="text/javascript"><!--
+			document.write("<a href='http://www.liveinternet.ru/click' " +
+				"target=_blank><img src='//counter.yadro.ru/hit?t26.11;r" +
+				escape(document.referrer) + ((typeof(screen) == "undefined") ? "" :
+					";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+					screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+				";" + Math.random() +
+				"' alt='' title='LiveInternet: показано число посетителей за" +
+				" сегодня' " +
+				"border='0' width='88' height='15'><\/a>")
+			//--></script><!--/LiveInternet-->
+			<!-- Yandex.Metrika counter -->
+			<script type="text/javascript">
+				(function (d, w, c) {
+					(w[c] = w[c] || []).push(function () {
+						try {
+							w.yaCounter24544484 = new Ya.Metrika({
+								id: 24544484,
+								webvisor: true,
+								clickmap: true,
+								trackLinks: true,
+								accurateTrackBounce: true
+							});
+						} catch (e) {
+						}
+					});
+
+					var n = d.getElementsByTagName("script")[0],
+						s = d.createElement("script"),
+						f = function () {
+							n.parentNode.insertBefore(s, n);
+						};
+					s.type = "text/javascript";
+					s.async = true;
+					s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+					if (w.opera == "[object Opera]") {
+						d.addEventListener("DOMContentLoaded", f, false);
+					} else {
+						f();
+					}
+				})(document, window, "yandex_metrika_callbacks");
+			</script>
+			<!-- Уведомление о необходимости обновить браузер -->
+			<script>
+				var $buoop = {
+					notify: {i: -4, f: -4, o: -4, s: -2, c: -4},
+					unsecure: true,
+					unsupported: false,
+					api: 5
+				};
+
+				function $buo_f() {
+					var e = document.createElement("script");
+					e.src = "//browser-update.org/update.min.js";
+					document.body.appendChild(e);
+				};
+				try {
+					document.addEventListener("DOMContentLoaded", $buo_f, false)
+				}
+				catch (e) {
+					window.attachEvent("onload", $buo_f)
+				}
+			</script>
+			<!-- /Уведомление о необходимости обновить браузер -->
+		<noscript>
+			<div><img src="//mc.yandex.ru/watch/24544484" style="position:absolute; left:-9999px;" alt=""/></div>
+		</noscript>
+		<!-- /Yandex.Metrika counter --></p>
+	</div>
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-63200426-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 </footer>

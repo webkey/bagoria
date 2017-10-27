@@ -1,0 +1,404 @@
+
+
+
+/* Start:/bitrix/components/api/main.feedback/css/jquery.modal.css*/
+/**
+ * CSS Modal
+ * Modal as reusable module
+ * http://drublic.github.com/css-modal
+ *
+ * @author Hans Christian Reinl - @drublic
+ * @version 1.0.4
+ *
+ * Usage:
+ *    selector {
+ *        @extend %modal;
+ *    }
+ */
+/*
+ * Configuration
+ */
+html {
+	overflow-y: scroll;
+}
+
+.has-overlay {
+	overflow: hidden;
+}
+.has-overlay > body {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.semantic-content {
+	-webkit-transform: translate(0, 100%);
+	-moz-transform: translate(0, 100%);
+	-o-transform: translate(0, 100%);
+	-ms-transform: translate(0, 100%);
+	transform: translate(0, 100%);
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	opacity: 0;
+	color: #222;
+	line-height: 1.3;
+	display: none\9;
+}
+.semantic-content:target {
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+	opacity: 1;
+}
+.is-active.semantic-content {
+	display: block\9;
+}
+.semantic-content:target {
+	display: block\9;
+}
+.semantic-content .modal-inner {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	z-index: 20;
+	margin-left: -325px;
+	width: 650px;
+	overflow-x: hidden;
+	border-radius: 2px;
+	background: #fff;
+	-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+.semantic-content .modal-inner > img,
+.semantic-content .modal-inner > video,
+.semantic-content .modal-inner > iframe {
+	width: 100%;
+	height: auto;
+	min-height: 300px;
+}
+.semantic-content .modal-inner > img {
+	width: auto;
+	max-width: 100%;
+}
+.semantic-content header {
+	border-bottom: 1px solid #dddddd;
+	padding: 0 1.2em;
+}
+.semantic-content header > h2 {
+	margin: 0.5em 0;
+	padding: 0;
+}
+.semantic-content .modal-content {
+	max-height: 400px;
+	max-height: 70vh;
+	border-bottom: 1px solid #dddddd;
+	padding: 15px 1.2em;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.semantic-content .modal-content > * {
+	max-width: 100%;
+}
+.semantic-content footer {
+	border-top: 1px solid white;
+	padding: 0 1.2em 18px;
+	background: #f0f0f0;
+	border-radius: 2px;
+}
+.semantic-content footer p{margin: 15px 0 0;}
+.semantic-content .modal-close {
+	display: block;
+	text-indent: -100px;
+	overflow: hidden;
+}
+.semantic-content .modal-close:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAMwA0QDNTiUx4gAAAABJRU5ErkJggg==");
+}
+.semantic-content .modal-close:after {
+	content: '\00d7';
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	z-index: 20;
+	margin-left: 285px;
+	background: #fff;
+	border-radius: 2px;
+	padding: 2px 8px;
+	font-size: 1.2em;
+	text-decoration: none;
+	text-indent: 0;
+}
+@media screen and (max-width: 690px) {
+	.semantic-content .modal-inner {
+		width: auto;
+		left: 20px;
+		right: 20px;
+		margin-left: 0;
+	}
+	.semantic-content .modal-close {
+		left: auto;
+		right: 33px;
+		margin-left: 0;
+	}
+	.semantic-content .modal-close:after {
+		margin-left: 40%;
+	}
+}
+@media screen and (max-width: 30em) {
+	.semantic-content {
+		-webkit-transform: translate(0, 400px);
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+		-webkit-transition: -webkit-transform .25s ease-in-out, opacity 1ms .25s;
+		-moz-transition: -moz-transform .25s ease-in-out, opacity 1ms .25s;
+		-o-transition: -o-transform .25s ease-in-out, opacity 1ms .25s;
+		-ms-transition: -ms-transform .25s ease-in-out, opacity 1ms .25s;
+		transition: transform .25s ease-in-out, opacity 1ms .25s;
+		display: block;
+		height: 100%;
+		bottom: auto;
+	}
+	.semantic-content:target {
+		-webkit-transition: -webkit-transform .25s ease-in-out;
+		-moz-transition: -moz-transform .25s ease-in-out;
+		-o-transition: -o-transform .25s ease-in-out;
+		-ms-transition: -ms-transform .25s ease-in-out;
+		transition: transform .25s ease-in-out;
+	}
+	.semantic-content:before {
+		background-color: #27aae2;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#27aae2), to(#1c9cd3));
+		background-image: -webkit-linear-gradient(top, #27aae2, #1c9cd3);
+		background-image: -moz-linear-gradient(top, #27aae2, #1c9cd3);
+		background-image: -o-linear-gradient(top, #27aae2, #1c9cd3);
+		background-image: linear-gradient(to bottom, #27aae2, #1c9cd3);
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 30;
+		height: 3em;
+		-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	}
+	.semantic-content .modal-inner {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding-top: 3em;
+		height: 100%;
+		overflow: scroll;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.semantic-content .modal-content {
+		max-height: none;
+	}
+	.semantic-content .modal-close {
+		right: auto;
+		text-decoration: none;
+	}
+	.semantic-content .modal-close:before {
+		display: none;
+	}
+	.semantic-content .modal-close:after {
+		content: attr(data-close);
+		top: 0.4em;
+		left: 1em;
+		z-index: 40;
+		margin-left: 0;
+		font-size: 1em;
+		padding: 0.5em 1em;
+	}
+}
+@media screen and (max-height: 46em) and (min-width: 30em) {
+	.semantic-content .modal-content {
+		max-height: 340px;
+		max-height: 50vh;
+	}
+}
+@media screen and (max-height: 36em) and (min-width: 30em) {
+	.semantic-content .modal-content {
+		max-height: 265px;
+		max-height: 40vh;
+	}
+}
+
+@media screen and (min-width: 30em) {
+	.semantic-content {
+		-webkit-transition: opacity 0.4s;
+		-o-transition: opacity 0.4s;
+		transition: opacity 0.4s;
+	}
+}
+
+/* End */
+
+
+
+/* Start:/bitrix/components/api/main.feedback/templates/.default/style.css*/
+.tpl_default{position: relative;}
+.tpl_default .asterisk{
+	color: #FF3737;
+	font-size: 13px;
+	font-weight: bold;
+}
+.tpl_default .api-submit{padding: 15px 5px;position: relative;}
+.tpl_default .api-file-ext{font-size: 11px; color: #6A6A6A}
+
+.tpl_default input[type="text"], .tpl_default textarea, .tpl_default select{border: 1px solid #8C8C8C;vertical-align: middle;}
+.tpl_default input[type="text"]:focus, .tpl_default textarea:focus, .tpl_default select:focus{
+	-webkit-box-shadow: 0 1px #FFFFFF, 0 2px 6px 2px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:    0 1px #FFFFFF, 0 2px 6px 2px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:         0 1px #FFFFFF, 0 2px 6px 2px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+/* ========================================================================
+   Component:  JS Error Module
+ ========================================================================== */
+.tpl_default [class*="ts-field-"]{
+	display: inline-block;
+	margin-left: 6px;
+	width: 14px;
+	height: 12px;
+	background-image: url('/bitrix/components/api/main.feedback/templates/.default/images/note.png');
+	background-repeat: no-repeat;
+}
+.tpl_default .ts-field-error{background-position: 0 0;}
+.tpl_default .ts-field-saccess{background-position: 0 -14px;}
+
+
+/* ========================================================================
+   Component: Captcha
+ ========================================================================== */
+.tpl_default .mf-captcha{padding: 5px;}
+.tpl_default .mf-captcha-wrap{display: inline-block;}
+.tpl_default .mf-captcha .mf-text{margin:0 0 3px;font-size: 13px;}
+.tpl_default .mf-captcha img{margin: 0 0 10px;}
+.tpl_default .mf-captcha input[type="text"]{width: 168px;text-transform: uppercase;}
+
+
+
+/* ========================================================================
+   Component: Alert
+ ========================================================================== */
+.ts-alert{
+	background: none repeat scroll 0 0 #EBF7FD;
+	border: 1px solid rgba(45, 112, 145, 0.3);
+	border-radius: 4px;
+	color: #2D7091;
+	padding: 10px;
+	text-shadow: 0 1px 0 #FFFFFF;
+	margin: 15px 0;
+	display: block;
+	font-size: 14px;
+	line-height: 21px;
+}
+.ts-alert p{margin: 0 !important; padding: 0 !important;}
+.ts-alert-success {
+	background: none repeat scroll 0 0 #F2FAE3;
+	border-color: rgba(101, 159, 19, 0.3);
+	color: #659F13;
+}
+.ts-alert-warning {
+	background: none repeat scroll 0 0 #FFFCEB;
+	border-color: rgba(226, 131, 39, 0.3);
+	color: #E28327;
+}
+.ts-alert-danger {
+	background: none repeat scroll 0 0 #FFF1F0;
+	border-color: rgba(216, 80, 48, 0.3);
+	color: #D85030;
+}
+
+
+/* ========================================================================
+   Component: File inputs
+ ========================================================================== */
+.tpl_default .api-file-wrap{position: relative;float: left;}
+.tpl_default .api-file-wrap input[type="file"]{display: none;}
+.tpl_default .api-file-name{color: #000000;font-size: 14px;}
+.tpl_default .api-file-string{overflow: hidden;margin: 0 0 5px;}
+.tpl_default input[type="submit"], .tpl_default .api-btn{
+	font: 13px/27px Arial,sans-serif;
+	color: #333333;
+	border: 1px solid;
+	border-color: #AFB3BB  #9B9FA7  #7D8087;
+	height: 27px;
+	padding: 0 6px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	position: relative;
+	-webkit-border-radius: 3px;
+	-moz-border-radius:    3px;
+	border-radius:         3px;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+	-moz-box-shadow:    0 1px 0 rgba(0, 0, 0, 0.07);
+	box-shadow:         0 1px 0 rgba(0, 0, 0, 0.07);
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+}
+.tpl_default input[type="submit"]:hover, .tpl_default .api-btn:hover{
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY1ZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f5f3 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f6f5f3));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f5f3 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f5f3 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f5f3 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f5f3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f5f3',GradientType=0 );
+}
+
+.tpl_default input[type="submit"]:active, .tpl_default .api-btn:active{
+	-webkit-box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow:    0 1px 3px -1px rgba(0, 0, 0, 0.5) inset;
+	box-shadow:         0 1px 3px -1px rgba(0, 0, 0, 0.5) inset;
+}
+.tpl_default .api-btn-small{height: 18px;font: normal 13px/18px Arial,sans-serif;}
+.tpl_default .api-form-row{overflow: hidden;}
+
+/* v1.2.9 */
+.tpl_default .option-qroup{display: inline-block;vertical-align: middle;}
+.tpl_default .date-group input[type="text"]{margin-bottom: 5px;}
+
+/* v1.3.4 */
+.tpl_default .hidden_protection {
+	background: transparent !important;
+	border: 0 none !important;
+	box-shadow: none !important;
+	color: transparent !important;
+	position: absolute !important;
+	right: 0 !important;
+	top: 0 !important;
+}
+/* End */
+/* /bitrix/components/api/main.feedback/css/jquery.modal.css */
+/* /bitrix/components/api/main.feedback/templates/.default/style.css */

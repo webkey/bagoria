@@ -1,0 +1,108 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* user form
+.form-title
+	display: block
+	+font-alt-bold
+	+font($font-size-h2, $line-height-h2)
+	color: $title-color
+	text-align: center
+	margin-bottom: $bottom-space--md
+
+.user-form
+	background: $bg-color-alt
+	+padding-vertical($text-layout-space-horizontal)
+	margin-bottom: $bottom-space
+	border: solid $border-color
+	border-width: 1px 0
+
+	&:last-child
+		margin-bottom: 0
+
+	+media('<tab-lg')
+		+padding-vertical($text-layout-space-horizontal--md)
+
+	+media('<mob-lg')
+		+padding-vertical($text-layout-space-horizontal--sm)
+
+	form
+		display: block
+
+	.input-wrap
+		margin-bottom: 50px
+
+	textarea
+		height: 130px
+		max-height: 130px
+		resize: none
+
+	.captcha
+		+display-inline-block-top
+		+clear-spacing
+		position: relative // Важно! Для позицирования отметки подтверждения полей формы
+		z-index: 1 // Важно! Отметка подтверждения полей формы имеет z-index: -1
+
+		+clear
+
+		img
+			$margin-right: 20px
+			display: inline-block
+			vertical-align: middle
+			max-width: calc(50%)
+			margin-right: $margin-right
+
+			& + input
+				display: inline-block
+				vertical-align: middle
+				width: 200px
+
+		+media('<tab-lg')
+			img
+				display: block
+				max-width: none
+				margin-bottom: $bottom-space--sm
+
+				& + input
+					display: block
+					max-width: none
+					width: 100%
+
+	.form-footer
+		+clear
+
+		+media('<mob-lg')
+			padding-top: $bottom-space--sm
+
+	.form-buttons
+		float: left
+		margin-right: 30px
+
+		+media('<mob-lg')
+			float: none
+			margin: 0
+
+		.btn-submit
+			width: 200px
+
+	.form-note
+		overflow: hidden
+		min-height: 50px
+		+clear-spacing
+		line-height: 25px
+
+		&::before
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			min-height: inherit
+
+	.form-note__item
+		display: inline-block
+		vertical-align: middle
+		width: calc(100% - 6px)
+		+font($font-size--sm, $line-height--sm)
+		letter-spacing: normal
+
+/* user form end

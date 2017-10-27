@@ -1,0 +1,69 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* breadcrumbs
+.breadcrumbs
+	color: $text-color-light
+	margin-bottom: $bottom-space
+
+.breadcrumbs__list, .#{$user-content} .breadcrumbs__list
+	padding: 0
+	margin: 0
+
+	li
+		padding: 0 17px 0 0
+		margin: 0
+
+		&::before, &:first-child::before
+			content: none
+
+.breadcrumbs__list
+	cursor: default
+	overflow: hidden
+
+	li
+		display: inline-block
+		vertical-align: top
+		position: relative
+
+		&::after
+			content: '/'
+			position: absolute
+			right: 10px
+			top: 1px
+			height: 0
+			width: 0
+			line-height: 1.2
+			border: none
+			color: $text-color-light
+
+		&:last-child::after
+			content: none
+
+		span
+			display: inline-block
+			vertical-align: top
+			line-height: 1.2
+			+truncate(260px)
+
+	a
+		display: inline-block
+		vertical-align: top
+		color: $link-color
+		text-decoration: none
+		cursor: pointer
+
+		.no-touchevents &:hover
+			text-decoration: none
+
+		span
+			border-bottom: 1px solid transparent
+			transition-property: border-color, color
+			transition-duration: $animation-speed
+
+		.no-touchevents &:hover span
+			border-color: tint($link-color, 30%)
+			color: $link-color
+
+/* breadcrumbs end

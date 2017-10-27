@@ -1,0 +1,65 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* files links
+.file
+	$file-icon-size: 42px
+	+display-inline-block-top
+	min-height: $file-icon-size
+	padding: 0.5em
+	+font(16px, 20px)
+	color: $text-color
+	text-decoration: none
+
+	@if $animation-use
+		transition:
+			property: background-color
+			duration: $animation-speed
+
+	+clear
+
+	svg
+		float: left
+		+size($file-icon-size)
+
+	@if $animation-use
+		path
+			transition:
+				property: fill
+				duration: $animation-speed
+
+	.st-bg
+		fill: #e2e5e7
+
+	.st-corner
+		fill: #b0b7bd
+
+	.st-shadow
+		fill: #cad1d8
+
+	.st-text
+		fill: white
+
+	& > span, & > em
+		display: block
+		margin-left: #{$file-icon-size}
+		padding-left: 1em
+
+		@if $animation-use
+			transition:
+				property: color
+				duration: $animation-speed
+
+	& > em
+		display: block
+		font-size: 1.4rem
+		color: $text-color-light
+
+	.no-touchevents &:hover
+		background-color: $base-color
+
+		& > em
+			color: $bg-color-base
+
+/* files links end

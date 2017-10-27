@@ -1,0 +1,147 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* jFiler
+.upload-file
+	opacity: 0
+
+.jFiler
+	position: relative
+
+.jFiler-input-dragDrop
+	margin: 0
+	cursor: pointer
+	padding: 20px
+	background: $bg-color-alt
+	border: 1px dashed $border-color
+	@if $animation-use
+		transition:
+			property: background-color, border-color, transform
+			duration: $animation-speed
+	@else
+		transition: none
+
+	.no-touchevents &:hover
+		border-color: $form-border-focus-color
+
+	&.dragged .jFiler-input-icon i
+		transform: translate(0, -8px)
+
+	.jFiler-input-icon
+		margin-top: 0
+		margin-bottom: 15px
+		text-align: center
+
+		i
+			display: inline-block
+			vertical-align: top
+			background: url(../../img/attach.png) no-repeat
+			background-size: contain
+			+size(60px, 44px)
+			transition-property: background-color, border-color, transform
+			transition-duration: $animation-speed
+
+	.jFiler-input-text strong
+		display: block
+		+font-normal
+		+font($font-size--less, $line-height--less)
+		color: $text-color
+		text-align: center
+
+.jFiler-items
+	//margin: #{$form-bottom-space} 0 0
+	margin: 50px 0 0
+
+.jFiler-items-list, .#{$user-content} .jFiler-items-list
+	margin: #{$bottom-space--sm} 0
+
+	li
+		padding-left: 0
+
+		&::before
+			content: none
+
+.jFiler-item
+	margin: #{$bottom-space--sm} 0
+	+font($font-size--sm, $line-height--sm)
+	color: $text-color
+	overflow: hidden
+
+.jFiler-item-icon
+	display: none
+
+.jFiler-item-title
+	display: inline-block
+	vertical-align: top
+	+font-bold
+	margin-right: 10px
+
+.jFiler-item-others
+	display: inline-block
+	vertical-align: top
+	color: $text-color-light
+	position: relative
+
+	&::after
+		content: ''
+		position: absolute
+		left: 100%
+		bottom: 0
+		+size(999px, 0)
+		border-bottom: 1px dotted $border-color
+		margin: 0 0 3px
+
+	span
+		padding-right: 5px
+
+.jFiler-item-assets
+	position: absolute
+	right: 0
+	bottom: 0
+
+.jFiler-item-assets ul,
+.#{$user-content} ul .jFiler-item-assets ul
+	margin: 0
+
+	li
+		margin: 0
+		padding: 0 0 3px 8px !important
+		background: $bg-color-alt
+
+.jFiler-item-trash-action
+	display: block
+	position: relative
+	+size(20px)
+	z-index: 2
+	cursor: pointer
+	background-color: $text-color
+
+	&::before, &::after
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		+size(16px, 2px)
+		border-radius: 2px
+		background: white
+		margin: -1px 0 0 -8px
+
+		@if $animation-use
+			transition:
+				property: background-color
+				duration: $animation-speed
+		@else
+			transition: none
+
+	&::before
+		transform: rotate(-45deg)
+
+	&::after
+		transform: rotate(45deg)
+
+	.no-touchevents &:hover::before,
+	.no-touchevents &:hover::after
+		background-color: $base-color
+
+/* jFiler end

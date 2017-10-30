@@ -5,10 +5,13 @@
 
 
 	<header class="header">
+		<a href="#" class="btn-menu btn-menu-js"><i>&nbsp;</i><span>Menu</span></a>
+
 		<a href="/">
 			<div class="logo" title="Оптовый поставщик шин и дисков в РБ. Купить автомобильные шины по безналу в Минске" alt="Шины. Диски. Аккумуляторы - СООО «Багория»">Багория</div>
 		</a>
-		<ul class="topNav"></li>
+
+		<ul class="topNav">
 			<li>
 				<a href="/about/">О компании</a>
 
@@ -56,6 +59,99 @@
 			</li>
 		</ul>
 
+		<!--for mob-->
+		<div class="nav-mob main-menu-js">
+			<div class="nav-mob-head">
+				<a href="#" class="btn-close btn-menu-close-js"><span>Close</span></a>
+			</div>
+			<ul class="topNav-mob top-nav-mob-js">
+				<li class="has-drop">
+					<a href="/about/">О компании</a>
+					<i class="topNav-angle opener-drop-js is-open"></i>
+
+					<ul>
+						<li>
+							<a href="/about/history/">История</a>
+						</li>
+						<li class="current">
+							<a href="/about/gallery/">Фотогалерея</a>
+						</li>
+						<li>
+							<a href="/about/brands/">Бренды</a>
+						</li>
+						<li>
+							<a href="/about/vakansii/">Вакансии</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/oformit-zakaz/">Оформить заказ</a>
+				</li>
+				<li class="has-drop">
+					<a href="/info/">Информация</a>
+					<i class="topNav-angle opener-drop-js"></i>
+
+					<ul>
+						<li>
+							<a href="/info/order/">Система заказа</a>
+						</li>
+						<li>
+							<a href="/info/catalog/">Каталоги</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/news/">Новости</a>
+				</li>
+				<li class="has-drop">
+					<a href="/contacts/">Контакты</a>
+					<i class="topNav-angle opener-drop-js"></i>
+
+					<ul>
+						<li>
+							<a href="/contacts/feedback">Обратная связь</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="nav-mob-foot">
+				<h4>Центральный офис</h4>
+				<ul class="cont-list">
+					<li>
+						<ul>
+							<li>
+								<img src="i/pin.svg" width="10" height="14" alt="image description" />
+								Брест, Московская, 275А
+							</li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li>
+								<img src="i/vel.svg" width="14" height="14" alt="image description" />
+								<a href="tel:8 (044) 5-400-800">8 (044) 5-400-800</a>
+							</li>
+							<li>
+								<img src="i/phone.svg" width="12" height="14" alt="image description" />
+								<a href="tel:8 (0162) 51-37-96">8 (0162) 51-37-96</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li>
+								<img src="i/mail.svg" width="12" height="14" alt="image description" />
+								<a href="mailto:info@bagoria.by">info@bagoria.by</a> – организационные вопросы;</li>
+							<li>
+								<img src="i/mail.svg" width="12" height="14" alt="image description" />
+								<a href="mailto:sales@bagoria.by">sales@bagoria.by</a> – для коммерческих предложений и информации.</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--for mob end-->
+
 		<script>
 			$(document).ready(function () {
 				$('ul.topNav a[href$="/about/"]').attr('href', '#');
@@ -63,6 +159,7 @@
 			});
 		</script>
 		<span class="enterLink">Вход для клиентов</span>
+
 		<form action="/personal/auth/" method="post" id="login_form">
 			<div class="auth">
 				<div class="column">
@@ -91,6 +188,18 @@
 	<div class="intro" id="intro-catalogue">
 		<nav class="catalogue">
 			<div class="title">Каталог</div>
+			<!--for mob-->
+			<div class="catalogue-mob">
+				<div><a href="#">Легковые шины</a></div>
+				<div><a href="#">Грузовые шины</a></div>
+				<div><a href="#">Легковые диски</a></div>
+				<div><a href="#">Аккумуляторы</a></div>
+				<div><a href="#">Шиноремонтные материалы и крепеж дисков</a></div>
+				<div><a href="#">Шины, камеры и ободные ленты для спецтехники и погрузчиков</a></div>
+			</div>
+			<div class="catalogue-mob">
+			</div>
+			<!--for mob end-->
 			<ul>
 				<li><a href="#catalogue-1">Легковые шины</a></li>
 				<li><a href="#catalogue-2">Грузовые шины</a></li>

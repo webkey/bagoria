@@ -6,7 +6,7 @@
 $breakpoints: ('desk-hd': 1920px, 'desk-lg': 1600px, 'desk-md': 1366px, 'desk-sm': 1200px, 'tab-lg': 1024px, 'tab-md': 960px, 'tab-sm': 768px, 'mob-lg': 640px, 'mob-md': 480px, 'mob-sm': 320px)
 
 // base
-$font-size: 1.6rem !default
+$font-size: 16px !default
 $line-height: round-float(2.4rem/$font-size, 2) !default
 // ===============
 $font-size--sm: 1.4rem !default
@@ -54,16 +54,16 @@ $line-height-h5: $line-height !default
 $font-size-h6: round-float($font-size*0.75, 1) !default
 $line-height-h6: round-float($line-height*1.25, 2) !default
 
-$bottom-space: round-float($font-size*$line-height, 1) !default
-$bottom-space--lg: round-float($font-size*$line-height*3, 1) !default
+$bottom-space: 1em !default
+$bottom-space--lg: 2em !default
 $bottom-space--md: round-float($font-size*$line-height*2.0, 1) !default
 $bottom-space--ml: round-float($font-size*$line-height*1.5, 1) !default
 $bottom-space--sm: round-float($font-size*$line-height*0.75, 1) !default
 
 // =======Цветовая схема========
 // цвет бренда
-$base-color: #ffa43f !default
-$base-color-alt: lightskyblue !default
+$base-color: #1a59b9 !default
+$base-color-alt: #ffbf14 !default
 // главные контрастные цвета (обычно, белый и черный)
 $text-color-base: black !default
 $bg-color-base: white !default
@@ -107,6 +107,9 @@ $flood-layout-width: 1000px !default
 $grid-space: 30px !default
 $grid-space--lg: 20px !default
 $grid-space--sm: 10px !default
+
+// header
+$header-height--lg: 70px !default
 
 // sidebar
 $sidebar-width: 260px !default

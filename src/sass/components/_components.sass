@@ -6,9 +6,20 @@
 body, .wrapper
 	min-width: 320px
 
+html
+	&.menu-is-open
+		+scroll-blocked()
+
 /* layout end
 
 /* header
+.header
+	+media('<tab-lg')
+		height: 70px
+
+/* header end
+
+/* navigation
 ul.topNav
 	+media('<desk-sm')
 		& > li
@@ -16,10 +27,349 @@ ul.topNav
 				margin-left: 5px
 				+padding-horizontal(5px)
 
-	+media('<tab-md')
+	+media('<tab-lg')
+		display: none
 
+.nav-mob
+	display: none
+	position: fixed
+	+position(0)
+	+size(100%)
+	overflow-x: hidden
+	overflow-y: auto
+	z-index: 99
+	background-color: $bg-color-base
+	box-sizing: border-box
 
-/* header end
+	&.menu-is-open
+		display: block
+
+.nav-mob-head
+	+clear
+
+.topNav-mob
+	$space: 23px
+	position: relative
+	background-color: $base-color
+	font-family: Tahoma, sans-serif
+	+font(15px, 20px)
+
+	li
+		position: relative
+		min-height: 50px
+
+		a
+			display: block
+			position: relative
+			color: white
+			text-decoration: none
+			padding: 15px $space
+
+			&:hover
+				text-decoration: none
+				color: $base-color-alt
+
+		&.has-drop > a
+			padding-right: 65px
+
+		&.current
+			& > a
+				color: $text-color
+				background-color: $base-color-alt
+
+				&::before
+					display: none
+
+			& + li > a
+				&::before
+					display: none
+
+	// firs level
+	& > li
+		border-top: 1px solid #3a76ae
+
+		&:first-child
+			border-top: none
+
+		& > a
+			font-family: pf_dintext_probold, sans-serif
+			font-size: 16px
+			text-transform: uppercase
+
+		& > ul
+			display: none
+
+			&.is-open
+				display: block
+
+	// second and lower levels
+	ul
+		background-color: shade($base-color, 85)
+
+		a
+			padding-left: $space*2
+
+	// second level
+	& > li > ul
+		a
+			&::before
+				+pseudo()
+				border-top: 1px solid #3a6c9b
+				left: $space*2
+				right: 0
+				top: 0
+
+		li:first-child
+			a
+				&::before
+					content: none
+
+.topNav-angle
+	display: none
+	position: absolute
+	right: 0
+	top: 0
+	+font(0, 0)
+	+size(50px, 50px)
+	background-image: url(../../i/arr_up_white.svg) // for preload
+	background-image: url(../../i/arr_dn_white.svg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: 14px 8px
+	cursor: pointer
+
+	&::before
+		$height: 22px
+		+pseudo()
+		height: $height
+		border: solid #3a76ae
+		border-width: 0 0 0 1px
+		top: 50%
+		margin-top: -#{round($height/2)}
+
+	&.is-open
+		background-image: url(../../i/arr_up_white.svg)
+
+	.has-drop > &
+		display: block
+
+.nav-mob-foot
+	padding: 18px 20px
+
+	h4
+		font-family: pf_dintext_proregular, sans-serif
+		+font(14px, 18px)
+		color: $base-color
+		text-transform: uppercase
+		margin-bottom: 10px
+		padding: 0
+
+.cont-list
+	+font(14px, 24px)
+	margin-bottom: $bottom-space
+
+	&:last-child
+		margin-bottom: 0
+
+	& > li
+		margin-bottom: 12px
+
+		&:last-child
+			margin-bottom: 0
+
+	ul
+		li
+			position: relative
+			padding-left: 22px
+
+		img
+			position: absolute
+			left: 0
+			top: 6px
+
+/* navigation end
+
+/* logo
+.logo
+	+media('<tab-lg')
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+
+/* logo end
+
+/* login
+.enterLink
+	+media('<tab-lg')
+		top: 0
+		right: 0
+		background-image: url(../../i/login.png)
+		background-repeat: no-repeat
+		background-position: center
+		background-color: transparent
+		background-size: 20px
+		padding: 0
+		+size($header-height--lg)
+		+font(0, 0)
+
+	&:hover
+		background-color: transparent
+		background-position: center
+
+/* login end
+
+/* button menu
+.btn-menu
+	position: absolute
+	display: none
+
+	$btn-menu-bg: $bg-color-base
+	$btn-menu-color: $text-color
+	$btn-menu-lines-width: 22px
+	$btn-menu-lines-height: 3px
+	$btn-menu-lines-space: 4px
+	$btn-menu-lines-color: $base-color
+
+	$btn-menu-cross-width: $btn-menu-lines-width
+	$btn-menu-cross-height: $btn-menu-lines-height
+	$btn-menu-cross-color: $btn-menu-lines-color
+
+	=menu-btn-line()
+		+size($btn-menu-lines-width, $btn-menu-lines-height)
+		background-color: $btn-menu-lines-color
+
+	=menu-btn-cross-line()
+		+size($btn-menu-cross-width, $btn-menu-cross-height)
+		background-color: $btn-menu-cross-color
+
+	text-decoration: none
+	color: $text-color
+	+size($header-height--lg)
+	background-color: $bg-color-base
+
+	+media('<tab-lg')
+		display: block
+
+	& > span
+		+hide-text
+		white-space: normal
+
+	// крест
+	&::before, &::after
+		+pseudo()
+		+menu-btn-cross-line
+		+position(50%)
+		+margin($top: -#{round($btn-menu-cross-height*0.5)}, $left: -#{round($btn-menu-cross-width*0.5)})
+		opacity: 0
+
+	// бутерброд
+	& > i
+		position: absolute
+		left: 50%
+		top: 50%
+		+menu-btn-line
+		+margin($top: -#{round($btn-menu-lines-height*0.5)}, $left: -#{round($btn-menu-lines-width*0.5)})
+
+		&::before, &::after
+			+pseudo()
+			left: 0
+			+menu-btn-line
+
+		//first line menu
+		&::before
+			top: -#{$btn-menu-lines-height + $btn-menu-lines-space}
+
+		//third line menu
+		&::after
+			top: #{$btn-menu-lines-height + $btn-menu-lines-space}
+
+	// hover
+	.no-touchevents &:hover
+
+		&::before, &::after
+			background-color: $base-color
+
+		& > i
+			background-color: $base-color
+
+			&::before, &::after
+				background-color: $base-color
+
+	// active
+	&.menu-is-open
+
+		&::before, &::after
+			opacity: 1
+
+		&::before
+			transform: rotate(45deg) translateZ(0)
+
+		&::after
+			transform: rotate(-45deg) translateZ(0)
+
+		& > i
+			opacity: 0
+			transition-delay: 0s
+
+			&::before, &::after
+				transition-delay: 0s
+
+			&::before
+				transform: translate(0, #{$btn-menu-lines-height + $btn-menu-lines-space}) translateZ(0)
+
+			&::after
+				transform: translate(0, -#{$btn-menu-lines-height + $btn-menu-lines-space}) translateZ(0)
+
+		// hover on active
+		//.no-touchevents &.active:hover
+
+			& > i
+
+				&::before, &::after
+					background-color: $bg-color-base
+
+/* button menu end
+
+/* button close menu
+.btn-close
+	display: block
+	position: relative
+	float: left
+
+	$btn-menu-bg: $bg-color-base
+	$btn-menu-color: $text-color
+	$btn-menu-cross-width: 22px
+	$btn-menu-cross-height: 3px
+	$btn-menu-lines-space: 4px
+	$btn-menu-cross-color: $base-color
+
+	=menu-btn-cross-line()
+		+size($btn-menu-cross-width, $btn-menu-cross-height)
+		background-color: $btn-menu-cross-color
+
+	text-decoration: none
+	color: $text-color
+	+size($header-height--lg)
+	background-color: $bg-color-base
+
+	& > span
+		+hide-text
+		white-space: normal
+
+	// крест
+	&::before, &::after
+		+pseudo()
+		+menu-btn-cross-line
+		+position(50%)
+		+margin($top: -#{round($btn-menu-cross-height*0.5)}, $left: -#{round($btn-menu-cross-width*0.5)})
+
+	&::before
+		transform: rotate(45deg) translateZ(0)
+
+	&::after
+		transform: rotate(-45deg) translateZ(0)
+
+/* button close menu end
 
 /* map tabs
 .mapWrap
@@ -42,3 +392,91 @@ ul.topNav
 	width: auto
 
 /* callback end
+
+/* catalogue
+.catalogue
+	+media('<tab-lg')
+		& ul
+			display: none
+
+	.catalogue-mob
+		display: none
+		font: 15px/20px Tahoma, sans-serif
+
+		& > div
+			padding: 8px 30px
+			position: relative
+
+			a
+				color: #fff
+				text-decoration: none
+				display: block
+
+				&:hover
+					color: #ffbf14
+					text-decoration: underline
+
+		+media('<tab-lg')
+			display: block
+
+/* catalogue end
+
+/* promo
+ul.slides .text
+	width: auto
+	max-width: 600px
+
+ol.pagination
+	box-sizing: border-box
+	margin-left: 0
+	+padding-horizontal(30px)
+	width: auto
+
+	+media('<desk-sm')
+		font-size: 15px
+
+	li
+
+		+media('<desk-sm')
+			box-sizing: border-box
+			width: 20%
+			min-height: 110px
+
+/* promo end
+
+/* location
+.location
+	+media('<desk-sm')
+		background-position-x: 100%
+
+/* location end
+
+/* services
+.services
+	height: auto
+
+	ul
+		li
+			height: 110px
+			box-sizing: border-box
+			padding-right: 10px
+
+		a
+			height: auto
+			+clear
+
+		span
+			width: auto
+			float: none
+			overflow: hidden
+			margin-left: 0
+			padding-left: 5px
+
+/* services end
+
+/* footer
+.ul.fNav li
+	+media('<desk-sm')
+		margin-right: 15px
+
+/* footer end

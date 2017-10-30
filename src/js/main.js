@@ -565,7 +565,8 @@ $(document).ready(function(){
 		$('.promo ul.slides').carouFredSel({
 			items: 1,
 			width: '100%',
-			auto: 6000,
+			// auto: 6000,
+			auto: false,
 			align: false,
 			pagination:{
 				container: '.promo ol.pagination',
@@ -2464,3 +2465,111 @@ $(function () {
 
 	}
 });
+
+/* add for mobile */
+$(function () {
+	/**
+	 * Toggle mobile main menu
+	 */
+	function toggleMenu() {
+
+		var $container = $('html');
+		var $menu = $('.main-menu-js');
+		var $menuOpener = $('.btn-menu-js');
+		var $menuCloser = $('.btn-menu-close-js');
+		var openClass = 'menu-is-open';
+
+		$menuOpener.on('click', function (e) {
+
+			e.preventDefault();
+			var $currentContainer = $(this).closest($container);
+
+			e.stopPropagation();
+
+			if ($currentContainer.hasClass(openClass)) {
+				closeMenu();
+				return;
+			}
+
+			openMenu();
+		});
+
+		$menuCloser.on('click', function (e) {
+
+			e.preventDefault();
+
+			e.stopPropagation();
+
+			closeMenu();
+		});
+
+		// $(document).on('click', function () {
+		// 	closeDrop();
+		// });
+
+		$(document).keyup(function(e) {
+			if ($menu.hasClass(openClass) && e.keyCode === 27) {
+				closeMenu();
+			}
+		});
+
+		$menu.on('closeChoiceDrop', function () {
+			closeMenu();
+		});
+
+		function closeMenu() {
+			$menu.removeClass(openClass);
+			$menuOpener.removeClass(openClass);
+			$container.removeClass(openClass);
+		}
+
+		function openMenu() {
+			$menu.addClass(openClass);
+			$menuOpener.addClass(openClass);
+			$container.addClass(openClass);
+		}
+
+	}
+
+	toggleMenu();
+
+	/**
+	 * !Collapse and expand blocks by fire events on the title of these blocks
+	 */
+	function simpleAccordion() {
+		function simpleAccordion($hand, $panel, animateSpeed) {
+			var activeClass = 'is-open';
+
+			$.each($hand, function () {
+				var $this = $(this);
+
+				if ($this.hasClass(activeClass)) {
+					$this.next().addClass(activeClass);
+				}
+			});
+
+			$hand.on('click', function (e) {
+				e.preventDefault();
+
+				var $thisOpener = $(this);
+				$thisOpener.toggleClass(activeClass);
+				$thisOpener.next().toggleClass(activeClass);
+			})
+		}
+
+		var $topNav = $('.top-nav-mob-js');
+
+		if ($topNav.length) {
+			$topNav.each(function () {
+				var $thisHand = $(this);
+				var $opener = $thisHand.find('.opener-drop-js');
+
+				simpleAccordion($opener, $opener.next(), 200);
+			})
+		}
+	}
+
+	simpleAccordion();
+});
+
+/* add for mobile end */

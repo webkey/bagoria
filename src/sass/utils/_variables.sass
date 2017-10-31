@@ -26,14 +26,14 @@ $font-size-h1--sm: 3.0rem !default
 $line-height-h1--sm: round-float(4.2rem/$font-size-h1--sm, 2) !default
 
 // =======h2========
-$font-size-h2: round-float($font-size-h1*3.6rem/4.8rem, 1) !default
-$line-height-h2: round-float(4.8rem/3.6rem, 2) !default
+$font-size-h2: 36px !default
+$line-height-h2: 36px !default
 // md ===
-$font-size-h2--md: round-float($font-size-h1--md*0.84, 1) !default
-$line-height-h2--md: round-float(($line-height-h1--md*1.02),2) !default
+$font-size-h2--md: 32px !default
+$line-height-h2--md: 34px !default
 // sm ===
-$font-size-h2--sm: round-float($font-size-h1--sm*0.87, 1) !default
-$line-height-h2--sm: round-float(($line-height-h1--sm*1.01),2) !default
+$font-size-h2--sm: 24px !default
+$line-height-h2--sm: 30px !default
 
 // =======h3========
 $font-size-h3: round-float($font-size-h1*2.4rem/4.8rem, 1) !default
@@ -54,11 +54,11 @@ $line-height-h5: $line-height !default
 $font-size-h6: round-float($font-size*0.75, 1) !default
 $line-height-h6: round-float($line-height*1.25, 2) !default
 
-$bottom-space: 1em !default
-$bottom-space--lg: 2em !default
-$bottom-space--md: round-float($font-size*$line-height*2.0, 1) !default
-$bottom-space--ml: round-float($font-size*$line-height*1.5, 1) !default
-$bottom-space--sm: round-float($font-size*$line-height*0.75, 1) !default
+$bottom-space: 20px !default
+$bottom-space--sm: round-float($bottom-space/2, 1) !default
+$bottom-space--lg: round-float($bottom-space*2, 1) !default
+$bottom-space--md: round-float($bottom-space*2.5, 1) !default
+$bottom-space--ml: round-float($bottom-space*3, 1) !default
 
 // =======Цветовая схема========
 // цвет бренда
@@ -80,7 +80,7 @@ $text-color-light: gray !default
 // цвет ссылки
 $link-color: blue !default
 // цвет линий и границ
-$border-color: lightgray !default
+$border-color: #e6e6e6 !default
 // цвет специальных элементов
 $mark-color: tomato !default
 
@@ -96,9 +96,9 @@ $page-layout-space-horizontal: 20px !default
 // максимальная ширина сайта
 $page-layout-width: 1920px !default
 // минимальные отступы слева и справа у текствого блока
-$text-layout-space-horizontal: 60px !default
-$text-layout-space-horizontal--md: 30px !default
-$text-layout-space-horizontal--sm: 15px !default
+$layout-space: 60px !default
+$layout-space--lg: 30px !default
+$layout-space--sm: 20px !default
 // максимальная ширина текстового блока
 $text-layout-width: 800px !default
 // максимальная ширина текстового блока выходящего за пределы текста
@@ -110,6 +110,7 @@ $grid-space--sm: 10px !default
 
 // header
 $header-height--lg: 70px !default
+$header-height--sm: 50px !default
 
 // sidebar
 $sidebar-width: 260px !default

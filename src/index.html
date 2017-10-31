@@ -44,6 +44,8 @@
 	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/jquery.mask.min.js"></script>
+	<script src="js/libs.min.js"></script>
+	<!--new-->
 	<script src="js/main.js"></script>
 	<script src="js/artem.js"></script>
 	<script src="js/ui.datepicker-ru.js"></script>
@@ -179,18 +181,18 @@
 						<li>
 							<ul>
 								<li>
-									<img src="i/pin.svg" width="10" height="14" alt="image description" /> Брест, Московская, 275А
+									<img src="i/pin.svg" width="10" height="14" alt="address" /> Брест, Московская, 275А
 								</li>
 							</ul>
 						</li>
 						<li>
 							<ul>
 								<li>
-									<img src="i/vel.svg" width="14" height="14" alt="image description" />
+									<img src="i/vel.svg" width="14" height="14" alt="phone(velcom)" />
 									<a href="tel:8 (044) 5-400-800">8 (044) 5-400-800</a>
 								</li>
 								<li>
-									<img src="i/phone.svg" width="12" height="14" alt="image description" />
+									<img src="i/phone.svg" width="12" height="14" alt="tel" />
 									<a href="tel:8 (0162) 51-37-96">8 (0162) 51-37-96</a>
 								</li>
 							</ul>
@@ -198,10 +200,10 @@
 						<li>
 							<ul>
 								<li>
-									<img src="i/mail.svg" width="12" height="14" alt="image description" />
+									<img src="i/mail.svg" width="12" height="14" alt="email" />
 									<a href="mailto:info@bagoria.by">info@bagoria.by</a> – организационные вопросы;</li>
 								<li>
-									<img src="i/mail.svg" width="12" height="14" alt="image description" />
+									<img src="i/mail.svg" width="12" height="14" alt="email" />
 									<a href="mailto:sales@bagoria.by">sales@bagoria.by</a> – для коммерческих предложений и информации.</li>
 							</ul>
 						</li>
@@ -215,6 +217,11 @@
 					$('ul.topNav a[href$="/info/"]').attr('href', '#');
 				});
 			</script>
+			<!--new-->
+			<a href="/personal/order/" class="userLink">Профиль</a>
+			<a href="/personal//order/cart/" class="cardLink">Корзина</a>
+			<a href="/personal/logout/" class="userLogout" title="Выход" style="display: none;"><img src="i/exit.png"></a>
+			<!--new end-->
 			<span class="enterLink">Вход для клиентов</span>
 			<form action="/personal/auth/" method="post" id="login_form">
 				<div class="auth">
@@ -254,8 +261,6 @@
 					<div><a href="#">Аккумуляторы</a></div>
 					<div><a href="#">Шиноремонтные материалы и крепеж дисков</a></div>
 					<div><a href="#">Шины, камеры и ободные ленты для спецтехники и погрузчиков</a></div>
-				</div>
-				<div class="catalogue-mob">
 				</div>
 				<!--for mob end-->
 				<ul>
@@ -334,6 +339,25 @@
 						<span>Клиентский сервис</span>
 					</li>
 				</ol>
+				<!--new-->
+				<ul class="promo-list-mob">
+					<li><a href="#">
+					<span>ОN-LINE склад</span>
+				</a></li>
+					<li><a href="#">
+					<span>Широкий ассортимент</span>
+				</a></li>
+					<li><a href="#">
+					<span>Первый поставщик в РБ</span>
+				</a></li>
+					<li><a href="#">
+					<span>Сеть представительств</span>
+				</a></li>
+					<li><a href="#">
+					<span>Клиентский сервис</span>
+				</a></li>
+				</ul>
+				<!--new end-->
 			</div>
 			<script type="text/javascript">
 				chained_select['shini'] = eval({
@@ -6770,6 +6794,70 @@
 			</div>
 		</div>
 		<section class="content">
+			<!--new-->
+			<div class="callback callback-mob">
+				<div class="callback-title">Система заказа товаров через интернет</div>
+				<div class="callback-text">
+					<p>Наша онлайн-система была разработана специально для удобства оформления заказов наших постоянных и новых клиентов (юридических лиц и индивидуальных предпринимателей) через Интернет в любое удобное для вас время.</p>
+					<p>В нашей онлайн-системе вы можете найти всё, что вам нужно, и при этом быть уверенным в том, что заказанный вами товар имеется в наличии и будет ожидать вас на складе либо доставлен вам в ближайшее время. Мы представляем огромный выбор
+						<a href="#">легковых шин</a>, <a href="#">дисков</a> и <a href="#">аккумуляторов</a>.</p>
+				</div>
+				<div class="callbackbtn">
+					<a id="orderme" class="btn callme">Оформить заказ</a>
+				</div>
+			</div>
+			<div class="dm-overlay" id="wino">
+				<div class="dm-table">
+					<div class="dm-cell">
+						<div class="dm-modal" id="dm-modal-order">
+							<h3>Оформление заказа</h3>
+							<script type="text/javascript">
+								jQuery(document).ready(function($) {
+
+									$('#UUID-591d8c3373c3d').on('change keyup', function() {
+										if (!$(this).length)
+											$(this).val('');
+									});
+
+								}); //END Ready
+							</script>
+							<div class="api-feedback tpl_default" style="">
+								<form action="/" method="POST" enctype="multipart/form-data" name="api_feedback_form" id="591d8c3373c3d">
+									<input type="hidden" name="sessid" id="sessid" value="7c9288a94dab20ab1acc4de90f619d60" />
+									<input type="hidden" name="UNIQUE_FORM_ID" value="591d8c3373c3d" />
+									<input type="text" class="hidden_protection" name="HIDDEN[NAME]" value="" />
+									<input type="text" class="hidden_protection" name="HIDDEN[EMAIL]" value="" />
+									<input type="text" class="hidden_protection" name="hidden_protection" value="" />
+									<div class="tpl_default_author_fio" style="width:100%;margin-bottom:10px;">
+										<label style="width:150px;display:block;float:left;color:#323b42;">ФИО:
+										<span class="asterisk"> *</span> </label>
+										<input style="width:200px;border:1px solid #b2b2b2;background:#fff;color:#333;padding:2px;" type="text" value="" name="author_fio" class="required" />
+									</div>
+									<div class="tpl_default_author_personal_mobile" style="width:100%;margin-bottom:10px;">
+										<label style="width:150px;display:block;float:left;color:#323b42;">Контактный телефон:
+										<span class="asterisk"> *</span> </label>
+										<input style="width:200px;border:1px solid #b2b2b2;background:#fff;color:#333;padding:2px;" type="text" value="" name="author_personal_mobile" class="required" />
+									</div>
+									<div class="api-submit">
+										<input type="submit" name="submit" style="" class="" id="" value="Отправить">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$('#orderme').click(function() {
+					$('#wino').show();
+				});
+				$(document).mouseup(function(e) {
+					if ($(e.target).closest("#dm-modal-order").length) return;
+					$('#wino').hide();
+					e.stopPropagation();
+				});
+			</script>
+			<!--new end-->
 			<div class="services">
 				<div class="advantages-title">Преимущества работы с нами</div>
 				<ul id="services">
@@ -6878,6 +6966,16 @@
 			</div>
 		</aside>
 		<input type="hidden" class="user_store" value="1">
+		<!--new-->
+		<div class="cart" style="display: block;">
+			<div class="cartIn" style="bottom: 0px; left: 285px; width: 1030px;">
+				<div class="caption">Ваш заказ:</div>
+				<div class="count"><a href="/personal/order/cart/"><span class="for-desk">Наименований в корзине:</span><span class="for-mob">Товаров:</span></a> <strong><span class="cart_items">0</span></strong> (<span class="cart_items_quantity">0</span> шт.)</div>
+				<div class="amount"><span class="for-desk">Общая сумма заказов:</span><span class="for-mob">На сумму</span> <strong><span class="cart_summ">0</span></strong> руб.</div>
+				<div class="delivery clearfix"><span class="cart_delivery_title">Доставка:</span> <span class="cart_delivery"><div class="cart_delivery_1 cart_delivery_main"> </div><div class="cart_delivery_6 cart_delivery_user"> </div></span></div>
+			</div>
+		</div>
+		<!--new end-->
 		<!-- >>> foot.tpl <<< -->
 		<!--footer-->
 		<footer class="footer">

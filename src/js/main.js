@@ -1657,7 +1657,7 @@ $(document).ready(function(){
 			$('#services').trigger('configuration', ['width', newWidth]);
 			$('#services').find('li').css('width', newWidth / 2);
 			$('#services').parent().css('width', newWidth);
-		}else if(newWidth <= 780){
+		}else if(newWidth <= 935){
 			$('#services').trigger('configuration', ['items.visible', 3]);
 			$('#services').trigger('configuration', ['width', newWidth]);
 			$('#services').find('li').css('width', newWidth/3);
@@ -1698,6 +1698,7 @@ $(document).ready(function(){
 		$(this).parent('li').siblings('li.active').removeClass('active');
 		$(this).parent('li').toggleClass('active');
 	});
+
 	$('ul.fSizes ul a').click(function(){
 	
 		text = $(this).text();
@@ -2467,7 +2468,47 @@ $(function () {
 });
 
 /* add for mobile */
+
+/**
+ * !device detected
+ * */
+var DESKTOP = device.desktop();
+//console.log('DESKTOP: ', DESKTOP);
+var MOBILE = device.mobile();
+//console.log('MOBILE: ', MOBILE);
+var TABLET = device.tablet();
+//console.log('MOBILE: ', MOBILE);
+/*device detected end*/
+
 $(function () {
+	// popular
+	var $popular = $('.popular-list');
+
+	/**
+	 * !Equal height of blocks by maximum height of them
+	 */
+	function equalHeight() {
+		// location thumbs
+		var $location = $('.location');
+
+		if($location) {
+			$location.children().not('.mapWrap').matchHeight({
+				byRow: true, property: 'height', target: null, remove: false
+			});
+		}
+
+		// intro
+		var $intro = $('.intro');
+
+		if($intro) {
+			$intro.children().not('script').not('.iCatalogue').matchHeight({
+				byRow: true, property: 'height', target: null, remove: false
+			});
+		}
+	}
+	
+	equalHeight();
+
 	/**
 	 * Toggle mobile main menu
 	 */

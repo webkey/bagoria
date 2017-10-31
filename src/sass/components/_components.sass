@@ -10,12 +10,18 @@ html
 	&.menu-is-open
 		+scroll-blocked()
 
+.for-mob
+	display: none
+
 /* layout end
 
 /* header
 .header
 	+media('<tab-lg')
-		height: 70px
+		height: $header-height--lg
+
+	+media('<mob-lg')
+		height: $header-height--sm
 
 /* header end
 
@@ -192,17 +198,29 @@ ul.topNav
 /* logo
 .logo
 	+media('<tab-lg')
+		left: $header-height--lg
+		top: 50%
+		transform: translate($layout-space--lg, -50%)
+
+	+media('<tab-md')
 		left: 50%
 		top: 50%
 		transform: translate(-50%, -50%)
+
+	+media('<mob-lg')
+		width: 153px
+		background-position: center
+		background-size: contain
 
 /* logo end
 
 /* login
 .enterLink
 	+media('<tab-lg')
-		top: 0
-		right: 0
+		position: relative
+		float: right
+		top: auto
+		right: auto
 		background-image: url(../../i/login.png)
 		background-repeat: no-repeat
 		background-position: center
@@ -212,11 +230,118 @@ ul.topNav
 		+size($header-height--lg)
 		+font(0, 0)
 
-	&:hover
-		background-color: transparent
+		&:hover
+			background-color: transparent
+			background-position: center
+
+	+media('<mob-lg')
+		+size($header-height--sm)
+
+a.userLink
+	+media('<tab-lg')
+		position: relative
+		float: right
+		top: auto !important
+		right: auto
+		background-image: url(../../i/login.png)
+		background-repeat: no-repeat
 		background-position: center
+		background-color: transparent
+		margin: 0
+		padding: 0
+		+size($header-height--lg)
+		+font(0, 0)
+
+	+media('<mob-lg')
+		+size($header-height--sm)
+		display: none !important
+
+a.userLogout
+	+media('<tab-lg')
+		position: relative
+		float: right
+		top: auto !important
+		right: auto
+		background-image: url(../../i/logout.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-color: transparent
+		background-size: 20px
+		+size($header-height--lg)
+		+font(0, 0)
+
+		img
+			display: none
+
+	+media('<mob-lg')
+		+size($header-height--sm)
+
+a.cardLink
+	display: none
+
+	+media('<tab-lg')
+		display: block
+		float: right
+		position: relative
+		top: auto !important
+		right: auto
+		background-image: url(../../i/cart.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-color: transparent
+		background-size: 20px
+		+size($header-height--lg)
+		+font(0, 0)
+
+		img
+			display: none
+
+	+media('<mob-lg')
+		+size($header-height--sm)
+		display: none !important
 
 /* login end
+
+/* auth
+.auth
+	+media('<mob-lg')
+		width: calc(100% - #{$layout-space--sm*2})
+		top: $layout-space--sm
+		right: $layout-space--sm
+		box-sizing: border-box
+		padding: $layout-space--sm
+		box-shadow: 0 0 35px rgba(0, 0, 0, 0.35)
+
+		.column
+			display: block
+			float: none
+			margin: 0 0 $bottom-space
+
+		input[type="email"], input[type="password"]
+			display: block
+			box-sizing: border-box
+			width: 100%
+
+		a.btn
+			margin-top: 0
+
+		.meta
+			margin: 0
+
+		.links
+			float: none
+			margin-bottom: $bottom-space
+
+			a
+				margin: 0 10px 0 0
+
+		input[type="checkbox"]
+			vertical-align: top
+
+		label
+			vertical-align: top
+
+/* auth end
 
 /* button menu
 .btn-menu
@@ -249,6 +374,9 @@ ul.topNav
 
 	+media('<tab-lg')
 		display: block
+
+	+media('<mob-lg')
+		+size($header-height--sm)
 
 	& > span
 		+hide-text
@@ -352,6 +480,9 @@ ul.topNav
 	+size($header-height--lg)
 	background-color: $bg-color-base
 
+	+media('<mob-lg')
+		+size($header-height--sm)
+
 	& > span
 		+hide-text
 		white-space: normal
@@ -371,46 +502,97 @@ ul.topNav
 
 /* button close menu end
 
-/* map tabs
-.mapWrap
-	background-image: url(../../i/img-map.jpg)
-	background-repeat: no-repeat
-	background-position: center
-	background-color: #bbb
-	background-size: cover
+/* button
+a.btn
+	+media('<tab-lg')
+		border-radius: 0
+		text-align: center
+		+font(14px, 24px)
+		padding: 8px 20px
+		
+	&.callme,
+	&#callme
+		+media('<tab-lg')
+			cursor: pointer
+			background: #4caf50
+			text-shadow: none
+			box-shadow: none
+			min-width: 240px
 
-/* map tabs end
+		+media('<mob-lg')
+			min-width: 0
+
+		&:hover
+			color: #fff
+			background: #1b5e20
+			text-shadow: none
+			box-shadow: none
+
+/* button end
 
 /* callback
+.callback
+	+media('<tab-lg')
+		font-size: 14px
+		line-height: 24px
+
 .callback-title
 	width: auto
 
+	+media('<mob-lg')
+		+font($font-size-h2--sm, $line-height-h2--sm)
+
 .callback-text
 	width: auto
+
+	+media('<tab-lg')
+		font-weight: normal
 
 .callbackbtn
 	width: auto
 
 /* callback end
 
-/* catalogue
+/* promo
+.intro
+	height: auto
+	+clear
+
 .catalogue
+	float: left
+	position: relative
+	left: auto
+	top: auto
+	box-sizing: border-box
+	min-height: 0
+
 	+media('<tab-lg')
 		& ul
 			display: none
+
+	+media('<tab-md')
+		width: 50%
+		padding: 0
+
+		.title
+			display: none
+
+	+media('<mob-lg')
+		float: none
+		width: auto
 
 	.catalogue-mob
 		display: none
 		font: 15px/20px Tahoma, sans-serif
 
 		& > div
-			padding: 8px 30px
 			position: relative
 
 			a
 				color: #fff
 				text-decoration: none
 				display: block
+				padding: 8px 30px
 
 				&:hover
 					color: #ffbf14
@@ -419,18 +601,123 @@ ul.topNav
 		+media('<tab-lg')
 			display: block
 
-/* catalogue end
+		+media('<tab-md')
+			height: 100%
+			width: 100%
+			display: table
 
-/* promo
+			& > div
+				display: table-row
+				padding: 0
+
+				a
+					display: block
+					display: table-cell
+					vertical-align: middle
+					padding: floor($layout-space--lg*0.5) $layout-space--lg
+					border-top: 1px solid #004280
+
+				&:first-child
+					a
+						border-top: 0
+
+		+media('<mob-lg')
+			display: block
+
+			& > div
+				display: block
+
+				a
+					display: block
+					+padding-horizontal($layout-space--sm)
+
+.promo
+	display: block
+	overflow: hidden
+	position: relative
+	top: auto
+	left: auto
+	right: auto
+	height: auto
+
+	.promo-list-mob
+		display: none
+
+	+media('<tab-md')
+		background-image: url(../../upload/iblock/e9f3a86d1e3500f6ef8fdad72825bf49.jpg)
+		background-size: cover
+
+		& > .title, & > .caroufredsel_wrapper, & > .pagination
+			display: none !important
+
+		.promo-list-mob
+			display: table
+			width: 100%
+			height: 100%
+			counter-reset: item
+
+			li
+				display: table-row
+				counter-increment: item
+
+				a
+					$space: 63px, 10px // left, right
+					display: table-cell
+					position: relative
+					vertical-align: middle
+					padding: #{nth($space, 2)} #{nth($space, 2)} #{nth($space, 2)} #{nth($space, 1)}
+					font-family: pf_dintext_probold, sans-serif
+					+font(16px, 18px)
+					text-transform: uppercase
+					color: $base-color-alt
+
+					&::before
+						+pseudo()
+						margin: -1px 0 0 -36px
+						vertical-align: top
+						content: "0" counter(item)
+						font-family: pf_dintext_proregular, sans-serif
+						color: white
+
+					&::after
+						+pseudo()
+						bottom: 0
+						left: #{nth($space, 1)}
+						right: 0
+						border-top: 1px solid white
+						opacity: 0.2
+
+					&:hover
+						text-decoration: none
+
+	+media('<mob-lg')
+		.promo-list-mob
+			display: block
+
+			li
+				display: block
+
+				a
+					$space: 58px, 10px // left, right
+					display: block
+					+padding-vertical(15px)
+					padding-left: #{nth($space, 1)}
+
+					&::after
+						left: #{nth($space, 1)}
+
 ul.slides .text
 	width: auto
 	max-width: 600px
 
 ol.pagination
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 100%
 	box-sizing: border-box
-	margin-left: 0
-	+padding-horizontal(30px)
-	width: auto
+	margin: 0
+	padding: $layout-space--lg
 
 	+media('<desk-sm')
 		font-size: 15px
@@ -445,9 +732,95 @@ ol.pagination
 /* promo end
 
 /* location
+
 .location
 	+media('<desk-sm')
 		background-position-x: 100%
+
+	.main
+		em
+			display: block
+			position: relative
+			left: auto
+			bottom: auto
+			padding-left: 20px
+
+	+media('<tab-lg')
+		background: $bg-color-base
+		border-bottom: 1px solid $border-color
+		box-shadow: none
+
+		.caption, .regions .caption
+			margin: 0 0 $bottom-space--sm
+
+		.regions
+			+padding-horizontal($layout-space--lg)
+
+	+media('<tab-md')
+		.main, .regions
+			box-sizing: border-box
+			padding: floor($layout-space--lg*0.85) floor($layout-space--lg*0.5) floor($layout-space--lg*0.6) $layout-space--lg
+
+	+media('<mob-lg')
+		.main, .regions
+			float: none
+			width: auto
+			margin: 0
+			padding: floor($layout-space--sm*0.85) $layout-space--sm floor($layout-space--sm*0.6)
+
+		.main
+			border-bottom: 1px solid $border-color
+
+a.mark
+	cursor: pointer
+
+	+media('<tab-lg')
+		margin-bottom: $bottom-space--sm
+		margin-right: $grid-space--lg
+		padding-left: 20px
+
+		&, .location .main &
+			&, &:hover, &.active
+				background-image: url(../../i/pin.svg)
+				background-position: 0 4px
+				background-size: 10px 14px
+
+			&.active
+				background-image: url(../../i/pin-white.svg)
+				box-shadow: -5px 0 0 $base-color-alt
+
+		span
+			+font(12px, round-float(22/12, 2))
+
+	&.active:after
+		top: 100%
+		left: 50%
+		transform: translate(-50%, 0)
+
+.mapWrap
+	background-image: url(../../i/img-map.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-color: #bbb
+	background-size: cover
+	top: calc(100% - 4px)
+
+	+media('<tab-lg')
+		& > img
+			display: none !important
+
+	+media('<mob-lg')
+		height: 240px
+
+.map
+	+media('<mob-lg')
+		height: 240px
+
+.mapWrap, .map
+	+media('<mob-lg')
+		height: 240px !important
+		padding: 0
+		box-shadow: none
 
 /* location end
 
@@ -472,11 +845,352 @@ ol.pagination
 			margin-left: 0
 			padding-left: 5px
 
+	+media('<tab-lg')
+		margin: 0
+
+		.advantages-title
+			+padding-horizontal($layout-space--lg)
+			text-align: left
+
+	+media('<tab-md')
+		padding: floor($layout-space--lg*0.85) $layout-space--lg
+		box-sizing: border-box
+
+		.advantages-title
+			padding: 0
+			margin: 0 0 $bottom-space
+			+font(36px, round-float(42/36, 2))
+
+		.caroufredsel_wrapper
+			&, & > ul, & > div
+				display: block !important
+				text-align: start !important
+				float: none !important
+				position: relative !important
+				top: auto !important
+				right: auto !important
+				bottom: auto !important
+				left: auto !important
+				z-index: auto !important
+				width: auto !important
+				height: auto !important
+				margin: 0 !important
+				overflow: hidden !important
+				box-sizing: border-box !important
+
+			& > ul
+				margin: 0 -#{floor($grid-space--lg/2)} !important
+
+		ul
+			li
+				+display-inline-block-top
+				height: auto
+				width: 50% !important
+				padding: 0 floor($grid-space--lg/2)
+				box-sizing: border-box
+				margin-top: $bottom-space
+
+				&:nth-child(-n+2)
+					margin-top: 0
+
+				span.advs, &:last-child span.advs
+					width: auto
+
+				span.icon
+					margin: 0
+					padding: 0
+					background-image: url(freeow/images/d_arrow.png)
+					background-repeat: no-repeat
+					background-position: center
+					background-size: contain
+					+size(20px, 16px)
+
+				&:first-child
+					span.icon
+						margin: 0
+
+		.arrow
+			display: none !important
+
+	+media('<mob-lg')
+		padding: floor($layout-space--sm*0.85) $layout-space--sm
+
+		.advantages-title
+			+font($font-size-h2--sm, $line-height-h2--sm)
+
+		ul
+			li
+				width: 100% !important
+
+				&, &:nth-child(-n+2)
+					margin-top: $bottom-space
+
+				&:first-child
+					margin-top: 0
+
+.callback-mob
+	display: none
+
+	+media('<tab-lg')
+		display: block
+
+.callback
+	padding: round($layout-space--lg*0.85) $layout-space--lg $layout-space--lg
+
+	+media('<mob-lg')
+		padding: round($layout-space--sm*0.85) $layout-space--sm $layout-space--sm
+
 /* services end
 
+/* content
+.content
+	+media('<tab-lg')
+		float: none
+		width: auto
+		padding: 0
+		background-color: $bg-color-base
+
+/* content end
+
+/* sidebar
+.sidebar
+	+media('<tab-lg')
+		float: none
+		width: auto
+
+/* sidebar end
+
+/* news
+.news, .news.extra
+	+media('<tab-lg')
+		padding: round($layout-space--lg*0.85) $layout-space--lg round($layout-space--lg*0.5)
+		+clear
+		+clear-spacing
+
+		.title
+			clear: both
+			//float: left
+			//width: 100%
+			margin-bottom: $bottom-space
+			+font(14px, round-float(20/14, 2))
+			letter-spacing: normal
+
+			&:last-child
+				margin-bottom: 0
+
+		article, & .extraLink
+			+display-inline-block-top
+			width: 25%
+			margin: 0 0 $bottom-space
+			+font(14px, round-float(20/14, 2))
+			letter-spacing: normal
+			box-sizing: border-box
+			padding: 0 $grid-space--lg 0 0
+
+			a
+				display: inline
+				font-weight: bold
+				padding-top: $bottom-space--sm
+
+				&:hover
+					text-decoration: none
+
+		article
+			a
+				&, &:hover
+					color: $base-color
+
+			time
+				margin-bottom: $bottom-space--sm
+
+		a.moreLink
+			+display-inline-block-top
+			+font(14px, round-float(20/14, 2))
+			letter-spacing: normal
+			margin: 0 0 $bottom-space
+
+	+media('<tab-lg')
+		article, & .extraLink
+			+display-inline-block-top
+			width: 50%
+
+	+media('<mob-lg')
+		padding: round($layout-space--sm*0.85) $layout-space--sm round($layout-space--sm*0.5)
+
+		article, & .extraLink
+			width: 100%
+
+.news.extra
+	+media('<tab-lg')
+		background-color: #607384
+		
+		.title
+			color: #a0bdd7
+
+		.extraLink a
+			color: white
+
+/* news end
+
 /* footer
-.ul.fNav li
-	+media('<desk-sm')
-		margin-right: 15px
+.footer
+
+	+media('<tab-lg')
+		padding: round($layout-space--lg*0.85) $layout-space--lg #{$header-height--lg + 20}
+
+	+media('<mob-lg')
+		padding: round($layout-space--sm*0.85) $layout-space--sm #{$header-height--sm + 15}
+
+.copy
+	+media('<tab-lg')
+		display: block
+		float: none
+		width: auto
+		padding: 0
+		margin-bottom: $bottom-space
+
+ul.fNav
+
+	+media('<tab-lg')
+		float: none
+		width: auto
+		padding: 0
+		margin: 0
+		+clear
+
+	li
+		+media('<desk-sm')
+			margin-right: 15px
+
+		+media('<tab-lg')
+			margin-bottom: $bottom-space
+
+.footer .search
+	+media('<tab-lg')
+		float: none
+		display: block
+		width: auto
+		box-sizing: border-box
+
+		input[type="text"]
+			display: block
+			float: none
+			width: 100%
+			border: none
+			background: #fff
+			font-size: 12px
+			line-height: 16px
+			height: 40px
+			color: $text-color !important
+			padding: 12px 20px
+			margin: 0
+			box-shadow: none
+			outline: none
+			border-radius: 0
+			box-sizing: border-box
+
+		input[type="submit"]
+			+size(40px)
+			background: url(../../i/search.svg) no-repeat center
+			background-size: 16px
+			outline: none
+
+.dev
+	+media('<tab-lg')
+		display: block
+		float: none
+		width: auto
+		text-align: left
+
+	p
+		margin-bottom: $bottom-space--sm
+
+		&:last-child
+			margin-bottom: 0
 
 /* footer end
+
+/* cart
+.cart
+	.menu-is-open &
+		display: none !important
+
+	+media('<tab-lg')
+		position: fixed
+		left: 0
+		bottom: 0
+		margin-left: 0
+		width: 100%
+		height: auto
+		z-index: 10
+
+.cartIn
+	+media('<tab-lg')
+		position: relative !important
+		width: auto !important
+		top: auto !important
+		right: auto !important
+		bottom: auto !important
+		left: auto !important
+		height: auto
+		box-sizing: border-box
+		padding: round($layout-space--lg*0.6) $layout-space--lg
+		border: none
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.caption, .count, .amount, .delivery
+			border: none
+			padding: 0 $grid-space--lg 0 0
+			margin: 0
+			font-size: 14px
+			color: $text-color
+			white-space: nowrap
+
+			a
+				color: $text-color
+
+			.for-desk
+				display: none
+
+			.for-mob
+				display: inline
+
+		.caption
+			padding: 0
+			padding-left: 30px
+			background: url(../../i/cart-black.svg) no-repeat
+			background-repeat: no-repeat
+			background-position: 0 center
+			background-size: 22px
+			font-size: 16px
+			text-transform: uppercase
+			color: $text-color
+
+	+media('<tab-md')
+		.delivery
+			display: none
+
+	+media('<mob-lg')
+		padding: round($layout-space--sm*0.6) $layout-space--sm
+
+		.caption, .count, .amount, .delivery
+			padding-right: $grid-space--sm
+
+		.caption
+			+font(0, 0)
+
+		.count
+
+			&::after
+				content: "/"
+				display: inline-block
+				font-weight: bold
+				margin-left: 6px
+
+		.amount
+			.for-mob
+				display: none
+
+/* cart end

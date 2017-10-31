@@ -97,8 +97,9 @@ gulp.task('createCustomModernizr', function (done) { // Таск для форм
 gulp.task('copyLibsScriptsToJs', ['copyJqueryToJs'], function () { // Таск для мераж js библиотек
 	return gulp.src([
 		'src/libs/device.js/lib/device.min.js' // определение устройств
-		, 'src/libs/jquery-smartresize/jquery.debouncedresize.js' // "умный" ресайз
-		, 'src/libs/jquery-placeholder/jquery.placeholder.min.js' // поддержка плейсхолдера в старых браузерах
+		// , 'src/libs/jquery-smartresize/jquery.debouncedresize.js' // "умный" ресайз
+		// , 'src/libs/jquery-placeholder/jquery.placeholder.min.js' // поддержка плейсхолдера в старых браузерах
+		, 'src/libs/matchHeight/dist/jquery.matchHeight-min.js' // скрипт для выравнивания элементов по максимальному
 		// , 'src/libs/select2/dist/js/select2.full.min.js' // кастомный селект
 		// , 'src/libs/select2/dist/js/i18n/ru.js' // локализация для кастомного селекта
 		// , 'src/js/temp/filer.min.js' // инпут файл

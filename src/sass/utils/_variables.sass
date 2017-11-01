@@ -56,9 +56,8 @@ $line-height-h6: round-float($line-height*1.25, 2) !default
 
 $bottom-space: 20px !default
 $bottom-space--sm: round-float($bottom-space/2, 1) !default
+$bottom-space--md: round-float($bottom-space*1.5, 1) !default
 $bottom-space--lg: round-float($bottom-space*2, 1) !default
-$bottom-space--md: round-float($bottom-space*2.5, 1) !default
-$bottom-space--ml: round-float($bottom-space*3, 1) !default
 
 // =======Цветовая схема========
 // цвет бренда
@@ -98,7 +97,9 @@ $page-layout-width: 1920px !default
 // минимальные отступы слева и справа у текствого блока
 $layout-space: 60px !default
 $layout-space--lg: 30px !default
+$layout-space-v--lg: round($layout-space--lg*0.85) !default
 $layout-space--sm: 20px !default
+$layout-space-v--sm: round($layout-space--sm*0.85) !default
 // максимальная ширина текстового блока
 $text-layout-width: 800px !default
 // максимальная ширина текстового блока выходящего за пределы текста
@@ -106,7 +107,9 @@ $flood-layout-width: 1000px !default
 // отступы внутри блочных элементов
 $grid-space: 30px !default
 $grid-space--lg: 20px !default
+$grid-space-v--lg: round($grid-space--lg*0.85) !default
 $grid-space--sm: 10px !default
+$grid-space-v--sm: round($grid-space--sm*0.85) !default
 
 // header
 $header-height--lg: 70px !default
@@ -120,6 +123,9 @@ $aside-width: 160px !default
 
 // footer
 $footer-grid-space: 30px !default
+
+// narrowScreenNav
+$narrowScreenNav-height: 50px !default
 
 // =======Form========
 $form-text-color: $text-color !default
@@ -164,7 +170,10 @@ $animation-speed-mouseleave: 0.35s !default
 
 // =========fonts style=========
 $font-norm: 'Roboto', sans-serif !default
-$font-alt: 'Roboto Slab', serif !default
+$font-alt-norm: "pf_dintext_proregular", sans-serif !default
+$font-alt-bold: "pf_dintext_probold", sans-serif !default
+$font-alt-light: "pf_dindisplay_prolight", sans-serif !default
+$font-alt-medium-italic: "pf_din_text_cond_proMdIt", sans-serif !default
 
 // ============= обнуление жирности и наклонности шрифта ==============
 // ============= использовать, если подключается font-face ==============
@@ -197,26 +206,32 @@ $font-alt: 'Roboto Slab', serif !default
 		style: italic
 
 // ========== дополнительный шрифт ============
-=font-alt()
+=font-alt-norm()
 	font:
-		family: $font-alt
-		style: normal
-		weight: normal
+		family: $font-alt-norm
+	+font-reset
 
 =font-alt-bold()
 	font:
-		family: $font-alt
-		style: normal
-		weight: 700
+		family: $font-alt-bold
+	+font-reset
 
-=font-alt-italic()
+=font-alt-light()
+	font:
+		family: $font-alt-light
+	+font-reset
+
+=font-alt-medium-italic()
+	font:
+		family: $font-alt-medium-italic
+	+font-reset
+
+//=font-alt-italic()
+	font:
+		family: $font-alt-norm
+		+font-reset
+
+//=font-alt-bold-italic()
 	font:
 		family: $font-alt
-		style: italic
-		weight: normal
-
-=font-alt-bold-italic()
-	font:
-		family: $font-alt
-		style: italic
-		weight: 700
+		+font-reset

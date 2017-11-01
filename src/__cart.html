@@ -1,0 +1,590 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Шины. Диски. Аккумуляторы - СООО Багория",
+	"pageClass": "inside floatSidebar"
+})
+
+	@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		<!--new-->
+		<!--<div class="narrowScreenNav">
+			<div class="toggle">&nbsp;</div>
+			<div class="currentPart">Легковые шины</div>
+		</div>-->
+		<div class="narrowScreenNav">
+			<div class="toggle">Каталог</div>
+			<!--<div class="currentPart">Легковые шины</div>-->
+		</div>
+		<!--new end-->
+
+		<div class="basket">
+			<h1>Ваша корзина</h1>
+			<form method="post" action="/personal/order/cart/" name="basket_form">
+				<script type="text/javascript">
+
+					function set_address(addr_field_id, np_id, np_name) {
+						$('#' + addr_field_id).val(np_name);
+						$('.' + addr_field_id).val(np_id);
+						var str_lenght = addr_field_id.length;
+						var res = addr_field_id.slice(0, str_lenght - 6);
+						document.getElementById(res + '_index').focus();
+						setTimeout(function () {
+							$('.title-search-result').css('display', 'none');
+						}, 1500);
+					}
+
+					$(document).ready(function () {
+						setTimeout(function () {
+							if ($('#legal_address_name').val() != '') {
+								$('#legal_address_np_id').val($('#legal_address_name').val());
+							}
+							if ($('#delivery_address_name').val() != '') {
+								$('#delivery_address_np_id').val($('#delivery_address_name').val());
+							}
+						}, 1500);
+						setTimeout(function () {
+							$('.title-search-result').each(function () {
+								$(this).css('display', 'none');
+							});
+						}, 4000);
+						$('input').on('focus', function (e) {
+							var $this = $(this);
+							if ($this.prop('class') != 'bx_input_text' && $('.title-search-result').css('display') == 'block') {
+								$('.title-search-result').css('display', 'none');
+							}
+						});
+					});
+
+				</script>
+
+				<input type="hidden" id="no_cart" name="no_cart" value="true">
+				<input type="hidden" id="basket_flag" name="basket_flag" value="true">
+				<input type="hidden" id="request_result" name="request_result" value="true">
+				<input type="hidden" id="info_popup" name="info_popup" value="false">
+				<input type="hidden" id="user_ur_oblast" name="user_ur_oblast" value="Витебская">
+
+				<div id="box" class="infoPopup" style="display: none;">
+					<p class="infoPopup__title">Для оформления заказа необходимо ввести адрес доставки в новом формате.</p>
+					<p><a href="/personal/profile/index.php?return=cart">Перейти в личный кабинет</a></p>
+				</div>
+				<div class="cartTabsContainer">
+					<ul class="cartTabs">
+						<li class="ui-tabs-active">
+							<a href="#cart-tabs-1" id="tab-1" class="cart-tab" store_id="1">Заказ для Центрального склада</a>
+						</li>
+					</ul>
+
+					<input type="hidden" id="store_1_name" value="Центральный склад">
+					<div id="cart-tabs-1">
+						<table>
+							<tr>
+								<th>№</th>
+								<th>Наименование</th>
+								<th>Производитель</th>
+								<th>Модель</th>
+								<th>Цена, руб.</th>
+								<th>Количество</th>
+								<th>Скидка, %</th>
+								<th>Цена со скидкой, руб.</th>
+								<th>Стоимость, руб.</th>
+								<th>&nbsp;</th>
+							</tr>
+							<tr class="basket_elements main " id="element_1956117" element_id="1956117">
+								<td><span id="number_1956117">1</span></td>
+								<td><strong>235/55R17</strong></td>
+								<td>Nitto</td>
+								<td><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></td>
+								<td class="right ">
+									<span class="cPrice" id="price_show_1956117">239.62 руб.</span><input type="hidden" id="price_1956117" value="239.62">
+								</td>
+								<td>
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">–</a>
+										<input class="counter_input" id="counter_1956117" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада" type="text" value="2"><input type="hidden" id="old_counter_1956117" value="2"><input type="hidden" id="store_quantity_1_1956117" value="0"><input type="hidden" id="store_quantity_2_1956117" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">+</a>
+									</div>
+								</td>
+								<td class="center">
+									<span class="discount_1956117">0</span><input type="hidden" id="disc_1956117" value="0">
+								</td>
+								<td class="right "><span class="cPrice">239.62 руб.</span></td>
+								<td class="right ">
+									<span class="cPrice" id="summ_show_1956117">479.24 руб.</span><input type="hidden" id="summ_1956117" value="479.24">
+								</td>
+								<td class="center">
+									<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659860" element_id="1956117"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="659860"><input type="hidden" id="product_659860" value="659860" store_id="1" product_model="90W" product_name="235/55R17" element_id="1956117" product_price="239.62" store="Центральный склад" store_quantity_1="0" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4" product_group="Шины" product_discount="0" product_diametr="17" code_1c="43838" order_type="Заказ со склада">
+								</td>
+							</tr>
+							<tr class="basket_elements main " id="element_1956118" element_id="1956118">
+								<td><span id="number_1956118">2</span></td>
+								<td><strong>235/60R18</strong></td>
+								<td>Nitto</td>
+								<td><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></td>
+								<td class="right ">
+									<span class="cPrice" id="price_show_1956118">282.94 руб.</span><input type="hidden" id="price_1956118" value="282.94">
+								</td>
+								<td>
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">–</a>
+										<input class="counter_input" id="counter_1956118" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада" type="text" value="1"><input type="hidden" id="old_counter_1956118" value="1"><input type="hidden" id="store_quantity_1_1956118" value="11"><input type="hidden" id="store_quantity_2_1956118" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">+</a>
+									</div>
+								</td>
+								<td class="center">
+									<span class="discount_1956118">0</span><input type="hidden" id="disc_1956118" value="0">
+								</td>
+								<td class="right "><span class="cPrice">282.94 руб.</span></td>
+								<td class="right ">
+									<span class="cPrice" id="summ_show_1956118">282.94 руб.</span><input type="hidden" id="summ_1956118" value="282.94">
+								</td>
+								<td class="center">
+									<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659864" element_id="1956118"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="659864"><input type="hidden" id="product_659864" value="659864" store_id="1" product_model="90W" product_name="235/60R18" element_id="1956118" product_price="282.94" store="Центральный склад" store_quantity_1="11" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4" product_group="Шины" product_discount="0" product_diametr="18" code_1c="43865" order_type="Заказ со склада">
+								</td>
+							</tr>
+							<tr class="basket_elements main " id="element_1956119" element_id="1956119">
+								<td><span id="number_1956119">3</span></td>
+								<td><strong>145/70R13</strong></td>
+								<td>Imperial</td>
+								<td>
+									<a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=Snowdragon HP">Snowdragon HP</a>
+								</td>
+								<td class="right ">
+									<span class="cPrice" id="price_show_1956119">57.55 руб.</span><input type="hidden" id="price_1956119" value="57.55">
+								</td>
+								<td>
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" id="counter_1956119" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада" type="text" value="1"><input type="hidden" id="old_counter_1956119" value="1"><input type="hidden" id="store_quantity_1_1956119" value="81"><input type="hidden" id="store_quantity_2_1956119" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
+								</td>
+								<td class="center">
+									<span class="discount_1956119">0</span><input type="hidden" id="disc_1956119" value="0">
+								</td>
+								<td class="right "><span class="cPrice">57.55 руб.</span></td>
+								<td class="right ">
+									<span class="cPrice" id="summ_show_1956119">57.55 руб.</span><input type="hidden" id="summ_1956119" value="57.55">
+								</td>
+								<td class="center">
+									<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="732955" element_id="1956119"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="732955"><input type="hidden" id="product_732955" value="732955" store_id="1" product_model="Snowdragon HP" product_name="145/70R13" element_id="1956119" product_price="57.55" store="Центральный склад" store_quantity_1="81" store_quantity_2="0" product_brand="Imperial" product_category="Легковые и 4х4" product_group="Шины" product_discount="0" product_diametr="13" code_1c="45904" order_type="Заказ со склада">
+								</td>
+							</tr>
+							<tr class="basket_elements main " id="element_1956120" element_id="1956120">
+								<td><span id="number_1956120">4</span></td>
+								<td><strong>145/70R13</strong></td>
+								<td>Matador</td>
+								<td><a href="/catalog/tires/car/?view=3&manufacturer=Matador&model=MP 54">MP 54</a></td>
+								<td class="right ">
+									<span class="cPrice" id="price_show_1956120">73.21 руб.</span><input type="hidden" id="price_1956120" value="73.21">
+								</td>
+								<td>
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада">–</a>
+										<input class="counter_input" id="counter_1956120" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада" type="text" value="5"><input type="hidden" id="old_counter_1956120" value="5"><input type="hidden" id="store_quantity_1_1956120" value="17"><input type="hidden" id="store_quantity_2_1956120" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада">+</a>
+									</div>
+								</td>
+								<td class="center">
+									<span class="discount_1956120">0</span><input type="hidden" id="disc_1956120" value="0">
+								</td>
+								<td class="right "><span class="cPrice">73.21 руб.</span></td>
+								<td class="right ">
+									<span class="cPrice" id="summ_show_1956120">366.05 руб.</span><input type="hidden" id="summ_1956120" value="366.05">
+								</td>
+								<td class="center">
+									<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="953217" element_id="1956120"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="953217"><input type="hidden" id="product_953217" value="953217" store_id="1" product_model="MP 54" product_name="145/70R13" element_id="1956120" product_price="73.21" store="Центральный склад" store_quantity_1="17" store_quantity_2="0" product_brand="Matador" product_category="Легковые и 4х4" product_group="Шины" product_discount="0" product_diametr="13" code_1c="58901" order_type="Заказ со склада">
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="cart-order">
+					<div class="buttons">
+						<div style="text-align:right;">
+							<span>Общее количество: <span class="quantity">9</span> шт.</span></div>
+						<div class="overall price">Общая стоимость: <span class="amount">1 185.78 руб.</span></div>
+						<input name="overall_summ" id="overall_summ" value="1185.78" type="hidden">
+						<input name="overall_disc" id="overall_disc" value="0" type="hidden">
+						<input name="overall_quantity" id="overall_quantity" value="9" type="hidden">
+						<!--
+						<input name="overall_summ_1"     id="overall_summ_1"     value="" type="hidden">
+						<input name="overall_disc_1"     id="overall_disc_1"     value="" type="hidden">
+						<input name="overall_quantity_1" id="overall_quantity_1" value="" type="hidden">
+						<input name="overall_summ_6"     id="overall_summ_6"     value="" type="hidden">
+						<input name="overall_disc_6"     id="overall_disc_6"     value="" type="hidden">
+						<input name="overall_quantity_6" id="overall_quantity_6" value="" type="hidden">-->
+						<input name="overall_summ_1" id="overall_summ_1" value="1185.78" type="hidden">
+						<input name="overall_disc_1" id="overall_disc_1" value="0" type="hidden">
+						<input name="overall_quantity_1" id="overall_quantity_1" value="9" type="hidden">
+						<a href="#" class="btn order_fill2" onclick="return false" store_id="1">Оформить заказ</a>
+						<a href="#" class="go_back_to_hell">Продолжить покупки</a>
+						<a href="#" class="clearLink">Очистить корзину</a></div>
+					<div class="info">Заказ оформляется исходя из состояния остатков на складе на момент отправки заявки</div>
+					<div class="orderInfo " id="start_order">
+						<!--
+						<dl>
+							<dt><span class="num">1.</span> Доставка:</dt>
+							<dd>
+								<span class="toggle delivery_status">бесплатно с Центрального склада (Барановичи)</span>
+								<div class="data delivery_status">бесплатно с Центрального склада (Барановичи)</div>
+							</dd>
+						</dl>
+						-->
+						<dl>
+							<dt><span class="num">1.</span> Доставка:</dt>
+							<dd>
+								<span class="toggle">бесплатно с Центрального склада (Барановичи)</span>
+								<div class="data">
+									<input type="radio" name="DELIVERY" id="DELIVERY_CENTER" value="1" val="1" checked>
+									<label for="DELIVERY_CENTER">бесплатно с Центрального склада (Барановичи)</label>
+									<br><input type="radio" name="DELIVERY" id="DELIVERY_EXPRESS" value="3" val="3">
+									<label for="DELIVERY_EXPRESS">экспресс доставка за счёт СООО "Багория"
+										<img src="i/question.png" align="absmiddle" alt="Доставка при помощи экспресс-перевозчика на следующий день после заказа/оплаты. Подробности о скидках уточняйте у продавца." title="Доставка при помощи экспресс-перевозчика на следующий день после заказа/оплаты. Подробности о скидках уточняйте у продавца."></label><br>
+
+								</div>
+							</dd>
+						</dl>
+						<div class="form">
+							<div class="caption">Адрес доставки</div>
+							<table>
+								<tr>
+									<th>Населённый пункт</th>
+									<td>
+										<div id="title-search-3" class="bx_search_container">
+											<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
+											<div class="bx_field">
+												<input id="delivery_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text"/>
+											</div>
+											<!-- </form> -->
+										</div>
+										<!--<script>
+											BX.ready(function () {
+												new JCTitleSearch({
+													'AJAX_PAGE': '/personal/order/cart/',
+													'CONTAINER_ID': 'title-search-3',
+													'INPUT_ID': 'delivery_address_np_id',
+													'MIN_QUERY_LEN': 2
+												});
+											});
+										</script>-->
+
+										<input type="hidden" id="delivery_address_np" class="delivery_address_np_id" name="delivery_address[np]" value="345221">
+										<input type="hidden" id="delivery_address_name" name="delivery_address[name]" value="Сватки аг. (Минская обл., Мядельский р-н, Сватковский с/с)">
+										<div class="addressCheck error">
+											<span></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th></th>
+									<td>
+										<input type="text" id="delivery_address_index" class="delivery_address_np_id_next" placeholder="Индекс" style="width: 60px;" name="delivery_address[index]" value="32443">
+										<select id="delivery_address_street_type" name="delivery_address[street_type]" style="width: 120px;">
+											<option value="342318">Улица</option>
+											<option value="342319">Бульвар</option>
+											<option value="342320">Проспект</option>
+											<option value="342321">Площадь</option>
+											<option value="342322">Микрорайон</option>
+											<option value="342323">Вал</option>
+											<option value="342324">Военная часть</option>
+											<option value="342325">Военный городок</option>
+											<option value="342326">Въезд</option>
+											<option value="342327">Квартал</option>
+											<option value="342328" selected>Кольцо</option>
+											<option value="342329">Магистраль</option>
+											<option value="342330">Набережная</option>
+											<option value="342331">Парк</option>
+											<option value="342332">Переулок</option>
+											<option value="342333">Поселок</option>
+											<option value="342334">Проезд</option>
+											<option value="342335">Разъезд</option>
+											<option value="342336">Спуск</option>
+											<option value="342337">Станция</option>
+											<option value="342338">Территория</option>
+											<option value="342339">Тракт</option>
+											<option value="342340">Тупик</option>
+											<option value="342341">Урочище</option>
+											<option value="342342">Шоссе</option>
+										</select>
+										<input type="text" id="delivery_address_street" placeholder="Улица" style="width: 200px;" name="delivery_address[street]" value="1-я Новая d2">
+										<input type="text" id="delivery_address_house" placeholder="Дом" style="width: 30px;" name="delivery_address[house]" value="5">
+										<input type="text" id="delivery_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="delivery_address[house_corpus]" value="3er">
+										<input type="text" id="delivery_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="delivery_address[office_appart]" value="23e">
+										<span class="required">*</span>
+										<div class="addressDetailCheck error">
+											<span></span>
+										</div>
+										</br><br>
+									</td>
+								</tr>
+								<tr>
+									<th>Контактное лицо:</th>
+									<td><input type="text" name="CONTACT_FIO" value="Петров М.И."></td>
+								</tr>
+								<tr>
+									<th>Телефон:</th>
+									<td><input type="tel" name="CONTACT_PHONE" value="232435"></td>
+								</tr>
+								<tr>
+									<th>Факс:</th>
+									<td><input type="tel" name="CONTACT_FAX" value=""></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="orderInfo ">
+						<dl>
+							<dt><span class="num">2.</span> Условия оплаты:</dt>
+							<dd>
+								<span class="toggle">предоплата</span>
+								<div class="data">
+									<input type="radio" name="PAYMENT" id="PREPAYMENT" value="PREPAYMENT" checked>
+									<label for="PREPAYMENT">предоплата</label><br>
+									<input type="radio" name="PAYMENT" id="PAYMENT_DEFERMENT" value="PAYMENT_DEFERMENT">
+									<label for="PAYMENT_DEFERMENT">отсрочка платежа</label><br>
+								</div>
+							</dd>
+						</dl>
+						<div class="form">
+							<div class="caption">Юридические реквизиты</div>
+							<table>
+								<tr>
+									<th>Название организации:</th>
+									<td><input type="text" name="LEGAL_NAME" value="Название"></td>
+								</tr>
+								<tr>
+									<th>ФИО руководителя:</th>
+									<td><input type="text" name="FIO" value="Иванов А.И."></td>
+								</tr>
+								<tr>
+									<th>Юридический адрес</th>
+									<td>
+										<div id="title-search" class="bx_search_container">
+											<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
+											<div class="bx_field">
+												<input id="legal_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text"/>
+											</div>
+											<!-- </form> -->
+										</div>
+										<!--<script>
+											BX.ready(function () {
+												new JCTitleSearch({
+													'AJAX_PAGE': '/personal/order/cart/',
+													'CONTAINER_ID': 'title-search',
+													'INPUT_ID': 'legal_address_np_id',
+													'MIN_QUERY_LEN': 2
+												});
+											});
+										</script>-->
+
+										<input type="hidden" id="legal_address_np" class="legal_address_np_id" name="legal_details[legal_address_np]" value="350640">
+										<input type="hidden" id="legal_address_name" name="legal_details[legal_address_name]" value="Замошье 1 д. (Витебская обл., Ушачский р-н, Ушачский с/с)">
+										<div class="addressCheck error">
+											<span></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th></th>
+									<td>
+										<input type="text" id="legal_address_index" placeholder="Индекс" style="width: 60px;" name="legal_details[legal_address_index]" value="211243">
+										<select id="legal_address_street_type" name="legal_details[legal_address_street_type]" style="width: 120px;">
+											<option value="342318">Улица</option>
+											<option value="342319">Бульвар</option>
+											<option value="342320">Проспект</option>
+											<option value="342321">Площадь</option>
+											<option value="342322">Микрорайон</option>
+											<option value="342323">Вал</option>
+											<option value="342324">Военная часть</option>
+											<option value="342325">Военный городок</option>
+											<option value="342326">Въезд</option>
+											<option value="342327">Квартал</option>
+											<option value="342328">Кольцо</option>
+											<option value="342329">Магистраль</option>
+											<option value="342330" selected>Набережная</option>
+											<option value="342331">Парк</option>
+											<option value="342332">Переулок</option>
+											<option value="342333">Поселок</option>
+											<option value="342334">Проезд</option>
+											<option value="342335">Разъезд</option>
+											<option value="342336">Спуск</option>
+											<option value="342337">Станция</option>
+											<option value="342338">Территория</option>
+											<option value="342339">Тракт</option>
+											<option value="342340">Тупик</option>
+											<option value="342341">Урочище</option>
+											<option value="342342">Шоссе</option>
+										</select>
+										<input type="text" id="legal_address_street" placeholder="Улица" style="width: 200px;" name="legal_details[legal_address_street]" value="Петровская dz 5 - .c">
+										<input type="text" id="legal_address_house" placeholder="Дом" style="width: 30px;" name="legal_details[legal_address_house]" value="64k">
+										<input type="text" id="legal_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="legal_details[legal_address_house_corpus]" value="23.-3">
+										<input type="text" id="legal_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="legal_details[legal_address_office_appart]" value="23er-v">
+										<span class="required">*</span>
+									</td>
+								</tr>
+								<tr>
+									<th>УНП:</th>
+									<td><input type="text" name="UNP" value="234445345"></td>
+								</tr>
+							</table>
+							<div class="caption">Банковские реквизиты</div>
+							<table>
+								<tr>
+									<th>Расчетный счет:</th>
+									<td><input type="text" name="RS" value="1234567890123"></td>
+								</tr>
+								<tr>
+									<th>Название банка:</th>
+									<td><input type="text" name="BANK" value="Название банка"></td>
+								</tr>
+								<tr>
+									<th>Код банка:</th>
+									<td><input type="text" name="BANKCOD" value="123"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="buttons" id="send_order" style="display:none">
+					<a id="send_all_order" href="#" class="btn order_add2" store_id="1">Отправить заказ</a>
+				</div>
+
+				<div id="page-preloader"></div>
+				<div id="spinner"></div>
+
+				<script type="text/javascript">
+					$('#send_all_order').click(function () {
+						$('#send_all_order').addClass('disabled');
+						$('#page-preloader').show();
+						$('#spinner').show();
+					});
+				</script>
+
+				<!--<input type="hidden" name="DELIVERY" value="1">-->
+				<input type="hidden" name="1C_ID" value="БФ000894">
+				<input type="hidden" name="LIMIT_REST" id="UF_LIMIT_REST" value="84000">
+				<input type="hidden" name="USER_GROUP" value="1"> <input type="hidden" name="USER_STORE" value="6">
+
+				<input type="hidden" class="product_info" name="Шины" product_type="GROUP" quantity="9" price="1185.78">
+				<input type="hidden" class="product_info" name="Легковые и 4х4" product_type="CATEGORY" quantity="9" price="1185.78">
+				<input type="hidden" class="product_info" name="Nitto" product_type="BRAND" quantity="3" price="762.18">
+				<input type="hidden" class="product_info" name="Imperial" product_type="BRAND" quantity="1" price="57.55">
+				<input type="hidden" class="product_info" name="Matador" product_type="BRAND" quantity="5" price="366.05">
+				<input type="hidden" class="product_info" name="90W" product_type="MODEL" quantity="3" price="762.18">
+				<input type="hidden" class="product_info" name="Snowdragon HP" product_type="MODEL" quantity="1" price="57.55">
+				<input type="hidden" class="product_info" name="MP 54" product_type="MODEL" quantity="5" price="366.05">
+				<script>
+					$(document).ready(function () {
+						$('input[name=DELIVERY]').each(function (i, radio) {
+								$(radio).val($(radio).attr('val'));
+							}
+						);
+					});
+				</script>
+			</form>
+		</div>
+		<div class="sendOrder"></div>
+		<!-- Флаг, определяющий, показывать или нет корзину на данной странице -->
+		<input type="hidden" name="show_basket" id="show_basket" value="false">
+		<div class="empty"></div>
+		<input type="hidden" name="cart_items" id="cart_items" value="4"><input type="hidden" name="cart_summ" id="cart_summ" value="1185.78">
+	</section>
+	<aside class="sidebar">
+		<nav class="catalogue">
+			<div class="title">Каталог</div>
+			<ul>
+				<li><a href="/catalog/tires/car/">Легковые шины</a></li>
+				<li><a href="/catalog/tires/truck/">Грузовые шины</a></li>
+				<li><a href="/catalog/wheels/">Легковые диски</a></li>
+				<li><a href="/catalog/battery/">Аккумуляторы</a></li>
+				<li><a href="/catalog/materials/">Шиноремонтные материалы и крепеж дисков</a></li>
+				<!--<li><a href="/catalog/fasteners/">Крепежные элементы</a></li>-->
+				<li><a href="/catalog/tires/industrial/">Шины, камеры и ободные ленты для спецтехники и погрузчиков</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="location">
+			<div class="main">
+				<div class="caption">Центральный офис</div>
+				<a href="/contacts/" class="mark"><span>г.Брест, ул.Московская, 275 А</span></a>
+				<em>+375 44 5-400-800</em>
+			</div>
+		</div>
+		<div class="news extra">
+			<div class="title">Рекомендации по выбору</div>
+			<div class="extraLink"><a href="/gruzovye-shiny/">Грузовые шины</a></div>
+			<div class="extraLink">
+				<a href="/industrialnye-i-selskokhozyaystvennye-shiny/">Сельскохозяйственные и идустриальные шины</a>
+			</div>
+			<div class="extraLink"><a href="/gruzovye-kamery/">Камеры и ободные ленты для грузовиков</a></div>
+		</div>
+		<div class="news">
+			<div class="title">Новости</div>
+			<article>
+				<time datetime="2017-06-01">01 июня</time>
+				<a href="/news/892907">Белагро-2017</a>
+			</article>
+			<article>
+				<time datetime="2017-03-28">28 марта</time>
+				<a href="/news/838707">Шины Trelleborg</a>
+			</article>
+			<article>
+				<time datetime="2016-11-22">22 ноября</time>
+				<a href="/news/758187">Новое поступление цельнолитых шин KABAT</a>
+			</article>
+			<a href="/news/" class="moreLink">Все новости</a>
+		</div>
+
+		<div class="services-2">
+			<ul id="services-2">
+				<li>
+
+					<a href="/gruzovye-shiny/">
+						<img src="upload/iblock/c44eebbc17217d2372f2fab71e473187.jpg" width="260" height="150" alt="Грузовые шины">
+						<span>Грузовые шины</span> </a>
+				</li>
+				<li>
+
+					<a href="/industrialnye-i-selskokhozyaystvennye-shiny/">
+						<img src="upload/iblock/473f2522d293ff8faba63f5b6897126d.jpg" width="260" height="150" alt="Индустриальные и с/х шины">
+						<span>Индустриальные и с/х шины</span> </a>
+				</li>
+				<li>
+
+					<a href="/gruzovye-kamery/">
+						<img src="upload/iblock/3e339a018166bfcbcbe16f86306728ff.jpg" width="260" height="150" alt="Грузовые камеры и ободные ленты">
+						<span>Грузовые камеры и ободные ленты</span> </a>
+				</li>
+				<li>
+
+					<a href="/info/order/#free_delivery">
+						<img src="upload/iblock/eb4c96c555b244b2a65f74c5339fa832.jpg" width="260" height="150" alt="Бесплатная доставка по РБ">
+						<span>Бесплатная доставка по РБ</span> </a>
+				</li>
+			</ul>
+		</div>
+
+
+		<!--<script type="text/javascript">if (window.location.hash != '' && window.location.hash != '#') top.BX.ajax.history.checkRedirectStart('bxajaxid', 'd826ea74ae97d2f309632e8ad7fdce1b')</script>-->
+		<div id="comp_d826ea74ae97d2f309632e8ad7fdce1b"></div>
+		<!--<script type="text/javascript">if (top.BX.ajax.history.bHashCollision) top.BX.ajax.history.checkRedirectFinish('bxajaxid', 'd826ea74ae97d2f309632e8ad7fdce1b');</script>
+		<script type="text/javascript">top.BX.bind(window, 'load', function () {
+			window.AJAX_PAGE_STATE = new top.BX.ajax.component('comp_d826ea74ae97d2f309632e8ad7fdce1b');
+			top.BX.ajax.history.init(window.AJAX_PAGE_STATE);
+		})</script>-->
+	</aside>
+	<input type="hidden" class="user_store" value="6">
+	<div class="cart">
+		<div class="cartIn" style="bottom: 0px; left: 285px; width: 1030px;">
+			<div class="caption">Ваш заказ</div>
+			<div class="count"><a href="/personal/order/cart/">Наименований в корзине</a>:
+				<strong><span class="cart_items">0</span></strong> (<span class="cart_items_quantity">0</span> шт.)
+			</div>
+			<div class="amount">Общая сумма заказов: <strong><span class="cart_summ">0</span></strong> руб.</div>
+			<div class="delivery clearfix"><span class="cart_delivery_title">Доставка:</span>
+				<span class="cart_delivery"><div class="cart_delivery_1 cart_delivery_main"> </div><div class="cart_delivery_6 cart_delivery_user"> </div></span>
+			</div>
+		</div>
+	</div>
+
+@@include('_tpl_layout_foot.html')

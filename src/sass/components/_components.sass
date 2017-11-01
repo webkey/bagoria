@@ -13,6 +13,43 @@ html
 .for-mob
 	display: none
 
+.wrapper select
+	+media('<tab-lg')
+		overflow: hidden
+		display: block
+		position: relative
+		width: 100%
+		height: 40px
+		cursor: pointer
+		padding: 11px 39px 11px 11px
+		text-indent: 0
+		text-overflow: ''
+		border: 1px solid $border-color
+		border-radius: 0
+		+font(12px, 16px)
+		white-space: nowrap
+		background: white
+		box-shadow: none
+		outline: none
+
+input[type="text"]
+	+media('<tab-lg')
+		width: 100%
+		display: block
+		border: 1px solid $border-color
+		background: #fff
+		font-family: Tahoma, sans-serif
+		font-size: 12px
+		line-height: 16px
+		height: 40px
+		color: $text-color
+		padding: 11px 19px
+		margin: 0
+		box-shadow: none
+		outline: none
+		border-radius: 0
+		box-sizing: border-box
+
 /* layout end
 
 /* header
@@ -304,6 +341,7 @@ a.cardLink
 
 /* auth
 .auth
+
 	+media('<mob-lg')
 		width: calc(100% - #{$layout-space--sm*2})
 		top: $layout-space--sm
@@ -505,11 +543,30 @@ a.cardLink
 /* button
 a.btn
 	+media('<tab-lg')
-		border-radius: 0
+		+display-inline-block-top
 		text-align: center
-		+font(14px, 24px)
 		padding: 8px 20px
-		
+		+font-alt-norm
+		+font(14px, 24px)
+		color: white
+		text-transform: uppercase
+		border-radius: 0
+		text-shadow: none
+		box-shadow: none
+		border: none
+
+		&:hover
+			box-shadow: none
+			text-shadow: none
+
+		&:active
+			box-shadow: none
+			text-shadow: none
+
+		&.disabled
+			box-shadow: none
+			text-shadow: none
+
 	&.callme,
 	&#callme
 		+media('<tab-lg')
@@ -528,30 +585,65 @@ a.btn
 			text-shadow: none
 			box-shadow: none
 
+.resetBtn
+	+media('<tab-lg')
+		+display-inline-block-top
+		text-align: center
+		padding: 8px 20px
+		+font-alt-norm
+		+font(14px, 24px)
+		color: $text-color
+		border-radius: 0
+		text-shadow: none
+		box-shadow: none
+		border: none
+		background-color: $bg-color-alt
+
+		&:hover
+			background-color: shade($bg-color-alt, 80)
+
+		&.disabled
+			cursor: default
+			color: $text-color-light
+
+a.cartBtn
+	+media('<tab-lg')
+		+display-inline-block-top
+		text-align: center
+		padding: 0
+		+font-alt-norm
+		+font(14px, 24px)
+		color: white
+		text-transform: uppercase
+		border-radius: 0
+		text-shadow: none
+		box-shadow: none
+		border: none
+		background-image: url(../../i/cart-white.svg)
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 24px
+		+size(50px, 40px)
+		float: none
+		text-decoration: none
+
+		&:hover
+			box-shadow: none
+			text-shadow: none
+
+		&:active
+			box-shadow: none
+			text-shadow: none
+			background-image: url(../../i/cart-white.svg)
+			background-repeat: no-repeat
+			background-position: center center
+			background-size: 24px
+
+		&.disabled
+			box-shadow: none
+			text-shadow: none
+
 /* button end
-
-/* callback
-.callback
-	+media('<tab-lg')
-		font-size: 14px
-		line-height: 24px
-
-.callback-title
-	width: auto
-
-	+media('<mob-lg')
-		+font($font-size-h2--sm, $line-height-h2--sm)
-
-.callback-text
-	width: auto
-
-	+media('<tab-lg')
-		font-weight: normal
-
-.callbackbtn
-	width: auto
-
-/* callback end
 
 /* promo
 .intro
@@ -846,11 +938,12 @@ a.mark
 			padding-left: 5px
 
 	+media('<tab-lg')
-		margin: 0
+		margin: 0 -#{$layout-space--lg}
 
 		.advantages-title
 			+padding-horizontal($layout-space--lg)
 			text-align: left
+			box-sizing: border-box
 
 	+media('<tab-md')
 		padding: floor($layout-space--lg*0.85) $layout-space--lg
@@ -914,6 +1007,7 @@ a.mark
 
 	+media('<mob-lg')
 		padding: floor($layout-space--sm*0.85) $layout-space--sm
+		margin: 0 -#{$layout-space--sm}
 
 		.advantages-title
 			+font($font-size-h2--sm, $line-height-h2--sm)
@@ -928,6 +1022,29 @@ a.mark
 				&:first-child
 					margin-top: 0
 
+/* services end
+
+/* callback
+.callback
+	+media('<tab-lg')
+		font-size: 14px
+		line-height: 24px
+
+.callback-title
+	width: auto
+
+	+media('<mob-lg')
+		+font($font-size-h2--sm, $line-height-h2--sm)
+
+.callback-text
+	width: auto
+
+	+media('<tab-lg')
+		font-weight: normal
+
+.callbackbtn
+	width: auto
+
 .callback-mob
 	display: none
 
@@ -935,35 +1052,132 @@ a.mark
 		display: block
 
 .callback
-	padding: round($layout-space--lg*0.85) $layout-space--lg $layout-space--lg
+	+media('<tab-lg')
+		padding: $layout-space-v--lg $layout-space--lg $layout-space--lg
+		+margin-horizontal(-#{$layout-space--lg})
+
+		&:first-child
+			margin-top: -#{$layout-space--lg}
+
+		&:last-child, .services + &
+			margin-bottom: -#{$layout-space--lg}
 
 	+media('<mob-lg')
-		padding: round($layout-space--sm*0.85) $layout-space--sm $layout-space--sm
+		padding: $layout-space-v--sm $layout-space--sm $layout-space--sm
+		+margin-horizontal(-#{$layout-space--sm})
 
-/* services end
+		&:first-child
+			margin-top: -#{$layout-space--sm}
+
+		&:last-child, .services + &
+			margin-bottom: -#{$layout-space--sm}
+
+/* callback end
 
 /* content
 .content
 	+media('<tab-lg')
 		float: none
 		width: auto
-		padding: 0
+		//padding: 0
 		background-color: $bg-color-base
+
+		padding: $layout-space-v--lg $layout-space--lg $layout-space--lg
+
+		+media('<mob-lg')
+			padding: $layout-space-v--sm $layout-space--sm $layout-space--sm
+
+	h1
+		+media('<tab-lg')
+			margin-bottom: $bottom-space--md
 
 /* content end
 
 /* sidebar
+.floatSidebar .content
+	position: relative
+
+	&::after
+		content: ""
+		display: block
+		position: fixed
+		+size(100%)
+		+position(0)
+		background-color: rgba(0, 0, 0, 0.5)
+		z-index: 1
+		opacity: 0
+		visibility: hidden
+		transition:
+			property: opacity, visibility
+			duration: $animation-speed
+
+.floatSidebar.openScreenNav .content
+	&::after
+		opacity: 1
+		visibility: visible
+
 .sidebar
 	+media('<tab-lg')
 		float: none
 		width: auto
+
+	.floatSidebar &
+
+		+media('<tab-lg')
+			top: $header-height--lg + $narrowScreenNav-height
+			box-shadow: none
+			width: 100%
+			left: 0
+			opacity: 0
+			visibility: hidden
+
+			.services-2
+				display: none
+
+			.catalogue
+				padding: 0
+				width: auto
+				top: auto
+				left: auto
+
+				.title
+					display: none
+
+				ul
+					font: 15px/20px Tahoma, sans-serif
+
+					li
+						padding: 0
+
+						&.ui-tabs-active
+							a::after
+								content: none
+
+					a
+						display: block
+						padding: 15px 30px
+						border-top: 1px solid #004280
+
+					li:first-child
+						a
+							border-top: 0
+
+		+media('<mob-lg')
+			top: $header-height--sm + $narrowScreenNav-height
+
+	.floatSidebar &.open
+		+media('<tab-lg')
+			opacity: 1
+			visibility: visible
+			box-shadow: 0 5px 5px rgba(0, 0, 0, 0.31)
+			z-index: 5
 
 /* sidebar end
 
 /* news
 .news, .news.extra
 	+media('<tab-lg')
-		padding: round($layout-space--lg*0.85) $layout-space--lg round($layout-space--lg*0.5)
+		padding: $layout-space-v--lg $layout-space--lg round($layout-space--lg*0.5)
 		+clear
 		+clear-spacing
 
@@ -1015,7 +1229,7 @@ a.mark
 			width: 50%
 
 	+media('<mob-lg')
-		padding: round($layout-space--sm*0.85) $layout-space--sm round($layout-space--sm*0.5)
+		padding: $layout-space-v--sm $layout-space--sm round($layout-space--sm*0.5)
 
 		article, & .extraLink
 			width: 100%
@@ -1036,10 +1250,10 @@ a.mark
 .footer
 
 	+media('<tab-lg')
-		padding: round($layout-space--lg*0.85) $layout-space--lg #{$header-height--lg + 20}
+		padding: $layout-space-v--lg $layout-space--lg #{$header-height--lg + 20}
 
 	+media('<mob-lg')
-		padding: round($layout-space--sm*0.85) $layout-space--sm #{$header-height--sm + 15}
+		padding: $layout-space-v--sm $layout-space--sm #{$header-height--sm + 15}
 
 .copy
 	+media('<tab-lg')
@@ -1195,16 +1409,408 @@ ul.fNav
 
 /* cart end
 
-/* pagination
-ul.paging
-	margin: 0 180px
-
-/* pagination end
-
 /* productsGrid
 .brand
 	img
 		max-width: 100%
 		height: auto
 
+ul.productsGrid
+	+media('<tab-lg')
+		+margin-horizontal(-#{round($grid-space--lg/2)})
+
+	table
+		+media('<tab-lg')
+			display: block
+
+			tbody
+				display: block
+
+			tr
+				display: block
+				display: flex
+				justify-content: space-between
+				align-items: center
+				flex-wrap: wrap
+				+clear-spacing
+
+			td
+				+display-inline-block-top
+				letter-spacing: normal
+				+font(12px, 16px)
+				border: none
+				padding: 10px 0 0
+
+				&:first-child
+					display: block
+					font-size: 12px
+					border-top: 1px solid $border-color
+					margin-top: 10px
+					width: 100%
+
+				&:nth-child(3)
+					flex: 1 1 40px
+					+padding-horizontal(10px)
+
+			tr:first-child
+				td:first-child
+					margin-top: 0
+					padding: 0
+					border: none
+
+			input[type="text"]
+				width: 100%
+				text-align: center
+
+	.caption
+		+media('<tab-lg')
+			margin-bottom: $bottom-space
+
+	& > li
+		+media('<tab-lg')
+			border: none
+			position: relative
+			padding: #{round($grid-space--lg*1.5)} #{round($grid-space--lg/2)}
+			margin: 0
+
+			&::before
+				+pseudo()
+				top: 0
+				left: #{round($grid-space--lg/2)}
+				right: #{round($grid-space--lg/2)}
+				border-top: 1px solid $base-color
+				pointer-events: none
+
+			&:nth-child(-n+3)
+				&::before
+					display: none
+
+		+media('<tab-sm')
+			width: 50%
+
+			&:nth-child(-n+3)
+				&::before
+					display: block
+
+			&:nth-child(-n+2)
+				&::before
+					display: none
+
+		+media('<mob-lg')
+			width: 100%
+
+			&:nth-child(-n+2)
+				&::before
+					display: block
+
+			&:nth-child(-n+1)
+				&::before
+					display: none
+
 /* productsGrid end
+
+/* narrowScreenNav
+.narrowScreenNav
+	+media('<tab-lg')
+		position: relative
+		height: $narrowScreenNav-height
+		margin: -#{$layout-space-v--lg} -#{$layout-space--lg} $layout-space-v--lg
+		padding: #{round($layout-space--lg*0.52)} #{$layout-space--lg}
+		background-color: $base-color
+		+font(12px, 18px)
+		color: white
+		letter-spacing: normal
+		white-space: nowrap
+		box-sizing: border-box
+		z-index: 4
+		user-select: none
+
+		&::after
+			+pseudo()
+			right: $layout-space--lg
+			top: 50%
+			+triangle(bottom, $base-color-alt, 5px, 1.2)
+			transform: translate(0, -50%)
+
+		&.open::after
+			transform: rotate(-0.5turn) translate(0, 50%)
+
+	+media('<mob-lg')
+		margin: -#{$layout-space-v--sm} -#{$layout-space--sm} $layout-space-v--sm
+		padding: #{round($layout-space-v--lg*0.52)} #{$layout-space-v--sm}
+
+		&::after
+			right: $layout-space--sm
+
+	.toggle
+		overflow: hidden
+		text-indent: -9999px
+
+		+media('<tab-lg')
+			position: static
+			display: inline
+			float: none
+			+size(auto)
+			margin: 0
+			background: none
+			color: $base-color-alt
+			text-transform: uppercase
+			+font-alt-norm
+			+font(14px, 18px)
+			text-indent: 0
+
+			&::before
+				+pseudo()
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+
+	.currentPart
+		+media('<tab-lg')
+			display: inline
+			float: none
+			+size(auto)
+			padding: 0
+			margin: 0
+			background: none
+			+font(12px, 18px)
+			color: white
+
+/* narrowScreenNav end
+
+/* fTabs
+ul.fTabs
+	+clear-spacing
+	line-height: 0
+
+	li, li.ui-tabs-active
+		box-sizing: border-box
+		+font(12px, 16px)
+		letter-spacing: normal
+		+display-inline-block-top
+		float: none
+		padding: 0
+		border: 1px solid $base-color-alt
+		box-shadow: 1px 0 0 $base-color-alt
+		border-right: none
+		margin: 0 0 -1px
+
+		a
+			display: block
+			padding: 12px 10px
+			border: none
+
+		&:last-child
+			border-right: 1px solid $base-color-alt
+			box-shadow: none
+
+		&:first-child
+			border: 1px solid $base-color-alt
+			border-right: none
+
+		+media('<mob-lg')
+			width: 50%
+
+/* fTabs end
+
+/* filterBlock
+.filterBlock
+	+media('<tab-lg')
+		padding: $grid-space--lg
+		border: none
+
+	.fParams, .fParams2, .fastSearch
+		+media('<tab-lg')
+			+margin-horizontal(-#{$grid-space--lg})
+			margin-bottom: $grid-space--lg
+			border-bottom: 1px solid #e6ad12
+			box-sizing: border-box
+
+	.fParams, .fParams2
+		+media('<tab-lg')
+			padding-right: $grid-space--lg
+			+clear-spacing
+
+		li
+			+media('<tab-lg')
+				+display-inline-block-top
+				box-sizing: border-box
+				margin: 0
+				padding: 0 0 $grid-space--lg $grid-space--lg
+				width: 33.3%
+				letter-spacing: normal
+				line-height: 1
+
+			+media('<tab-sm')
+				width: 50.0%
+
+			+media('<mob-lg')
+				width: 100.0%
+
+	ul.fParams2
+		span
+			+media('<tab-lg')
+				+display-inline-block-top
+				margin: 0 5px 0 0
+
+				& + label
+					margin: 0
+					line-height: 16px
+
+	select
+		border-color: transparent
+
+	.label, label
+		+media('<tab-lg')
+			font-size: 13px
+			letter-spacing: normal
+			padding: 0
+			margin-bottom: 5px
+
+	.fastSearch
+		+media('<tab-lg')
+			padding: 0 $grid-space--lg $grid-space--lg
+
+	a.btn
+		+media('<tab-lg')
+			position: relative
+			bottom: auto
+			right: auto
+
+	.resetBtn
+		+media('<tab-lg')
+			position: relative
+			bottom: auto
+			right: auto
+			margin-right: 10px
+
+/* filterBlock end
+
+.fastSearch
+	input[type="text"]
+		+media('<tab-lg')
+			width: 200px
+			display: block
+			border: none
+			background: #fff
+			font-size: 12px
+			line-height: 16px
+			height: 40px
+			color: $text-color !important
+			padding: 12px 20px
+			margin: 0
+			box-shadow: none
+			outline: none
+			border-radius: 0
+			box-sizing: border-box
+
+		+media('<mob-lg')
+			width: 100%
+			margin-bottom: $bottom-space--sm
+
+	.ex
+		+media('<tab-lg')
+			line-height: 40px
+
+		+media('<mob-lg')
+			line-height: 16px
+			margin-left: 0
+			padding-left: 0
+
+select.chained_select_db.forward_select
+	+media('<tab-lg')
+		width: 100%
+
+/* catalog_sort_by
+.catalog_sort_by
+	+media('<tab-lg')
+		//margin-top: 0
+		margin-bottom: $bottom-space
+
+	& > span
+		+media('<tab-lg')
+			display: block
+			margin-bottom: 5px
+
+/* catalog_sort_by end
+
+/* paging
+ul.paging
+	margin: 0 180px
+
+	+media('<mob-lg')
+		margin: 0 0 $bottom-space--sm -7px
+		text-align: left
+
+	li
+		+media('<tab-lg')
+			font-size: 14px
+			+margin-horizontal(7px)
+
+			&.current
+				+margin-horizontal(0)
+				+padding-horizontal(7px)
+
+		+media('<mob-lg')
+			display: none
+
+			&.current, &.prev_, &.next_
+				display: inline-block
+
+ul.display
+	+media('<tab-lg')
+		font-size: 14px
+
+	+media('<mob-lg')
+		float: none
+		+clear
+		margin-bottom: $bottom-space--sm
+		margin-left: -7px
+
+ul.view
+	+media('<tab-lg')
+		font-size: 14px
+
+	+media('<mob-lg')
+		float: none
+		margin-bottom: $bottom-space--sm
+		+clear
+
+.finedCount
+	+media('<tab-lg')
+		position: relative
+		right: auto
+		font-size: 14px
+
+	+media('<mob-lg')
+		float: none
+		text-align: right
+		margin-bottom: $bottom-space--sm
+		+clear
+
+/* paging end
+
+/* counter
+.counter
+	+media('<tab-lg')
+		width: 94px
+
+	input[type="text"]
+		+media('<tab-lg')
+			padding: 1px 4px
+			text-align: center
+			height: 22px
+
+	a
+		+media('<tab-lg')
+			border: none
+			border-radius: 0
+			box-shadow: none
+			+size(22px)
+			line-height: 18px
+
+			&:hover, &:active
+				box-shadow: none
+
+/* counter end

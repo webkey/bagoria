@@ -251,10 +251,16 @@
 			</form>
 		</header>
 		<section class="content">
+			<!--new-->
+			<!--<div class="narrowScreenNav">
+			<div class="toggle">&nbsp;</div>
+			<div class="currentPart">Легковые шины</div>
+		</div>-->
 			<div class="narrowScreenNav">
-				<div class="toggle">&nbsp;</div>
+				<div class="toggle">Каталог:</div>
 				<div class="currentPart">Легковые шины</div>
 			</div>
+			<!--new end-->
 			<script type="text/javascript">
 				chained_select = [];
 				chained_props = [];
@@ -1329,7 +1335,7 @@
 				<!--<div class="count">Всего товаров: <b>4 600</b></div>-->
 				<div class="title">Подбор товаров</div>
 				<ul class="fTabs">
-					<li class="ui-tabs-active"><a href="#filter-1-1">По параметрам</a></li>
+					<li><a href="#filter-1-1">По параметрам</a></li>
 					<li><a href="#filter-1-2">По cписку типоразмеров</a></li>
 					<li><a href="#filter-1-3">По марке авто</a></li>
 					<li><a href="#filter-1-4">Легковые камеры</a></li>
@@ -2034,11 +2040,15 @@
 						<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form4').submit();" class="btn">Открыть</a>
 					</form>
 				</div>
-				<script>
-					$(document).ready(function() {
-						$('#filter-1').tabs();
-					})
-				</script>
+				<!--new-->
+				<!--<script>
+				$(document).ready(function () {
+					$('#filter-1').tabs({
+						collapsible: true
+					});
+				})
+			</script>-->
+				<!--new end-->
 			</div>
 			</form>
 			<style text="text/css">
@@ -2087,6 +2097,7 @@
 				</ul>
 				<ul class="paging">
 					<!--<li>Страницы:</li>-->
+					<li class="prev_"><a class="catalogLink" href="/catalog/tires/car/?tab=1&amp;view=2&amp;width=&amp;height=&amp;diametr=&amp;season=%D0%97%D0%B8%D0%BC%D0%BD%D1%8F%D1%8F&amp;manufacturer=&amp;fast_search=&amp;PAGEN_1=7" id="navigation_1_previous_page">Назад</a></li>
 					<li class="current">1</li>
 					<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=2">2</a></li>
 					<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=3">3</a></li>
@@ -2140,11 +2151,26 @@
 					<div class="caption">
 						<a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=Snowdragon+HP">Imperial Snowdragon HP</a></div>
 					<table>
-						<tr>
-							<td>
-								<!--Остаток -->Центральный склад:
-								<!--&gt;--><span class="currentCount" id="currentCount_1_732955" style="font-weight:bold;">>10</span></td>
-						</tr>
+						<tbody>
+							<tr>
+								<td>
+									<!--Остаток -->Центральный склад:
+									<!--&gt;--><span class="currentCount" id="currentCount_1_286958" style="font-weight:bold;">&gt;20</span></td>
+								<td>Заказать:</td>
+								<td><input type="text" class="quantity_286958" id="quantity_store1_286958"></td>
+								<td><a href="#" class="cartBtn" title="Добавить в корзину" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="1" store_quantity="102" section_name="Шины" subsection_name="Легковые и 4х4"
+									    brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801">Добавить в корзину</a></td>
+							</tr>
+							<tr>
+								<td>
+									<!--Остаток -->Минск:
+									<!--&gt;--><span class="currentCount" id="currentCount_6_286958" style="font-weight:bold;">0</span></td>
+								<td>Заказать:</td>
+								<td><input type="text" class="quantity_286958" id="quantity_store6_286958"></td>
+								<td><a href="#" class="cartBtn" title="Добавить в корзину" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801">Добавить в корзину</a></td>
+							</tr>
+						</tbody>
 					</table>
 				</li>
 				<li>
@@ -3331,6 +3357,7 @@
 			<div class="pagination">
 				<ul class="paging">
 					<!--<li>Страницы:</li>-->
+					<li class="prev_"><a class="catalogLink" href="/catalog/tires/car/?tab=1&amp;view=2&amp;width=&amp;height=&amp;diametr=&amp;season=%D0%97%D0%B8%D0%BC%D0%BD%D1%8F%D1%8F&amp;manufacturer=&amp;fast_search=&amp;PAGEN_1=7" id="navigation_1_previous_page">Назад</a></li>
 					<li class="current">1</li>
 					<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=2">2</a></li>
 					<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=3">3</a></li>

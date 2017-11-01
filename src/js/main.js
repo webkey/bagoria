@@ -2521,8 +2521,6 @@ var TABLET = device.tablet();
 /*device detected end*/
 
 $(function () {
-	// popular
-	var $popular = $('.popular-list');
 
 	/**
 	 * !Equal height of blocks by maximum height of them
@@ -2551,6 +2549,15 @@ $(function () {
 
 		if($tabs) {
 			$tabs.children().matchHeight({
+				byRow: true, property: 'height', target: null, remove: false
+			});
+		}
+
+		// table-resp
+		var $tableRespRow = $('.table-resp tr');
+
+		if($tableRespRow) {
+			$tableRespRow.children().matchHeight({
 				byRow: true, property: 'height', target: null, remove: false
 			});
 		}

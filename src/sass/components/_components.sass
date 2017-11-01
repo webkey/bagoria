@@ -13,6 +13,10 @@ html
 .for-mob
 	display: none
 
+.bg-alt
+	.wrapper, .content
+		background-color: #f7f7f7
+
 .wrapper select
 	+media('<tab-lg')
 		overflow: hidden
@@ -1579,10 +1583,11 @@ ul.productsGrid
 
 /* narrowScreenNav end
 
-/* fTabs
-ul.fTabs
+/* fTabs / cartTabs
+ul.fTabs, ul.cartTabs
 	+clear-spacing
 	line-height: 0
+	padding-bottom: 1px
 
 	li, li.ui-tabs-active
 		box-sizing: border-box
@@ -1612,7 +1617,7 @@ ul.fTabs
 		+media('<mob-lg')
 			width: 50%
 
-/* fTabs end
+/* fTabs / cartTabs end
 
 /* filterBlock
 .filterBlock
@@ -1814,3 +1819,144 @@ ul.view
 				box-shadow: none
 
 /* counter end
+
+/* table-resp
+.table-resp
+	+media('<tab-md')
+		display: block
+
+		tbody, tfoot, thead, tr
+			display: block
+			position: relative
+			box-sizing: border-box
+
+		tr
+			border: 1px solid $border-color
+			margin-bottom: $bottom-space
+			+clear-spacing
+			box-sizing: border-box
+
+			&:nth-child(2n+1) td
+				background-color: white
+
+		td
+			display: block
+			box-sizing: border-box
+			text-align: center
+			border: solid $border-color
+			border-width: 0 0 1px
+			background-color: white
+			+clear-spacing
+
+			.tresp-val
+				+font(14px, 18px)
+				letter-spacing: normal
+
+			&.right
+				+media('>=mob-lg')
+					text-align: center
+
+			&::before
+				display: block
+				content: attr(data-label)
+				+font-alt-norm
+				+font(11px, 13px)
+				letter-spacing: normal
+				text-transform: uppercase
+				text-align: center
+				color: $text-color-light
+				margin-bottom: 0.5em
+
+			&.tresp-number, &.tresp-name, &.tresp-del
+				&::before
+					display: none
+
+			&.tresp-number
+				float: left
+				border-width: 0 1px 1px 0
+
+			&.tresp-name
+				+padding-horizontal(60px)
+
+			//&.tresp-number, &.tresp-name
+				border-bottom: 1px solid $border-color
+
+			&.tresp-del
+				position: absolute
+				top: -1px
+				right: -1px
+				border: 1px solid $border-color
+				padding: 0
+
+				a
+					display: block
+
+			&.tresp-product, &.tresp-model
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 50%
+
+			&.tresp-discount, &.tresp-sprice, &.tresp-sum
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 33.3%
+					border: none
+
+			&.tresp-sum
+				&, & .tresp-val
+					font-size: 18px
+
+			.counter
+				+push-auto
+
+		td
+			&, &.tresp-del a
+				padding: #{round($grid-space--lg*0.6)} $grid-space--lg
+
+	+media('<mob-lg')
+		td
+			display: block
+
+			&::before
+				+display-inline-block-middle
+				width: 49.98%
+				margin-bottom: 0
+				text-align: left
+
+			.tresp-val
+				+display-inline-block-middle
+				width: 49.98%
+				text-align: right
+
+			&.tresp-name
+				.tresp-val
+					display: block
+					width: auto
+					text-align: center
+
+			&.tresp-sum
+				border-bottom: none
+
+				&, &::before, & .tresp-val
+					display: block
+					width: auto
+					text-align: center
+
+				&::before
+					margin-bottom: 0.5em
+
+			&.tresp-del
+				text-align: center
+
+				.tresp-val
+					width: auto
+
+			.counter
+				margin: 0 0 0 auto
+
+	.tresp-head
+		+media('<tab-md')
+			display: none
+
+
+/* table-resp end

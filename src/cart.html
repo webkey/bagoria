@@ -61,7 +61,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="inside floatSidebar">
+<body class="inside floatSidebar bg-alt">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript>
 	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L9WPFM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -315,8 +315,9 @@
 						</ul>
 						<input type="hidden" id="store_1_name" value="Центральный склад">
 						<div id="cart-tabs-1">
-							<table>
-								<tr>
+							<!--new-->
+							<table class="table-resp">
+								<tr class="tresp-head">
 									<th>№</th>
 									<th>Наименование</th>
 									<th>Производитель</th>
@@ -329,124 +330,116 @@
 									<th>&nbsp;</th>
 								</tr>
 								<tr class="basket_elements main " id="element_1956117" element_id="1956117">
-									<td><span id="number_1956117">1</span></td>
-									<td><strong>235/55R17</strong></td>
-									<td>Nitto</td>
-									<td><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></td>
-									<td class="right ">
-										<span class="cPrice" id="price_show_1956117">239.62 руб.</span><input type="hidden" id="price_1956117" value="239.62">
+									<td class="tresp-number" data-label="№">
+										<div class="tresp-val"><span id="number_1956117">1</span></div>
 									</td>
-									<td>
-										<div class="counter">
-											<a href="#" class="minus change_counter" act="desc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">–</a>
-											<input class="counter_input" id="counter_1956117" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада" type="text" value="2"><input type="hidden" id="old_counter_1956117" value="2"><input type="hidden"
-											    id="store_quantity_1_1956117" value="0"><input type="hidden" id="store_quantity_2_1956117" value="0">
-											<a href="#" class="plus change_counter" act="inc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">+</a>
+									<td class="tresp-name" data-label="Наименование">
+										<div class="tresp-val"><strong>235/55R17</strong></div>
+									</td>
+									<td class="tresp-product" data-label="Производитель">
+										<div class="tresp-val">Nitto</div>
+									</td>
+									<td class="tresp-model" data-label="Модель">
+										<div class="tresp-val"><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></div>
+									</td>
+									<td class="right tresp-price" data-label="Цена, руб.">
+										<div class="tresp-val">
+											<span class="cPrice" id="price_show_1956117">239.62 руб.</span>
+											<input type="hidden" id="price_1956117" value="239.62">
 										</div>
 									</td>
-									<td class="center">
-										<span class="discount_1956117">0</span><input type="hidden" id="disc_1956117" value="0">
+									<td class="tresp-count" data-label="Количество">
+										<div class="tresp-val">
+											<div class="counter">
+												<a href="#" class="minus change_counter" act="desc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">–</a>
+												<input class="counter_input" id="counter_1956117" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада" type="text" value="2">
+												<input type="hidden" id="old_counter_1956117" value="2">
+												<input type="hidden" id="store_quantity_1_1956117" value="0">
+												<input type="hidden" id="store_quantity_2_1956117" value="0">
+												<a href="#" class="plus change_counter" act="inc" price="239.62" store_id="1" prod_id="659860" element_id="1956117" order_type="Заказ со склада">+</a>
+											</div>
+										</div>
 									</td>
-									<td class="right "><span class="cPrice">239.62 руб.</span></td>
-									<td class="right ">
-										<span class="cPrice" id="summ_show_1956117">479.24 руб.</span><input type="hidden" id="summ_1956117" value="479.24">
+									<td class="center tresp-discount" data-label="Скидка, %">
+										<div class="tresp-val">
+											<span class="discount_1956117">0</span>
+											<input type="hidden" id="disc_1956117" value="0">
+										</div>
 									</td>
-									<td class="center">
-										<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659860" element_id="1956117"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="659860"><input type="hidden" id="product_659860"
-										    value="659860" store_id="1" product_model="90W" product_name="235/55R17" element_id="1956117" product_price="239.62" store="Центральный склад" store_quantity_1="0" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4"
-										    product_group="Шины" product_discount="0" product_diametr="17" code_1c="43838" order_type="Заказ со склада">
+									<td class="right tresp-sprice" data-label="Цена со скидкой, руб.">
+										<div class="tresp-val"><span class="cPrice">239.62 руб.</span></div>
+									</td>
+									<td class="right tresp-sum" data-label="Стоимость, руб.">
+										<div class="tresp-val"><span class="cPrice" id="summ_show_1956117">479.24 руб.</span>
+											<input type="hidden" id="summ_1956117" value="479.24">
+										</div>
+									</td>
+									<td class="center tresp-del">
+										<div class="tresp-val">
+											<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659860" element_id="1956117"><img src="i/delete.png" alt="Удалить"></a>
+											<input type="hidden" class="product" store_id="1" value="659860">
+											<input type="hidden" id="product_659860" value="659860" store_id="1" product_model="90W" product_name="235/55R17" element_id="1956117" product_price="239.62" store="Центральный склад" store_quantity_1="0" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4"
+											    product_group="Шины" product_discount="0" product_diametr="17" code_1c="43838" order_type="Заказ со склада">
+										</div>
 									</td>
 								</tr>
 								<tr class="basket_elements main " id="element_1956118" element_id="1956118">
-									<td><span id="number_1956118">2</span></td>
-									<td><strong>235/60R18</strong></td>
-									<td>Nitto</td>
-									<td><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></td>
-									<td class="right ">
-										<span class="cPrice" id="price_show_1956118">282.94 руб.</span><input type="hidden" id="price_1956118" value="282.94">
+									<td class="tresp-number" data-label="№">
+										<div class="tresp-val"><span id="number_1956118">2</span></div>
 									</td>
-									<td>
-										<div class="counter">
-											<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">–</a>
-											<input class="counter_input" id="counter_1956118" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада" type="text" value="1"><input type="hidden" id="old_counter_1956118" value="1"><input type="hidden"
-											    id="store_quantity_1_1956118" value="11"><input type="hidden" id="store_quantity_2_1956118" value="0">
-											<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">+</a>
+									<td class="tresp-name" data-label="Наименование">
+										<div class="tresp-val"><strong>235/60R18</strong></div>
+									</td>
+									<td class="tresp-product" data-label="Производитель">
+										<div class="tresp-val">Nitto</div>
+									</td>
+									<td class="tresp-model" data-label="Модель">
+										<div class="tresp-val"><a href="/catalog/tires/car/?view=3&manufacturer=Nitto&model=90W">90W</a></div>
+									</td>
+									<td class="right tresp-price" data-label="Цена, руб.">
+										<div class="tresp-val">
+											<span class="cPrice" id="price_show_1956118">282.94 руб.</span>
+											<input type="hidden" id="price_1956118" value="282.94">
 										</div>
 									</td>
-									<td class="center">
-										<span class="discount_1956118">0</span><input type="hidden" id="disc_1956118" value="0">
-									</td>
-									<td class="right "><span class="cPrice">282.94 руб.</span></td>
-									<td class="right ">
-										<span class="cPrice" id="summ_show_1956118">282.94 руб.</span><input type="hidden" id="summ_1956118" value="282.94">
-									</td>
-									<td class="center">
-										<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659864" element_id="1956118"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="659864"><input type="hidden" id="product_659864"
-										    value="659864" store_id="1" product_model="90W" product_name="235/60R18" element_id="1956118" product_price="282.94" store="Центральный склад" store_quantity_1="11" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4"
-										    product_group="Шины" product_discount="0" product_diametr="18" code_1c="43865" order_type="Заказ со склада">
-									</td>
-								</tr>
-								<tr class="basket_elements main " id="element_1956119" element_id="1956119">
-									<td><span id="number_1956119">3</span></td>
-									<td><strong>145/70R13</strong></td>
-									<td>Imperial</td>
-									<td>
-										<a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=Snowdragon HP">Snowdragon HP</a>
-									</td>
-									<td class="right ">
-										<span class="cPrice" id="price_show_1956119">57.55 руб.</span><input type="hidden" id="price_1956119" value="57.55">
-									</td>
-									<td>
-										<div class="counter">
-											<a href="#" class="minus change_counter" act="desc" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада">–</a>
-											<input class="counter_input" id="counter_1956119" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада" type="text" value="1"><input type="hidden" id="old_counter_1956119" value="1"><input type="hidden"
-											    id="store_quantity_1_1956119" value="81"><input type="hidden" id="store_quantity_2_1956119" value="0">
-											<a href="#" class="plus change_counter" act="inc" price="57.55" store_id="1" prod_id="732955" element_id="1956119" order_type="Заказ со склада">+</a>
+									<td class="tresp-count" data-label="Количество">
+										<div class="tresp-val">
+											<div class="counter">
+												<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">–</a>
+												<input class="counter_input" id="counter_1956118" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада" type="text" value="1">
+												<input type="hidden" id="old_counter_1956118" value="1">
+												<input type="hidden" id="store_quantity_1_1956118" value="11">
+												<input type="hidden" id="store_quantity_2_1956118" value="0">
+												<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956118" order_type="Заказ со склада">+</a>
+											</div>
 										</div>
 									</td>
-									<td class="center">
-										<span class="discount_1956119">0</span><input type="hidden" id="disc_1956119" value="0">
-									</td>
-									<td class="right "><span class="cPrice">57.55 руб.</span></td>
-									<td class="right ">
-										<span class="cPrice" id="summ_show_1956119">57.55 руб.</span><input type="hidden" id="summ_1956119" value="57.55">
-									</td>
-									<td class="center">
-										<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="732955" element_id="1956119"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="732955"><input type="hidden" id="product_732955"
-										    value="732955" store_id="1" product_model="Snowdragon HP" product_name="145/70R13" element_id="1956119" product_price="57.55" store="Центральный склад" store_quantity_1="81" store_quantity_2="0" product_brand="Imperial" product_category="Легковые и 4х4"
-										    product_group="Шины" product_discount="0" product_diametr="13" code_1c="45904" order_type="Заказ со склада">
-									</td>
-								</tr>
-								<tr class="basket_elements main " id="element_1956120" element_id="1956120">
-									<td><span id="number_1956120">4</span></td>
-									<td><strong>145/70R13</strong></td>
-									<td>Matador</td>
-									<td><a href="/catalog/tires/car/?view=3&manufacturer=Matador&model=MP 54">MP 54</a></td>
-									<td class="right ">
-										<span class="cPrice" id="price_show_1956120">73.21 руб.</span><input type="hidden" id="price_1956120" value="73.21">
-									</td>
-									<td>
-										<div class="counter">
-											<a href="#" class="minus change_counter" act="desc" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада">–</a>
-											<input class="counter_input" id="counter_1956120" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада" type="text" value="5"><input type="hidden" id="old_counter_1956120" value="5"><input type="hidden"
-											    id="store_quantity_1_1956120" value="17"><input type="hidden" id="store_quantity_2_1956120" value="0">
-											<a href="#" class="plus change_counter" act="inc" price="73.21" store_id="1" prod_id="953217" element_id="1956120" order_type="Заказ со склада">+</a>
+									<td class="center tresp-discount" data-label="Скидка, %" class="center">
+										<div class="tresp-val">
+											<span class="discount_1956118">0</span>
+											<input type="hidden" id="disc_1956118" value="0">
 										</div>
 									</td>
-									<td class="center">
-										<span class="discount_1956120">0</span><input type="hidden" id="disc_1956120" value="0">
+									<td class="right tresp-sprice" data-label="Цена со скидкой, руб.">
+										<div class="tresp-val"><span class="cPrice">282.94 руб.</span></div>
 									</td>
-									<td class="right "><span class="cPrice">73.21 руб.</span></td>
-									<td class="right ">
-										<span class="cPrice" id="summ_show_1956120">366.05 руб.</span><input type="hidden" id="summ_1956120" value="366.05">
+									<td class="right tresp-sum" data-label="Стоимость, руб.">
+										<div class="tresp-val">
+											<span class="cPrice" id="summ_show_1956118">282.94 руб.</span>
+											<input type="hidden" id="summ_1956118" value="282.94">
+										</div>
 									</td>
-									<td class="center">
-										<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="953217" element_id="1956120"><img src="i/delete.png" alt="Удалить"></a><input type="hidden" class="product" store_id="1" value="953217"><input type="hidden" id="product_953217"
-										    value="953217" store_id="1" product_model="MP 54" product_name="145/70R13" element_id="1956120" product_price="73.21" store="Центральный склад" store_quantity_1="17" store_quantity_2="0" product_brand="Matador" product_category="Легковые и 4х4"
-										    product_group="Шины" product_discount="0" product_diametr="13" code_1c="58901" order_type="Заказ со склада">
+									<td class="center tresp-del">
+										<div class="tresp-val">
+											<a href="#" title="Удалить" class="deleteLink" store_id="1" prod_id="659864" element_id="1956118"><img src="i/delete.png" alt="Удалить"></a>
+											<input type="hidden" class="product" store_id="1" value="659864">
+											<input type="hidden" id="product_659864" value="659864" store_id="1" product_model="90W" product_name="235/60R18" element_id="1956118" product_price="282.94" store="Центральный склад" store_quantity_1="11" store_quantity_2="0" product_brand="Nitto" product_category="Легковые и 4х4"
+											    product_group="Шины" product_discount="0" product_diametr="18" code_1c="43865" order_type="Заказ со склада">
+										</div>
 									</td>
 								</tr>
 							</table>
+							<!--new end-->
 						</div>
 					</div>
 					<div id="cart-order">

@@ -17,6 +17,10 @@ html
 	.wrapper, .content
 		background-color: #f7f7f7
 
+.clear-layout
+	clear: both
+	+font(0, 0)
+
 .wrapper select
 	+media('<tab-lg')
 		overflow: hidden
@@ -25,7 +29,7 @@ html
 		width: 100%
 		height: 40px
 		cursor: pointer
-		padding: 11px 39px 11px 11px
+		padding: 11px 27px 11px 14px
 		text-indent: 0
 		text-overflow: ''
 		border: 1px solid $border-color
@@ -36,14 +40,14 @@ html
 		box-shadow: none
 		outline: none
 
-input[type="text"]
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"]
 	+media('<tab-lg')
 		width: 100%
 		display: block
 		border: 1px solid $border-color
 		background: #fff
 		font-family: Tahoma, sans-serif
-		font-size: 12px
+		font-size: 14px
 		line-height: 16px
 		height: 40px
 		color: $text-color
@@ -547,17 +551,19 @@ a.cardLink
 /* button
 a.btn
 	+media('<tab-lg')
-		+display-inline-block-top
-		text-align: center
-		padding: 8px 20px
-		+font-alt-norm
-		+font(14px, 24px)
-		color: white
-		text-transform: uppercase
-		border-radius: 0
-		text-shadow: none
-		box-shadow: none
-		border: none
+		&
+			+display-inline-block-top
+			text-align: center
+			padding: 8px 20px
+			+font-alt-norm
+			+font(14px, 24px)
+			color: white
+			text-transform: uppercase
+			border-radius: 0
+			text-shadow: none
+			box-shadow: none
+			border: none
+			box-sizing: border-box
 
 		&:hover
 			box-shadow: none
@@ -571,23 +577,23 @@ a.btn
 			box-shadow: none
 			text-shadow: none
 
-	&.callme,
-	&#callme
-		+media('<tab-lg')
-			cursor: pointer
-			background: #4caf50
-			text-shadow: none
-			box-shadow: none
-			min-width: 240px
+		&.callme,
+		&#callme
+			+media('<tab-lg')
+				cursor: pointer
+				background: #4caf50
+				text-shadow: none
+				box-shadow: none
+				min-width: 240px
 
-		+media('<mob-lg')
-			min-width: 0
+			+media('<mob-lg')
+				min-width: 0
 
-		&:hover
-			color: #fff
-			background: #1b5e20
-			text-shadow: none
-			box-shadow: none
+			&:hover
+				color: #fff
+				background: #1b5e20
+				text-shadow: none
+				box-shadow: none
 
 .resetBtn
 	+media('<tab-lg')
@@ -602,6 +608,7 @@ a.btn
 		box-shadow: none
 		border: none
 		background-color: $bg-color-alt
+		box-sizing: border-box
 
 		&:hover
 			background-color: shade($bg-color-alt, 80)
@@ -630,6 +637,7 @@ a.cartBtn
 		+size(50px, 40px)
 		float: none
 		text-decoration: none
+		box-sizing: border-box
 
 		&:hover
 			box-shadow: none
@@ -646,6 +654,33 @@ a.cartBtn
 		&.disabled
 			box-shadow: none
 			text-shadow: none
+
+.go_back_to_hell, .clearLink
+	+media('<tab-lg')
+		+display-inline-block-top
+		text-align: center
+		padding: 8px 20px
+		+font-alt-norm
+		+font(14px, 24px)
+		color: white
+		text-transform: none
+		border-radius: 0
+		text-shadow: none
+		box-shadow: none
+		border: none
+		box-sizing: border-box
+
+.clearLink
+	+media('<tab-lg')
+		border: 1px solid $border-color
+		text-decoration: none
+
+.go_back_to_hell
+	+media('<tab-lg')
+		background-color: $base-color-alt
+		text-transform: uppercase
+		color: white
+		text-decoration: none
 
 /* button end
 
@@ -1095,6 +1130,9 @@ a.mark
 		+media('<tab-lg')
 			margin-bottom: $bottom-space--md
 
+		+media('<mob-lg')
+			+font(24px, 36px)
+
 /* content end
 
 /* sidebar
@@ -1107,7 +1145,7 @@ a.mark
 		position: fixed
 		+size(100%)
 		+position(0)
-		background-color: rgba(0, 0, 0, 0.5)
+		background-color: rgba(0, 0, 0, 0.3)
 		z-index: 1
 		opacity: 0
 		visibility: hidden
@@ -1334,35 +1372,59 @@ ul.fNav
 		display: none !important
 
 	+media('<tab-lg')
+		box-sizing: border-box
 		position: fixed
 		left: 0
 		bottom: 0
 		margin-left: 0
 		width: 100%
-		height: auto
+		height: 70px
 		z-index: 10
+		padding: 5px $layout-space--lg
+		background-color: $base-color-alt
+
+		&::before
+			content: ""
+			+display-inline-block-middle
+			height: 100%
+			vertical-align: middle
+
+	+media('<mob-lg')
+		padding: 2px 5px
 
 .cartIn
+	&, .floatSidebar &
+		+media('<tab-lg')
+			min-width: 0
+			padding: 0
+			background: none
+
 	+media('<tab-lg')
+		+display-inline-block-middle
+		box-sizing: border-box
 		position: relative !important
-		width: auto !important
+		width: calc(100% - 4px) !important
 		top: auto !important
 		right: auto !important
 		bottom: auto !important
 		left: auto !important
 		height: auto
-		box-sizing: border-box
-		padding: round($layout-space--lg*0.6) $layout-space--lg
 		border: none
-		display: flex
-		justify-content: space-between
-		align-items: center
+		//display: flex
+		//justify-content: space-between
+		//align-items: center
+		+clear-spacing
+		text-align: center
 
 		.caption, .count, .amount, .delivery
+			float: none
+			+display-inline-block-top
 			border: none
-			padding: 0 $grid-space--lg 0 0
+			padding: 2px $grid-space--lg 2px 0
 			margin: 0
-			font-size: 14px
+			height: auto
+			+font(14px, 24px)
+			letter-spacing: normal
 			color: $text-color
 			white-space: nowrap
 
@@ -1375,41 +1437,63 @@ ul.fNav
 			.for-mob
 				display: inline
 
-		.caption
+		.delivery
+			font-size: 13px
+			white-space: normal
+
+		.cart_delivery_title
+			float: none
+			font-weight: bold
+			margin-right: 5px
+
+		.cart_delivery
+			display: inline
+			float: none
+			margin: 0 !important
 			padding: 0
+			+font(inherit, inherit)
+
+			& > div
+				display: inline
+
+		.caption
 			padding-left: 30px
 			background: url(../../i/cart-black.svg) no-repeat
 			background-repeat: no-repeat
 			background-position: 0 center
 			background-size: 22px
 			font-size: 16px
+			min-height: 18px
 			text-transform: uppercase
 			color: $text-color
 
-	+media('<tab-md')
-		.delivery
-			display: none
-
 	+media('<mob-lg')
-		padding: round($layout-space--sm*0.6) $layout-space--sm
-
 		.caption, .count, .amount, .delivery
 			padding-right: $grid-space--sm
+			+font(12px, 18px)
 
 		.caption
+			display: none
 			+font(0, 0)
+			background-size: 18px
+			padding-left: 18px
 
 		.count
-
 			&::after
 				content: "/"
 				display: inline-block
 				font-weight: bold
 				margin-left: 6px
 
+			strong
+				font-size: 12px
+
 		.amount
 			.for-mob
 				display: none
+
+			strong
+				font-size: 12px
 
 /* cart end
 
@@ -1559,7 +1643,7 @@ ul.productsGrid
 			background: none
 			color: $base-color-alt
 			text-transform: uppercase
-			+font-alt-norm
+			+font-alt-light
 			+font(14px, 18px)
 			text-indent: 0
 
@@ -1616,6 +1700,11 @@ ul.fTabs, ul.cartTabs
 
 		+media('<mob-lg')
 			width: 50%
+
+ul.cartTabs
+	li, li.ui-tabs-active
+		+media('<mob-lg')
+			width: 100%
 
 /* fTabs / cartTabs end
 
@@ -1753,6 +1842,9 @@ ul.paging
 			font-size: 14px
 			+margin-horizontal(7px)
 
+			&:empty
+				display: none
+
 			&.current
 				+margin-horizontal(0)
 				+padding-horizontal(7px)
@@ -1797,9 +1889,9 @@ ul.view
 /* paging end
 
 /* counter
-.counter
+//.counter
 	+media('<tab-lg')
-		width: 94px
+
 
 	input[type="text"]
 		+media('<tab-lg')
@@ -1822,7 +1914,7 @@ ul.view
 
 /* table-resp
 .table-resp
-	+media('<tab-md')
+	+media('<tab-lg')
 		display: block
 
 		tbody, tfoot, thead, tr
@@ -1838,6 +1930,9 @@ ul.view
 
 			&:nth-child(2n+1) td
 				background-color: white
+
+			&.tresp-head
+				display: none
 
 		td
 			display: block
@@ -1859,17 +1954,21 @@ ul.view
 			&::before
 				display: block
 				content: attr(data-label)
-				+font-alt-norm
+				+font-alt-light
 				+font(11px, 13px)
 				letter-spacing: normal
 				text-transform: uppercase
 				text-align: center
 				color: $text-color-light
 				margin-bottom: 0.5em
+				box-sizing: border-box
 
 			&.tresp-number, &.tresp-name, &.tresp-del
 				&::before
 					display: none
+
+				//float: left
+				//border-width: 0 1px 1px 0
 
 			&.tresp-number
 				float: left
@@ -1891,41 +1990,152 @@ ul.view
 				a
 					display: block
 
+			&.tresp-full
+				+media('>=mob-lg')
+					display: block
+					width: 100%
+
+			&.tresp-half
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 49.98%
+
+			&.tresp-third
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 33.28%
+
+			&.tresp-fourth
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 24.98%
+
 			&.tresp-product, &.tresp-model
 				+media('>=mob-lg')
 					+display-inline-block-top
 					width: 50%
 
+			&.tresp-title, &.tresp-title ~ .tresp-product, &.tresp-title ~ .tresp-model
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 33.28%
+
 			&.tresp-discount, &.tresp-sprice, &.tresp-sum
 				+media('>=mob-lg')
 					+display-inline-block-top
-					width: 33.3%
-					border: none
+					width: 33.28%
 
 			&.tresp-sum
+				position: relative
+
 				&, & .tresp-val
 					font-size: 18px
 
-			.counter
+			&.tresp-load, &.tresp-speed, &.tresp-apply
+
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 33.28%
+
+			&.tresp-rest
+				+media('>=mob-lg')
+					+display-inline-block-top
+					width: 49.98%
+					border-bottom: none
+
+			.orderCount
+				box-sizing: border-box
+				position: relative
+				width: 200px
+				max-width: 100%
 				+push-auto
+
+				.currentCount
+					font-weight: bold
+
+				input[type="text"]
+					float: none
+					width: 100%
+					padding-right: 64px
+					+padding-horizontal(6px, 55px)
+					text-align: center
+
+				a.cartBtn
+					+size(50px, 40px)
+					position: absolute
+					right: 0
+					bottom: 0
+
+			.counter
+				position: relative
+				width: 200px
+				+push-auto
+
+				a
+					display: block
+					float: none
+					position: absolute
+					top: 0
+					background-color: white
+					text-shadow: none
+					box-shadow: none
+					color: $text-color
+					+size(40px)
+					border: 1px solid $border-color
+					box-sizing: border-box
+					+font(24px, 36px)
+					outline: none
+					border-radius: 0
+
+					&:hover, &:active
+						box-shadow: none
+
+				.minus
+					left: 0
+
+				.plus
+					right: 0
+
+				input[type="text"]
+					float: none
+					width: 100%
+					height: 40px
+					padding: 9px 50px
+					margin: 0
+					border: solid $border-color
+					border-width: 1px
+					box-shadow: none
+					outline: none !important
+					+font(16px, 20px)
+					text-align: center
+					box-sizing: border-box
 
 		td
 			&, &.tresp-del a
-				padding: #{round($grid-space--lg*0.6)} $grid-space--lg
+				padding: #{round($grid-space--lg*0.55)} $grid-space--lg
+				box-sizing: border-box
+
+			&.tresp-number, &.tresp-del a
+				+padding-horizontal(6px)
+				min-width: 38px
 
 	+media('<mob-lg')
+		.basket & tr
+			padding-bottom: 39px
+
 		td
 			display: block
 
 			&::before
 				+display-inline-block-middle
-				width: 49.98%
+				width: 39.98%
+				padding-right: 10px
 				margin-bottom: 0
 				text-align: left
 
 			.tresp-val
 				+display-inline-block-middle
-				width: 49.98%
+				width: 59.98%
 				text-align: right
 
 			&.tresp-name
@@ -1944,19 +2154,370 @@ ul.view
 
 				&::before
 					margin-bottom: 0.5em
+					padding-right: 0
 
-			&.tresp-del
-				text-align: center
+			&.tresp-number, &.tresp-del, &.tresp-count
 
 				.tresp-val
+					display: block
+					width: auto
+					text-align: center
+
+			&.tresp-photo
+				&::before
+					display: block
+					width: auto
+					text-align: center
+					margin-bottom: 5px
+					padding-right: 0
+
+				.tresp-val
+					display: block
 					width: auto
 
+			&.tresp-count
+				position: absolute
+				bottom: -1px
+				left: -1px
+				padding: 0
+				border: none
+				width: calc(100% + 2px)
+				height: 40px
+
+				.tresp-val
+					height: 100%
+
+				&::before
+					display: none
+
 			.counter
-				margin: 0 0 0 auto
+				+size(100%)
 
-	.tresp-head
-		+media('<tab-md')
-			display: none
+			.orderCount
+				padding-left: 40px
 
+			.currentCount
+				position: absolute
+				top: 50%
+				left: 0
+				margin: 0
+				transform: translate(0, -50%)
 
 /* table-resp end
+
+/* cart footer
+.buttons
+	+media('<tab-lg')
+		+font(14px, 20px)
+		text-align: left
+
+		[style*=":right"]
+			text-align: left !important
+
+	a
+		+media('<tab-md')
+			margin-right: $grid-space--lg
+
+	.order_add2, .order_fill2, .go_back_to_hell, .clearLink
+		+media('<mob-lg')
+			float: none
+			display: block
+			max-width: 320px
+			margin: 0 auto $bottom-space--sm
+			text-decoration: none
+
+.info
+	+media('<tab-lg')
+		+font(14px, 20px)
+		color: $text-color-light
+
+	+media('<mob-lg')
+		+font(12px, 14px)
+
+.overall
+	+media('<tab-lg')
+		float: none
+		margin-bottom: $bottom-space
+
+/* cart footer end
+
+/* orderInfo
+.orderInfo
+	+media('<tab-lg')
+		dl
+			min-width: 0
+			float: none
+			display: block
+			padding: $grid-space-v--lg $grid-space--lg
+			+clear
+
+		dt
+			.num
+				margin-left: 0
+				margin-right: 10px
+
+		dd
+			float: none
+			overflow: hidden
+
+		.form
+			.caption
+				margin-bottom: $grid-space--lg
+				padding: $grid-space-v--lg $grid-space--lg
+
+			table
+				margin-bottom: $grid-space--lg
+
+			td
+				&:last-child
+					padding-right: $grid-space--lg
+
+				.required
+					margin-top: 0
+					font-size: 14px
+
+			th
+				padding: 5px $grid-space--lg
+				vertical-align: middle
+				text-align: left
+				+font(14px, 18px)
+
+			#delivery_address_index,
+			#legal_address_index,
+			.address-index
+				width: 20% !important
+
+			#delivery_address_street_type, #delivery_address_street,
+			#legal_address_street_type, #legal_address_street,
+			.address-street
+				width: 40% !important
+
+			#delivery_address_house, #delivery_address_house_corpus, #delivery_address_office_appart,
+			#legal_address_house, #legal_address_house_corpus, #legal_address_office_appart,
+			.delivery_address_office_appart
+				width: 30.0% !important
+
+			input[type="text"], input[type="email"], input[type="password"], input[type="tel"]
+				width: 100%
+				float: left
+
+			.addressCheck.error
+				padding: 0
+				line-height: 16px
+
+	+media('<tab-md')
+		.form
+			th
+				width: 200px
+				box-sizing: border-box
+
+	+media('<mob-lg')
+		&
+			+margin-horizontal(-#{$layout-space--sm})
+			margin-bottom: 0
+			border-bottom: 1px solid #d9a411
+
+			&.open
+				border: none
+
+		dt
+			display: block
+			float: none
+			margin-bottom: $bottom-space--sm
+
+		dd
+			padding-left: 0
+
+			input[type="radio"]
+				margin-left: 0
+
+		.form
+			border: none
+			margin: 0
+
+			.caption
+				margin: 0
+
+			table, tbody, thead, tfoot, tr, th, td
+				display: block
+				padding: 0
+				margin: 0
+				width: auto
+				box-sizing: border-box
+
+			table
+				padding: $grid-space--lg
+
+			th
+				margin-bottom: 5px
+				font-size: 12px
+				font-weight: bold
+
+				&:empty
+					margin: 0
+
+			td
+				+clear
+				margin-bottom: 15px
+
+				&:last-child
+					padding-right: 0
+
+				.required
+					position: relative
+					margin-left: -20px
+					left: 20px
+					padding: 0 0 0 5px
+
+			#delivery_address_index,
+			#legal_address_index,
+			.address-index
+				width: 100% !important
+
+			#delivery_address_street_type, #delivery_address_street,
+			#legal_address_street_type, #legal_address_street,
+			.address-street
+				width: 100% !important
+
+			#delivery_address_house, #delivery_address_house_corpus, #delivery_address_office_appart,
+			#legal_address_house, #legal_address_house_corpus, #legal_address_office_appart,
+			.delivery_address_office_appart
+				width: 33.3% !important
+
+#cart-order
+	margin-bottom: $bottom-space
+
+/* orderInfo end
+
+/* photoPreview
+.photoPreview
+	+media('<tab-lg')
+		user-select: none
+		z-index: auto
+
+		&::after
+			content: none !important
+
+		img
+			position: relative
+			top: auto
+			left: auto
+			border: none
+			box-shadow: none
+			padding: 0
+			max-width: 100%
+			height: auto
+			+push-auto
+
+		&:hover
+			//&::after
+				display: none
+
+			img
+				display: none
+
+		&.hovers
+			height: auto
+			width: auto
+			background: none
+
+			&, &:hover
+				//&::after
+					display: block
+
+				img
+					display: block
+
+/* photoPreview end
+
+/* card
+.card-title
+	float: left
+
+	+media('<tab-lg')
+		float: none
+
+		h1
+			margin-bottom: $bottom-space
+
+.card-product
+	float: right
+
+	+media('<tab-lg')
+		float: none
+		margin: -#{$bottom-space} 0 $bottom-space--md
+
+.card-img
+	float: left
+	padding-right: 22px
+	margin-bottom: $bottom-space
+	box-sizing: border-box
+	max-width: 40%
+
+	+media('<mob-lg')
+		max-width: none
+		float: none
+		display: block
+
+	img
+		max-width: 100%
+		height: auto
+
+.card-description
+	overflow: hidden
+	text-align: justify
+	margin-bottom: $bottom-space
+
+	+media('<mob-lg')
+		text-align: left
+
+/* card end
+
+/* currentDiscount
+.currentDiscount
+	+media('<tab-lg')
+		+font(14px, 16px)
+
+.currentDiscountIn
+	+media('<tab-lg')
+		width: auto
+		+font-alt-light
+		text-transform: uppercase
+		padding: round($grid-space--lg*0.5) $grid-space--lg
+
+		strong
+			+font-alt-bold
+
+.changeLinkText
+	+media('<tab-lg')
+		+display-inline-block-middle
+		+font-alt-light
+
+	+media('<mob-lg')
+		a.changeLink
+			margin-left: 0
+
+.discountText
+	+display-inline-block-middle
+	margin-right: 5px
+
+	+media('<mob-lg')
+		display: block
+		margin-bottom: 10px
+
+.discountChange
+	+media('<tab-lg')
+		+display-inline-block-middle
+
+		input[type="text"]
+			+display-inline-block-middle
+			width: 50px
+			text-align: center
+			+padding-horizontal(5px)
+			border: none
+
+			.changeLink
+				+display-inline-block-middle
+
+
+/* currentDiscount end

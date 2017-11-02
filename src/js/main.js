@@ -2469,20 +2469,29 @@ $(function () {
 		
 	});
 
-	$('.photoPreview').mouseout(function () {
-		$(this).removeClass('hovers');
-	})
-	
-	$('.photoPreview').click(function () {
-		$('.photoPreview').removeClass('hovers');
-		$(this).addClass('hovers');
-    });
-    
-    $('.photoPreview IMG').click(function () {
-    	$('.photoPreview').removeClass('hovers');
-    	return false;
-    })
-	
+	// new
+	var $photoPreview = $('.photoPreview');
+	if(window.innerWidth > 1023) {
+		$photoPreview.mouseout(function () {
+			$(this).removeClass('hovers');
+		});
+
+		$photoPreview.click(function () {
+			$('.photoPreview').removeClass('hovers');
+			$(this).addClass('hovers');
+		});
+
+		$photoPreview.find('img').click(function () {
+			$('.photoPreview').removeClass('hovers');
+			return false;
+		});
+	} else {
+		$photoPreview.on('click', function () {
+			$(this).toggleClass('hovers');
+		})
+	}
+	// new end
+
 	if($.browser.version <= 15.0 && $.browser.opera == true){
 		function widthContent(){
 			var width = $('.wrapper').width();

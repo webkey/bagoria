@@ -251,269 +251,65 @@
 			</form>
 		</header>
 		<section class="content">
-			<div class="narrowScreenNav">
-				<div class="toggle">&nbsp;</div>
-				<div class="currentPart">Грузовые шины</div>
+			<h1>Список заказов</h1>
+			<ul class="cartTabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+				<li class="ui-tabs-active ui-state-default ui-corner-top ui-state-active" role="tab" tabindex="0" aria-controls="cart-tabs-1" aria-labelledby="ui-id-1" aria-selected="true">
+					<a href="cabinet-order.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Список заказов&nbsp;</a>
+				</li>
+				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="cart-tabs-3" aria-labelledby="ui-id-3" aria-selected="false">
+					<a href="cabinet-vsaimoraschet.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Взаиморасчёты&nbsp;</a>
+				</li>
+				<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="cart-tabs-2" aria-labelledby="ui-id-2" aria-selected="false">
+					<a href="cabinet-profile.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Редактирование профиля</a>
+				</li>
+			</ul>
+			<div class="catalog_sort_by" style="display: inline-block; margin-top: 12px;">
+				<span>Сортировать: </span> <select id="order_sort_list" onchange="redirect()">
+			<option>- выберите -</option>
+			<option value="DATE_UPDATE.ASC">по дате изменения заказа (по возрастанию)</option>
+			<option value="DATE_UPDATE.DESC" selected>по дате изменения заказа (по убыванию)</option>
+			<option value="ID.ASC">по номеру заказа (по возрастанию)</option>
+			<option value="ID.DESC">по номеру заказа (по убыванию)</option>
+			<option value="STATUS_ID.ASC">по статусу заказа (по возрастанию)</option>
+			<option value="STATUS_ID.DESC">по статусу заказа (по убыванию)</option>
+			<option value="PRICE.ASC">по цене (по возрастанию)</option>
+			<option value="PRICE.DESC">по цене (по убыванию)</option>
+		</select>
 			</div>
-			<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo;
-				<a href="/catalog/tires/truck/">Каталог грузовых шин</a> &raquo; <span>Грузовые шины Кама NF 202</span>
-			</div>
-			<!--new-->
-			<div class="card-title">
-				<h1>Кама NF 202</h1>
-			</div>
-			<div class="card-product">
-				<img src="upload/iblock/b140e3901b036c840406a65ca885195e.png" alt="image description" width="147" height="44">
-			</div>
-			<div class="clear-layout">&nbsp;</div>
-			<div class="find-out-price"><a id="callme" class="btn" onclick="" rel="Кама NF 202">Узнать стоимость</a></div>
-			<div class="card-img">
-				<img class="" src="upload/iblock/3b0d7ad9e7572e71f8793aa55cdf85f3.jpg" alt="image description">
-			</div>
-			<div class="card-description">
-				<p>Грузовые шины Кама NF-202 предназначены для установки на колеса передних осей автобусов и грузовых автомобилей различной грузоподъемности, используемых в междугородних и межрегиональных перевозках. Прекрасные показатели топливной экономичности за
-					счет низкого сопротивления качению сочетаются с хорошим сцеплением на мокрой дороге. Высокая прочность шины, благодаря применению цельнометаллического корда, предусматривает возможность нарезки рисунка или наваривания нового протектора. Индикаторы
-					износа протектора позволяют безошибочно определить остаточный ресурс.</p>
-			</div>
-			<div class="clear-layout">&nbsp;</div>
-			<!--new-->
-			<div id="findOutPriceBG" class="findOutPriceBG"></div>
-			<div id="findOutPriceBox" class="findOutPriceBox">
-				<h2>Узнать стоимость</h2>
-				<div class="findOutPriceBoxGroup">
-					<div class="priceBoxSize">
-						<select name="priceBoxSize" id="priceBoxSize">
-						<option value="">Укажите типоразмер</option>
-						<option value="215/75R17,5 126/124M">215/75R17,5 126/124M</option>
-						<option value="235/75R17,5 132/130M">235/75R17,5 132/130M</option>
-						<option value="285/70R19,5 145/143M">285/70R19,5 145/143M</option>
-						<option value="315/70R22,5 154/150L">315/70R22,5 154/150L</option>
-					</select>
-					</div>
-					<label>Типоразмер</label>
-				</div>
-				<div class="findOutPriceBoxGroup">
-					<input type="text" value="" name="priceBoxFIO" id="priceBoxFIO"> <label>ФИО</label>
-				</div>
-				<div class="findOutPriceBoxGroup">
-					<input type="text" value="" name="priceBoxPhone" id="priceBoxPhone"> <label>Телефон</label>
-				</div>
-				<a id="findOutPriceBoxSend" class="btn">Отправить</a><span id="priceBoxWarn" class="priceBoxWarn">Заполнены не все поля!</span>
-			</div>
-			<script>
-				$('#callme').click(function() {
-					$('#findOutPriceBG').show();
-					$('#findOutPriceBox').show();
-				});
-				$('#findOutPriceBoxSend').click(function() {
-					var product = $('#priceBoxSize option:selected').val() + ' ' + $('#callme').attr('rel');
-					var fio = $('#priceBoxFIO').val();
-					var phone = $('#priceBoxPhone').val();
-					if ($('#priceBoxSize option:selected').val().trim().length < 3 || fio.trim().length < 3 || phone.trim().length < 3) {
-						$('#priceBoxWarn').show();
-						return false;
-					} else {
-						$('#priceBoxWarn').hide();
-					}
-					var findOutPriceData = 'product=' + product + '&fio=' + fio + '&phone=' + phone;
-					$.ajax({
-						url: '/include/ask_price.php',
-						type: 'POST',
-						data: findOutPriceData,
-						success: function(data, textStatus, jqXHR) {
-
-						}
-					});
-					yaCounter24544484.reachGoal('ask_price');
-					$('#findOutPriceBox').html('<h2>Заявка успешно отправлена!</h2><h3>Мы свяжемся с вами в ближайшее время.</h3>');
-				});
-				$(document).mouseup(function(e) {
-					if ($(e.target).closest('#findOutPriceBox').length) return;
-					$('#findOutPriceBG').hide();
-					$('#findOutPriceBox').hide();
-					e.stopPropagation();
-				});
+			<script type="text/javascript">
+				function redirect() {
+					$sort_params = $("#order_sort_list option:selected").val();
+					$sort_params = $sort_params.split('.');
+					location.href = '/personal/order/?by=' + $sort_params[0] + '&order=' + $sort_params[1];
+				}
 			</script>
-			<input type="hidden" id="displayQuantityLimit" value="20">
-			<table class="table-resp">
+			<table>
 				<tbody>
-					<tr class="tresp-head">
-						<!--<th>Тип</th>-->
-						<th>Фото</th>
-						<th style="width: 100px;"><strong>Типоразмер</strong></th>
-						<th>Бренд</th>
-						<th style="width: 130px;"><strong>Модель</strong></th>
-						<th>Индекс нагрузки</th>
-						<th>Индекс скорости</th>
-						<th>Применяемость</th>
-						<th>Остаток<br>Центральный<br>склад</th>
-					</tr>
 					<tr>
-						<!--<td class="center"><img src="i/truck.png" alt=""></td>-->
-						<td class="tresp-photo" data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото">
-									<img src="upload/iblock/3b0d7ad9e7572e71f8793aa55cdf85f3.jpg" alt=""></div>
-							</div>
-						</td>
-						<td class="tresp-title" data-label="Типоразмер">
-							<div class="tresp-val"><strong>215/75R17,5</strong></div>
-						</td>
-						<td class="tresp-product" data-label="Бренд">
-							<div class="tresp-val">Кама</div>
-						</td>
-						<td class="action tresp-model" data-label="Модель">
-							<div class="tresp-val"><strong>NF 202</strong></div>
-						</td>
-						<td class="tresp-load" data-label="Индекс нагрузки">
-							<div class="tresp-val">126/124<br></div>
-						</td>
-						<td class="tresp-speed" data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td class="tresp-apply" data-label="Применяемость">
-							<div class="tresp-val">рулевая</div>
-						</td>
-						<td class="tresp-full" data-label="Остаток - Центральный склад:">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount">
-										<!--&gt;-->1</div>
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<!--<td class="center"><img src="i/truck.png" alt=""></td>-->
-						<td class="tresp-photo" data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото">
-									<img src="upload/iblock/3b0d7ad9e7572e71f8793aa55cdf85f3.jpg" alt=""></div>
-							</div>
-						</td>
-						<td class="tresp-title" data-label="Типоразмер">
-							<div class="tresp-val"><strong>215/75R17,5</strong></div>
-						</td>
-						<td class="tresp-product" data-label="Бренд">
-							<div class="tresp-val">Кама</div>
-						</td>
-						<td class="action tresp-model" data-label="Модель">
-							<div class="tresp-val"><strong>NF 202</strong></div>
-						</td>
-						<td class="tresp-load" data-label="Индекс нагрузки">
-							<div class="tresp-val">126/124<br></div>
-						</td>
-						<td class="tresp-speed" data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td class="tresp-apply" data-label="Применяемость">
-							<div class="tresp-val">рулевая</div>
-						</td>
-						<td class="tresp-full" data-label="Остаток - Центральный склад:">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount">
-										<!--&gt;-->10</div>
-								</div>
-							</div>
-						</td>
+						<th>
+							<center>Дата изменения заказа</b>
+							</center>
+						</th>
+						<th>
+							<center>№ заказа</b>
+							</center>
+						</th>
+						<th>
+							<center>Содержимое заказа</center>
+						</th>
+						<th>
+							<center>Сумма заказа</center>
+						</th>
+						<th>
+							<center>Статус заказа</center>
+						</th>
+						<th>
+							<center>Счет</center>
+						</th>
 					</tr>
 				</tbody>
 			</table>
-			<table id="currentOffer" class="tableOffers table-resp">
-				<tbody>
-					<tr class="tresp-head">
-						<th>Тип</th>
-						<th>Фото</th>
-						<th style="width: 100px;"><strong>Типоразмер</strong></th>
-						<th>Индекс</th>
-						<th>Бренд</th>
-						<th><strong>Модель</strong></th>
-						<th>Сезон</th>
-						<th>Остаток<br>Центральный<br>склад</th>
-					</tr>
-					<tr>
-						<td class="center tresp-type" data-label="Тип">
-							<div class="tresp-val"><img src="i/car.png" alt=""></div>
-						</td>
-						<td class="tresp-photo" data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/icacher/45904.webp" alt=""></div>
-							</div>
-						</td>
-						<td class="tresp-third" data-label="Типоразмер">
-							<div class="tresp-val"><strong>145/70R13</strong></div>
-						</td>
-						<td class="tresp-third" data-label="Индекс">
-							<div class="tresp-val">71T</div>
-						</td>
-						<td class="tresp-third" data-label="Бренд">
-							<div class="tresp-val">Imperial</div>
-						</td>
-						<td class="action tresp-third" data-label="Модель">
-							<div class="tresp-val"><strong>Snowdragon HP</strong></div>
-						</td>
-						<td class="center tresp-third" data-label="Сезон">
-							<div class="tresp-val"><img src="i/winter.png" alt="Зима"></div>
-						</td>
-						<td class="tresp-third" data-label="Остаток - Центральный склад:">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount" id="currentCount_1_732955">
-										<!--&gt;-->&gt;10</div>
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="center tresp-type" data-label="Тип">
-							<div class="tresp-val"><img src="i/car.png" alt=""></div>
-						</td>
-						<td class="tresp-photo" data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/icacher/45904.webp" alt=""></div>
-							</div>
-						</td>
-						<td class="tresp-third" data-label="Типоразмер">
-							<div class="tresp-val"><strong>145/70R13</strong></div>
-						</td>
-						<td class="tresp-third" data-label="Индекс">
-							<div class="tresp-val">71T</div>
-						</td>
-						<td class="tresp-third" data-label="Бренд">
-							<div class="tresp-val">Imperial</div>
-						</td>
-						<td class="action tresp-third" data-label="Модель">
-							<div class="tresp-val"><strong>Snowdragon HP</strong></div>
-						</td>
-						<td class="center tresp-third" data-label="Сезон">
-							<div class="tresp-val"><img src="i/winter.png" alt="Зима"></div>
-						</td>
-						<td class="tresp-third" data-label="Остаток - Центральный склад:">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount" id="currentCount_1_732955">
-										<!--&gt;-->&gt;10</div>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<ul class="paging">
-					<li></li>
-				</ul>
-			</div>
-			<input type="hidden" class="user_store" value="">
-			<input type="hidden" name="UF_LIMIT" id="UF_LIMIT" value=""><input type="hidden" name="UF_LIMIT_REST" id="UF_LIMIT_REST" value="0"><input type="hidden" name="MinTovarov" id="MinTovarov" value="0"><input type="hidden" name="MinSumma" id="MinSumma" value="0">
-			<input
-			    type="hidden" name="MaxSummaMonth" id="MaxSummaMonth" value="120000"><input type="hidden" name="MinTovarov" id="MinTovarov" value="0"><input type="hidden" name="MinSumma" id="MinSumma" value="0"><input type="hidden" name="MaxSummaMonth" id="MaxSummaMonth" value="120000">
-				<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
+			<input type="hidden" name="cart_items" id="cart_items" value="6"><input type="hidden" name="cart_summ" id="cart_summ" value="7772789">
 		</section>
 		<aside class="sidebar">
 			<nav class="catalogue">

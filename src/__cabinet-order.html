@@ -1,0 +1,72 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Купить грузовые шины Кама NF 202 в Беларуси",
+	"pageClass": "inside floatSidebar"
+})
+
+@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		<h1>Список заказов</h1>
+		<ul class="cartTabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+			<li class="ui-tabs-active ui-state-default ui-corner-top ui-state-active" role="tab" tabindex="0" aria-controls="cart-tabs-1" aria-labelledby="ui-id-1" aria-selected="true">
+				<a href="cabinet-order.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Список заказов&nbsp;</a>
+			</li>
+			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="cart-tabs-3" aria-labelledby="ui-id-3" aria-selected="false">
+				<a href="cabinet-vsaimoraschet.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Взаиморасчёты&nbsp;</a>
+			</li>
+			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="cart-tabs-2" aria-labelledby="ui-id-2" aria-selected="false">
+				<a href="cabinet-profile.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Редактирование профиля</a>
+			</li>
+		</ul>
+
+		<div class="catalog_sort_by" style="display: inline-block; margin-top: 12px;">
+			<span>Сортировать: </span> <select id="order_sort_list" onchange="redirect()">
+			<option>- выберите -</option>
+			<option value="DATE_UPDATE.ASC">по дате изменения заказа (по возрастанию)</option>
+			<option value="DATE_UPDATE.DESC" selected>по дате изменения заказа (по убыванию)</option>
+			<option value="ID.ASC">по номеру заказа (по возрастанию)</option>
+			<option value="ID.DESC">по номеру заказа (по убыванию)</option>
+			<option value="STATUS_ID.ASC">по статусу заказа (по возрастанию)</option>
+			<option value="STATUS_ID.DESC">по статусу заказа (по убыванию)</option>
+			<option value="PRICE.ASC">по цене (по возрастанию)</option>
+			<option value="PRICE.DESC">по цене (по убыванию)</option>
+		</select>
+		</div>
+
+		<script type="text/javascript">
+			function redirect() {
+				$sort_params = $("#order_sort_list option:selected").val();
+				$sort_params = $sort_params.split('.');
+				location.href = '/personal/order/?by=' + $sort_params[0] + '&order=' + $sort_params[1];
+			}
+		</script>
+
+		<table>
+			<tbody>
+				<tr>
+					<th>
+						<center>Дата изменения заказа</b></center>
+					</th>
+					<th>
+						<center>№ заказа</b></center>
+					</th>
+					<th>
+						<center>Содержимое заказа</center>
+					</th>
+					<th>
+						<center>Сумма заказа</center>
+					</th>
+					<th>
+						<center>Статус заказа</center>
+					</th>
+					<th>
+						<center>Счет</center>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+		<input type="hidden" name="cart_items" id="cart_items" value="6"><input type="hidden" name="cart_summ" id="cart_summ" value="7772789">
+	</section>
+
+@@include('_tpl_layout_sidebar.html')
+@@include('_tpl_layout_foot.html')

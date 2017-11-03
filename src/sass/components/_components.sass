@@ -14,8 +14,9 @@ html
 	display: none
 
 .bg-alt
-	.wrapper, .content
-		background-color: #f7f7f7
+	+media('<tab-lg')
+		.wrapper, .content
+			background-color: #f7f7f7
 
 .clear-layout
 	clear: both
@@ -29,7 +30,7 @@ html
 		width: 100%
 		height: 40px
 		cursor: pointer
-		padding: 11px 27px 11px 14px
+		padding: 9px 27px 9px 14px
 		text-indent: 0
 		text-overflow: ''
 		border: 1px solid $border-color
@@ -563,7 +564,7 @@ a.btn
 			+display-inline-block-top
 			text-align: center
 			padding: 8px 20px
-			+font-alt-norm
+			+font-alt-light
 			+font(14px, 24px)
 			color: white
 			text-transform: uppercase
@@ -1688,6 +1689,9 @@ ul.fTabs, ul.cartTabs
 	+media('<tab-lg')
 		margin-bottom: $bottom-space
 
+	li
+		background-color: $bg-color-base
+
 	li, li.ui-tabs-active
 		box-sizing: border-box
 		+font(12px, 16px)
@@ -1833,27 +1837,108 @@ select.chained_select_db.forward_select
 
 /* catalog_sort_by
 .catalog_sort_by
+
 	+media('<tab-lg')
 		//margin-top: 0
 		margin-bottom: $bottom-space
+		margin-top: 0
+		display: block !important
+		width: auto
+		max-width: calc(50% - #{round($grid-space--lg/2)})
 
-	& > span
-		+media('<tab-lg')
+		& > span
 			display: block
 			margin-bottom: 5px
 
+	+media('<tab-md')
+		display: block !important
+		max-width: none
+
 /* catalog_sort_by end
 
-/* paging
+
+/* pagination end
+.pagination
+	margin-top: 0
+	margin-bottom: $bottom-space
+
+.display-view
+	+clear
+
+	+media('<tab-lg')
+		border: 1px solid transparent
+
+	+media('<tab-md')
+		border-color: $border-color
+
+ul.display
+	+media('<tab-lg')
+		font-size: 14px
+
+		.display__title
+			display: none
+
+		.display-view &
+			margin-left: -1px
+			margin-top: -1px
+			margin-bottom: -1px
+
+		li:not(.display-view)
+			border: 1px solid $border-color
+			margin-left: -1px
+
+			a
+				display: block
+				padding: 8px 12px
+				text-decoration: none
+
+			&.current
+				border-color: $base-color-alt
+				background-color: $base-color-alt
+				padding: 8px 12px
+				position: relative
+				z-index: 1
+
+ul.view
+	+media('<tab-lg')
+		font-size: 14px
+
+		.display-view &
+			margin-left: -1px
+			margin-top: -1px
+			margin-bottom: -1px
+
+		.view__title
+			display: none
+
+		li:not(.view__title)
+			border: 1px solid $border-color
+			margin-right: -1px
+
+			a
+				display: block
+				padding: 8px 12px
+
+			&.current
+				border-color: $base-color-alt
+				background-color: $base-color-alt
+				padding: 8px 12px
+				position: relative
+				z-index: 1
+
 ul.paging
 	margin: 0 180px
 
-	+media('<mob-lg')
-		margin: 0 0 $bottom-space--sm -7px
-		text-align: left
+	+media('<tab-lg')
+		display: none
 
-	li
-		+media('<tab-lg')
+		.pagination-top &
+			display: none
+
+		.paging__title
+			display: none
+
+		li
 			font-size: 14px
 			+margin-horizontal(7px)
 
@@ -1864,44 +1949,119 @@ ul.paging
 				+margin-horizontal(0)
 				+padding-horizontal(7px)
 
-		+media('<mob-lg')
+	+media('<mob-lg')
+		margin: 0 0 $bottom-space--sm -7px
+		text-align: left
+
+		//li
 			display: none
 
 			&.current, &.prev_, &.next_
 				display: inline-block
 
-ul.display
-	+media('<tab-lg')
+.paging-mob
+	display: none
+	border: 1px solid $border-color
+	text-align: center
+	height: 40px
+	position: relative
+	box-sizing: border-box
+
+	&, .content &
+		list-style: none
+		padding: 0
+		margin: 0
+
+		li
+			padding: 0
+			margin: 0
+			background: none
+
+	li
 		font-size: 14px
+		line-height: 38px
+		box-sizing: border-box
+
+		a
+			display: block
+			text-decoration: none
+			box-sizing: border-box
+
+		&.first_, &.prev_, &.next_, &.last_
+			position: absolute
+			top: -1px
+			border: 1px solid $border-color
+			background-repeat: no-repeat
+			background-position: center
+			background-size: 14px 14px
+
+			a
+				+size(38px)
+				text-indent: -9999px
+				overflow: hidden
+				cursor: pointer
+
+			&.disabled
+				a
+					cursor: default
+
+		&.first_
+			left: -1px
+			margin-right: -1px
+			background-image: url(../../i/arr_left_dbl.svg)
+
+			&.disabled
+				background-image: url(../../i/arr_left_dbl_dis.svg)
+
+		&.prev_
+			left: 38px
+			margin-right: -1px
+			background-image: url(../../i/arr_left.svg)
+
+			&.disabled
+				background-image: url(../../i/arr_left_dis.svg)
+
+		&.next_
+			right: 38px
+			margin-left: -1px
+			background-image: url(../../i/arr_right.svg)
+
+			&.disabled
+				background-image: url(../../i/arr_right_dis.svg)
+
+		&.last_
+			right: -1px
+			margin-left: -1px
+			background-image: url(../../i/arr_right_dbl.svg)
+
+			&.disabled
+				background-image: url(../../i/arr_right_dbl_dis.svg)
+
+		.counter_
+			+display-inline-block-top
+
+	+media('<tab-lg')
+		display: block
 
 	+media('<mob-lg')
-		float: none
-		+clear
-		margin-bottom: $bottom-space--sm
-		margin-left: -7px
-
-ul.view
-	+media('<tab-lg')
-		font-size: 14px
-
-	+media('<mob-lg')
-		float: none
-		margin-bottom: $bottom-space--sm
-		+clear
+		.counter_
+			span
+				display: none
 
 .finedCount
+	position: relative
+	display: block
+	float: none
+	clear: both
+	right: auto
+	padding: 0
+	margin-bottom: $bottom-space--sm
+
 	+media('<tab-lg')
-		position: relative
-		right: auto
-		font-size: 14px
+		font-size: 12px
+		margin-bottom: $bottom-space
 
-	+media('<mob-lg')
-		float: none
-		text-align: right
-		margin-bottom: $bottom-space--sm
-		+clear
-
-/* paging end
+/* pagination
 
 /* counter
 //.counter
@@ -1930,6 +2090,230 @@ ul.view
 /* table-resp
 .table-resp
 	+media('<tab-lg')
+		display: block
+		+clear-spacing
+
+		&, .content &
+			width: auto !important
+			+margin-horizontal(-#{round($grid-space--lg/2)})
+
+		tbody, tfoot, thead, tr
+			display: block
+			position: relative
+			box-sizing: border-box
+
+		tr
+			+display-inline-block-top
+			width: 50%
+			margin-bottom: $bottom-space
+			+padding-horizontal(#{round($grid-space--lg/2)})
+
+			&:nth-child(2n+1) td
+				background-color: white
+
+			&.tresp-head
+				display: none
+
+		td
+			display: block
+			box-sizing: border-box
+			text-align: left
+			border: solid $border-color
+			border-width: 0 1px 1px
+			background-color: white
+			+clear-spacing
+
+			&:first-child
+				border-top-width: 1px
+
+			&::before
+				+display-inline-block-middle
+				content: attr(data-label)
+				+font-alt-light
+				+font(11px, 13px)
+				letter-spacing: normal
+				text-transform: uppercase
+				text-align: left
+				color: $text-color-light
+				margin-bottom: 0
+				box-sizing: border-box
+
+				width: 39.98%
+				padding-right: 10px
+
+			.tresp-val
+				+display-inline-block-middle
+				width: 59.98%
+				+font(14px, 18px)
+				letter-spacing: normal
+
+				&, & center
+					text-align: left
+
+			&.right
+				+media('>=tab-md')
+					text-align: center
+
+			&.tresp-number, &.tresp-name, &.tresp-del
+				&::before
+					display: none
+
+			&.tresp-name
+				+padding-horizontal(60px)
+				border-top-width: 1px
+				min-height: 40px
+
+				.tresp-val
+					+truncate(none)
+
+			&.tresp-number, &.tresp-del
+				position: absolute
+				top: 0
+				border-width: 1px
+				padding: 0
+
+				.tresp-val
+					display: block
+					width: auto
+					text-align: center
+
+				a
+					display: block
+
+			&.tresp-number
+				left: #{round($grid-space--lg/2)}
+
+			&.tresp-del
+				right: #{round($grid-space--lg/2)}
+
+			&.tresp-photo
+				.photoPreview
+					margin: 0
+
+					img
+						margin: 0
+
+			.orderCount
+				box-sizing: border-box
+				position: relative
+				width: 180px
+				max-width: 100%
+				padding-left: 40px
+				margin: 0
+
+				input[type="text"]
+					float: none
+					width: 100%
+					padding-right: 64px
+					+padding-horizontal(6px, 55px)
+					text-align: center
+
+				a.cartBtn
+					+size(50px, 40px)
+					position: absolute
+					right: 0
+					bottom: 0
+
+			.currentCount
+				font-weight: bold
+				position: absolute
+				top: 50%
+				left: 0
+				margin: 0
+				transform: translate(0, -50%)
+
+			.counter
+				position: relative
+				+size(auto, 100%)
+				max-width: 180px
+
+				a
+					display: block
+					float: none
+					position: absolute
+					top: 0
+					background-color: white
+					text-shadow: none
+					box-shadow: none
+					color: $text-color
+					+size(40px)
+					border: 1px solid $border-color
+					box-sizing: border-box
+					+font(24px, 36px)
+					outline: none
+					border-radius: 0
+
+					&:hover, &:active
+						box-shadow: none
+
+				.minus
+					left: 0
+
+				.plus
+					right: 0
+
+				input[type="text"]
+					float: none
+					width: 100%
+					height: 40px
+					padding: 9px 50px
+					margin: 0
+					border: solid $border-color
+					border-width: 1px
+					box-shadow: none
+					outline: none !important
+					+font(16px, 20px)
+					text-align: center
+					box-sizing: border-box
+
+			&, &.tresp-del a, &.tresp-number span
+				padding: #{round($grid-space--lg*0.5)} $grid-space--lg
+				box-sizing: border-box
+
+			&.tresp-number span, &.tresp-del a
+				display: block
+				+padding-horizontal(6px)
+				min-width: 38px
+				min-height: 38px
+
+	+media('<tab-md')
+		.basket & tr
+			padding-bottom: 39px
+
+		tr
+			display: block
+			width: auto
+
+		td
+			display: block
+
+			&.tresp-name
+				.tresp-val
+					display: block
+					width: auto
+
+			&.tresp-count
+				position: absolute
+				bottom: 0
+				left: #{round($grid-space--lg/2)}
+				right: #{round($grid-space--lg/2)}
+				padding: 0
+				border: none
+				+size(auto, 40px)
+
+				.tresp-val
+					height: 100%
+					display: block
+					width: auto
+
+				&::before
+					display: none
+
+			.counter
+				width: auto
+				max-width: none
+
+	//+media('<tab-lg')
 		display: block
 
 		&, .content &
@@ -2136,7 +2520,7 @@ ul.view
 				+padding-horizontal(6px)
 				min-width: 38px
 
-	+media('<tab-md')
+	//+media('<tab-md')
 		.basket & tr
 			padding-bottom: 39px
 
@@ -2204,7 +2588,7 @@ ul.view
 
 			&.tresp-count
 				position: absolute
-				bottom: -1px
+				bottom: 0
 				left: -1px
 				padding: 0
 				border: none
@@ -2231,25 +2615,18 @@ ul.view
 				margin: 0
 				transform: translate(0, -50%)
 
-	+media('<mob-lg')
-		&, .content &
-			+margin-horizontal(-#{$layout-space--sm + 1})
-
 /* table-resp end
 
 /* table-grids
 .table-grids
 	+media('<tab-lg')
-		&, & tbody
-			+clear-spacing
-
 		&, .content &
-			width: auto !important
+			+margin-horizontal(-#{round($grid-space--lg/2)})
 
 		tr
 			+display-inline-block-top
+			+padding-horizontal(#{round($grid-space--lg/2)})
 			width: 50%
-			box-sizing: border-box
 
 	+media('<mob-lg')
 		tr
@@ -2489,6 +2866,7 @@ ul.view
 	+media('<tab-lg')
 		user-select: none
 		z-index: auto
+		margin: 0
 
 		&::after
 			content: none !important
@@ -2502,7 +2880,6 @@ ul.view
 			padding: 0
 			max-width: 100%
 			height: auto
-			+push-auto
 
 		&:hover
 			//&::after
@@ -2569,6 +2946,9 @@ ul.view
 /* card end
 
 /* currentDiscount
+.discount
+	letter-spacing: normal
+
 .currentDiscount
 
 	+media('<tab-lg')
@@ -2615,6 +2995,9 @@ ul.view
 
 			.changeLink
 				+display-inline-block-middle
+
+.discountUnit
+	+display-inline-block-middle
 
 
 /* currentDiscount end

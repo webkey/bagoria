@@ -2563,13 +2563,13 @@ $(function () {
 		}
 
 		// table-resp
-		var $tableRespRow = $('.table-resp tr');
-
-		if($tableRespRow) {
-			$tableRespRow.children().matchHeight({
-				byRow: true, property: 'height', target: null, remove: false
-			});
-		}
+		// var $tableRespRow = $('.table-resp tr');
+		//
+		// if($tableRespRow) {
+		// 	$tableRespRow.children().matchHeight({
+		// 		byRow: true, property: 'height', target: null, remove: false
+		// 	});
+		// }
 	}
 	
 	equalHeight();

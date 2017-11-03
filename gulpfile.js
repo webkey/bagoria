@@ -42,15 +42,15 @@ gulp.task('htmlCompilation', function () { // Таск формирования 
 });
 
 /// Таск для переноса normalize.css и его минификации
-gulp.task('compressNormalizeCss', function () {
-	return gulp.src('src/libs/normalize-css/normalize.css')
-		.pipe(gulp.dest('src/sass/base/'))
-		.pipe(cssnano())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('src/sass/base/'));
-});
+// gulp.task('compressNormalizeCss', function () {
+// 	return gulp.src('src/libs/normalize-css/normalize.css')
+// 		.pipe(gulp.dest('src/sass/base/'))
+// 		.pipe(cssnano())
+// 		.pipe(rename({suffix: '.min'}))
+// 		.pipe(gulp.dest('src/sass/base/'));
+// });
 
-gulp.task('sassCompilation', ['compressNormalizeCss'], function () { // Создаем таск для компиляции sass файлов
+gulp.task('sassCompilation', function () { // Создаем таск для компиляции sass файлов
 	return gulp.src('src/sass/**/*.+(scss|sass)') // Берем источник
 		.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -86,12 +86,6 @@ gulp.task('mergeCssLibs', function () { // Таск для мержа css биб
 		.pipe(cssnano()) // Сжимаем
 		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
 		.pipe(gulp.dest('./')); // Выгружаем в папку src/css сжатую версию
-});
-
-gulp.task('createCustomModernizr', function (done) { // Таск для формирования кастомного modernizr
-	modernizr.build(config, function (code) {
-		fs.writeFile('src/js/modernizr.min.js', code, done);
-	});
 });
 
 gulp.task('copyLibsScriptsToJs', ['copyJqueryToJs'], function () { // Таск для мераж js библиотек
@@ -133,7 +127,7 @@ gulp.task('browserSync', function (done) { // Таск browserSync
 	done();
 });
 
-gulp.task('watch', ['createCustomModernizr', 'browserSync', 'htmlCompilation', 'sassCompilation', 'mergeCssLibs', 'copyLibsScriptsToJs'], function () {
+gulp.task('watch', ['browserSync', 'htmlCompilation', 'sassCompilation', 'mergeCssLibs', 'copyLibsScriptsToJs'], function () {
 	gulp.watch(['src/_tpl_*.html', 'src/__*.html', 'src/includes-json/**/*.json'], ['htmlCompilation']); // Наблюдение за tpl
 	// файлами в папке include
 	gulp.watch('src/sass/**/*.+(scss|sass)', ['sassCompilation']); // Наблюдение за sass файлами в папке sass
@@ -146,7 +140,7 @@ gulp.task('default', ['watch']); // Назначаем таск watch дефол
  ************************************************************/
 
 gulp.task('copyImgToDist', function () {
-	return gulp.src('src/img/**/*')
+	return gulp.src('src/i/**/*')
 		.pipe(cache(imagemin({ // Сжимаем их с наилучшими настройками с учетом кеширования
 			interlaced: true,
 			progressive: true,
@@ -154,18 +148,18 @@ gulp.task('copyImgToDist', function () {
 			optimizationLevel: 7, //степень сжатия от 0 до 7
 			use: [pngquant()]
 		})))
-		.pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
+		.pipe(gulp.dest('dist/i')); // Выгружаем на продакшен
 });
 
-gulp.task('build', ['cleanDistFolder', 'htmlCompilation', 'copyImgToDist', 'sassCompilation', 'mergeCssLibs', 'createCustomModernizr', 'copyLibsScriptsToJs'], function () {
+gulp.task('build', ['cleanDistFolder', 'htmlCompilation', 'copyImgToDist', 'sassCompilation', 'mergeCssLibs', 'copyLibsScriptsToJs'], function () {
 
-	gulp.src('src/css/*.css')
+	gulp.src('src/css/**/*')
 	.pipe(gulp.dest('dist/css'));
 
 	gulp.src('src/fonts/**/*') // Переносим шрифты в продакшен
 		.pipe(gulp.dest('dist/fonts'));
 
-	gulp.src(['!src/js/temp/**/*.js', '!src/js/**/temp-*.js', 'src/js/*.js']) // Переносим скрипты в продакшен
+	gulp.src(['!src/js/temp/**/*.js', '!src/js/**/temp-*.js', 'src/js/**/*']) // Переносим скрипты в продакшен
 		.pipe(gulp.dest('dist/js'));
 
 	gulp.src(['!src/__*.html', '!src/forms.html', '!src/_tpl_*.html', 'src/*.html']) // Переносим HTML в продакшен
@@ -173,6 +167,9 @@ gulp.task('build', ['cleanDistFolder', 'htmlCompilation', 'copyImgToDist', 'sass
 
 	gulp.src(['src/*.png', 'src/*.ico', 'src/.htaccess']) // Переносим favicon и др. файлы в продакшин
 		.pipe(gulp.dest('dist'));
+
+	gulp.src(['src/upload/**/*']) // Переносим папку upload в продакшин
+		.pipe(gulp.dest('dist/upload'));
 
 });
 

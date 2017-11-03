@@ -2377,8 +2377,6 @@ ul.view
 	+media('<mob-lg')
 		&
 			+margin-horizontal(-#{$layout-space--sm})
-			margin-bottom: 0
-			border-bottom: 1px solid #d9a411
 
 			&.open
 				border: none
@@ -2396,7 +2394,6 @@ ul.view
 
 		.form
 			border: none
-			margin: 0
 
 			.caption
 				margin: 0
@@ -2441,10 +2438,40 @@ ul.view
 			.delivery_address_office_appart
 				width: 33.3% !important
 
+.orderInfo
+	+media('<mob-lg')
+		margin-bottom: 0
+		border-bottom: 1px solid #d9a411
+
+		.form
+			margin: 0
+
 #cart-order
 	margin-bottom: $bottom-space
 
 /* orderInfo end
+
+/* form footer
+.form-footer
+	+clear
+
+	.note
+		+font(12px, 14px)
+		float: right
+
+	+media('<tab-lg')
+		.note
+			float: none
+			margin-bottom: $bottom-space
+
+		.captcha
+			margin: 0 0 $bottom-space--sm
+
+	+media('<mob-lg')
+		.registrationForm &
+			+padding-horizontal($grid-space--lg)
+
+/* form footer end
 
 /* cartTabsContainer
 //.cartTabsContainer

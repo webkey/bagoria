@@ -87,6 +87,7 @@
 		</li>
 	</ul>
 
+	<!--new-->
 	<div class="registrationForm">
 		<form action="/personal/profile/index.php" method="post" id="registration_form">
 			<input type="hidden" id="return" name="return" value="">
@@ -391,19 +392,26 @@
 				</table>
 
 			</div>
-			<div style="font: 12px/14px Tahoma, sans-serif; float: right;">Поля, помеченные символом
-				<span style="font-weight: bold; color: #00519b;">*</span> являются обязательными для заполнения
-			</div>
-			<!--<div class="captcha">
-				<img src="i/captcha.jpg" alt=""><br>
-				Введите текст изображенный на картинке: <input type="text">
-			</div>-->
 
-			<div class="buttons">
-				<a href="javascript:void(0);" id="registration_btn" class="btn" onClick="submit_registration_form(); return false;">Сохранить</a>
+			<!--new-->
+			<div class="form-footer">
+				<div class="note">
+					Поля, помеченные символом <span style="font-weight: bold; color: #00519b;">*</span> являются обязательными для заполнения
+				</div>
+
+				<div class="captcha">
+					<img src="i/captcha.jpg" alt=""><br>
+					Введите текст изображенный на картинке: <input type="text">
+				</div>
+
+				<div class="buttons">
+					<a href="javascript:void(0);" id="registration_btn" class="btn" onClick="submit_registration_form(); return false;">Сохранить</a>
+				</div>
 			</div>
+			<!--new end-->
 		</form>
 	</div>
+	<!--new end-->
 
 	<script type="text/javascript">
 

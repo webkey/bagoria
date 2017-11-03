@@ -34,11 +34,15 @@ html
 		text-overflow: ''
 		border: 1px solid $border-color
 		border-radius: 0
-		+font(12px, 16px)
+		+font(14px, 16px)
 		white-space: nowrap
 		background: white
 		box-shadow: none
 		outline: none
+
+	+media('<mob-lg')
+		+padding-horizontal(9px)
+		font-size: 12px
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="password"]
 	+media('<tab-lg')
@@ -57,6 +61,10 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 		outline: none
 		border-radius: 0
 		box-sizing: border-box
+
+	+media('<mob-lg')
+		+padding-horizontal(12px)
+		font-size: 12px
 
 /* layout end
 
@@ -1146,7 +1154,7 @@ a.mark
 		+size(100%)
 		+position(0)
 		background-color: rgba(0, 0, 0, 0.3)
-		z-index: 1
+		z-index: 2
 		opacity: 0
 		visibility: hidden
 		transition:
@@ -1379,7 +1387,7 @@ ul.fNav
 		margin-left: 0
 		width: 100%
 		height: 70px
-		z-index: 10
+		z-index: 1
 		padding: 5px $layout-space--lg
 		background-color: $base-color-alt
 
@@ -1665,6 +1673,10 @@ ul.productsGrid
 			+font(12px, 18px)
 			color: white
 
+.currentPart
+	&:empty
+		display: none
+
 /* narrowScreenNav end
 
 /* fTabs / cartTabs
@@ -1672,6 +1684,9 @@ ul.fTabs, ul.cartTabs
 	+clear-spacing
 	line-height: 0
 	padding-bottom: 1px
+
+	+media('<tab-lg')
+		margin-bottom: $bottom-space
 
 	li, li.ui-tabs-active
 		box-sizing: border-box
@@ -1917,6 +1932,9 @@ ul.view
 	+media('<tab-lg')
 		display: block
 
+		&, .content &
+			width: auto !important
+
 		tbody, tfoot, thead, tr
 			display: block
 			position: relative
@@ -1948,7 +1966,7 @@ ul.view
 				letter-spacing: normal
 
 			&.right
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					text-align: center
 
 			&::before
@@ -1991,37 +2009,36 @@ ul.view
 					display: block
 
 			&.tresp-full
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					display: block
-					width: 100%
 
 			&.tresp-half
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 49.98%
 
 			&.tresp-third
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 33.28%
 
 			&.tresp-fourth
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 24.98%
 
 			&.tresp-product, &.tresp-model
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 50%
 
 			&.tresp-title, &.tresp-title ~ .tresp-product, &.tresp-title ~ .tresp-model
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 33.28%
 
 			&.tresp-discount, &.tresp-sprice, &.tresp-sum
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 33.28%
 
@@ -2033,12 +2050,12 @@ ul.view
 
 			&.tresp-load, &.tresp-speed, &.tresp-apply
 
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 33.28%
 
 			&.tresp-rest
-				+media('>=mob-lg')
+				+media('>=tab-md')
 					+display-inline-block-top
 					width: 49.98%
 					border-bottom: none
@@ -2119,7 +2136,7 @@ ul.view
 				+padding-horizontal(6px)
 				min-width: 38px
 
-	+media('<mob-lg')
+	+media('<tab-md')
 		.basket & tr
 			padding-bottom: 39px
 
@@ -2136,7 +2153,10 @@ ul.view
 			.tresp-val
 				+display-inline-block-middle
 				width: 59.98%
-				text-align: right
+
+				&, & center
+					//text-align: right
+					text-align: left
 
 			&.tresp-name
 				.tresp-val
@@ -2144,7 +2164,7 @@ ul.view
 					width: auto
 					text-align: center
 
-			&.tresp-sum
+			//&.tresp-sum
 				border-bottom: none
 
 				&, &::before, & .tresp-val
@@ -2163,7 +2183,7 @@ ul.view
 					width: auto
 					text-align: center
 
-			&.tresp-photo
+			//&.tresp-photo
 				&::before
 					display: block
 					width: auto
@@ -2174,6 +2194,13 @@ ul.view
 				.tresp-val
 					display: block
 					width: auto
+
+			&.tresp-photo
+				.photoPreview
+					margin: 0
+
+					img
+						margin: 0
 
 			&.tresp-count
 				position: absolute
@@ -2195,6 +2222,7 @@ ul.view
 
 			.orderCount
 				padding-left: 40px
+				margin: 0
 
 			.currentCount
 				position: absolute
@@ -2203,7 +2231,31 @@ ul.view
 				margin: 0
 				transform: translate(0, -50%)
 
+	+media('<mob-lg')
+		&, .content &
+			+margin-horizontal(-#{$layout-space--sm + 1})
+
 /* table-resp end
+
+/* table-grids
+.table-grids
+	+media('<tab-lg')
+		&, & tbody
+			+clear-spacing
+
+		&, .content &
+			width: auto !important
+
+		tr
+			+display-inline-block-top
+			width: 50%
+			box-sizing: border-box
+
+	+media('<mob-lg')
+		tr
+			width: 100%
+
+/* table-grids end
 
 /* cart footer
 .buttons
@@ -2242,7 +2294,7 @@ ul.view
 /* cart footer end
 
 /* orderInfo
-.orderInfo
+.orderInfo, .registrationForm
 	+media('<tab-lg')
 		dl
 			min-width: 0
@@ -2275,31 +2327,42 @@ ul.view
 				.required
 					margin-top: 0
 					font-size: 14px
+					position: relative
+					margin-left: -20px
+					left: 20px
+					padding: 0 0 0 5px
 
 			th
 				padding: 5px $grid-space--lg
 				vertical-align: middle
 				text-align: left
-				+font(14px, 18px)
+				+font(13px, 15px)
 
 			#delivery_address_index,
 			#legal_address_index,
+			#post_address_index,
 			.address-index
 				width: 20% !important
 
 			#delivery_address_street_type, #delivery_address_street,
 			#legal_address_street_type, #legal_address_street,
+			#post_address_street_type, #post_address_street,
 			.address-street
 				width: 40% !important
 
 			#delivery_address_house, #delivery_address_house_corpus, #delivery_address_office_appart,
 			#legal_address_house, #legal_address_house_corpus, #legal_address_office_appart,
+			#post_address_house, #post_address_house_corpus, #post_address_office_appart,
 			.delivery_address_office_appart
-				width: 30.0% !important
+				width: 33.3% !important
 
 			input[type="text"], input[type="email"], input[type="password"], input[type="tel"]
 				width: 100%
 				float: left
+
+			.addressCheck
+				box-sizing: border-box
+				width: auto
 
 			.addressCheck.error
 				padding: 0
@@ -2363,12 +2426,6 @@ ul.view
 				&:last-child
 					padding-right: 0
 
-				.required
-					position: relative
-					margin-left: -20px
-					left: 20px
-					padding: 0 0 0 5px
-
 			#delivery_address_index,
 			#legal_address_index,
 			.address-index
@@ -2388,6 +2445,17 @@ ul.view
 	margin-bottom: $bottom-space
 
 /* orderInfo end
+
+/* cartTabsContainer
+//.cartTabsContainer
+	+media('<mob-lg')
+		&, .content &
+			+margin-horizontal(-#{$layout-space--sm + 1})
+
+			.table-resp
+				+margin-horizontal(0)
+
+/* cartTabsContainer end
 
 /* photoPreview
 .photoPreview
@@ -2475,8 +2543,10 @@ ul.view
 
 /* currentDiscount
 .currentDiscount
+
 	+media('<tab-lg')
 		+font(14px, 16px)
+		margin-bottom: $bottom-space
 
 .currentDiscountIn
 	+media('<tab-lg')

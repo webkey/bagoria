@@ -251,6 +251,16 @@
 			</form>
 		</header>
 		<section class="content">
+			<!--new-->
+			<!--<div class="narrowScreenNav">
+	<div class="toggle">&nbsp;</div>
+	<div class="currentPart">Легковые шины</div>
+</div>-->
+			<div class="narrowScreenNav">
+				<div class="toggle">Каталог</div>
+				<div class="currentPart"></div>
+			</div>
+			<!--new end-->
 			<h1>Список заказов</h1>
 			<ul class="cartTabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
 				<li class="ui-tabs-active ui-state-default ui-corner-top ui-state-active" role="tab" tabindex="0" aria-controls="cart-tabs-1" aria-labelledby="ui-id-1" aria-selected="true">
@@ -283,16 +293,15 @@
 					location.href = '/personal/order/?by=' + $sort_params[0] + '&order=' + $sort_params[1];
 				}
 			</script>
-			<table>
+			<!--new-->
+			<table class="table-resp">
 				<tbody>
-					<tr>
+					<tr class="tresp-head">
 						<th>
-							<center>Дата изменения заказа</b>
-							</center>
+							<center>Дата изменения заказа</center>
 						</th>
 						<th>
-							<center>№ заказа</b>
-							</center>
+							<center>№ заказа</center>
 						</th>
 						<th>
 							<center>Содержимое заказа</center>
@@ -307,8 +316,81 @@
 							<center>Счет</center>
 						</th>
 					</tr>
+					<tr>
+						<td class="tresp-half" data-label="Дата изменения заказа">
+							<div class="tresp-val">12-09-2017</div>
+						</td>
+						<td class="tresp-half" data-label="№ заказа">
+							<div class="tresp-val">133445</div>
+						</td>
+						<td data-label="Содержимое заказа">
+							<div class="tresp-val">
+								<div><a href="#">IMPERIAL SNOWDRAGON HP</a>, 1 шт.</div>
+								<div><a href="#">MATADOR MP 54</a>, 4 шт.</div>
+								<div><a href="#">TAURUS WINTER 601</a>, 14 шт.</div>
+							</div>
+						</td>
+						<td class="tresp-third" data-label="Сумма заказа">
+							<div class="tresp-val">1 282.94 руб.</div>
+						</td>
+						<td class="tresp-third" data-label="Статус заказа">
+							<div class="tresp-val">Доставка</div>
+						</td>
+						<td class="tresp-third" data-label="Счет">
+							<div class="tresp-val">12321232354436</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="tresp-half" data-label="Дата изменения заказа">
+							<div class="tresp-val">12-09-2017</div>
+						</td>
+						<td class="tresp-half" data-label="№ заказа">
+							<div class="tresp-val">133445</div>
+						</td>
+						<td data-label="Содержимое заказа">
+							<div class="tresp-val">
+								<div><a href="#">IMPERIAL SNOWDRAGON HP</a>, 1 шт.</div>
+								<div><a href="#">MATADOR MP 54</a>, 4 шт.</div>
+								<div><a href="#">TAURUS WINTER 601</a>, 14 шт.</div>
+							</div>
+						</td>
+						<td class="tresp-third" data-label="Сумма заказа">
+							<div class="tresp-val">1 282.94 руб.</div>
+						</td>
+						<td class="tresp-third" data-label="Статус заказа">
+							<div class="tresp-val">Доставка</div>
+						</td>
+						<td class="tresp-third" data-label="Счет">
+							<div class="tresp-val">12321232354436</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="tresp-half" data-label="Дата изменения заказа">
+							<div class="tresp-val">12-09-2017</div>
+						</td>
+						<td class="tresp-half" data-label="№ заказа">
+							<div class="tresp-val">133445</div>
+						</td>
+						<td data-label="Содержимое заказа">
+							<div class="tresp-val">
+								<div><a href="#">IMPERIAL SNOWDRAGON HP</a>, 1 шт.</div>
+								<div><a href="#">MATADOR MP 54</a>, 4 шт.</div>
+								<div><a href="#">TAURUS WINTER 601</a>, 14 шт.</div>
+							</div>
+						</td>
+						<td class="tresp-third" data-label="Сумма заказа">
+							<div class="tresp-val">1 282.94 руб.</div>
+						</td>
+						<td class="tresp-third" data-label="Статус заказа">
+							<div class="tresp-val">Доставка</div>
+						</td>
+						<td class="tresp-third" data-label="Счет">
+							<div class="tresp-val">12321232354436</div>
+						</td>
+					</tr>
 				</tbody>
 			</table>
+			<!--new end-->
 			<input type="hidden" name="cart_items" id="cart_items" value="6"><input type="hidden" name="cart_summ" id="cart_summ" value="7772789">
 		</section>
 		<aside class="sidebar">

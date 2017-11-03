@@ -1,0 +1,16 @@
+<!--new-->
+<!--<div class="narrowScreenNav">
+	<div class="toggle">&nbsp;</div>
+	<div class="currentPart">Легковые шины</div>
+</div>-->
+<div class="narrowScreenNav">
+	@@if(context.noCategory) {
+	<div class="toggle">Каталог</div>
+	<div class="currentPart"></div>
+	}
+	@@if(!context.noCategory) {
+	<div class="toggle">Каталог:</div>
+	<div class="currentPart">Легковые шины</div>
+	}
+</div>
+<!--new end-->

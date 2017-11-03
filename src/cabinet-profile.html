@@ -251,6 +251,16 @@
 			</form>
 		</header>
 		<section class="content">
+			<!--new-->
+			<!--<div class="narrowScreenNav">
+	<div class="toggle">&nbsp;</div>
+	<div class="currentPart">Легковые шины</div>
+</div>-->
+			<div class="narrowScreenNav">
+				<div class="toggle">Каталог</div>
+				<div class="currentPart"></div>
+			</div>
+			<!--new end-->
 			<script type="text/javascript">
 				function set_address(addr_field_id, np_id, np_name) {
 					$('#' + addr_field_id).val(np_name);
@@ -324,316 +334,318 @@
 					<a href="cabinet-profile.html" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Редактирование профиля</a>
 				</li>
 			</ul>
-			<form action="/personal/profile/index.php" method="post" id="registration_form">
-				<input type="hidden" id="return" name="return" value="">
-				<div class="form">
-					<div class="caption">Личные данные</div>
-					<table>
-						<tr>
-							<th>Имя</th>
-							<td>
-								<input type="text" name="personal_data[first_name]" value="Разработка"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Фамилия</th>
-							<td><input type="text" name="personal_data[last_name]" value="сайта"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Ваш электронный адрес</th>
-							<td><input type="text" style="color: gray;" value="7664683@gmail.com" disabled></span>
-							</td>
-						</tr>
-						<tr>
-							<th>Пароль</th>
-							<td><input type="password" name="personal_data[password]" value="">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-							</td>
-						</tr>
-						<tr>
-							<th>Подтверждение пароля</th>
-							<td><input type="password" name="personal_data[password_confirm]" value="">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-							</td>
-						</tr>
-					</table>
-					<div class="caption">Юридические реквизиты</div>
-					<table>
-						<tr>
-							<th>Название организации / ИП</th>
-							<td><input type="text" name="legal_details[name]" value="Название"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>УНП</th>
-							<td><input type="text" style="color: gray;" value="234445345" disabled></span>
-							</td>
-						</tr>
-						<tr>
-							<th>ФИО руководителя</th>
-							<td><input type="text" name="legal_details[head_name]" value="ФИО"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Населённый пункт</th>
-							<td>
-								<div id="title-search" class="bx_search_container">
-									<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
-									<div class="bx_field">
-										<input id="legal_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+			<div class="registrationForm">
+				<form action="/personal/profile/index.php" method="post" id="registration_form">
+					<input type="hidden" id="return" name="return" value="">
+					<div class="form">
+						<div class="caption">Личные данные</div>
+						<table>
+							<tr>
+								<th>Имя</th>
+								<td>
+									<input type="text" name="personal_data[first_name]" value="Разработка"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
 									</div>
-									<!-- </form> -->
-								</div>
-								<script>
-									BX.ready(function() {
-										new JCTitleSearch({
-											'AJAX_PAGE': '/personal/profile/',
-											'CONTAINER_ID': 'title-search',
-											'INPUT_ID': 'legal_address_np_id',
-											'MIN_QUERY_LEN': 2
-										});
-									});
-								</script>
-								<input type="hidden" id="legal_address_np" class="legal_address_np_id" name="legal_details[legal_address_np]" value="">
-								<input type="hidden" id="legal_address_name" name="legal_details[legal_address_name]" value="">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Адрес</th>
-							<td>
-								<input type="text" id="legal_address_index" placeholder="Индекс" style="width: 60px; " name="legal_details[legal_address_index]" value="">
-								<select id="legal_address_street_type" name="legal_details[legal_address_street_type]" style="width: 120px;"> </select>
-								<input type="text" id="legal_address_street" placeholder="Улица" style="width: 200px;" name="legal_details[legal_address_street]" value="">
-								<input type="text" id="legal_address_house" placeholder="Дом" style="width: 30px;" name="legal_details[legal_address_house]" value="">
-								<input type="text" id="legal_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="legal_details[legal_address_house_corpus]" value="">
-								<input type="text" id="legal_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="legal_details[legal_address_office_appart]" value="">
-								<span class="required">*</span>
-							</td>
-						</tr>
-					</table>
-					<div class="caption">Контактные реквизиты</div>
-					<table>
-						<tr>
-							<th>Контактное лицо (ФИО)</th>
-							<td><input type="text" name="contact_details[name]" value="ФИО"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Должность</th>
-							<td>
-								<input type="text" name="contact_details[post]" value="Должность"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Телефон/факс</th>
-							<td><input type="text" name="contact_details[phone]" value="232435"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Почтовый адрес</th>
-							<td>
-								<div id="title-search-2" class="bx_search_container">
-									<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
-									<div class="bx_field">
-										<input id="post_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+								</td>
+							</tr>
+							<tr>
+								<th>Фамилия</th>
+								<td><input type="text" name="personal_data[last_name]" value="сайта"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
 									</div>
-									<!-- </form> -->
-								</div>
-								<script>
-									BX.ready(function() {
-										new JCTitleSearch({
-											'AJAX_PAGE': '/personal/profile/',
-											'CONTAINER_ID': 'title-search-2',
-											'INPUT_ID': 'post_address_np_id',
-											'MIN_QUERY_LEN': 2
-										});
-									});
-								</script>
-								<input type="hidden" id="post_address_np" class="post_address_np_id" name="post_address[np]" value="">
-								<input type="hidden" id="post_address_name" name="post_address[name]" value="">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th></th>
-							<td>
-								<input type="text" id="post_address_index" placeholder="Индекс" style="width: 60px; " name="post_address[index]" value="">
-								<select id="post_address_street_type" name="post_address[street_type]" style="width: 120px;"> </select>
-								<input type="text" id="post_address_street" placeholder="Улица" style="width: 200px;" name="post_address[street]" value="">
-								<input type="text" id="post_address_house" placeholder="Дом" style="width: 30px;" name="post_address[house]" value="">
-								<input type="text" id="post_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="post_address[house_corpus]" value="">
-								<input type="text" id="post_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="post_address[office_appart]" value="">
-								<span class="required">*</span>
-								<div class="addressCheck" style="margin-bottom: 8px;">
-									<input type="checkbox" id="post_address_copy" onClick="copyAddr('post_address')">
-									<label for="post_address_copy">Почтовый адрес совпадает с юридическим</label>
-								</div>
-								</br>
-							</td>
-						</tr>
-						<tr>
-							<th>Адрес доставки</th>
-							<td>
-								<div id="title-search-3" class="bx_search_container">
-									<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
-									<div class="bx_field">
-										<input id="delivery_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+								</td>
+							</tr>
+							<tr>
+								<th>Ваш электронный адрес</th>
+								<td><input type="text" style="color: gray;" value="7664683@gmail.com" disabled></span>
+								</td>
+							</tr>
+							<tr>
+								<th>Пароль</th>
+								<td><input type="password" name="personal_data[password]" value="">
+									<div class="addressCheck error">
+										<span></span>
 									</div>
-									<!-- </form> -->
-								</div>
-								<script>
-									BX.ready(function() {
-										new JCTitleSearch({
-											'AJAX_PAGE': '/personal/profile/',
-											'CONTAINER_ID': 'title-search-3',
-											'INPUT_ID': 'delivery_address_np_id',
-											'MIN_QUERY_LEN': 2
+								</td>
+								</td>
+							</tr>
+							<tr>
+								<th>Подтверждение пароля</th>
+								<td><input type="password" name="personal_data[password_confirm]" value="">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+								</td>
+							</tr>
+						</table>
+						<div class="caption">Юридические реквизиты</div>
+						<table>
+							<tr>
+								<th>Название организации / ИП</th>
+								<td><input type="text" name="legal_details[name]" value="Название"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>УНП</th>
+								<td><input type="text" style="color: gray;" value="234445345" disabled></span>
+								</td>
+							</tr>
+							<tr>
+								<th>ФИО руководителя</th>
+								<td><input type="text" name="legal_details[head_name]" value="ФИО"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Населённый пункт</th>
+								<td>
+									<div id="title-search" class="bx_search_container">
+										<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
+										<div class="bx_field">
+											<input id="legal_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+										</div>
+										<!-- </form> -->
+									</div>
+									<script>
+										BX.ready(function() {
+											new JCTitleSearch({
+												'AJAX_PAGE': '/personal/profile/',
+												'CONTAINER_ID': 'title-search',
+												'INPUT_ID': 'legal_address_np_id',
+												'MIN_QUERY_LEN': 2
+											});
 										});
-									});
-								</script>
-								<input type="hidden" id="delivery_address_np" class="delivery_address_np_id" name="delivery_address[np]" value="">
-								<input type="hidden" id="delivery_address_name" name="delivery_address[name]" value="">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th></th>
-							<td>
-								<input type="text" id="delivery_address_index" class="delivery_address_np_id_next" placeholder="Индекс" style="width: 60px;" name="delivery_address[index]" value="">
-								<select id="delivery_address_street_type" name="delivery_address[street_type]" style="width: 120px;"> </select>
-								<input type="text" id="delivery_address_street" placeholder="Улица" style="width: 200px;" name="delivery_address[street]" value="">
-								<input type="text" id="delivery_address_house" placeholder="Дом" style="width: 30px;" name="delivery_address[house]" value="">
-								<input type="text" id="delivery_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="delivery_address[house_corpus]" value="">
-								<input type="text" id="delivery_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="delivery_address[office_appart]" value="">
-								<span class="required">*</span>
-								<div class="addressDetailCheck error">
-									<span></span>
-								</div>
-								<div class="addressCheck" style="margin-bottom: 8px;">
-									<input type="checkbox" id="delivery_address_copy" onClick="copyAddr('delivery_address')">
-									<label for="delivery_address_copy">Адрес доставки совпадает с юридическим</label>
-								</div>
-								</br>
-							</td>
-						</tr>
-					</table>
-					<div class="caption">Банковские реквизиты</div>
-					<table>
-						<tr>
-							<th>Расчетный счет (IBAN)</th>
-							<td><input type="text" name="banking_details[rs]" value="1234567890123">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Название банка</th>
-							<td><input type="text" name="banking_details[name]" value="Название">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Код банка (IBAN)</th>
-							<td><input type="text" name="banking_details[code]" value="123">
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-					</table>
-					<div class="caption">Сведения из Единого государственного реестра</div>
-					<table>
-						<tr>
-							<th>Регистрационный номер</th>
-							<td><input type="text" name="egr_details[number]" value="123457890"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Орган, осуществивший регистрацию</th>
-							<td><input type="text" name="egr_details[organ]" value="Орган"><span class="required">*</span>
-								<div class="addressCheck error">
-									<span></span>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th>Дата решения о гос. регистрации</th>
-							<td><input type="text" name="egr_details[date]" value="21.11.2019"><span class="required">*</span>
-							</td>
-						</tr>
-					</table>
-					<div class="caption">Дополнительная информация</div>
-					<table>
-						<tr>
-							<th>Цель приобретения</th>
-							<td>
-								<select style="color: gray;" disabled>
-							<option>Для собственного потребления</option>
-						</select>
-							</td>
-						</tr>
-						<tr>
-							<th>Выбор склада</th>
-							<td>
-								<select style="color: gray;" disabled>
-							<option>Минск + Центральный склад</option>
-						</select>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div style="font: 12px/14px Tahoma, sans-serif; float: right;">Поля, помеченные символом
-					<span style="font-weight: bold; color: #00519b;">*</span> являются обязательными для заполнения
-				</div>
-				<!--<div class="captcha">
-			<img src="i/captcha.jpg" alt=""><br>
-			Введите текст изображенный на картинке: <input type="text">
-		</div>-->
-				<div class="buttons">
-					<a href="javascript:void(0);" id="registration_btn" class="btn" onClick="submit_registration_form(); return false;">Сохранить</a>
-				</div>
-			</form>
+									</script>
+									<input type="hidden" id="legal_address_np" class="legal_address_np_id" name="legal_details[legal_address_np]" value="">
+									<input type="hidden" id="legal_address_name" name="legal_details[legal_address_name]" value="">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Адрес</th>
+								<td>
+									<input type="text" id="legal_address_index" placeholder="Индекс" style="width: 60px; " name="legal_details[legal_address_index]" value="">
+									<select id="legal_address_street_type" name="legal_details[legal_address_street_type]" style="width: 120px;"> </select>
+									<input type="text" id="legal_address_street" placeholder="Улица" style="width: 200px;" name="legal_details[legal_address_street]" value="">
+									<input type="text" id="legal_address_house" placeholder="Дом" style="width: 30px;" name="legal_details[legal_address_house]" value="">
+									<input type="text" id="legal_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="legal_details[legal_address_house_corpus]" value="">
+									<input type="text" id="legal_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="legal_details[legal_address_office_appart]" value="">
+									<span class="required">*</span>
+								</td>
+							</tr>
+						</table>
+						<div class="caption">Контактные реквизиты</div>
+						<table>
+							<tr>
+								<th>Контактное лицо (ФИО)</th>
+								<td><input type="text" name="contact_details[name]" value="ФИО"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Должность</th>
+								<td>
+									<input type="text" name="contact_details[post]" value="Должность"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Телефон/факс</th>
+								<td><input type="text" name="contact_details[phone]" value="232435"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Почтовый адрес</th>
+								<td>
+									<div id="title-search-2" class="bx_search_container">
+										<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
+										<div class="bx_field">
+											<input id="post_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+										</div>
+										<!-- </form> -->
+									</div>
+									<script>
+										BX.ready(function() {
+											new JCTitleSearch({
+												'AJAX_PAGE': '/personal/profile/',
+												'CONTAINER_ID': 'title-search-2',
+												'INPUT_ID': 'post_address_np_id',
+												'MIN_QUERY_LEN': 2
+											});
+										});
+									</script>
+									<input type="hidden" id="post_address_np" class="post_address_np_id" name="post_address[np]" value="">
+									<input type="hidden" id="post_address_name" name="post_address[name]" value="">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<input type="text" id="post_address_index" placeholder="Индекс" style="width: 60px; " name="post_address[index]" value="">
+									<select id="post_address_street_type" name="post_address[street_type]" style="width: 120px;"> </select>
+									<input type="text" id="post_address_street" placeholder="Улица" style="width: 200px;" name="post_address[street]" value="">
+									<input type="text" id="post_address_house" placeholder="Дом" style="width: 30px;" name="post_address[house]" value="">
+									<input type="text" id="post_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="post_address[house_corpus]" value="">
+									<input type="text" id="post_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="post_address[office_appart]" value="">
+									<span class="required">*</span>
+									<div class="addressCheck" style="margin-bottom: 8px;">
+										<input type="checkbox" id="post_address_copy" onClick="copyAddr('post_address')">
+										<label for="post_address_copy">Почтовый адрес совпадает с юридическим</label>
+									</div>
+									</br>
+								</td>
+							</tr>
+							<tr>
+								<th>Адрес доставки</th>
+								<td>
+									<div id="title-search-3" class="bx_search_container">
+										<!-- <form action="/search/index.php" name="search_title" id="search_title"> -->
+										<div class="bx_field">
+											<input id="delivery_address_np_id" type="text" placeholder="Введите название населённого пункта и выберите нужный из предложенного списка" name="q" value="" size="23" maxlength="50" autocomplete="off" class="bx_input_text" />
+										</div>
+										<!-- </form> -->
+									</div>
+									<script>
+										BX.ready(function() {
+											new JCTitleSearch({
+												'AJAX_PAGE': '/personal/profile/',
+												'CONTAINER_ID': 'title-search-3',
+												'INPUT_ID': 'delivery_address_np_id',
+												'MIN_QUERY_LEN': 2
+											});
+										});
+									</script>
+									<input type="hidden" id="delivery_address_np" class="delivery_address_np_id" name="delivery_address[np]" value="">
+									<input type="hidden" id="delivery_address_name" name="delivery_address[name]" value="">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<input type="text" id="delivery_address_index" class="delivery_address_np_id_next" placeholder="Индекс" style="width: 60px;" name="delivery_address[index]" value="">
+									<select id="delivery_address_street_type" name="delivery_address[street_type]" style="width: 120px;"> </select>
+									<input type="text" id="delivery_address_street" placeholder="Улица" style="width: 200px;" name="delivery_address[street]" value="">
+									<input type="text" id="delivery_address_house" placeholder="Дом" style="width: 30px;" name="delivery_address[house]" value="">
+									<input type="text" id="delivery_address_house_corpus" placeholder="Корпус" style="width: 50px;" name="delivery_address[house_corpus]" value="">
+									<input type="text" id="delivery_address_office_appart" placeholder="Офис/квартира" style="width: 100px;" name="delivery_address[office_appart]" value="">
+									<span class="required">*</span>
+									<div class="addressDetailCheck error">
+										<span></span>
+									</div>
+									<div class="addressCheck" style="margin-bottom: 8px;">
+										<input type="checkbox" id="delivery_address_copy" onClick="copyAddr('delivery_address')">
+										<label for="delivery_address_copy">Адрес доставки совпадает с юридическим</label>
+									</div>
+									</br>
+								</td>
+							</tr>
+						</table>
+						<div class="caption">Банковские реквизиты</div>
+						<table>
+							<tr>
+								<th>Расчетный счет (IBAN)</th>
+								<td><input type="text" name="banking_details[rs]" value="1234567890123">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Название банка</th>
+								<td><input type="text" name="banking_details[name]" value="Название">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Код банка (IBAN)</th>
+								<td><input type="text" name="banking_details[code]" value="123">
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="caption">Сведения из Единого государственного реестра</div>
+						<table>
+							<tr>
+								<th>Регистрационный номер</th>
+								<td><input type="text" name="egr_details[number]" value="123457890"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Орган, осуществивший регистрацию</th>
+								<td><input type="text" name="egr_details[organ]" value="Орган"><span class="required">*</span>
+									<div class="addressCheck error">
+										<span></span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>Дата решения о гос. регистрации</th>
+								<td><input type="text" name="egr_details[date]" value="21.11.2019"><span class="required">*</span>
+								</td>
+							</tr>
+						</table>
+						<div class="caption">Дополнительная информация</div>
+						<table>
+							<tr>
+								<th>Цель приобретения</th>
+								<td>
+									<select style="color: gray;" disabled>
+								<option>Для собственного потребления</option>
+							</select>
+								</td>
+							</tr>
+							<tr>
+								<th>Выбор склада</th>
+								<td>
+									<select style="color: gray;" disabled>
+								<option>Минск + Центральный склад</option>
+							</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div style="font: 12px/14px Tahoma, sans-serif; float: right;">Поля, помеченные символом
+						<span style="font-weight: bold; color: #00519b;">*</span> являются обязательными для заполнения
+					</div>
+					<!--<div class="captcha">
+				<img src="i/captcha.jpg" alt=""><br>
+				Введите текст изображенный на картинке: <input type="text">
+			</div>-->
+					<div class="buttons">
+						<a href="javascript:void(0);" id="registration_btn" class="btn" onClick="submit_registration_form(); return false;">Сохранить</a>
+					</div>
+				</form>
+			</div>
 			<script type="text/javascript">
 				var submit_registration_form = function() {
 					$('#legal_address_name').val($('#legal_address_np_id').val());

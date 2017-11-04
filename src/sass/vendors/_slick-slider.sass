@@ -3,33 +3,25 @@
 @import ../../libs/include-media/dist/include-media
 
 /* slick sliders
+.slick-slide
+	outline: none
+	box-sizing: border-box
+
+	.slick-track
+		margin: 0
+
 // arrows
 .slick-arrow
-	+size(40px)
+	+size(30px)
 	display: block
 	position: absolute
 	border: none
 	border-radius: 0
-	background: none
+	background: white
 	outline: none
 	box-shadow: none
 	opacity: 1
 	z-index: 6
-	transition-property: background, opacity, visibility
-	transition-duration: 0.2s
-
-	.no-touchevents &:hover
-		opacity: 1
-		background: #e6e6e6
-
-	&.slick-disabled, .no-touchevents &.slick-disabled
-		opacity: 0.25
-		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25)
-		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25)
-		cursor: default
-
-		&::before
-			opacity: 1
 
 	&::before
 		content: none
@@ -38,34 +30,54 @@
 		top: 50%
 		content: ""
 		position: absolute
+		+size(12px)
+		+margin-horizontal(-3px)
+		margin-top: -6px
+		transform: rotate(45deg)
+		border: 1px solid #00519b
+		box-sizing: border-box
 		opacity: 1
 		pointer-events: none
-		+size(12px)
-		transform: rotate(45deg)
-		border: 0 solid #000
+
+.slick-next, .slick-prev
+	&:focus,
+	&:hover
+		background-color: white
+
+	&.slick-disabled
+		opacity: 0.25
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25)
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25)
+		cursor: default
+
+		&::before
+			opacity: 1
+
 
 .slick-prev
 	left: 0
 
 	&::after
 		left: 50%
-		border-width: 0 0 2px 2px
-		margin: -6px 0 0 -4px
+		border-top: none
+		border-right: none
+		margin-right: 0
 
 .slick-next
 	right: 0
 
 	&::after
 		right: 50%
-		border-width: 2px 2px 0 0
-		margin: -6px -4px 0 0
+		border-bottom: none
+		border-left: none
+		margin-left: 0
 
 // dots
 .slick-dots
 	margin: 0
 	line-height: 0
 
-	.#{$user-content} &
+	.content &, &
 		margin: 0
 		max-width: none
 
@@ -75,39 +87,22 @@
 		height: auto
 		margin: 0
 
-		&, .#{$user-content} &
-			padding: 4px 10px
+		&, .content &
+			padding: 4px 7px
 			margin: 0
+			background: none
+
+		button
+			+size(8px)
+			padding: 0
+			border-radius: 0
+			position: relative
+			background: white
 
 			&::before
 				content: none
 
-		button
-			width: 12px
-			height: 12px
-			padding: 0
-			border-radius: 50%
-			background: $base-color
-			position: relative
-			transition-property: background, border, box-shadow, transform
-			transition-duration: 0.6s
+		&.slick-active button
+			background-color: $base-color-alt
 
-			&::before
-				content: ''
-				position: absolute
-				left: 2px
-				top: 2px
-				height: 8px
-				width: 8px
-				background: #fff
-				border-radius: 50%
-				opacity: 1
-				box-shadow: 0 2px 3px rgba(0, 0, 0, 0.20)
-				transition-property: transform, opacity
-				transition-duration: $animation-speed
-
-		&.slick-active button::before
-			opacity: 0
-
-//.no-touchevents &:hover button::before
 /* slick sliders end

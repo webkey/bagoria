@@ -97,7 +97,7 @@ gulp.task('copyLibsScriptsToJs', ['copyJqueryToJs'], function () { // Таск �
 		// , 'src/libs/select2/dist/js/select2.full.min.js' // кастомный селект
 		// , 'src/libs/select2/dist/js/i18n/ru.js' // локализация для кастомного селекта
 		// , 'src/js/temp/filer.min.js' // инпут файл
-		// , 'src/libs/slick-carousel/slick/slick.min.js' // slick slider
+		, 'src/libs/slick-carousel/slick/slick.min.js' // slick slider
 		// , 'node_modules/object-fit-images/dist/ofi.min.js' // object-fit fix for a non-support browsers
 	])
 		.pipe(concat('libs.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -120,6 +120,10 @@ gulp.task('browserSync', function (done) { // Таск browserSync
 	browserSync.init({
 		server: {
 			baseDir: "./src"
+		},
+		port: 3000,
+		ui: {
+			port: 3000
 		},
 		notify: false // Отключаем уведомления
 	});

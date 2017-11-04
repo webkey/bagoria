@@ -19,7 +19,7 @@ gulp.task('changePath', function () {
 	])
 	.pipe(sassVariables({
 		'$slick-font-path': '../fonts/slick/',
-		'$slick-loader-path': '../img/'
+		'$slick-loader-path': '../i/'
 	}))
 	.pipe(sass())
 	.pipe(gulp.dest('src/css/temp')); // Выгружаем в папку src/css
@@ -37,7 +37,7 @@ gulp.task('copyFilesFromLibs', function () {
 	gulp.src([
 		'src/libs/slick-carousel/slick/ajax-loader.gif'
 	])
-	.pipe(gulp.dest('src/img'));
+	.pipe(gulp.dest('src/i'));
 
 	// add classList.js for ie 9 and older
 	gulp.src([

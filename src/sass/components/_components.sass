@@ -2,9 +2,79 @@
 @import ../utils/mixins
 @import ../../libs/include-media/dist/include-media
 
+/* reset
++media('<tab-lg')
+	a, input, button,
+	a:focus, input:focus, button:focus
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important
+		-webkit-focus-ring-color: rgba(255, 255, 255, 0) !important
+		outline: none !important
+	*:focus
+		outline: none
+		-moz-outline: 3px solid white !important
+	body
+		-webkit-font-smoothing: antialiased
+	body, html
+		height: 100%
+		width: 100%
+	select[disabled]
+		cursor: default
+	form
+		margin: 0
+		padding: 0
+	input
+		vertical-align: middle
+	textarea, .select select, input[type="text"], input[type="email"], input[type="search"], input[type="submit"], input[type="button"], input[type="reset"], button
+		-webkit-appearance: none
+		-moz-appearance: none
+		border-radius: 0
+	select::-ms-expand
+		display: none
+	input[type=radio], input[type=checkbox], select
+		cursor: pointer
+	textarea, input, button
+		-webkit-appearance: none
+		border-radius: 0
+	input[type="radio"]:focus
+		-moz-outline-radius: 12px !important
+		-moz-outline-offset: 0 !important
+	input[type="checkbox"]:focus
+		-moz-outline-offset: -1px !important
+		-moz-outline: 1px solid #000 !important
+	input::-ms-clear
+		display: none
+	blockquote, q
+		quotes: none
+	blockquote::before, blockquote::after, q::before, q::after
+		content: none
+	ins
+		text-decoration: none
+	del
+		text-decoration: line-through
+	fieldset
+		border: none
+		margin: 0
+		padding: 0
+	table
+		border: 0
+		width: 100%
+		padding: 0
+		margin: 0
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+	*, *::after, *::before
+		box-sizing: border-box
+
+/* reset end
 /* layout
 body, .wrapper
 	min-width: 320px
+
+.wrapper
+	+media('<tab-lg')
+		background: $bg-color-base
 
 html
 	&.menu-is-open
@@ -587,7 +657,8 @@ a.btn
 			text-shadow: none
 
 		&.callme,
-		&#callme
+		&#callme,
+		&.callme-js
 			+media('<tab-lg')
 				cursor: pointer
 				background: #4caf50
@@ -850,6 +921,10 @@ ul.slides .text
 	width: auto
 	max-width: 600px
 
+ul.slides
+	+media('<tab-md')
+		display: none
+
 ol.pagination
 	position: absolute
 	left: 0
@@ -986,7 +1061,7 @@ a.mark
 			padding-left: 5px
 
 	+media('<tab-lg')
-		margin: 0 -#{$layout-space--lg}
+		margin: 0 -#{$layout-space--lg} -#{$layout-space--lg}
 
 		.advantages-title
 			+padding-horizontal($layout-space--lg)
@@ -1055,7 +1130,7 @@ a.mark
 
 	+media('<mob-lg')
 		padding: floor($layout-space--sm*0.85) $layout-space--sm
-		margin: 0 -#{$layout-space--sm}
+		margin: 0 -#{$layout-space--sm} -#{$layout-space--sm}
 
 		.advantages-title
 			+font($font-size-h2--sm, $line-height-h2--sm)
@@ -1096,10 +1171,10 @@ a.mark
 .callback-mob
 	display: none
 
-	+media('<tab-lg')
-		display: block
-
 .callback
+	.sidebar &
+		display: none
+
 	+media('<tab-lg')
 		padding: $layout-space-v--lg $layout-space--lg $layout-space--lg
 		+margin-horizontal(-#{$layout-space--lg})
@@ -1109,6 +1184,16 @@ a.mark
 
 		&:last-child, .services + &
 			margin-bottom: -#{$layout-space--lg}
+
+		display: none
+
+		.sidebar &
+			background-color: $bg-color-base
+			+margin-horizontal(0)
+			display: block
+
+		&.callback-mob
+			display: block
 
 	+media('<mob-lg')
 		padding: $layout-space-v--sm $layout-space--sm $layout-space--sm
@@ -1226,13 +1311,27 @@ a.mark
 /* sidebar end
 
 /* news
+.moreLink-mob
+	display: none
+	+font(14px, round-float(20/14, 2))
+	letter-spacing: normal
+	margin: 0 0 $bottom-space
+	padding-left: round($grid-space--lg/2)
+
+	&::before
+		+pseudo-inline-block("|")
+		padding-right: round($grid-space--lg/2)
+
 .news, .news.extra
+	position: relative
+
 	+media('<tab-lg')
 		padding: $layout-space-v--lg $layout-space--lg round($layout-space--lg*0.5)
 		+clear
 		+clear-spacing
 
 		.title
+			+display-inline-block-top
 			clear: both
 			//float: left
 			//width: 100%
@@ -1269,10 +1368,10 @@ a.mark
 				margin-bottom: $bottom-space--sm
 
 		a.moreLink
+			display: none
+
+		a.moreLink-mob
 			+display-inline-block-top
-			+font(14px, round-float(20/14, 2))
-			letter-spacing: normal
-			margin: 0 0 $bottom-space
 
 	+media('<tab-lg')
 		article, & .extraLink

@@ -1,0 +1,86 @@
+@import ../utils/variables
+@import ../utils/mixins
+@import ../../libs/include-media/dist/include-media
+
+/* news slider
+
+.news-slider-theme
+	+media('<tab-lg')
+		position: static
+		// before slide load
+		white-space: nowrap
+		overflow: hidden
+		// before slide load end
+
+		.slick-slide
+			// before slide load
+			float: none
+			+display-inline-block-top
+			// before slide load end
+
+		&.slick-initialized, .no-js &
+			// after slide load
+			white-space: normal
+			//overflow: visible
+			// after slide load end
+
+			.slick-slide
+				// after slide load
+				float: left
+				display: block
+				// after slide load end
+
+		.slick-track
+			margin: 0
+
+		&, &.slick-dotted
+			margin-bottom: 0
+
+			.slick-list
+				margin: 0 -#{round($grid-space--lg/2)} 0
+
+				.slick-slide
+					padding: 0 round($grid-space--lg/2)
+
+		.slick-dots
+			position: relative
+			bottom: auto
+			padding: 14px 0 24px
+
+		.slick-list + .slick-dots // костыль для удаления пагинации если мало слайдов. Работает только, если включены стрелки
+			display: none
+
+		.slick-next, .slick-prev
+			top: auto
+			bottom: 30px
+			margin: 0
+			transform: translateY(0)
+
+/* news slider end
+
+/* news (if slider)
+.news
+	+media('>=tab-lg')
+		.slick-slider
+			white-space: normal
+			overflow: visible
+			margin: 0
+
+		.slick-prev, .slick-next, .slick-dots
+			display: none !important
+
+		.slick-track
+			left: auto
+			top: auto
+			margin: 0
+			opacity: 1 !important
+			width: auto !important
+			transform: translate3d(0px, 0px, 0px) !important
+
+		.slick-slide
+			float: none
+			display: block
+			width: auto !important
+			height: auto !important
+
+/* news (if slider) end

@@ -2687,6 +2687,97 @@ $(function () {
 	}
 
 	filtersTab();
+
+	/**
+	 * !Initial sliders on the project
+	 * */
+	function slidersInit() {
+		/*news slider*/
+		var $newsSlider = $('.news-slider-js');
+
+		if ($newsSlider.length) {
+
+			$newsSlider.each(function () {
+				var $currentSlider = $(this);
+				var dur = 200;
+
+				$currentSlider.on('init', function (event, el) {
+					$(el.$slides).matchHeight({
+						byRow: true, property: 'height', target: null, remove: false
+					});
+				}).slick({
+					fade: false,
+					speed: dur,
+					slidesToShow: 4,
+					slidesToScroll: 4,
+					// autoplay: true,
+					// autoplaySpeed: 5000,
+					// initialSlide: 2,
+					// lazyLoad: 'ondemand',
+					infinite: true,
+					dots: true,
+					arrows: true,
+
+					draggable: false,
+					swipe: false,
+					touchMove: false,
+					accessibility: false,
+
+					responsive: [
+						// {
+						// 	breakpoint: 320,
+						// 	settings: "unslick"
+						// },
+						{
+							breakpoint: 1024,
+							settings: {
+								draggable: true,
+								swipe: true,
+								touchMove: true,
+								accessibility: true
+							}
+						},
+						{
+							breakpoint: 960,
+							settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3,
+								draggable: true,
+								swipe: true,
+								touchMove: true,
+								accessibility: true
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2,
+								draggable: true,
+								swipe: true,
+								touchMove: true,
+								accessibility: true
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1,
+								draggable: true,
+								swipe: true,
+								touchMove: true,
+								accessibility: true
+							}
+						}
+					]
+				});
+
+			});
+		}
+	}
+
+	slidersInit();
 });
 
 /* add for mobile end */

@@ -4556,7 +4556,7 @@
 					<a href="#">легковых шин</a>, <a href="#">дисков</a> и <a href="#">аккумуляторов</a>.</p>
 			</div>
 			<div class="callbackbtn">
-				<a id="orderme" class="btn callme">Оформить заказ</a>
+				<a id="orderme" class="btn callme order-js">Оформить заказ</a>
 			</div>
 		</div>
 		<div class="dm-overlay" id="wino">
@@ -4601,7 +4601,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			$('#orderme').click(function () {
+			$('.order-js').click(function () {
 				$('#wino').show();
 			});
 			$(document).mouseup(function (e) {
@@ -4638,7 +4638,7 @@
 			<div class="callback-title">Профессиональная техническая консультация</div>
 			<div class="callback-text">Наши специалисты помогут вам сделать правильный выбор шин мировых брендов, ответят на все вопросы, связанные с работой онлайн-сервиса СООО "Багория", предоставят всю необходимую информацию для оформления заказа.</div>
 			<div class="callbackbtn">
-				<a id="callme" class="btn" onclick="yaCounter24544484.reachGoal('callback_start'); return true;">Заказать звонок</a>
+				<a class="btn callme-js" onclick="yaCounter24544484.reachGoal('callback_start'); return true;">Заказать звонок</a>
 			</div>
 		</div>
 		<div class="dm-overlay" id="win1">
@@ -4682,16 +4682,6 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript">
-			$('#callme').click(function () {
-				$('#win1').show();
-			});
-			$(document).mouseup(function (e) {
-				if ($(e.target).closest("#dm-modal").length) return;
-				$('#win1').hide();
-				e.stopPropagation();
-			});
-		</script>
 
 
 		<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
@@ -4699,29 +4689,64 @@
 	<aside class="sidebar">
 		<div class="news extra">
 			<div class="title">Рекомендации по выбору</div>
-			<div class="extraLink"><a href="/gruzovye-shiny/">Грузовые шины</a></div>
-			<div class="extraLink">
-				<a href="/industrialnye-i-selskokhozyaystvennye-shiny/">Сельскохозяйственные и идустриальные шины</a>
+			<!--new-->
+			<div class="news-list news-slider-js news-slider-theme">
+				<div class="extraLink">
+					<a href="#">Грузовые шины</a>
+				</div>
+				<div class="extraLink">
+					<a href="#">Сельскохозяйственные и идустриальные шины</a>
+				</div>
+				<div class="extraLink">
+					<a href="#">Камеры и ободные ленты для грузовиков</a>
+				</div>
+				<div class="extraLink">
+					<a href="#">Наши специалисты помогут вам сделать правильный выбор шин мировых брендов, ответят на все вопросы, связанные с работой онлайн-сервиса</a>
+				</div>
 			</div>
-			<div class="extraLink"><a href="/gruzovye-kamery/">Камеры и ободные ленты для грузовиков</a></div>
+			<!--new end-->
 		</div>
+
+		<div class="callback">
+			<div class="callback-title">Профессиональная техническая консультация</div>
+			<div class="callback-text">Наши специалисты помогут вам сделать правильный выбор шин мировых брендов, ответят на все вопросы, связанные с работой онлайн-сервиса СООО "Багория", предоставят всю необходимую информацию для оформления заказа.</div>
+			<div class="callbackbtn">
+				<a class="btn callme-js" onclick="yaCounter24544484.reachGoal('callback_start'); return true;">Заказать звонок</a>
+			</div>
+		</div>
+
 		<div class="news">
+			<!--new-->
 			<div class="title">Новости</div>
-			<article>
-				<time datetime="2017-06-01">01 июня</time>
-				<a href="/news/892907">Белагро-2017</a>
-			</article>
-			<article>
-				<time datetime="2017-03-28">28 марта</time>
-				<a href="/news/838707">Шины Trelleborg</a>
-			</article>
-			<article>
-				<time datetime="2016-11-22">22 ноября</time>
-				<a href="/news/758187">Новое поступление цельнолитых шин KABAT</a>
-			</article>
+			<a href="/news/" class="moreLink moreLink-mob">Все новости</a> <!--mob-->
+			<div class="news-list news-slider-js news-slider-theme">
+				<article>
+					<time datetime="2017-06-01">01 июня</time>
+					<a href="/news/892907">Белагро-2017</a>
+				</article>
+				<article>
+					<time datetime="2017-03-28">28 марта</time>
+					<a href="/news/838707">Шины Trelleborg</a>
+				</article>
+				<article>
+					<time datetime="2016-11-22">22 ноября</time>
+					<a href="/news/758187">Новое поступление цельнолитых шин KABAT</a>
+				</article>
+			</div>
 			<a href="/news/" class="moreLink">Все новости</a>
+			<!--new end-->
 		</div>
 	</aside>
 	<input type="hidden" class="user_store" value="1">
+	<script type="text/javascript">
+		$('.callme-js').click(function () {
+			$('#win1').show();
+		});
+		$(document).mouseup(function (e) {
+			if ($(e.target).closest("#dm-modal").length) return;
+			$('#win1').hide();
+			e.stopPropagation();
+		});
+	</script>
 
 @@include('_tpl_layout_foot.html')

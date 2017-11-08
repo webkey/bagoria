@@ -1,0 +1,86 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Багория. История компании",
+	"pageClass": "inside floatSidebar"
+})
+
+	@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		@@include('_tpl_layout_catalog-menu.html', {"noCategory": true})
+
+		<div id="breadcrumb" class="breadcrumbs pleft">
+			<a href="/">Главная</a> » <a href="/about/">О компании</a> » <span>История компании</span>
+		</div>
+
+		<h1>История компании</h1>
+
+		<div class="timeline-block">
+			<div class="timeline-border"></div>
+			<div class="timeline-border-entry">
+				<div class="entry-timeline">
+					<span>2001</span>
+					<div class="timeline-divider"></div>
+				</div>
+				<div class="entry-title">
+					<h2>Основание компании СООО "Багория"</h2>
+				</div>
+				<div class="entry-content">
+					<p>Воплощение идеи о представительстве ведущих мировых производителей шин на территории Республики Беларусь.</p>
+				</div>
+			</div>
+			<div class="timeline-border-entry">
+				<div class="entry-timeline">
+					<span>2004</span>
+					<div class="timeline-divider"></div>
+				</div>
+				<div class="entry-title">
+					<h2>Создание корпоративного сайта</h2>
+				</div>
+				<div class="entry-content">
+					<p>Создание корпоративного сайта, позволяющего клиентам быстро и удобно проверять наличие товара на складе в Республике Беларусь.</p>
+				</div>
+			</div>
+			<div class="timeline-border-entry">
+				<div class="entry-timeline">
+					<span>2007</span>
+					<div class="timeline-divider"></div>
+				</div>
+				<div class="entry-title">
+					<h2>Расширение штата компании</h2>
+				</div>
+				<div class="entry-content">
+					<p>В компании работает более 100 квалифицированных сотрудников.</p>
+				</div>
+			</div>
+			<div class="timeline-border-entry">
+				<div class="entry-timeline">
+					<span>2008</span>
+					<div class="timeline-divider"></div>
+				</div>
+				<div class="entry-title">
+					<h2>Строительство центрального склада</h2>
+				</div>
+				<div class="entry-content">
+					<p>Строительство центрального склада в Беларуси, общей площадью более 5 000 кв.м.</p>
+				</div>
+			</div>
+			<div class="timeline-border-entry">
+				<div class="entry-timeline">
+					<span>2013</span>
+					<div class="timeline-divider"></div>
+				</div>
+				<div class="entry-title">
+					<h2>Отдел по работе с корпоративными клиентами</h2>
+				</div>
+				<div class="entry-content">
+					<p>Расширение отдела по работе с корпоративными клиентами.</p>
+				</div>
+			</div>
+		</div>
+
+		<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
+	</section>
+
+@@include('_tpl_layout_sidebar.html')
+
+@@include('_tpl_layout_foot.html')

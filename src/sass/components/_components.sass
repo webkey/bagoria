@@ -33,7 +33,7 @@
 	input[type=radio], input[type=checkbox], select
 		cursor: pointer
 	textarea, input, button
-		-webkit-appearance: none
+		//-webkit-appearance: none
 		border-radius: 0
 	input[type="radio"]:focus
 		-moz-outline-radius: 12px !important
@@ -64,8 +64,14 @@
 		list-style: none
 		padding: 0
 		margin: 0
-	*, *::after, *::before
-		box-sizing: border-box
+	img
+		border: none
+		vertical-align: top
+		max-width: 100%
+		height: auto
+
+		table &
+			max-width: none
 
 /* reset end
 /* layout
@@ -73,8 +79,9 @@ body, .wrapper
 	min-width: 320px
 
 .wrapper
-	+media('<tab-lg')
-		background: $bg-color-base
+	&, .inside &
+		+media('<tab-lg')
+			background: $bg-color-base
 
 html
 	&.menu-is-open
@@ -115,7 +122,7 @@ html
 		+padding-horizontal(9px)
 		font-size: 12px
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="password"]
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea
 	+media('<tab-lg')
 		width: 100%
 		display: block
@@ -136,6 +143,12 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
 	+media('<mob-lg')
 		+padding-horizontal(12px)
 		font-size: 12px
+
+textarea
+	+media('<tab-lg')
+		height: 118px
+		max-height: 118px
+		resize: none
 
 /* layout end
 
@@ -280,7 +293,7 @@ ul.topNav
 	&.is-open
 		background-image: url(../../i/arr_up_white.svg)
 
-	.has-drop > &
+	.topNav-mob .has-drop > &
 		display: block
 
 .nav-mob-foot
@@ -628,7 +641,7 @@ a.cardLink
 /* button close menu end
 
 /* button
-a.btn
+a.btn, .btn
 	+media('<tab-lg')
 		&
 			+display-inline-block-top
@@ -637,24 +650,31 @@ a.btn
 			+font-alt-light
 			+font(14px, 24px)
 			color: white
+			white-space: nowrap
 			text-transform: uppercase
 			border-radius: 0
 			text-shadow: none
 			box-shadow: none
 			border: none
 			box-sizing: border-box
+			cursor: pointer
+			background-color: #00a6eb
 
 		&:hover
 			box-shadow: none
 			text-shadow: none
+			background-color: #003b71
 
 		&:active
 			box-shadow: none
 			text-shadow: none
+			background-color: #003b71
+			color: $base-color-alt
 
 		&.disabled
 			box-shadow: none
 			text-shadow: none
+			cursor: default
 
 		&.callme,
 		&#callme,
@@ -735,20 +755,25 @@ a.cartBtn
 			box-shadow: none
 			text-shadow: none
 
-.go_back_to_hell, .clearLink
+.go_back_to_hell, .clearLink, .btn-clear
 	+media('<tab-lg')
 		+display-inline-block-top
 		text-align: center
 		padding: 8px 20px
 		+font-alt-norm
 		+font(14px, 24px)
-		color: white
+		color: $text-color
 		text-transform: none
 		border-radius: 0
 		text-shadow: none
 		box-shadow: none
 		border: none
 		box-sizing: border-box
+		cursor: pointer
+		background: #efefef
+
+		&.disabled
+			cursor: default
 
 .clearLink
 	+media('<tab-lg')
@@ -948,9 +973,24 @@ ol.pagination
 
 /* location
 
+.vote, .location
+	.floatSidebar &
+		display: block
+
+	.location-none &
+		display: none
+
+.news, .vote, .location
+	+media('<1025px')
+		.floatSidebar &
+			display: none
+
 .location
 	+media('<desk-sm')
 		background-position-x: 100%
+
+		.sidebar &
+			background-image: none
 
 	.main
 		em
@@ -1210,22 +1250,30 @@ a.mark
 /* content
 .content
 	+media('<tab-lg')
+		//+display-inline-block-top // clear layout
+		//width: 100%
 		float: none
 		width: auto
 		//padding: 0
 		background-color: $bg-color-base
+		box-sizing: border-box
 
 		padding: $layout-space-v--lg $layout-space--lg $layout-space--lg
 
-		+media('<mob-lg')
-			padding: $layout-space-v--sm $layout-space--sm $layout-space--sm
+	+media('<mob-lg')
+		padding: $layout-space-v--sm $layout-space--sm $layout-space--sm
 
 	h1
 		+media('<tab-lg')
 			margin-bottom: $bottom-space--md
 
 		+media('<mob-lg')
-			+font(24px, 36px)
+			+font($font-size-h1--sm, $line-height-h1--sm)
+
+	h2
+
+		+media('<mob-lg')
+			+font($font-size-h2--sm, $line-height-h2--sm)
 
 /* content end
 
@@ -1258,6 +1306,8 @@ a.mark
 		width: auto
 
 	.floatSidebar &
+		+media('<1025px')
+			box-shadow: none
 
 		+media('<tab-lg')
 			top: $header-height--lg + $narrowScreenNav-height
@@ -3100,3 +3150,161 @@ ul.paging
 
 
 /* currentDiscount end
+
+/* timeline-block
+$timeline-block-space--sm: 60px
+$timeline-block-size--sm: 44px
+
+.timeline-block
+	+media('<mob-lg')
+		padding-left: $timeline-block-space--sm
+
+.timeline-border-entry
+	+media('<mob-lg')
+		margin-bottom: $bottom-space
+		padding-bottom: $bottom-space
+
+.entry-timeline
+	+media('<mob-lg')
+		left: -#{$timeline-block-space--sm}
+		top: 10px
+		+size($timeline-block-size--sm)
+		font-size: 18px
+		transition: none
+
+		span
+			margin-top: 13px
+
+.timeline-border
+	+media('<mob-lg')
+		left: 25px
+
+.timeline-divider
+	+media('<mob-lg')
+		left: 47px
+		top: 21px
+		width: 12px
+
+.entry-title
+	+media('<mob-lg')
+		padding-top: 10px
+
+		h2
+			font-size: $font-size-h3--sm
+			line-height: $line-height-h3--sm
+
+/* timeline-block end
+
+/* more_photo
+.more_photos
+	+clear
+	+clear-spacing
+
+	+media('<tab-lg')
+		box-sizing: border-box
+		+margin-horizontal(-#{round($grid-space--lg/2)})
+
+	+media('<mob-md')
+		+margin-horizontal(-#{round($grid-space--sm/2)})
+
+.more_photo
+	+media('<tab-lg')
+		float: none
+		+display-inline-block-top
+		+font($font-size, $line-height)
+		letter-spacing: normal
+		width: 25%
+		margin-right: 0
+		padding: 0 round($grid-space--lg/2) $grid-space--lg
+		box-sizing: border-box
+
+		a
+			display: block
+
+		img
+			width: auto
+
+	+media('<tab-md')
+		width: 33.3%
+
+	+media('<mob-md')
+		width: 50.0%
+		padding: 0 round($grid-space--sm/2) $grid-space--sm
+
+/* more_photo end
+
+/* aboutCompany
+ul.aboutCompany
+	+media('<tab-lg')
+		+clear-spacing
+		float: none
+		width: auto
+		text-align: center
+
+		&, & *
+			box-sizing: border-box
+
+		&, .content &
+			margin: 0 -#{round($grid-space--lg/2)} $bottom-space
+
+			li
+				padding: 0 round($grid-space--lg/2) $grid-space--lg
+				margin: 0
+
+		li, .noBack
+			float: none
+			+display-inline-block-top
+			+font($font-size, $line-height)
+			letter-spacing: normal
+
+		img
+			width: auto
+			height: auto
+			+push-auto
+
+	+media('<mob-lg')
+		li, .noBack
+			width: 33.3%
+
+	+media('<mob-md')
+		li, .noBack
+			width: 50%
+
+/* aboutCompany end
+
+/* form-table
+.form-table
+	+media('<tab-lg')
+		td, th
+			+font($font-size--sm, $line-height--sm)
+			border-color: $border-color
+
+		tr:nth-child(2n+1) td
+			$border-color: #d2dbe4
+			border-left-color: $border-color
+			border-right-color: $border-color
+
+	+media('<mob-lg')
+		display: block
+
+		tbody, thead, tfoot, tr, td, th
+			display: block
+
+		tr
+			margin-bottom: $bottom-space
+
+		td, th
+			border-width: 0 1px 1px
+
+		tr:nth-child(2n+1) td
+			background-color: $bg-color-base
+			border-color: $border-color
+
+		td, th
+			&:first-child
+				border-top-width: 1px
+
+/* form-table end
+
+.hidden_protection
+	display: none !important

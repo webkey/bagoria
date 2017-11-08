@@ -5,109 +5,21 @@
 		<div class="logo" title="Оптовый поставщик шин и дисков в РБ. Купить автомобильные шины по безналу в Минске" alt="Шины. Диски. Аккумуляторы - СООО «Багория»">Багория</div>
 	</a>
 
-	<ul class="topNav">
-		<li>
-			<a href="/about/">О компании</a>
-
-			<ul>
-				<li>
-					<a href="/about/history/">История</a>
-				</li>
-				<li>
-					<a href="/about/gallery/">Фотогалерея</a>
-				</li>
-				<li>
-					<a href="/about/brands/">Бренды</a>
-				</li>
-				<li>
-					<a href="/about/vakansii/">Вакансии</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<a href="/oformit-zakaz/">Оформить заказ</a>
-		</li>
-		<li>
-			<a href="/info/">Информация</a>
-
-			<ul>
-				<li>
-					<a href="/info/order/">Система заказа</a>
-				</li>
-				<li>
-					<a href="/info/catalog/">Каталоги</a>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<a href="/news/">Новости</a>
-		</li>
-		<li>
-			<a href="/contacts/">Контакты</a>
-
-			<ul>
-				<li>
-					<a href="/contacts/feedback">Обратная связь</a>
-				</li>
-			</ul>
-		</li>
-	</ul>
+	@@include("_tpl_nav.html", {
+	"class": "topNav"
+	})
 
 	<!--for mob-->
+
 	<div class="nav-mob main-menu-js">
 		<div class="nav-mob-head">
 			<a href="#" class="btn-close btn-menu-close-js"><span>Close</span></a>
 		</div>
-		<ul class="topNav-mob top-nav-mob-js">
-			<li class="has-drop">
-				<a href="/about/">О компании</a>
-				<i class="topNav-angle opener-drop-js is-open"></i>
 
-				<ul>
-					<li>
-						<a href="/about/history/">История</a>
-					</li>
-					<li class="current">
-						<a href="/about/gallery/">Фотогалерея</a>
-					</li>
-					<li>
-						<a href="/about/brands/">Бренды</a>
-					</li>
-					<li>
-						<a href="/about/vakansii/">Вакансии</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="/oformit-zakaz/">Оформить заказ</a>
-			</li>
-			<li class="has-drop">
-				<a href="/info/">Информация</a>
-				<i class="topNav-angle opener-drop-js"></i>
+		@@include("_tpl_nav.html", {
+		"class": "topNav-mob top-nav-mob-js"
+		})
 
-				<ul>
-					<li>
-						<a href="/info/order/">Система заказа</a>
-					</li>
-					<li>
-						<a href="/info/catalog/">Каталоги</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="/news/">Новости</a>
-			</li>
-			<li class="has-drop">
-				<a href="/contacts/">Контакты</a>
-				<i class="topNav-angle opener-drop-js"></i>
-
-				<ul>
-					<li>
-						<a href="/contacts/feedback">Обратная связь</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
 		<div class="nav-mob-foot">
 			<h4>Центральный офис</h4>
 			<ul class="cont-list">

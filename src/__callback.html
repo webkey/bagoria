@@ -1,0 +1,72 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Багория. Обратная связь",
+	"pageClass": "inside floatSidebar"
+})
+
+	@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		@@include('_tpl_layout_catalog-menu.html', {"noCategory": true})
+
+		<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <a href="/contacts/">Контакты</a> &raquo; <span>Обратная связь</span></div>
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				$('#UUID-546c8ba16835f').on('change keyup',function(){
+					if(!$(this).length)
+						$(this).val('');
+				});
+			}); //END Ready
+		</script>
+		<div class="api-feedback tpl_white_grey" style="text-align:left;">
+			<h1 style="">Обратная связь</h1>
+			<form action="/contacts/feedback/" method="POST" enctype="multipart/form-data" name="api_feedback_form" id="546c8ba16835f">
+			<input type="hidden" name="sessid" id="sessid" value="3f39e72d14c4622e84b985d2f8f04a76" />		<input type="hidden" name="UNIQUE_FORM_ID" value="546c8ba16835f" />
+			<input type="text" class="hidden_protection" name="HIDDEN[NAME]" value="" />
+			<input type="text" class="hidden_protection" name="HIDDEN[EMAIL]" value="" />
+			<input type="text" class="hidden_protection" name="hidden_protection" value="" />
+			<div class="tpl_white_grey_author_fio" style="overflow:hidden;padding:5px;">
+				<label style="display: block;min-width:175px;margin-bottom: 3px;float:left;">ФИО:
+					<span class="asterisk"> *</span>
+				</label>
+				<input style="min-width:220px;padding:3px 5px;" type="text" value="" name="author_fio"
+						class="required" />
+			</div>
+			<div class="tpl_white_grey_author_email" style="overflow:hidden;padding:5px;">
+				<label style="display: block;min-width:175px;margin-bottom: 3px;float:left;">E-mail:
+					<span class="asterisk"> *</span>
+				</label>
+				<input style="min-width:220px;padding:3px 5px;" type="text" value="" name="author_email"
+						class="required" />
+			</div>
+			<div class="tpl_white_grey_author_personal_mobile" style="overflow:hidden;padding:5px;">
+				<label style="display: block;min-width:175px;margin-bottom: 3px;float:left;">Контактный телефон:
+					<span class="asterisk"> *</span>
+				</label>
+				<input style="min-width:220px;padding:3px 5px;" type="text" value="" name="author_personal_mobile"
+						class="required" />
+			</div>
+			<div class="tpl_white_grey_author_message_theme" style="overflow:hidden;padding:5px;">
+				<label style="display: block;min-width:175px;margin-bottom: 3px;float:left;">Тема сообщения:
+					<span class="asterisk"> *</span>
+				</label>
+				<input style="min-width:220px;padding:3px 5px;" type="text" value="" name="author_message_theme"
+						class="required" />
+			</div>
+			<div class="tpl_white_grey_author_message" style="overflow:hidden;padding:5px;">
+				<label style="display: block;min-width:175px;margin-bottom: 3px;float:left;">Сообщение:
+					<span class="asterisk"> *</span>
+				</label>
+				<textarea style="padding:3px 5px;min-width:380px;min-height:150px;" 					          name="author_message"
+						class="required"></textarea>
+			</div>
+			<div class="api-submit">
+				<input type="submit" name="submit" style="" class="" id=""  value="Отправить">
+			</div>
+		</form>
+		</div>
+		<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
+	</section>
+
+@@include('_tpl_layout_sidebar.html')
+
+@@include('_tpl_layout_foot.html')

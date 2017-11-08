@@ -1,0 +1,647 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Багория. Анкета",
+	"pageClass": "inside floatSidebar"
+})
+
+	@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		@@include('_tpl_layout_catalog-menu.html', {"noCategory": true})
+		<script>
+			window.onload = function () {
+				// Стабильность
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Карьера
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Самостоятельность
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Деньги
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Высокая интенсивность
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Новый опыт
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Четко поставленные задачи
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Близость к дому
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Психологический климат
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').selectedIndex; // Престиж компании
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+				// Престиж компании
+				document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj').addEventListener('change', function () {
+					var mycoolarr = new Array();
+					var mycoolperem = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj');
+					mycoolarr[0] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330').selectedIndex; // Стабильность
+					mycoolarr[1] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp').selectedIndex; // Карьера
+					mycoolarr[2] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS').selectedIndex; // Самостоятельность
+					mycoolarr[3] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob').selectedIndex; // Деньги
+					mycoolarr[4] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj').selectedIndex; // Высокая интенсивность
+					mycoolarr[5] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z').selectedIndex; // Новый опыт
+					mycoolarr[6] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP').selectedIndex; // Четко поставленные задачи
+					mycoolarr[7] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g').selectedIndex; // Близость к дому
+					mycoolarr[8] = document.getElementById('form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy').selectedIndex; // Психологический климат
+
+					if (mycoolperem.options[mycoolperem.selectedIndex].text != '') {
+						for (var i = 0; i < mycoolarr.length; i++) {
+							if (mycoolperem.options[mycoolperem.selectedIndex].text == mycoolarr[i]) {
+								mycoolperem.selectedIndex = 0;
+								alert('Такое значение уже выбрано!');
+								break;
+							}
+						}
+					}
+				});
+
+			};
+		</script>
+
+
+		<form name="SIMPLE_FORM_1" action="/form/" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="sessid" id="sessid" value="3f39e72d14c4622e84b985d2f8f04a76"/><input type="hidden" name="WEB_FORM_ID" value="1"/>
+			<h1>Анкета</h1>
+			<p>Анкета для предложения вакансии СООО &quot;Багория&quot;</p>
+			<table class="form-table data-table">
+				<thead>
+					<tr>
+						<th colspan="2">&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							Вакансия<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_259" id="form_dropdown_SIMPLE_QUESTION_259">
+								<option value="155">[Барановичи] Грузчик</option>
+								<option value="160">[Барановичи] Уборщица</option>
+								<option value="161">Другая</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Фото<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<input name="form_image_2" class="inputfile" size="0" type="file"/><span class="bx-input-file-desc"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Фамилия, имя, отчество<font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_3" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Дата рождения<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<input type="text" name="form_date_4" id="form_date_LyUAXr6X" value="" size="0"/><img src="http://bagoria.by/bitrix/js/main/core/images/calendar-icon.gif" alt="Выбрать дату в календаре" class="calendar-icon" onclick="BX.calendar({node:this, field:'form_date_LyUAXr6X', form: 'SIMPLE_FORM_1', bTime: false, currentTime: '1510158009', bHideTime: false});" onmouseover="BX.addClass(this, 'calendar-icon-hover');" onmouseout="BX.removeClass(this, 'calendar-icon-hover');" border="0"/> (DD.MM.YYYY)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Место рождения<font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_5" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Адрес прописки<font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_6" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Домашний телефон
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_7" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Мобильный телефон<font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_8" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							E-mail <font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_email_9" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Семейное положение
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_10" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Дети <font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_11" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Учебное заведение, специальность
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_12" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Годы учебы <font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_13" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Форма обучения <font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_14" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Дополнительное образование (курсы, тренинги, стажировки)
+						</td>
+						<td><textarea name="form_textarea_15" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Укажите, где еще Вы планируете получать дополнительное образование
+						</td>
+						<td><textarea name="form_textarea_16" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Укажите все Ваши места работы, начиная с последнего
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><textarea name="form_textarea_17" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Кто может дать Вам рекомендации с предыдущих мест работы
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><textarea name="form_textarea_18" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Отметьте, что не нравилось Вам на последнем рабочем месте
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<input type="checkbox" id="19" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="19"><label for="19">Уровень оплаты труда</label><br/><input type="checkbox" id="20" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="20"><label for="20">Сверхурочная работа</label><br/><input type="checkbox" id="21" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="21"><label for="21">Сложный психологический климат</label><br/><input type="checkbox" id="22" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="22"><label for="22">Завышенные требования у руководства</label><br/><input type="checkbox" id="23" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="23"><label for="23">Отсутствие уверенности в жизнеспособности организации</label><br/><input type="checkbox" id="24" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="24"><label for="24">Напряженные отношения с руководителем</label><br/><input type="checkbox" id="25" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="25"><label for="25">Неполное использование Вашего потенциала</label><br/><input type="checkbox" id="26" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="26"><label for="26">Нет перспективы роста</label><br/><input type="checkbox" id="27" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="27"><label for="27">Однообразная работа</label><br/><input type="checkbox" id="145" name="form_checkbox_SIMPLE_QUESTION_540[]" id="form_checkbox_SIMPLE_QUESTION_540[]" value="145"><label for="145">Другое</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Имеете ли Вы или Ваша семья собственный бизнес. Если да, то какой
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_28" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Стаж вождения автомобиля <font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_29" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td>
+							Ваше отношение к командировкам
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><input type="text" class="inputtext" name="form_text_30" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<td colspan="2">Проранжируйте по убыванию от 10 до 1 значения факторов при выборе работы в порядке важности</td>
+					</tr>
+					<tr>
+						<td>
+							Стабильность <font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330" id="form_dropdown_SIMPLE_QUESTION_330">
+								<option value="134"></option>
+								<option value="31">1</option>
+								<option value="32">2</option>
+								<option value="33">3</option>
+								<option value="34">4</option>
+								<option value="35">5</option>
+								<option value="36">6</option>
+								<option value="37">7</option>
+								<option value="38">8</option>
+								<option value="39">9</option>
+								<option value="40">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Карьера<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp" id="form_dropdown_SIMPLE_QUESTION_330_464Cp">
+								<option value="135"></option>
+								<option value="42">1</option>
+								<option value="43">2</option>
+								<option value="44">3</option>
+								<option value="45">4</option>
+								<option value="46">5</option>
+								<option value="47">6</option>
+								<option value="48">7</option>
+								<option value="49">8</option>
+								<option value="50">9</option>
+								<option value="51">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Самостоятельность <font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS">
+								<option value="136"></option>
+								<option value="52">1</option>
+								<option value="53">2</option>
+								<option value="54">3</option>
+								<option value="55">4</option>
+								<option value="56">5</option>
+								<option value="57">6</option>
+								<option value="58">7</option>
+								<option value="59">8</option>
+								<option value="60">9</option>
+								<option value="61">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Деньги<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob">
+								<option value="137"></option>
+								<option value="62">1</option>
+								<option value="63">2</option>
+								<option value="64">3</option>
+								<option value="65">4</option>
+								<option value="66">5</option>
+								<option value="67">6</option>
+								<option value="68">7</option>
+								<option value="69">8</option>
+								<option value="70">9</option>
+								<option value="71">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Высокая интенсивность
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj">
+								<option value="138"></option>
+								<option value="72">1</option>
+								<option value="73">2</option>
+								<option value="74">3</option>
+								<option value="75">4</option>
+								<option value="76">5</option>
+								<option value="77">6</option>
+								<option value="78">7</option>
+								<option value="79">8</option>
+								<option value="80">9</option>
+								<option value="81">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Новый опыт <font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj_0tT8Z">
+								<option value="139"></option>
+								<option value="82">1</option>
+								<option value="83">2</option>
+								<option value="84">3</option>
+								<option value="85">4</option>
+								<option value="86">5</option>
+								<option value="87">6</option>
+								<option value="88">7</option>
+								<option value="89">8</option>
+								<option value="90">9</option>
+								<option value="91">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Четко поставленные задачи
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__nCEbP">
+								<option value="140"></option>
+								<option value="92">1</option>
+								<option value="93">2</option>
+								<option value="94">3</option>
+								<option value="95">4</option>
+								<option value="96">5</option>
+								<option value="97">6</option>
+								<option value="98">7</option>
+								<option value="99">8</option>
+								<option value="100">9</option>
+								<option value="101">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Близость к дому <font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__Fxl8g">
+								<option value="141"></option>
+								<option value="102">1</option>
+								<option value="103">2</option>
+								<option value="104">3</option>
+								<option value="105">4</option>
+								<option value="106">5</option>
+								<option value="107">6</option>
+								<option value="108">7</option>
+								<option value="109">8</option>
+								<option value="110">9</option>
+								<option value="111">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Психологический климат
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__376vy">
+								<option value="142"></option>
+								<option value="112">1</option>
+								<option value="113">2</option>
+								<option value="114">3</option>
+								<option value="115">4</option>
+								<option value="116">5</option>
+								<option value="117">6</option>
+								<option value="118">7</option>
+								<option value="119">8</option>
+								<option value="120">9</option>
+								<option value="121">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Престиж компании <font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td>
+							<select class="inputselect" name="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj" id="form_dropdown_SIMPLE_QUESTION_330_464Cp_lANIS_b4oob_WkWqj__mvtYj">
+								<option value="143"></option>
+								<option value="122">1</option>
+								<option value="123">2</option>
+								<option value="124">3</option>
+								<option value="125">4</option>
+								<option value="126">5</option>
+								<option value="127">6</option>
+								<option value="128">7</option>
+								<option value="129">8</option>
+								<option value="130">9</option>
+								<option value="131">10</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>
+							Какие цели в жизни Вы перед собой ставите в долгосрочной перспективе
+							<font color='red'><span class='form-required starrequired'>*</span></font></td>
+						<td><textarea name="form_textarea_132" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Напишите любую информацию о себе, не вошедшую в эту анкету
+						</td>
+						<td><textarea name="form_textarea_133" cols="40" rows="5" class="inputtextarea"></textarea></td>
+					</tr>
+					<tr>
+						<td>
+							Через какое время Вы можете приступить к работе?
+						</td>
+						<td><input type="text" class="inputtext" name="form_text_159" value="" size="0"/></td>
+					</tr>
+					<tr>
+						<th colspan="2"><b>Защита от автоматического заполнения</b></th>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<input type="hidden" name="captcha_sid" value="0c01ea1b353bb46adfe4b4ff37cf6b4c"/><img src="http://bagoria.by/bitrix/tools/captcha.php?captcha_sid=0c01ea1b353bb46adfe4b4ff37cf6b4c" width="180" height="40"/>
+						</td>
+					</tr>
+					<tr>
+						<td>Введите символы с картинки<font color='red'><span class='form-required starrequired'>*</span></font>
+						</td>
+						<td><input type="text" name="captcha_word" size="30" maxlength="50" value="" class="inputtext"/>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="2">
+							<!--new-->
+							<input class="btn" type="submit" name="web_form_submit" value="Отправить"/> &nbsp;<input class="btn-clear" type="reset" value="Сбросить"/>
+							<!--new end-->
+						</th>
+					</tr>
+				</tfoot>
+			</table>
+			<p>
+				<font color='red'><span class='form-required starrequired'>*</span></font> - Поля, обязательные для заполнения
+			</p>
+		</form>
+		<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
+	</section>
+
+@@include('_tpl_layout_sidebar.html')
+
+@@include('_tpl_layout_foot.html')

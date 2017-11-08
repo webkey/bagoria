@@ -1,0 +1,40 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Багория. Мировые бренды - наши партнеры",
+	"pageClass": "inside floatSidebar"
+})
+
+	@@include('_tpl_layout_header.html')
+
+	<section class="content">
+		@@include('_tpl_layout_catalog-menu.html', {"noCategory": true})
+
+		<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo;
+			<a href="/about/">О компании</a> &raquo; <span>Вакансии</span></div>
+		<style type="text/css">
+			.vacsend{
+				display: inline-block;
+			}
+			.vacsend.text{
+				font: 20px/20px pf_din_text_cond_proMdIt, cursive;
+				color: #00519b;
+				text-transform: uppercase;
+			}
+		</style>
+		<h1>Вакансии</h1>
+		<p>Адрес электронной почты для отправки резюме: <a href="mailto:kadry@bagoria.by">kadry@bagoria.by</a></p>
+		<p><a href="/form/">Анкета</a> для электронного заполнения.</p>
+		<hr>
+		<h2>[Барановичи] Грузчик</h2>
+		<p><strong>Оплата:</strong> от 600 руб.</p>
+		<p><a href="anketa.html" class="btn">Заполнить анкету</a></p>
+		<hr>
+		<h2>[Барановичи] Уборщица</h2>
+		<p><strong>Оплата:</strong> от 300 руб.</p>
+		<p><a href="anketa.html" class="btn">Заполнить анкету</a></p>
+		<hr>
+		<input type="hidden" name="cart_items" id="cart_items" value="0"><input type="hidden" name="cart_summ" id="cart_summ" value="0">
+	</section>
+
+@@include('_tpl_layout_sidebar.html')
+
+@@include('_tpl_layout_foot.html')

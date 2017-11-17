@@ -344,8 +344,13 @@ ul.topNav
 		top: 50%
 		transform: translate(-50%, -50%)
 
+	+media('<tab-sm')
+		left: $header-height--lg
+		transform: translate(0, -50%)
+
 	+media('<mob-lg')
 		width: 153px
+		left: $header-height--sm
 		background-position: center
 		background-size: contain
 
@@ -391,7 +396,7 @@ a.userLink
 
 	+media('<mob-lg')
 		+size($header-height--sm)
-		display: none !important
+		//display: none !important
 
 a.userLogout
 	+media('<tab-lg')
@@ -3308,3 +3313,128 @@ ul.aboutCompany
 
 .hidden_protection
 	display: none !important
+
+/* news
+ul.cNews
+	+clear-spacing
+
+	li
+		letter-spacing: normal
+
+		+media('<tab-lg')
+			+font(14px, round-float(20/14, 2))
+			padding-left: 0
+
+		+media('<tab-sm')
+			width: 100%
+			border-left-width: 0 !important
+			border-right-width: 0 !important
+
+			&, &:nth-last-child(1), &:nth-last-child(2)
+				margin-bottom: $bottom-space
+				padding-bottom: $bottom-space
+
+			&:last-child
+				margin-bottom: 0
+
+	a
+		+media('<tab-lg')
+			display: block
+			float: left
+			width: 140px
+			padding-right: $grid-space--lg
+
+		+media('<mob-md')
+			float: none
+			padding-right: 0
+			padding-bottom: 8px
+
+	time
+		+media('<tab-lg')
+			display: block
+			overflow: hidden
+			+font(14px, round-float(20/14, 2))
+
+			& ~ a
+				float: none
+				width: auto
+				overflow: hidden
+				padding: 0
+
+	img
+		+media('<tab-lg')
+			float: none
+			margin: 0 auto
+
+		+media('<mob-md')
+			margin: 0
+
+/* news end
+
+/* tabs
+ul.tabs
+	+media('<mob-md')
+		+margin-horizontal(-#{$layout-space--sm})
+		text-align: center
+		letter-spacing: -4px
+
+	li
+		+padding-horizontal(8px)
+
+		+media('<mob-md')
+			float: none
+			+display-inline-block-top
+			letter-spacing: normal
+
+/* tabs end
+
+/* products
+ul.products
+	+media('<tab-lg')
+		text-align: center
+		height: auto
+		letter-spacing: -4px
+
+	li
+		+media('<tab-lg')
+			width: 33.3%
+			letter-spacing: normal
+			border-color: $border-color
+			margin-bottom: $bottom-space
+
+			&:nth-child(3n+1)
+				border-left-color: transparent
+
+		+media('<tab-sm')
+			width: 50%
+
+			&:nth-child(3n+1)
+				border-color: $border-color
+
+			&:nth-child(2n+1)
+				border-left-color: transparent
+
+		+media('<mob-md')
+			width: 100%
+			height: auto
+			padding: $bottom-space 0
+			border: solid $border-color !important
+			border-width: 0 0 1px !important
+			margin-bottom: 0
+
+			&:first-child
+				border-width: 1px 0 !important
+
+			&:last-child
+				margin-bottom: 0
+
+			a
+				display: block
+
+			.pic
+				+size(auto)
+				float: none
+				margin: 0 0 8px
+				line-height: 1
+
+/* products end

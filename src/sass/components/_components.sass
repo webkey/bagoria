@@ -3438,3 +3438,18 @@ ul.products
 				line-height: 1
 
 /* products end
+
+/* infoPopup
+.infoPopup
+	+media('<tab-lg')
+		position: fixed
+		margin: 0
+		transform: translate(-50%, -50%)
+
+	+media('<mob-lg')
+		width: calc(100% - #{$layout-space--lg})
+		box-sizing: border-box
+		padding: $grid-space--lg
+		border-width: 4px
+
+/* infoPopup end

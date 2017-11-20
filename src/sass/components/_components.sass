@@ -2471,9 +2471,9 @@ ul.paging
 
 			&.remainder
 				&::before
-					display: block
-					width: 100%
-					padding-right: 0
+					//display: block
+					//width: 100%
+					padding-right: 5px
 					margin-bottom: 10px
 
 				.tresp-val
@@ -2485,7 +2485,7 @@ ul.paging
 				position: relative
 				width: 100%
 				max-width: 320px
-				padding-left: 40px
+				padding-left: 0
 				padding-right: 105px
 				margin: 0
 
@@ -2512,20 +2512,12 @@ ul.paging
 					right: 0
 					bottom: 0
 
-			.currentCount
+			.currentCount.mob-show
+				+display-inline-block-top
 				font-weight: bold
-				position: absolute
-				top: 50%
-				left: 0
 				margin: 0
-				transform: translate(0, -50%)
-
-				+media('<mob-md')
-					position: relative
-					top: auto
-					left: auto
-					transform: none
-					margin-bottom: 5px
+				+font(11px, 13px)
+				letter-spacing: normal
 
 			&, &.tresp-del a, &.tresp-number span
 				padding: #{round($grid-space--lg*0.5)} $grid-space--lg

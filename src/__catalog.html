@@ -1175,19 +1175,60 @@
 				<div class="caption">
 					<a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=Snowdragon+HP">Imperial Snowdragon HP</a></div>
 
-				<table>	<tbody><tr>
-					<td><!--Остаток -->Центральный склад: <!--&gt;--><span class="currentCount" id="currentCount_1_286958" style="font-weight:bold;">&gt;20</span></td>
-					<td>Заказать:</td>
-					<td><input type="text" class="quantity_286958" id="quantity_store1_286958"></td>
-					<td><a href="#" class="cartBtn" title="Добавить в корзину" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="1" store_quantity="102" section_name="Шины" subsection_name="Легковые и 4х4" brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801">Добавить в корзину</a></td>
-				</tr>
-					<tr>
-						<td><!--Остаток -->Минск: <!--&gt;--><span class="currentCount" id="currentCount_6_286958" style="font-weight:bold;">0</span></td>
-						<td>Заказать:</td>
-						<td><input type="text" class="quantity_286958" id="quantity_store6_286958"></td>
-						<td><a href="#" class="cartBtn" title="Добавить в корзину" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801">Добавить в корзину</a></td>
-					</tr>
-				</tbody></table>
+				<table>
+					<tbody>
+						<!--change-->
+						<tr class="prodOrder">
+						<!--change end-->
+							<td>
+								<!--Остаток -->Центральный склад: <!--&gt;--><span class="currentCount" id="currentCount_1_286958" style="font-weight:bold;">&gt;20</span>
+							</td>
+							<!--change-->
+							<td class="mob-hide">Заказать:</td>
+							<td>
+								<!--<input type="text" class="quantity_286958" id="quantity_store1_286958">-->
+								<!--add counter-->
+								<div class="counter">
+									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+									<input class="counter_input" id="quantity_store1_286958" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+									<input type="hidden" id="old_counter_1956119" value="0">
+									<input type="hidden" id="store_quantity_1_1956119" value="11">
+									<input type="hidden" id="store_quantity_2_1956119" value="0">
+									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+								</div>
+							</td>
+							<td>
+								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="1" store_quantity="102" section_name="Шины" subsection_name="Легковые и 4х4" brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзину</span></a>
+							</td>
+							<!--change end-->
+						</tr>
+						<!--change-->
+						<tr class="prodOrder">
+						<!--change end-->
+							<td>
+								<!--Остаток -->Минск: <!--&gt;--><span class="currentCount" id="currentCount_6_286958" style="font-weight:bold;">0</span>
+							</td>
+							<!--change-->
+							<td class="mob-hide">Заказать:</td>
+							<td>
+								<!--<input type="text" class="quantity_286958" id="quantity_store6_286958">-->
+								<div class="counter">
+									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+									<input class="counter_input" id="quantity_store6_286958" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+									<input type="hidden" id="old_counter_1956116" value="0">
+									<input type="hidden" id="store_quantity_1_1956116" value="11">
+									<input type="hidden" id="store_quantity_2_1956116" value="0">
+									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+								</div>
+							</td>
+							<td>
+								<!--add class inCar-->
+								<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="Contyre Arctic Ice" product_name="155/70R13" element_id="286958" product_price="451118.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" brand_name="Росава" product_diametr="13" product_category="Легковые и 4х4" diametr="13" code_1c="28801"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
+							</td>
+							<!--change end-->
+						</tr>
+					</tbody>
+				</table>
 			</li>
 			<li>
 				<div class="pic">
@@ -2351,7 +2392,7 @@
 
 		<input type="hidden" class="user_store" value="">
 		<input type="hidden" name="UF_LIMIT" id="UF_LIMIT" value="">
-		<input type="hidden" name="UF_LIMIT_REST" id="UF_LIMIT_REST" value="0">
+		<input type="hidden" name="UF_LIMIT_REST" id="UF_LIMIT_REST" value="84000">
 		<input type="hidden" name="MinTovarov" id="MinTovarov" value="0">
 		<input type="hidden" name="MinSumma" id="MinSumma" value="0">
 		<input type="hidden" name="MaxSummaMonth" id="MaxSummaMonth" value="120000">

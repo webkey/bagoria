@@ -99,6 +99,16 @@ html
 	clear: both
 	+font(0, 0)
 
+.mob-show
+	display: none
+
+	+media('<tab-lg')
+		display: block
+
+.mob-hide
+	+media('<tab-lg')
+		display: none
+
 .wrapper select
 	+media('<tab-lg')
 		overflow: hidden
@@ -723,7 +733,7 @@ a.btn, .btn
 			color: $text-color-light
 
 a.cartBtn
-	+media('<tab-lg')
+	//+media('<tab-lg')
 		+display-inline-block-top
 		text-align: center
 		padding: 0
@@ -759,6 +769,43 @@ a.cartBtn
 		&.disabled
 			box-shadow: none
 			text-shadow: none
+
+	+media('<tab-lg')
+		+display-inline-block-top
+		text-align: center
+		padding: 0
+		+font-alt-light
+		+font(14px, 40px)
+		text-indent: 0
+		letter-spacing: 0.05em
+		color: white
+		text-transform: uppercase
+		border-radius: 0
+		text-shadow: none
+		box-shadow: none
+		border: none
+		background: #00a6eb
+		+size(105px, 40px)
+		float: none
+		text-decoration: none
+		box-sizing: border-box
+
+		&:hover, &:active
+			box-shadow: none
+			text-shadow: none
+			background: $base-color
+
+		&.disabled
+			box-shadow: none
+			text-shadow: none
+
+		// inCar
+		&.inCar
+			background: $base-color-alt
+			color: $text-color
+
+			&:hover, &:active
+				background-color: rgba($base-color-alt, 0.80)
 
 .go_back_to_hell, .clearLink, .btn-clear
 	+media('<tab-lg')
@@ -1667,6 +1714,13 @@ ul.fNav
 		height: auto
 
 ul.productsGrid
+	// for desk
+	.counter
+		width: 51px
+
+		.change_counter
+			display: none
+
 	+media('<tab-lg')
 		+margin-horizontal(-#{round($grid-space--lg/2)})
 
@@ -1684,6 +1738,10 @@ ul.productsGrid
 				align-items: center
 				flex-wrap: wrap
 				+clear-spacing
+				margin-bottom: 10px
+
+				&:last-child
+					margin-bottom: 0
 
 			td
 				+display-inline-block-top
@@ -1695,13 +1753,23 @@ ul.productsGrid
 				&:first-child
 					display: block
 					font-size: 12px
-					border-top: 1px solid $border-color
-					margin-top: 10px
+					border: none
+					margin-top: 0
 					width: 100%
 
 				&:nth-child(3)
 					flex: 1 1 40px
-					+padding-horizontal(10px)
+
+				&.mob-hide
+					display: none
+
+			.counter
+				max-width: none
+				width: auto
+				float: none
+
+				.change_counter
+					display: block
 
 			tr:first-child
 				td:first-child
@@ -1841,7 +1909,7 @@ ul.fTabs, ul.cartTabs
 	padding-bottom: 1px
 
 	+media('<tab-lg')
-		margin-bottom: $bottom-space
+		margin-bottom: -1px
 
 	li
 		background-color: $bg-color-base
@@ -2239,7 +2307,61 @@ ul.paging
 			&:hover, &:active
 				box-shadow: none
 
+.counter
+	+media('<tab-lg')
+		position: relative
+		+size(auto, 100%)
+		max-width: 180px
+
+		a
+			display: block
+			float: none
+			position: absolute
+			top: 0
+			background-color: white
+			text-shadow: none
+			box-shadow: none
+			color: $text-color
+			+size(40px)
+			border: 1px solid $border-color
+			box-sizing: border-box
+			+font(24px, 36px)
+			outline: none
+			border-radius: 0
+
+			&:hover, &:active
+				box-shadow: none
+				background-color: $bg-color-alt
+				text-shadow: none
+
+		.minus
+			left: 0
+
+		.plus
+			right: 0
+
+		input[type="text"]
+			float: none
+			width: 100%
+			height: 40px
+			padding: 9px 50px
+			margin: 0
+			border: solid $border-color
+			border-width: 1px
+			box-shadow: none
+			outline: none !important
+			+font(16px, 20px)
+			text-align: center
+			box-sizing: border-box
+
 /* counter end
+
+.orderCount .counter
+	float: left
+	width: 55px
+
+	.change_counter
+		display: none
 
 /* table-resp
 .table-resp
@@ -2347,23 +2469,45 @@ ul.paging
 					img
 						margin: 0
 
+			&.remainder
+				&::before
+					display: block
+					width: 100%
+					padding-right: 0
+					margin-bottom: 10px
+
+				.tresp-val
+					display: block
+					width: auto
+
 			.orderCount
 				box-sizing: border-box
 				position: relative
-				width: 180px
-				max-width: 100%
+				width: 100%
+				max-width: 320px
 				padding-left: 40px
+				padding-right: 105px
 				margin: 0
 
-				input[type="text"]
+				+media('<mob-md')
+					padding-left: 0
+
+				//input[type="text"]
 					float: none
 					width: 100%
 					padding-right: 64px
 					+padding-horizontal(6px, 55px)
 					text-align: center
 
+				.counter
+					max-width: none
+					width: auto
+					float: none
+
+					.change_counter
+						display: block
+
 				a.cartBtn
-					+size(50px, 40px)
 					position: absolute
 					right: 0
 					bottom: 0
@@ -2376,49 +2520,12 @@ ul.paging
 				margin: 0
 				transform: translate(0, -50%)
 
-			.counter
-				position: relative
-				+size(auto, 100%)
-				max-width: 180px
-
-				a
-					display: block
-					float: none
-					position: absolute
-					top: 0
-					background-color: white
-					text-shadow: none
-					box-shadow: none
-					color: $text-color
-					+size(40px)
-					border: 1px solid $border-color
-					box-sizing: border-box
-					+font(24px, 36px)
-					outline: none
-					border-radius: 0
-
-					&:hover, &:active
-						box-shadow: none
-
-				.minus
-					left: 0
-
-				.plus
-					right: 0
-
-				input[type="text"]
-					float: none
-					width: 100%
-					height: 40px
-					padding: 9px 50px
-					margin: 0
-					border: solid $border-color
-					border-width: 1px
-					box-shadow: none
-					outline: none !important
-					+font(16px, 20px)
-					text-align: center
-					box-sizing: border-box
+				+media('<mob-md')
+					position: relative
+					top: auto
+					left: auto
+					transform: none
+					margin-bottom: 5px
 
 			&, &.tresp-del a, &.tresp-number span
 				padding: #{round($grid-space--lg*0.5)} $grid-space--lg

@@ -2475,6 +2475,7 @@ ul.paging
 					//width: 100%
 					padding-right: 5px
 					margin-bottom: 10px
+					width: auto
 
 				.tresp-val
 					display: block
@@ -2516,7 +2517,7 @@ ul.paging
 				+display-inline-block-top
 				font-weight: bold
 				margin: 0
-				+font(11px, 13px)
+				+font(13px, 13px)
 				letter-spacing: normal
 
 			&, &.tresp-del a, &.tresp-number span
@@ -3206,7 +3207,7 @@ ul.paging
 
 	+media('<tab-lg')
 		+font(14px, 16px)
-		margin-bottom: $bottom-space
+		//margin-bottom: $bottom-space
 
 .currentDiscountIn
 	+media('<tab-lg')
@@ -3217,6 +3218,37 @@ ul.paging
 
 		strong
 			+font-alt-bold
+
+.cardProductTabs
+	+media('<tab-lg')
+		box-sizing: border-box
+		+clear-spacing
+		+clear
+
+		.cardProductTabsIn
+			float: none
+			+display-inline-block-top
+			+font(12px, 16px)
+			letter-spacing: normal
+			box-sizing: border-box
+
+			a
+				display: block
+				padding: 12px 10px
+				border: none
+
+	+media('<mob-lg')
+		display: flex
+		justify-content: space-between
+		align-items: stretch
+		flex-wrap: wrap
+
+		.cardProductTabsIn
+			width: 50%
+			flex: 0 0 50%
+
+.currentDiscountSpacer
+	display: none
 
 .changeLinkText
 	+media('<tab-lg')

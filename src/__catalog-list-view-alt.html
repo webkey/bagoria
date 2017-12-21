@@ -1,0 +1,1404 @@
+@@include('_tpl_layout_head.html', {
+	"title": "Шины. Диски. Аккумуляторы - СООО Багория",
+	"pageClass": "inside floatSidebar location-none"
+})
+
+	@@include('_tpl_layout_header.html')
+
+<section class="content">
+@@include('_tpl_layout_catalog-menu.html')
+
+	<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <span>Каталог грузовых камер</span></div>
+	<h1>Грузовые шины
+		<div class="help_link">
+			<div class="help_label"><a href="/info/pravila/">Помощь</a></div>
+		</div>
+	</h1>
+
+	<div class="filter" id="filter-truck-1">
+		<!--<div class="count">Всего товаров: <b>4 600</b></div>-->
+		<div class="title">Подбор товаров</div>
+		<ul class="fTabs">
+			<li><a href="#filter-truck-1-1">По параметрам</a></li>
+			<li class="ui-tabs-active"><a href="#filter-truck-1-2">По cписку типоразмеров</a></li>
+			<li><a href="#filter-truck-1-3">Грузовые диски</a></li>
+			<li><a href="#filter-truck-1-4">Грузовые камеры</a></li>
+			<li><a href="#filter-truck-1-5">Ободные ленты</a></li>
+		</ul>
+		<div class="filterBlock ui-tabs-hide" id="filter-truck-1-1">
+			<form id="filter_form_truck1" action="/catalog/tires/truck/" method="get">
+				<input type="hidden" name="tab" value="1" />
+				<input type="hidden" name="view" value="1" />
+				<ul class="fParams">
+					<li>
+						<div class="label">Типоразмер:</div>
+						<select name="size">
+							<option value="">Любой</option>
+							<option value="10,00R20">10,00R20</option>
+							<option value="11,00R20">11,00R20</option>
+							<option value="11R22,5">11R22,5</option>
+							<option value="12,00-18">12,00-18</option>
+							<option value="12,00R18">12,00R18</option>
+							<option value="12,00R20">12,00R20</option>
+							<option value="12,00R24">12,00R24</option>
+							<option value="1220*400-533">1220*400-533</option>
+							<option value="13R22,5">13R22,5</option>
+							<option value="14,00-20">14,00-20</option>
+							<option value="14,00R20">14,00R20</option>
+							<option value="15,00-20">15,00-20</option>
+							<option value="205/65R17,5">205/65R17,5</option>
+							<option value="205/75R17,5">205/75R17,5</option>
+							<option value="215/75R17,5">215/75R17,5</option>
+							<option value="225/75R17,5">225/75R17,5</option>
+							<option value="235/75R17,5">235/75R17,5</option>
+							<option value="245/70R17,5">245/70R17,5</option>
+							<option value="245/70R19,5">245/70R19,5</option>
+							<option value="265/70R17,5">265/70R17,5</option>
+							<option value="265/70R19,5">265/70R19,5</option>
+							<option value="275/70R22,5">275/70R22,5</option>
+							<option value="285/70R19,5">285/70R19,5</option>
+							<option value="295/60R22,5">295/60R22,5</option>
+							<option value="295/80R22,5">295/80R22,5</option>
+							<option value="315/60R22,5">315/60R22,5</option>
+							<option value="315/70R22,5">315/70R22,5</option>
+							<option value="315/80R22,5">315/80R22,5</option>
+							<option value="365/85R20">365/85R20</option>
+							<option value="385/55R19,5">385/55R19,5</option>
+							<option value="385/55R22,5">385/55R22,5</option>
+							<option value="385/65R22,5">385/65R22,5</option>
+							<option value="400/70-21">400/70-21</option>
+							<option value="425/85R21">425/85R21</option>
+							<option value="435/50R19,5">435/50R19,5</option>
+							<option value="445/45R19,5">445/45R19,5</option>
+							<option value="500/70-20 (1200*500-508)">500/70-20 (1200*500-508)</option>
+							<option value="6,50R16C">6,50R16C</option>
+							<option value="7,00R16">7,00R16</option>
+							<option value="7,00R16C">7,00R16C</option>
+							<option value="7,50R16">7,50R16</option>
+							<option value="7,50R16C">7,50R16C</option>
+							<option value="8,25R15">8,25R15</option>
+							<option value="8,25R20">8,25R20</option>
+							<option value="9,00R20">9,00R20</option>
+							<option value="9,5R17,5">9,5R17,5</option>
+						</select>
+					</li>
+					<li>
+						<div class="label">Ось:</div>
+						<select name="axis">
+							<option value="">Любая</option>
+							<option value="Повышенной проходимости">Повышенной проходимости</option>
+							<option value="Универс.">Универс.</option>
+							<option value="ведущая">ведущая</option>
+							<option value="всепозиционные">всепозиционные</option>
+							<option value="прицепная">прицепная</option>
+							<option value="рулевая">рулевая</option>
+						</select>
+					</li>
+					<li>
+						<div class="label">Производитель:</div>
+						<select name="manufacturer">
+							<option value="">Все</option>
+							<option value="AEOLUS">AEOLUS</option>
+							<option value="Antyre">Antyre</option>
+							<option value="Aurora">Aurora</option>
+							<option value="Barum">Barum</option>
+							<option value="Continental">Continental</option>
+							<option value="Cordiant">Cordiant</option>
+							<option value="Domar">Domar</option>
+							<option value="Double Coin">Double Coin</option>
+							<option value="Fulda">Fulda</option>
+							<option value="Fullrun">Fullrun</option>
+							<option value="Geyer&Hosaja">Geyer&Hosaja</option>
+							<option value="GoodYear">GoodYear</option>
+							<option value="Hankook">Hankook</option>
+							<option value="Kelly">Kelly</option>
+							<option value="Matador">Matador</option>
+							<option value="Minerva">Minerva</option>
+							<option value="NextTread">NextTread</option>
+							<option value="Sava">Sava</option>
+							<option value="Triangle">Triangle</option>
+							<option value="АШК">АШК</option>
+							<option value="Амтел">Амтел</option>
+							<option value="Белшина">Белшина</option>
+							<option value="Волтайр">Волтайр</option>
+							<option value="Кама">Кама</option>
+							<option value="Ольга-1">Ольга-1</option>
+							<option value="Ольга-1 ОДО">Ольга-1 ОДО</option>
+							<option value="Омск">Омск</option>
+							<option value="Росава">Росава</option>
+						</select>
+					</li>
+					<li>
+						<div class="label">Индекс нагрузки:</div>
+						<select name="index">
+							<option value="">Любой</option>
+							<option value="108/107">108/107</option>
+							<option value="117/116">117/116</option>
+							<option value="121/120">121/120</option>
+							<option value="122/118">122/118</option>
+							<option value="122/120">122/120</option>
+							<option value="124">124</option>
+							<option value="124/122">124/122</option>
+							<option value="125/122">125/122</option>
+							<option value="126/124">126/124</option>
+							<option value="128/126">128/126</option>
+							<option value="129/124">129/124</option>
+							<option value="129/127">129/127</option>
+							<option value="130">130</option>
+							<option value="130/128">130/128</option>
+							<option value="132/130">132/130</option>
+							<option value="135/133">135/133</option>
+							<option value="135">135</option>
+							<option value="136/133">136/133</option>
+							<option value="136/134">136/134</option>
+							<option value="137/135">137/135</option>
+							<option value="139/136">139/136</option>
+							<option value="140/138">140/138</option>
+							<option value="140">140</option>
+							<option value="141/140">141/140</option>
+							<option value="141">141</option>
+							<option value="143/141">143/141</option>
+							<option value="144/143">144/143</option>
+							<option value="145/143">145/143</option>
+							<option value="145">145</option>
+							<option value="146/143">146/143</option>
+							<option value="146/144">146/144</option>
+							<option value="146">146</option>
+							<option value="146L140M">146L140M</option>
+							<option value="148/145">148/145</option>
+							<option value="149/145">149/145</option>
+							<option value="149/146">149/146</option>
+							<option value="150/146">150/146</option>
+							<option value="150/147">150/147</option>
+							<option value="150/148">150/148</option>
+							<option value="150/149">150/149</option>
+							<option value="150K149L">150K149L</option>
+							<option value="151/148">151/148</option>
+							<option value="152/148">152/148</option>
+							<option value="152/149">152/149</option>
+							<option value="152/150">152/150</option>
+							<option value="154/148">154/148</option>
+							<option value="154/149">154/149</option>
+							<option value="154/150">154/150</option>
+							<option value="154/151">154/151</option>
+							<option value="154/152">154/152</option>
+							<option value="154L152M">154L152M</option>
+							<option value="156">156</option>
+							<option value="156/150">156/150</option>
+							<option value="156/154">156/154</option>
+							<option value="156G154K">156G154K</option>
+							<option value="156L154M">156L154M</option>
+							<option value="158/160">158/160</option>
+							<option value="158L160J">158L160J</option>
+							<option value="158">158</option>
+							<option value="160 (158)">160 (158)</option>
+							<option value="160">160</option>
+							<option value="160/156">160/156</option>
+							<option value="160/158">160/158</option>
+							<option value="160K158L">160K158L</option>
+							<option value="164/158">164/158</option>
+							<option value="164">164</option>
+							<option value="164/160">164/160</option>
+							<option value="164K158L">164K158L</option>
+						</select>
+					</li>
+				</ul>
+				<ul class="fParams2">
+					<li><span class="fNovelty"><input type="checkbox" id="filter-param-6" name="novelty"></span>
+						<label for="filter-param-6">Новинки</label>
+					</li>
+					<li><span class="fSpecial"><input type="checkbox" id="filter-param-7" name="special_offer"></span>
+						<label for="filter-param-7">Спецпредложения</label>
+					</li>
+					<li><span class="fDiscount"><input type="checkbox" id="filter-param-8" name="sale"></span>
+						<label for="filter-param-8">Сниженная цена</label>
+					</li>
+
+				</ul>
+				<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form_truck1').submit();" class="btn">Открыть</a>
+			</form>
+		</div>
+		<div class="filterBlock" id="filter-truck-1-2">
+			<form id="filter_form_truck2" action="/catalog/tires/truck/" method="get">
+				<input type="hidden" name="tab" value="2" />
+				<input type="hidden" name="view" value="1" />
+				<div class="fParamsSizes">
+					<div class="fSize">
+						<div class="label">Типоразмеры по диаметру: <span class="chosenSize"></span>
+							<input type="hidden" name="chosenSize" value="" />
+						</div>
+						<ul class="fSizes">
+							<li><span class="size">R15-16</span>
+								<ul>
+									<li><a href="#">Выбрать все R15-16</a></li>
+									<li><a href="#">7,50R16</a></li>
+									<li><a href="#">8,25R15</a></li>
+								</ul>
+							</li>
+							<li><span class="size">R17,5-19,5</span>
+								<ul>
+									<li><a href="#">Выбрать все R17,5-19,5</a></li>
+									<li><a href="#">12,00-18</a></li>
+									<li><a href="#">205/65R17,5</a></li>
+									<li><a href="#">205/75R17,5</a></li>
+									<li><a href="#">215/75R17,5</a></li>
+									<li><a href="#">225/75R17,5</a></li>
+									<li><a href="#">235/75R17,5</a></li>
+									<li><a href="#">245/70R17,5</a></li>
+									<li><a href="#">265/70R19,5</a></li>
+									<li><a href="#">285/70R19,5</a></li>
+									<li><a href="#">385/55R19,5</a></li>
+									<li><a href="#">435/50R19,5</a></li>
+									<li><a href="#">445/45R19,5</a></li>
+									<li><a href="#">445/45R19,5</a></li>
+								</ul>
+							</li>
+							<li><span class="size">R20-21</span>
+								<ul>
+									<li><a href="#">Выбрать все R20-21</a></li>
+									<li><a href="#">10,00R20</a></li>
+									<li><a href="#">11,00R20</a></li>
+									<li><a href="#">12,00R20</a></li>
+									<li><a href="#">14,00R20</a></li>
+									<li><a href="#">15,00-20</a></li>
+									<li><a href="#">400/70-21</a></li>
+									<li><a href="#">425/85R21</a></li>
+									<li><a href="#">8,25R20</a></li>
+									<li><a href="#">9,00R20</a></li>
+								</ul>
+							</li>
+							<li><span class="size">R22,5</span>
+								<ul>
+									<li><a href="#">Выбрать все R22,5</a></li>
+									<li><a href="#">13R22,5</a></li>
+									<li><a href="#">275/70R22,5</a></li>
+									<li><a href="#">295/60R22,5</a></li>
+									<li><a href="#">295/80R22,5</a></li>
+									<li><a href="#">315/60R22,5</a></li>
+									<li><a href="#">315/70R22,5</a></li>
+									<li><a href="#">315/80R22,5</a></li>
+									<li><a href="#">385/55R22,5</a></li>
+									<li><a href="#">385/65R22,5</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<ul class="fParams">
+						<li>
+							<div class="label">Ось:</div>
+							<select name="axis">
+								<option value="">Любая</option>
+								<option value="Повышенной проходимости">Повышенной проходимости</option>
+								<option value="Универс.">Универс.</option>
+								<option value="ведущая">ведущая</option>
+								<option value="всепозиционные">всепозиционные</option>
+								<option value="прицепная">прицепная</option>
+								<option value="рулевая">рулевая</option>
+							</select>
+						</li>
+					</ul>
+
+
+					<ul class="fParams2">
+						<li style="display: none;"><span class="fNovelty"><input type="checkbox" id="filter-param-6" name="novelty"></span>
+							<label for="filter-param-6">Новинки</label>
+						</li>
+						<li><span class="fSpecial"><input type="checkbox" id="filter-param-7" name="special_offer"></span>
+							<label for="filter-param-7">Спецпредложения</label>
+						</li>
+						<li><span class="fDiscount"><input type="checkbox" id="filter-param-8" name="sale"></span>
+							<label for="filter-param-8">Сниженная цена</label>
+						</li>
+					</ul>
+				</div>
+				<ul class="fParams fParamsCheckbox">
+					<li>
+						<noindex>
+							<div class="sel_unsel"><a href="" class="sel">Выделить всё</a><!-- / <a href="" class="un_sel">Снять всё</a>--></div>
+						</noindex>
+						<div class="label">Производитель:</div>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="AEOLUS">
+							AEOLUS
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Antyre">
+							Antyre
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Aurora">
+							Aurora
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Barum">
+							Barum
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Continental">
+							Continental
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Cordiant">
+							Cordiant
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Domar">
+							Domar
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Double Coin">
+							Double Coin
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Fulda">
+							Fulda
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Fullrun">
+							Fullrun
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Geyer&Hosaja">
+							Geyer&Hosaja
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="GoodYear">
+							GoodYear
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Hankook">
+							Hankook
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Kelly">
+							Kelly
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Matador">
+							Matador
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Minerva">
+							Minerva
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="NextTread">
+							NextTread
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Sava">
+							Sava
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Triangle">
+							Triangle
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="АШК">
+							АШК
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Амтел">
+							Амтел
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Белшина">
+							Белшина
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Волтайр">
+							Волтайр
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Кама">
+							Кама
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Ольга-1">
+							Ольга-1
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Ольга-1 ОДО">
+							Ольга-1 ОДО
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Омск">
+							Омск
+						</label>
+						<label>
+							<input type="checkbox" name="manufacturer[]" value="Росава">
+							Росава
+						</label>
+					</li>
+
+				</ul>
+				<div class="clear"><!-- --></div>
+				<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form_truck2').submit();" class="btn">Открыть</a>
+			</form>
+		</div>
+		<div class="filterBlock ui-tabs-hide" id="filter-truck-1-3">
+			<form id="filter_form_truck3" action="/catalog/tires/truck/" method="get">
+				<input type="hidden" name="tab" value="3" />
+				<input type="hidden" name="view" value="1" />
+				<ul class="fParams">
+					<li>
+						<div class="label">Типоразмер:</div>
+						<select name="size">
+							<option value="">Любой</option>
+							<option value="11.75 x 22,5">11.75 x 22,5</option>
+							<option value="14.00 x 19,5">14.00 x 19,5</option>
+							<option value="6.00 x 17,5">6.00 x 17,5</option>
+							<option value="6.75 x 17,5">6.75 x 17,5</option>
+							<option value="6.75 x 19,5">6.75 x 19,5</option>
+							<option value="7.50 x 19,5">7.50 x 19,5</option>
+							<option value="7.50 x 22,5">7.50 x 22,5</option>
+							<option value="8.25 x 19,5">8.25 x 19,5</option>
+							<option value="8.25 x 22,5">8.25 x 22,5</option>
+							<option value="9.00 x 22,5">9.00 x 22,5</option>
+						</select>
+					</li>
+				</ul>
+				<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form_truck3').submit();" class="btn">Открыть</a>
+			</form>
+		</div>
+		<div class="filterBlock ui-tabs-hide" id="filter-truck-1-4">
+			<form id="filter_form_truck4" action="/catalog/tires/truck/" method="get">
+				<input type="hidden" name="tab" value="4" />
+				<input type="hidden" name="view" value="1" />
+				<ul class="fParams">
+					<li>
+						<div class="label">Типоразмер:</div>
+						<select name="size">
+							<option value="">Любой</option>
+							<option value="7,00-16|7,50-16|8,75-16,5">7,00-16|7,50-16|8,75-16,5</option>
+							<option value="12,00-18">12,00-18</option>
+							<option value="9,00-20">9,00-20</option>
+							<option value="10,00-20">10,00-20</option>
+							<option value="11,00-20">11,00-20</option>
+							<option value="12,00-20">12,00-20</option>
+							<option value="7,00/7,50-16">7,00/7,50-16</option>
+							<option value="7,50-16">7,50-16</option>
+							<option value="8,25-20">8,25-20</option>
+							<option value="16,00-24">16,00-24</option>
+							<option value="16,00-20">16,00-20</option>
+							<option value="1220/400-533">1220/400-533</option>
+							<option value="1300/530-533">1300/530-533</option>
+							<option value="14,00-20">14,00-20</option>
+							<option value="12,00-24">12,00-24</option>
+						</select>
+					</li>
+				</ul>
+				<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form_truck4').submit();" class="btn">Открыть</a>
+			</form>
+		</div>
+		<div class="filterBlock ui-tabs-hide" id="filter-truck-1-5">
+			<form id="filter_form_truck5" action="/catalog/tires/truck/" method="get">
+				<input type="hidden" name="tab" value="5" />
+				<input type="hidden" name="view" value="1" />
+				<ul class="fParams">
+					<li>
+						<div class="label">Типоразмер:</div>
+						<select name="size">
+							<option value="">Любой</option>
+							<option value="6,7-20">6,7-20</option>
+							<option value="7,7-20">7,7-20</option>
+							<option value="340-533">340-533</option>
+							<option value="11,00/12,00-24">11,00/12,00-24</option>
+							<option value="13,00/14,00-24">13,00/14,00-24</option>
+						</select>
+					</li>
+				</ul>
+				<a href="javascript:void(0);" onClick="$(this).parent().reset_form();" class="resetBtn">Сбросить</a> <a href="javascript:void(0);" onClick="$('#filter_form_truck5').submit();" class="btn">Открыть</a>
+			</form>
+		</div>
+		<script>
+			$(document).ready(function () {
+				$('#filter-truck-1').tabs({
+					'active': 1
+				});
+			})
+		</script>
+	</div>
+	</form>
+	<script type="text/javascript">
+		$(function () {
+			var availableTags = [];
+			$("#fast_search").autocomplete({
+				source: availableTags, minChars: 2, width: 148
+			});
+
+			$("#ui-id-3").trigger("click");
+		});
+	</script>
+
+	<!--new-->
+	<div class="pagination pagination-top">
+		<div class="finedCount"><b>Найдено:</b> 2238</div>
+
+		<div class="display-view">
+			<ul class="display">
+				<li class="display__title">Показывать:</li>
+				<li><a class="catalogLink" href="/catalog/tires/car/?count=15">15</a></li>
+				<li><a class="catalogLink" href="/catalog/tires/car/?count=30">30</a></li>
+				<li class="current">60</li>
+			</ul>
+
+			<ul class="view">
+				<li class="view__title">Вид:</li>
+				<li class="current"><img src="i/rows.png" alt="Таблицей"></li>
+				<li><a href="catalog.html"><img src="i/grid.png" alt="Сеткой"></a></li>
+			</ul>
+		</div>
+
+		<ul class="paging">
+			<!--<li class="paging__title">Страницы:</li>-->
+
+			<li class="prev_"><a class="catalogLink" href="/catalog/tires/car/?tab=1&amp;view=2&amp;width=&amp;height=&amp;diametr=&amp;season=%D0%97%D0%B8%D0%BC%D0%BD%D1%8F%D1%8F&amp;manufacturer=&amp;fast_search=&amp;PAGEN_1=7" id="navigation_1_previous_page">Назад</a></li>
+
+			<li class="current">1</li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=2">2</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=3">3</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=4">4</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=5">5</a></li>
+			<li>...</li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=34">34</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=35">35</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=36">36</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=37">37</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=38">38</a></li>
+
+			<li class="next_"><a href="/catalog/tires/car/?PAGEN_1=2">Далее</a></li>
+
+		</ul>
+	</div>
+
+	<div class="catalog_sort_by">
+		<span>Сортировать:</span>
+		<select id="sort_list">
+			<option>- выберите -</option>
+			<option value="size_asc">по типоразмеру (по возрастанию)</option>
+			<option value="size_desc">по типоразмеру (по убыванию)</option>
+			<option value="brend_asc">по бренду (по возрастанию)</option>
+			<option value="brend_desc">по бренду (по убыванию)</option>
+			<option value="model_asc">по модели (по возрастанию)</option>
+			<option value="model_desc">по модели (по убыванию)</option>
+			<option value="season_asc">по сезонности (по возрастанию)</option>
+			<option value="season_desc">по сезонности (по убыванию)</option>
+			<option value="indexn_asc">по индексу нагрузки (по возрастанию)</option>
+			<option value="indexn_desc">по индексу нагрузки (по убыванию)</option>
+		</select>
+	</div>
+	<!--new end-->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#sort_list").on('change', function () {
+				var url = '/catalog/tires/car/?sort=__sort__field__';
+				location.href = url.replace('__sort__field__', $(this).val());
+			});
+		});
+	</script>
+
+	<!--new-->
+	<div class="currentDiscount">
+		<div class="currentDiscountIn">
+			<span class="discountText">Ваша скидка: <strong>0%</strong></span>
+			<span class="discountChange" style="display:none">
+		<input type="text" size="1" name="discount" class="discount_input" id="discount" value="0">
+		<input type="hidden" name="discount_tmp" id="discount_tmp" value="0"><span class="discountUnit">%</span>
+		<a id="changeDisc" class="changeLink" href="#">Сохранить</a>
+	</span> <span class="changeLinkText"><a id="changeLink" class="changeLink" href="#">Изменить</a></span>
+		</div>
+	</div>
+	<!--new end-->
+
+	<input type="hidden" id="displayQuantityLimit" value="20">
+
+	<!--new-->
+	<div class="table-auto">
+		<table>
+			<tbody>
+				<tr>
+					<th>Наименование</th>
+					<th>Примечание</th>
+					<th>Бренд</th>
+					<th>PCD</th>
+					<th>Остаток<br>Центральный<br>склад</th>
+				</tr>
+				<tr>
+					<td>MP002 (4x100 Nissan, Subaru)</td>
+					<td>8 гаек D2, 2 кольца Z02</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->3</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP004 (4x100 VW, Seat, Skoda)</td>
+					<td>8 болтов R15,2 кольца Z03</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP005a (4x100 Fiat Grande Punto(Typ 199)</td>
+					<td>8 болтов R06,2 кольца Z04</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP005 (4x100 Opel, Daewoo)</td>
+					<td>8 болтов R07,2 кольца Z04</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP005 (4x100 Opel, Daewoo)</td>
+					<td>8 болтов R07,2 кольца Z04</td>
+					<td>Anzio</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP006 (4x100 Honda, Rover, Mitsubishi, Kia)</td>
+					<td>8 гаек D6, 2 кольца Z05</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP008 (4x100 Hyundai,Kia,Mazda,Opel,Suzuki,Toyota)</td>
+					<td>8 гаек D6, 2 кольца Z06</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->1</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP012 (4x108 Ford-Mazda 2)</td>
+					<td>8 гаек D6, без кольца</td>
+					<td>Alutec</td>
+					<td>4/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP012 (4x108 Ford-Mazda 2)</td>
+					<td>8 гаек D6, без кольца</td>
+					<td>Anzio</td>
+					<td>4/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP015b (4x98 Fiat Stilo)</td>
+					<td>8 болтов R01,2 кольца Z09</td>
+					<td>Alutec</td>
+					<td>4/98,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP015a (4x98 Fiat, Lancia, Alfa)</td>
+					<td>8 болтов R02,2 кольца Z09</td>
+					<td>Alutec</td>
+					<td>4/98,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP015 (4x98 Fiat, Lancia, Alfa, Seat)</td>
+					<td>8 болтов R04,2 кольца Z09</td>
+					<td>Alutec</td>
+					<td>4/98,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP018a (5x98 Alfa Romeo)</td>
+					<td>10 болтов R02, без кольца</td>
+					<td>Alutec</td>
+					<td>5/98,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->5</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP025 (4x114,3 Nissan)</td>
+					<td>8 гаек D2, 2 кольца Z11</td>
+					<td>Alutec</td>
+					<td>4/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->9</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP027 (4x114,3 Honda-Rover)</td>
+					<td>8 гаек D6, 2 кольца Z12</td>
+					<td>Alutec</td>
+					<td>4/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->7</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP033 (5x114,3 Toyota)</td>
+					<td>10 гаек D6, 2 кольца Z13</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->1</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP033 (5x114,3 Toyota)</td>
+					<td>10 гаек D6, 2 кольца Z13</td>
+					<td>Anzio</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->3</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP035b (5x114,3 Suzuki SX4)</td>
+					<td>10 болт.R07, 2 кольца Z13</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP035a (5x114,3 Suzuki Vitara)</td>
+					<td>10 гаек D2, 2 кольца Z13</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP035 (5x100 Toyota)</td>
+					<td>10 гаек D6, 2 кольца Z06</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP035 (5x100 Toyota)</td>
+					<td>10 гаек D6, 2 кольца Z06</td>
+					<td>Anzio</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->8</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP037 (5x100 Audi-Chrysler-Skoda-Seat-VW)</td>
+					<td>10 болт.R14, 2 кольца Z03</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->18</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP037 (5x100 Audi-Chrysler-Skoda-Seat-VW)</td>
+					<td>10 болт.R14, 2 кольца Z03</td>
+					<td>Anzio</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP043 (5x112 Mercedes)</td>
+					<td>10 болт.R15, 2 кольца Z15</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP043 (5x112 Mercedes)</td>
+					<td>10 болт.R15, 2 кольца Z15</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP045 (5x112 Audi-Skoda-VW)</td>
+					<td>10 болт.R14, 2 кольца Z16</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->5</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP045 (5x112 Audi-Skoda-VW)</td>
+					<td>10 болт.R14, 2 кольца Z16</td>
+					<td>Anzio</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP046 (5x108 Citroen-Peugeot)</td>
+					<td>10 болт.R04, 2 кольца Z17</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP047 (5x108 Renault)</td>
+					<td>10 болт.R14, 2 кольца Z13</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP051a (4x108 Citroen-Peugeot)</td>
+					<td>8 болтов R02</td>
+					<td>Alutec</td>
+					<td>4/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->11</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP051a (4x108 Citroen-Peugeot)</td>
+					<td>8 болтов R02</td>
+					<td>Anzio</td>
+					<td>4/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP053a (5x112 Audi-Mercedes)</td>
+					<td>10 болтов R10 сфера</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP057 (LK 5x108 Volvo 850, S/V70 , 2 кольца Z 17)</td>
+					<td>2 кольца Z17</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->5</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP061 (4x100 Suzuki, Opel)</td>
+					<td>8 гаек D02, 2 кольца Z06</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP064a (Toyota, Lexus, Mitsubishi)</td>
+					<td>10 гаек D6</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP064 (5x114,3 Honda, Rover Freelander)</td>
+					<td>10 гаек D6, 2 кольца Z12</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP064 (5x114,3 Honda, Rover Freelander)</td>
+					<td>10 гаек D6, 2 кольца Z12</td>
+					<td>Anzio</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP065 (5x114,3 Nissan)</td>
+					<td>10 гаек D2, 2 кольца Z11</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->11</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP065а (5x114,3 Subaru)</td>
+					<td>10 гаек D2, 2 кольца Z37</td>
+					<td>Alutec</td>
+					<td>5/114,3</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->8</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP067a (5x100 Subaru)</td>
+					<td>10 гаек D2</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->8</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP067 (5x100 Subaru)</td>
+					<td>10 гаек D2, 2 кольца Z05</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP068 (5x100 Chrysler Neon, Voyager-Opel)</td>
+					<td>10 гаек D6, 2 кольца Z03</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP072 (4 x100 Daewoo)</td>
+					<td>8 гаек D6, 2 кольца Z04</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP074 (5 x 98, 5 x 110, 5 x 112)</td>
+					<td>10 болтов R14, без кольца</td>
+					<td>Alutec</td>
+					<td>5/98,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP073 (5 x100 Rover 75)</td>
+					<td>10 болтов R14,2кольца Z05</td>
+					<td>Alutec</td>
+					<td>5/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP075 (5x118-5x130 Fiat, Citroen, Peugeot, MB, VW)</td>
+					<td>10 болтов R16</td>
+					<td>Alutec</td>
+					<td>5/118,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP075a (5x108  Volvo)</td>
+					<td>10 болтов R16,2кольца Z34</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->14</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP075b (5x108  Volvo)</td>
+					<td>2 кольца Z34</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->8</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP075b (5x108  Volvo)</td>
+					<td>2 кольца Z34</td>
+					<td>Anzio</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP076 (5x130 Citroen, Fiat, Peugeot)</td>
+					<td>10 болтов R17</td>
+					<td>Alutec</td>
+					<td>5/130,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->16</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP077 (5x108 Volvo)</td>
+					<td>10 болт.R14, 2 кольца Z17</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->10</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP078 (4x100 Kia, Subaru, Suzuki)</td>
+					<td>8 болтов R07,2 кольца Z06</td>
+					<td>Alutec</td>
+					<td>4/100,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP077 (5x108 Volvo)</td>
+					<td>10 болт.R14, 2 кольца Z17</td>
+					<td>Anzio</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->8</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP079а (5x108 Alfa, lancia)</td>
+					<td>10 болт.R01, 2 кольца Z35</td>
+					<td>Alutec</td>
+					<td>5/108,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP080a (5x110 Opel-Saab &amp; 5x120 BMW)</td>
+					<td>10 болтов R07</td>
+					<td>Alutec</td>
+					<td>5/120,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->12</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP080d (5x120 BMW)</td>
+					<td>10 болтов R18</td>
+					<td>Alutec</td>
+					<td>5/120,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->6</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP080a (5x110 Opel-Saab &amp; 5x120 BMW)</td>
+					<td>10 болтов R07</td>
+					<td>Anzio</td>
+					<td>5/120,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->&gt;20</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP081 (5x112 Audi-Ford-Seat-Skoda-VW)</td>
+					<td>10 болт.R14, 2 кольца Z25</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP082 (5x112 Mercedes)</td>
+					<td>10 болт.R15, 2 кольца Z24</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->4</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>MP083 (5x112 Mercedes V-/S-/E-Klasse)</td>
+					<td>10 болт.R14, 2 кольца Z24</td>
+					<td>Alutec</td>
+					<td>5/112,0</td>
+
+					<td>
+						<div class="orderCount">
+							<div class="currentCount"><!--&gt;-->2</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--new end-->
+
+	<div class="pagination">
+		<ul class="paging">
+			<!--<li>Страницы:</li>-->
+
+			<li class="prev_"><a class="catalogLink" href="/catalog/tires/car/?tab=1&amp;view=2&amp;width=&amp;height=&amp;diametr=&amp;season=%D0%97%D0%B8%D0%BC%D0%BD%D1%8F%D1%8F&amp;manufacturer=&amp;fast_search=&amp;PAGEN_1=7" id="navigation_1_previous_page">Назад</a></li>
+
+			<li class="current">1</li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=2">2</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=3">3</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=4">4</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=5">5</a></li>
+			<li>...</li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=34">34</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=35">35</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=36">36</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=37">37</a></li>
+			<li><a class="catalogLink" href="/catalog/tires/car/?PAGEN_1=38">38</a></li>
+
+			<li class="next_"><a href="/catalog/tires/car/?PAGEN_1=2">Далее</a></li>
+
+		</ul>
+
+		<!--mob-->
+		<ul class="paging-mob">
+			<li class="first_ disabled"><a class="catalogLink" href="#">В начеало</a></li>
+			<li class="prev_ disabled"><a class="catalogLink" href="/catalog/tires/car/?tab=1&amp;view=2&amp;width=&amp;height=&amp;diametr=&amp;season=%D0%97%D0%B8%D0%BC%D0%BD%D1%8F%D1%8F&amp;manufacturer=&amp;fast_search=&amp;PAGEN_1=7" id="navigation_1_previous_page">Назад</a></li>
+
+			<li class="counter_"><span>Страниа:</span> 1/28</li>
+
+			<li class="next_"><a href="/catalog/tires/car/?PAGEN_1=2">Далее</a></li>
+			<li class="last_"><a href="#">В конце</a></li>
+		</ul>
+		<!--mob end-->
+	</div>
+
+	<input type="hidden" class="user_store" value="">
+	<input type="hidden" name="UF_LIMIT" id="UF_LIMIT" value="">
+	<input type="hidden" name="UF_LIMIT_REST" id="UF_LIMIT_REST" value="">
+	<input type="hidden" name="MinTovarov" id="MinTovarov" value="0">
+	<input type="hidden" name="MinSumma" id="MinSumma" value="0">
+	<input type="hidden" name="MaxSummaMonth" id="MaxSummaMonth" value="84000">
+	<input type="hidden" name="MinTovarov" id="MinTovarov" value="0">
+	<input type="hidden" name="MinSumma" id="MinSumma" value="0">
+	<input type="hidden" name="MaxSummaMonth" id="MaxSummaMonth" value="84000">
+
+	<input type="hidden" name="cart_items" id="cart_items" value="7">
+	<input type="hidden" name="cart_summ" id="cart_summ" value="4477.34">
+</section>
+
+@@include('_tpl_layout_sidebar.html')
+
+@@include('_tpl_layout_foot.html')

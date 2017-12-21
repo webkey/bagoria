@@ -109,6 +109,19 @@ html
 	+media('<tab-lg')
 		display: none
 
+.table-auto
+	+media('<tab-lg')
+		position: relative
+		overflow: auto
+		max-width: 100%
+		-webkit-overflow-scrolling: touch
+		margin-bottom: $bottom-space
+
+		table
+			margin-bottom: 0
+			width: auto
+			min-width: 100%
+
 .wrapper select
 	+media('<tab-lg')
 		overflow: hidden
@@ -132,7 +145,7 @@ html
 		+padding-horizontal(9px)
 		font-size: 12px
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text
 	+media('<tab-lg')
 		width: 100%
 		display: block
@@ -1910,6 +1923,7 @@ ul.fTabs, ul.cartTabs
 
 	+media('<tab-lg')
 		margin-bottom: -1px
+		padding: 0 0 1px 1px
 
 	li
 		background-color: $bg-color-base
@@ -1922,9 +1936,9 @@ ul.fTabs, ul.cartTabs
 		float: none
 		padding: 0
 		border: 1px solid $base-color-alt
-		box-shadow: 1px 0 0 $base-color-alt
-		border-right: none
-		margin: 0 0 -1px
+		//box-shadow: 1px 0 0 $base-color-alt
+		//border-right: none
+		margin: 0 0 -1px -1px
 
 		a
 			display: block
@@ -1955,6 +1969,11 @@ ul.cartTabs
 		padding: $grid-space--lg
 		border: none
 
+	.fParamsSizes
+		+media('<tab-lg')
+			float: none
+			width: auto
+
 	.fParams, .fParams2, .fastSearch
 		+media('<tab-lg')
 			+margin-horizontal(-#{$grid-space--lg})
@@ -1966,6 +1985,8 @@ ul.cartTabs
 		+media('<tab-lg')
 			padding-right: $grid-space--lg
 			+clear-spacing
+			float: none
+			width: auto
 
 		li
 			+media('<tab-lg')
@@ -1982,6 +2003,25 @@ ul.cartTabs
 
 			+media('<mob-lg')
 				width: 100.0%
+
+	ul.fParamsCheckbox
+		li
+			+media('<tab-lg')
+				display: block
+				width: 100%
+
+		.sel_unsel
+			+media('<tab-lg')
+				font-size: 12px
+				right: 20px
+
+		label
+			+media('<mob-md')
+				width: 49.98%
+
+		.label
+			+media('<mob-md')
+				margin-bottom: 15px
 
 	ul.fParams2
 		span
@@ -3584,3 +3624,115 @@ ul.products
 		border-width: 4px
 
 /* infoPopup end
+
+.bx_search_container
+	+media('<tab-lg')
+		height: auto
+		line-height: 1
+
+	& .bx_field
+		+media('<tab-lg')
+			position: relative
+			margin-top: 0
+			height: auto
+			width: auto
+			border: none
+			border-radius: 0
+			background: none
+			box-shadow: none
+			line-height: 1
+
+	& .bx_field .bx_input_text
+		+media('<tab-lg')
+			position: relative
+			left: auto
+			top: auto
+			right: auto
+
+/* ul.fSizes
+ul.fSizes
+	+media('<mob-lg')
+		ul
+			position: fixed
+			top: 30px
+			left: 20px
+			width: calc(100% - 40px)
+			height: calc(100% - 60px)
+			padding: 30px 15px
+			border: 2px solid $base-color
+			box-sizing: border-box
+			font-size: 18px
+			line-height: 24px
+			z-index: 999
+			overflow-x: hidden
+			overflow-y: auto
+			box-shadow: 0 0 0 50px rgba(black, 0.5)
+
+			//&::before
+				+pseudo()
+				+size(200%)
+				left: -50%
+				top: -50%
+				background-color: rgba(0, 0, 0, 0.5)
+				z-index: -1
+
+			//&::after
+				+pseudo()
+				+size(100%)
+				left: 0
+				top: 0
+				background-color: white
+
+			li
+				margin-bottom: 10px
+				position: relative
+				z-index: 2
+
+	& + .btn-close
+		display: none
+
+		+media('<mob-lg')
+			display: block
+			position: fixed
+			right: 22px
+			top: 32px
+			z-index: 9999
+			+size(40px)
+
+/* ul.fSizes end
+
+/* findOutPriceBox
+.findOutPriceBox
+
+	+media('<tab-lg')
+		box-sizing: border-box
+		height: 400px !important
+		margin-top: -183px !important
+
+		.priceBoxSize
+			width: 100% !important
+
+	+media('<mob-md')
+		top: 30px !important
+		left: 20px !important
+		width: calc(100% - 40px) !important
+		height: calc(100% - 60px) !important
+		padding: 30px 15px !important
+		margin: 0 !important
+		box-sizing: border-box
+		overflow-x: hidden
+		overflow-y: auto
+
+	& + .btn-close
+		display: none
+
+		+media('<mob-lg')
+			display: block
+			position: fixed
+			right: 22px
+			top: 32px
+			z-index: 99999
+			+size(40px)
+
+
+/* findOutPriceBox end

@@ -1,0 +1,143 @@
+/* Start:/local/templates/.default/components/bitrix/search.title/np/style.css*/
+.bx_search_container{
+	height: 33px;
+	line-height: 50px;
+	padding: 0px;
+}
+
+.bx_search_container .bx_field{
+	position: relative;
+	margin-top: 0px;
+	height: 25px;
+	width: 558px;
+	border-top:    1px solid #b2b2b2;
+	border-right:  1px solid #b2b2b2;
+	border-bottom: 1px solid #b2b2b2;
+	border-left:   1px solid #b2b2b2;
+	border-radius: 0px;
+	background: #fff;
+	box-shadow: inset 0 2px 3px 0 rgba(0,0,0,0.1);
+	line-height: 25px;
+}
+.bx_search_container .bx_field .bx_input_text{
+	position: absolute;
+	right: 34px;
+	left: 5px;
+	height: 25px;
+	outline: none;
+	border: none;
+	background: none;
+	line-height: 25px;
+	width: 560px;
+}
+.bx_search_container .bx_field .bx_input_submit{
+	position: absolute;
+	top: 2px;
+	right: 0;
+	bottom: 0;
+	width: 34px;
+	border: none;
+	background: url('/local/templates/.default/components/bitrix/search.title/np/images/search_lupe.png') no-repeat left center;
+	cursor: pointer;
+
+}
+
+div.title-search-result {
+	border:1px solid #c6c6c6;
+	display:none;
+	overflow:hidden;
+	z-index:999;
+	min-width: 370px;
+	1margin-left: 11px;
+	margin-top:-9px;
+	background-color: #FFF;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow:0 0 7px 0 rgba(0,0,0,.3), inset 0 3px 3px 0 rgba(0,0,0,.1);
+	max-height: 400px;
+	overflow: auto;
+}
+
+div.title-search-fader {
+	display:none;
+	background-image: url('/local/templates/.default/components/bitrix/search.title/np/images/fader.png');
+	background-position: right top;
+	background-repeat: repeat-y;
+	position:absolute;
+}
+
+p.title-search-preview {
+	font-size:12px;
+}
+div.title-search-result td.title-search-price span {
+	font-size: 26px;
+}
+
+/*========================*/
+.bx_searche{}
+.bx_searche .bx_img_element{
+	width: 0px;
+	padding: 0px;
+}
+.bx_searche .bx_item_block{
+	min-height: 65px;
+	position: relative
+}
+.bx_searche .bx_image{
+	width: 45px;
+	height: 45px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 1px solid #e8e8e8;
+}
+.bx_searche .bx_item_element{
+	/*float: left;*/
+	padding-left: 10px;
+	margin-left: 10px;
+}
+.bx_searche .bx_item_element hr{
+	margin: 0;
+	border: none;
+	border-bottom: 1px solid #e5e5e5;
+}
+.bx_searche .bx_item_element a{
+	margin-top: 10px;
+	display: inline-block;
+	color: #4788cb;
+	font-size: 13px;
+	text-decoration: none;
+}
+.bx_searche .bx_item_element a b{color: #000;font-weight: normal;}
+.bx_searche .bx_item_element a:hover,
+.bx_searche .bx_item_element a:hover b{text-decoration: underline;}
+.bx_searche .bx_price{
+	font-weight:bold;
+	font-size:13px;
+}
+.bx_searche .bx_price .old{
+	font-weight:normal;
+	text-decoration: line-through;
+	color: #636363
+}
+.bx_item_block.all_result{display:none;}
+.bx_item_block.others_result{
+	min-height: 0;
+	padding: 0 0 12px;
+	line-height: 12px;
+}
+.bx_item_block.all_result .all_result_title{
+	display: block;
+	font-size: 12px;
+	color: #a7a7a7;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.bx_item_block.all_result .all_result_title a{color: #a7a7a7}
+.bx_item_block.all_result .all_result_title a:hover{color: #4788cb}
+.bx_item_block.all_result a{
+	margin-top: 0;
+}
+/* End */
+/* /local/templates/.default/components/bitrix/search.title/np/style.css */

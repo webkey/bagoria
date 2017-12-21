@@ -375,6 +375,21 @@ html.menu-is-open {
 }
 
 @media (max-width: 1023px) {
+	.table-auto {
+		position: relative;
+		overflow: auto;
+		max-width: 100%;
+		-webkit-overflow-scrolling: touch;
+		margin-bottom: 20px;
+	}
+	.table-auto table {
+		margin-bottom: 0;
+		width: auto;
+		min-width: 100%;
+	}
+}
+
+@media (max-width: 1023px) {
 	.wrapper select {
 		overflow: hidden;
 		display: block;
@@ -405,7 +420,7 @@ html.menu-is-open {
 }
 
 @media (max-width: 1023px) {
-	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text {
 		width: 100%;
 		display: block;
 		border: 1px solid #e6e6e6;
@@ -425,7 +440,7 @@ html.menu-is-open {
 }
 
 @media (max-width: 639px) {
-	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text {
 		padding-right: 12px;
 		padding-left: 12px;
 		font-size: 12px;
@@ -2557,6 +2572,7 @@ ul.fTabs, ul.cartTabs {
 @media (max-width: 1023px) {
 	ul.fTabs, ul.cartTabs {
 		margin-bottom: -1px;
+		padding: 0 0 1px 1px;
 	}
 }
 
@@ -2574,9 +2590,7 @@ ul.fTabs li, ul.fTabs li.ui-tabs-active, ul.cartTabs li, ul.cartTabs li.ui-tabs-
 	float: none;
 	padding: 0;
 	border: 1px solid #ffbf14;
-	box-shadow: 1px 0 0 #ffbf14;
-	border-right: none;
-	margin: 0 0 -1px;
+	margin: 0 0 -1px -1px;
 }
 
 ul.fTabs li a, ul.fTabs li.ui-tabs-active a, ul.cartTabs li a, ul.cartTabs li.ui-tabs-active a {
@@ -2617,6 +2631,13 @@ ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:
 }
 
 @media (max-width: 1023px) {
+	.filterBlock .fParamsSizes {
+		float: none;
+		width: auto;
+	}
+}
+
+@media (max-width: 1023px) {
 	.filterBlock .fParams, .filterBlock .fParams2, .filterBlock .fastSearch {
 		margin-right: -20px;
 		margin-left: -20px;
@@ -2631,6 +2652,8 @@ ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:
 		padding-right: 20px;
 		font-size: 0;
 		letter-spacing: -4px;
+		float: none;
+		width: auto;
 	}
 }
 
@@ -2656,6 +2679,32 @@ ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:
 @media (max-width: 639px) {
 	.filterBlock .fParams li, .filterBlock .fParams2 li {
 		width: 100.0%;
+	}
+}
+
+@media (max-width: 1023px) {
+	.filterBlock ul.fParamsCheckbox li {
+		display: block;
+		width: 100%;
+	}
+}
+
+@media (max-width: 1023px) {
+	.filterBlock ul.fParamsCheckbox .sel_unsel {
+		font-size: 12px;
+		right: 20px;
+	}
+}
+
+@media (max-width: 479px) {
+	.filterBlock ul.fParamsCheckbox label {
+		width: 49.98%;
+	}
+}
+
+@media (max-width: 479px) {
+	.filterBlock ul.fParamsCheckbox .label {
+		margin-bottom: 15px;
 	}
 }
 
@@ -4228,6 +4277,121 @@ ul.tabs li {
 }
 
 /* infoPopup end */
+@media (max-width: 1023px) {
+	.bx_search_container {
+		height: auto;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 1023px) {
+	.bx_search_container .bx_field {
+		position: relative;
+		margin-top: 0;
+		height: auto;
+		width: auto;
+		border: none;
+		border-radius: 0;
+		background: none;
+		box-shadow: none;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 1023px) {
+	.bx_search_container .bx_field .bx_input_text {
+		position: relative;
+		left: auto;
+		top: auto;
+		right: auto;
+	}
+}
+
+/* ul.fSizes */
+@media (max-width: 639px) {
+	ul.fSizes ul {
+		position: fixed;
+		top: 30px;
+		left: 20px;
+		width: calc(100% - 40px);
+		height: calc(100% - 60px);
+		padding: 30px 15px;
+		border: 2px solid #1a59b9;
+		box-sizing: border-box;
+		font-size: 18px;
+		line-height: 24px;
+		z-index: 999;
+		overflow-x: hidden;
+		overflow-y: auto;
+		box-shadow: 0 0 0 50px rgba(0, 0, 0, 0.5);
+	}
+	ul.fSizes ul li {
+		margin-bottom: 10px;
+		position: relative;
+		z-index: 2;
+	}
+}
+
+ul.fSizes + .btn-close {
+	display: none;
+}
+
+@media (max-width: 639px) {
+	ul.fSizes + .btn-close {
+		display: block;
+		position: fixed;
+		right: 22px;
+		top: 32px;
+		z-index: 9999;
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/* ul.fSizes end */
+/* findOutPriceBox */
+@media (max-width: 1023px) {
+	.findOutPriceBox {
+		box-sizing: border-box;
+		height: 400px !important;
+		margin-top: -183px !important;
+	}
+	.findOutPriceBox .priceBoxSize {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 479px) {
+	.findOutPriceBox {
+		top: 30px !important;
+		left: 20px !important;
+		width: calc(100% - 40px) !important;
+		height: calc(100% - 60px) !important;
+		padding: 30px 15px !important;
+		margin: 0 !important;
+		box-sizing: border-box;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+.findOutPriceBox + .btn-close {
+	display: none;
+}
+
+@media (max-width: 639px) {
+	.findOutPriceBox + .btn-close {
+		display: block;
+		position: fixed;
+		right: 22px;
+		top: 32px;
+		z-index: 99999;
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/* findOutPriceBox end */
 /* COMPONENTS end */
 /*======================================================*/
 /* LAYOUT */

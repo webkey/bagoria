@@ -2571,7 +2571,6 @@ ul.fTabs, ul.cartTabs {
 
 @media (max-width: 1023px) {
 	ul.fTabs, ul.cartTabs {
-		margin-bottom: -1px;
 		padding: 0 0 1px 1px;
 	}
 }
@@ -2606,7 +2605,6 @@ ul.fTabs li:last-child, ul.fTabs li.ui-tabs-active:last-child, ul.cartTabs li:la
 
 ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:first-child, ul.cartTabs li.ui-tabs-active:first-child {
 	border: 1px solid #ffbf14;
-	border-right: none;
 }
 
 @media (max-width: 639px) {
@@ -4296,6 +4294,11 @@ ul.tabs li {
 		box-shadow: none;
 		line-height: 1;
 	}
+	.bx_search_container .bx_field::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 @media (max-width: 1023px) {
@@ -4392,6 +4395,38 @@ ul.fSizes + .btn-close {
 }
 
 /* findOutPriceBox end */
+/* r-progress */
+@media (max-width: 1023px) {
+	.r-progress {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+}
+
+/* r-progress end */
+@media (max-width: 1023px) {
+	.button-row {
+		height: auto !important;
+	}
+}
+
+/* my-popup */
+@media (max-width: 639px) {
+	.my-popup {
+		top: 100px;
+		left: 10px;
+		right: 10px;
+		padding: 20px;
+		width: auto;
+		height: auto;
+	}
+	.my-popup p {
+		margin-top: 0;
+	}
+}
+
+/* my-popup end */
 /* COMPONENTS end */
 /*======================================================*/
 /* LAYOUT */

@@ -1922,7 +1922,7 @@ ul.fTabs, ul.cartTabs
 	padding-bottom: 1px
 
 	+media('<tab-lg')
-		margin-bottom: -1px
+		//margin-bottom: -1px
 		padding: 0 0 1px 1px
 
 	li
@@ -1951,7 +1951,7 @@ ul.fTabs, ul.cartTabs
 
 		&:first-child
 			border: 1px solid $base-color-alt
-			border-right: none
+			//border-right: none
 
 		+media('<mob-lg')
 			width: 50%
@@ -3642,6 +3642,8 @@ ul.products
 			box-shadow: none
 			line-height: 1
 
+			+clear
+
 	& .bx_field .bx_input_text
 		+media('<tab-lg')
 			position: relative
@@ -3736,3 +3738,31 @@ ul.fSizes
 
 
 /* findOutPriceBox end
+
+/* r-progress
+.r-progress
+	+media('<tab-lg')
+		position: relative
+		top: auto
+		right: auto
+
+/* r-progress end
+
+.button-row
+	+media('<tab-lg')
+		height: auto !important
+
+/* my-popup
+.my-popup
+	+media('<mob-lg')
+		top: 100px
+		left: 10px
+		right: 10px
+		padding: 20px
+		width: auto
+		height: auto
+
+		p
+			margin-top: 0
+
+/* my-popup end

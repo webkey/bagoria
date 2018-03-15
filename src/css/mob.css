@@ -420,7 +420,12 @@ html.menu-is-open {
 }
 
 @media (max-width: 1023px) {
-	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text {
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"],
+	input[type="password"],
+	textarea,
+	.bx_search_container .bx_field .bx_input_text {
 		width: 100%;
 		display: block;
 		border: 1px solid #e6e6e6;
@@ -440,7 +445,12 @@ html.menu-is-open {
 }
 
 @media (max-width: 639px) {
-	input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text {
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"],
+	input[type="password"],
+	textarea,
+	.bx_search_container .bx_field .bx_input_text {
 		padding-right: 12px;
 		padding-left: 12px;
 		font-size: 12px;
@@ -1171,7 +1181,7 @@ a.cardLink {
 }
 
 @media (max-width: 1023px) {
-	a.cartBtn {
+	.table-resp a.cartBtn {
 		display: inline-block;
 		vertical-align: top;
 		text-align: center;
@@ -1196,20 +1206,20 @@ a.cardLink {
 		text-decoration: none;
 		box-sizing: border-box;
 	}
-	a.cartBtn:hover, a.cartBtn:active {
+	.table-resp a.cartBtn:hover, .table-resp a.cartBtn:active {
 		box-shadow: none;
 		text-shadow: none;
 		background: #1a59b9;
 	}
-	a.cartBtn.disabled {
+	.table-resp a.cartBtn.disabled {
 		box-shadow: none;
 		text-shadow: none;
 	}
-	a.cartBtn.inCar {
+	.table-resp a.cartBtn.inCar {
 		background: #ffbf14;
 		color: #262626;
 	}
-	a.cartBtn.inCar:hover, a.cartBtn.inCar:active {
+	.table-resp a.cartBtn.inCar:hover, .table-resp a.cartBtn.inCar:active {
 		background-color: rgba(255, 191, 20, 0.8);
 	}
 }
@@ -1852,6 +1862,7 @@ a.mark.active:after {
 	.content h1 {
 		font-size: 24px;
 		line-height: 28px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -1859,6 +1870,14 @@ a.mark.active:after {
 	.content h2 {
 		font-size: 24px;
 		line-height: 24px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.content [style*="float"] {
+		float: none !important;
+		width: auto !important;
+		max-width: 100%;
 	}
 }
 
@@ -2316,11 +2335,32 @@ a.mark.active:after {
 	height: auto;
 }
 
+.counter {
+	margin-right: 0;
+	margin-bottom: 5px;
+}
+
+.counter input[type="text"] {
+	float: left;
+	margin-right: 0;
+	margin-bottom: 5px;
+}
+
+@media (max-width: 1023px) {
+	.counter input[type="text"] {
+		font-size: 12px;
+		line-height: 14px;
+		padding: 2px;
+		height: 20px;
+		margin: 0;
+	}
+}
+
 ul.productsGrid .counter {
 	width: 51px;
 }
 
-ul.productsGrid .counter .change_counter {
+ul.productsGrid .counter .css-counter {
 	display: none;
 }
 
@@ -2387,7 +2427,7 @@ ul.productsGrid .counter .change_counter {
 		width: auto;
 		float: none;
 	}
-	ul.productsGrid table .counter .change_counter {
+	ul.productsGrid table .counter .css-counter {
 		display: block;
 	}
 	ul.productsGrid table tr:first-child td:first-child {
@@ -2616,6 +2656,12 @@ ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:
 @media (max-width: 639px) {
 	ul.cartTabs li, ul.cartTabs li.ui-tabs-active {
 		width: 100%;
+	}
+}
+
+@media (max-width: 1023px) {
+	.altTabs {
+		margin-bottom: 20px !important;
 	}
 }
 
@@ -3075,13 +3121,13 @@ ul.paging {
 /* pagination */
 /* counter */
 @media (max-width: 1023px) {
-	.counter {
+	.table-resp .counter {
 		position: relative;
 		width: auto;
 		height: 100%;
 		max-width: 180px;
 	}
-	.counter a {
+	.table-resp .counter a {
 		display: block;
 		float: none;
 		position: absolute;
@@ -3099,18 +3145,18 @@ ul.paging {
 		outline: none;
 		border-radius: 0;
 	}
-	.counter a:hover, .counter a:active {
+	.table-resp .counter a:hover, .table-resp .counter a:active {
 		box-shadow: none;
 		background-color: #f3f3f3;
 		text-shadow: none;
 	}
-	.counter .minus {
+	.table-resp .counter .minus {
 		left: 0;
 	}
-	.counter .plus {
+	.table-resp .counter .plus {
 		right: 0;
 	}
-	.counter input[type="text"] {
+	.table-resp .counter input[type="text"] {
 		float: none;
 		width: 100%;
 		height: 40px;
@@ -3128,13 +3174,14 @@ ul.paging {
 }
 
 /* counter end */
-.orderCount .counter {
-	float: left;
-	width: 55px;
-}
-
-.orderCount .counter .change_counter {
-	display: none;
+@media (max-width: 1023px) {
+	.table-resp .orderCount .counter {
+		float: left;
+		width: 55px;
+	}
+	.table-resp .orderCount .counter .css-counter {
+		display: none;
+	}
 }
 
 /* table-resp */
@@ -3292,7 +3339,7 @@ ul.paging {
 		width: auto;
 		float: none;
 	}
-	.table-resp td .orderCount .counter .change_counter {
+	.table-resp td .orderCount .counter .css-counter {
 		display: block;
 	}
 	.table-resp td .orderCount a.cartBtn {
@@ -4398,9 +4445,27 @@ ul.fSizes + .btn-close {
 /* r-progress */
 @media (max-width: 1023px) {
 	.r-progress {
-		position: relative;
-		top: auto;
-		right: auto;
+		position: relative !important;
+		top: auto  !important;
+		right: auto !important;
+		margin-bottom: 20px;
+	}
+	.r-progress::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@media (max-width: 639px) {
+	.c100 {
+		font-size: 100px !important;
+	}
+}
+
+@media (max-width: 639px) {
+	.c100.medium {
+		font-size: 80px !important;
 	}
 }
 
@@ -4411,22 +4476,171 @@ ul.fSizes + .btn-close {
 	}
 }
 
+@media (max-width: 639px) {
+	.button-row .button {
+		margin-bottom: 10px !important;
+	}
+}
+
 /* my-popup */
 @media (max-width: 639px) {
 	.my-popup {
-		top: 100px;
-		left: 10px;
-		right: 10px;
-		padding: 20px;
-		width: auto;
-		height: auto;
+		position: fixed !important;
+		top: 30% !important;
+		left: 10px !important;
+		right: 10px !important;
+		padding: 20px !important;
+		width: auto !important;
+		height: auto !important;
 	}
 	.my-popup p {
-		margin-top: 0;
+		margin-top: 0 !important;
 	}
 }
 
 /* my-popup end */
+/* help_label */
+@media (max-width: 1023px) {
+	.help_label {
+		position: relative;
+		display: block;
+		right: auto;
+		bottom: auto;
+		height: auto;
+	}
+}
+
+/* help_label end */
+@media (max-width: 1023px) {
+	.r-container .group {
+		float: none !important;
+		box-sizing: border-box;
+		width: 100% !important;
+		margin-bottom: 30px !important;
+		margin-right: 0 !important;
+	}
+	.r-container input, .r-container textarea {
+		box-sizing: border-box;
+		width: 100% !important;
+	}
+	.r-container input:focus ~ label, .r-container input.used ~ label {
+		left: 0 !important;
+	}
+	.r-container .bar {
+		box-sizing: border-box;
+		width: 100% !important;
+		height: 100% !important;
+	}
+	.r-container h2 {
+		margin-top: 0 !important;
+		padding-bottom: 0 !important;
+		margin-bottom: 30px !important;
+	}
+}
+
+@media (max-width: 1023px) {
+	.new-messages {
+		position: relative !important;
+		top: auto !important;
+		right: auto !important;
+		margin-bottom: 20px !important;
+	}
+}
+
+@media (max-width: 639px) {
+	.new-messages {
+		width: 50px !important;
+		height: 50px !important;
+	}
+}
+
+@media (max-width: 639px) {
+	.new-messages-counter {
+		width: 14px !important;
+		padding: 2px 5px !important;
+	}
+}
+
+@media (max-width: 1023px) {
+	.search-contractor {
+		float: none !important;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.r-container .group {
+		float: none !important;
+	}
+}
+
+@media (max-width: 1023px) {
+	a.mapLink {
+		display: block;
+		margin: 8px 0 0 0;
+	}
+}
+
+@media (max-width: 639px) {
+	ul.offices {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 1023px) {
+	.r-container_n table img {
+		height: 112px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.mapPopup {
+		width: 640px;
+		height: 480px;
+		margin: -240px 0 0 -320px;
+		box-sizing: border-box;
+	}
+}
+
+@media (max-width: 767px) {
+	.mapPopup {
+		width: calc(100% - 40px);
+		height: calc(100% - 80px);
+		margin: 0;
+		left: 20px;
+		top: 40px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.mapPopup .bx-google-map {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+@media (max-width: 1023px) {
+	#BX_GMAP_mapContacts {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+.video-wrap {
+	clear: both;
+	margin-bottom: 20px;
+}
+
+.table-zoom-js {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.table-zoom-js.table-zoom-initialized {
+	opacity: 1;
+	visibility: visible;
+}
+
 /* COMPONENTS end */
 /*======================================================*/
 /* LAYOUT */

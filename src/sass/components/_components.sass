@@ -145,7 +145,12 @@ html
 		+padding-horizontal(9px)
 		font-size: 12px
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea, .bx_search_container .bx_field .bx_input_text
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea,
+.bx_search_container .bx_field .bx_input_text
 	+media('<tab-lg')
 		width: 100%
 		display: block
@@ -783,42 +788,43 @@ a.cartBtn
 			box-shadow: none
 			text-shadow: none
 
-	+media('<tab-lg')
-		+display-inline-block-top
-		text-align: center
-		padding: 0
-		+font-alt-light
-		+font(14px, 40px)
-		text-indent: 0
-		letter-spacing: 0.05em
-		color: white
-		text-transform: uppercase
-		border-radius: 0
-		text-shadow: none
-		box-shadow: none
-		border: none
-		background: #00a6eb
-		+size(105px, 40px)
-		float: none
-		text-decoration: none
-		box-sizing: border-box
-
-		&:hover, &:active
-			box-shadow: none
+	.table-resp &
+		+media('<tab-lg')
+			+display-inline-block-top
+			text-align: center
+			padding: 0
+			+font-alt-light
+			+font(14px, 40px)
+			text-indent: 0
+			letter-spacing: 0.05em
+			color: white
+			text-transform: uppercase
+			border-radius: 0
 			text-shadow: none
-			background: $base-color
-
-		&.disabled
 			box-shadow: none
-			text-shadow: none
-
-		// inCar
-		&.inCar
-			background: $base-color-alt
-			color: $text-color
+			border: none
+			background: #00a6eb
+			+size(105px, 40px)
+			float: none
+			text-decoration: none
+			box-sizing: border-box
 
 			&:hover, &:active
-				background-color: rgba($base-color-alt, 0.80)
+				box-shadow: none
+				text-shadow: none
+				background: $base-color
+
+			&.disabled
+				box-shadow: none
+				text-shadow: none
+
+			// inCar
+			&.inCar
+				background: $base-color-alt
+				color: $text-color
+
+				&:hover, &:active
+					background-color: rgba($base-color-alt, 0.80)
 
 .go_back_to_hell, .clearLink, .btn-clear
 	+media('<tab-lg')
@@ -1334,11 +1340,17 @@ a.mark
 
 		+media('<mob-lg')
 			+font($font-size-h1--sm, $line-height-h1--sm)
+			margin-bottom: 20px
 
 	h2
-
 		+media('<mob-lg')
 			+font($font-size-h2--sm, $line-height-h2--sm)
+
+	[style*="float"]
+		+media('<tab-lg')
+			float: none !important
+			width: auto !important
+			max-width: 100%
 
 /* content end
 
@@ -1726,12 +1738,29 @@ ul.fNav
 		max-width: 100%
 		height: auto
 
+// плюс и минус в счетчике неправильно позиционируются
+.counter
+	margin-right: 0
+	margin-bottom: 5px
+
+	input[type="text"]
+		float: left
+		margin-right: 0
+		margin-bottom: 5px
+
+		+media('<tab-lg')
+			font-size: 12px
+			line-height: 14px
+			padding: 2px
+			height: 20px
+			margin: 0
+
 ul.productsGrid
 	// for desk
 	.counter
 		width: 51px
 
-		.change_counter
+		.css-counter
 			display: none
 
 	+media('<tab-lg')
@@ -1781,7 +1810,7 @@ ul.productsGrid
 				width: auto
 				float: none
 
-				.change_counter
+				.css-counter
 					display: block
 
 			tr:first-child
@@ -1960,6 +1989,10 @@ ul.cartTabs
 	li, li.ui-tabs-active
 		+media('<mob-lg')
 			width: 100%
+
+.altTabs
+	+media('<tab-lg')
+		margin-bottom: 20px !important
 
 /* fTabs / cartTabs end
 
@@ -2348,60 +2381,63 @@ ul.paging
 				box-shadow: none
 
 .counter
-	+media('<tab-lg')
-		position: relative
-		+size(auto, 100%)
-		max-width: 180px
+	.table-resp &
+		+media('<tab-lg')
+			position: relative
+			+size(auto, 100%)
+			max-width: 180px
 
-		a
-			display: block
-			float: none
-			position: absolute
-			top: 0
-			background-color: white
-			text-shadow: none
-			box-shadow: none
-			color: $text-color
-			+size(40px)
-			border: 1px solid $border-color
-			box-sizing: border-box
-			+font(24px, 36px)
-			outline: none
-			border-radius: 0
-
-			&:hover, &:active
-				box-shadow: none
-				background-color: $bg-color-alt
+			a
+				display: block
+				float: none
+				position: absolute
+				top: 0
+				background-color: white
 				text-shadow: none
+				box-shadow: none
+				color: $text-color
+				+size(40px)
+				border: 1px solid $border-color
+				box-sizing: border-box
+				+font(24px, 36px)
+				outline: none
+				border-radius: 0
 
-		.minus
-			left: 0
+				&:hover, &:active
+					box-shadow: none
+					background-color: $bg-color-alt
+					text-shadow: none
 
-		.plus
-			right: 0
+			.minus
+				left: 0
 
-		input[type="text"]
-			float: none
-			width: 100%
-			height: 40px
-			padding: 9px 50px
-			margin: 0
-			border: solid $border-color
-			border-width: 1px
-			box-shadow: none
-			outline: none !important
-			+font(16px, 20px)
-			text-align: center
-			box-sizing: border-box
+			.plus
+				right: 0
+
+			input[type="text"]
+				float: none
+				width: 100%
+				height: 40px
+				padding: 9px 50px
+				margin: 0
+				border: solid $border-color
+				border-width: 1px
+				box-shadow: none
+				outline: none !important
+				+font(16px, 20px)
+				text-align: center
+				box-sizing: border-box
 
 /* counter end
 
 .orderCount .counter
-	float: left
-	width: 55px
+	.table-resp &
+		+media('<tab-lg')
+			float: left
+			width: 55px
 
-	.change_counter
-		display: none
+			.css-counter
+				display: none
 
 /* table-resp
 .table-resp
@@ -2545,7 +2581,7 @@ ul.paging
 					width: auto
 					float: none
 
-					.change_counter
+					.css-counter
 						display: block
 
 				a.cartBtn
@@ -3742,9 +3778,19 @@ ul.fSizes
 /* r-progress
 .r-progress
 	+media('<tab-lg')
-		position: relative
-		top: auto
-		right: auto
+		position: relative !important
+		top: auto  !important
+		right: auto !important
+		+clear
+		margin-bottom: 20px
+
+.c100
+	+media('<mob-lg')
+		font-size: 100px !important
+
+.c100.medium
+	+media('<mob-lg')
+		font-size: 80px !important
 
 /* r-progress end
 
@@ -3752,17 +3798,133 @@ ul.fSizes
 	+media('<tab-lg')
 		height: auto !important
 
+	+media('<mob-lg')
+		.button
+			margin-bottom: 10px !important
+
 /* my-popup
 .my-popup
 	+media('<mob-lg')
-		top: 100px
-		left: 10px
-		right: 10px
-		padding: 20px
-		width: auto
-		height: auto
+		position: fixed !important
+		top: 30% !important
+		left: 10px !important
+		right: 10px !important
+		padding: 20px !important
+		width: auto !important
+		height: auto !important
 
 		p
-			margin-top: 0
+			margin-top: 0 !important
 
 /* my-popup end
+
+/* help_label
+.help_label
+	+media('<tab-lg')
+		position: relative
+		display: block
+		right: auto
+		bottom: auto
+		height: auto
+
+/* help_label end
+
+.r-container
+	+media('<tab-lg')
+		.group
+			float: none !important
+			box-sizing: border-box
+			width: 100% !important
+			margin-bottom: 30px !important
+			margin-right: 0 !important
+
+		input, textarea
+			box-sizing: border-box
+			width: 100% !important
+
+		input:focus ~ label, input.used ~ label
+			left: 0 !important
+
+		.bar
+			box-sizing: border-box
+			width: 100% !important
+			height: 100% !important
+
+		h2
+			margin-top: 0 !important
+			padding-bottom: 0 !important
+			margin-bottom: 30px !important
+
+.new-messages
+	+media('<tab-lg')
+		position: relative !important
+		top: auto !important
+		right: auto !important
+		margin-bottom: 20px !important
+
+	+media('<mob-lg')
+		width: 50px !important
+		height: 50px !important
+
+.new-messages-counter
+	+media('<mob-lg')
+		width: 14px !important
+		padding: 2px 5px !important
+
+.search-contractor
+	+media('<tab-lg')
+		float: none !important
+		margin-bottom: 20px
+
+.r-container .group
+	+media('<tab-lg')
+		float: none !important
+
+a.mapLink
+	+media('<tab-lg')
+		display: block
+		margin: 8px 0 0 0
+
+ul.offices
+	+media('<mob-lg')
+		margin-left: 0
+
+.r-container_n table img
+	+media('<tab-lg')
+		height: 112px
+
+.mapPopup
+	+media('<tab-lg')
+		width: 640px
+		height: 480px
+		margin: -240px 0 0 -320px
+		box-sizing: border-box
+
+	+media('<tab-sm')
+		width: calc(100% - 40px)
+		height: calc(100% - 80px)
+		margin: 0
+		left: 20px
+		top: 40px
+
+	.bx-google-map
+		+media('<tab-lg')
+			width: 100% !important
+			height: 100% !important
+
+#BX_GMAP_mapContacts
+	+media('<tab-lg')
+		width: 100% !important
+		height: 100% !important
+
+.video-wrap
+	clear: both
+	margin-bottom: 20px
+
+.table-zoom-js
+	opacity: 0
+	visibility: hidden
+
+	&.table-zoom-initialized
+		opacity: 1
+		visibility: visible

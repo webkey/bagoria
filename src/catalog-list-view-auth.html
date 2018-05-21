@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Легковые - Неавториз</title>
+	<title>Легковые - Авториз</title>
 	<!--<meta name="viewport" content="width=device-width">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta name="robots" content="index, follow" />
@@ -66,7 +66,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="inside floatSidebar location-none">
+<body class="inside floatSidebar location-none authorized">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript>
 	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5L9WPFM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -2170,27 +2170,18 @@
 				<tbody>
 					<tr class="tresp-head">
 						<th>Тип</th>
-						<!--1-->
 						<th>Фото</th>
-						<!--2-->
 						<th style="width: 100px;"><strong>Типоразмер</strong></th>
-						<!--3-->
 						<th>Индекс</th>
-						<!--4-->
 						<!--<th>Бренд</th>-->
 						<th>Производитель</th>
-						<!--6-->
 						<th><strong>Модель</strong></th>
-						<!--7-->
 						<th>Сезон</th>
-						<!--5-->
 						<!--<th><strong>Цена, руб</strong></th>-->
-						<!--<th><strong>Цена</strong></th>-->
-						<!--Цены нет для неавторизованных пользователей-->
+						<th><strong>Цена</strong></th>
 						<!--<th>Остаток<br>Центральный<br>склад</th>-->
 						<!--<th>Остаток<br>Минск</th>-->
 						<th>Остаток</th>
-						<!--8-->
 					</tr>
 					<tr>
 						<td data-label="Тип" class="center">
@@ -2221,9 +2212,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">41.6 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2247,19 +2238,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286950_001">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286950_001">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2294,9 +2287,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">460 334 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">46.0 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2320,19 +2313,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286951">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286951_002">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286951_002">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2366,9 +2361,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">496 272 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">49.6 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2392,19 +2387,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286952">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286952_003">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286952_003">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2427,8 +2424,7 @@
 						<th><strong>Модель</strong></th>
 						<th>Сезон</th>
 						<!--<th><strong>Цена, руб</strong></th>-->
-						<!--<th><strong>Цена</strong></th>-->
-						<!--Цены нет для неавторизованных пользователей-->
+						<th><strong>Цена</strong></th>
 						<!--<th>Остаток<br>Центральный<br>склад</th>-->
 						<!--<th>Остаток<br>Минск</th>-->
 						<th>Остаток</th>
@@ -2462,9 +2458,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">41.6 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2488,19 +2484,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286950_004">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286950_004">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2535,9 +2533,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">41.6 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2561,19 +2559,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286950_005">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286950_005">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2608,9 +2608,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">460 334 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">46.0 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2634,19 +2634,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286951">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286951_006">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286951_006">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>
@@ -2680,9 +2682,9 @@
 						<td data-label="Сезон" class="center">
 							<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
 						</td>
-						<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">496 272 руб.</span></div>
-					</td>-->
+						<td data-label="Цена, руб" class="right">
+							<div class="tresp-val"><span class="cPrice">49.6 руб.</span></div>
+						</td>
 						<!--change-->
 						<!--<td class="remainder" data-label="Остаток Центральный склад:">
 						<div class="currentCount mob-show" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
@@ -2706,19 +2708,21 @@
 							<!--<div class="currentCount mob-show" id="currentCount_6_286952">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
 							<div class="tresp-val">
 								<div class="orderCount">
-									<div class="currentCount" id="currentCount_6_286952_007">&gt; 10</div>
+									<div class="currentCount" id="currentCount_6_286952_007">
+										<!--&gt;-->0</div>
 									<!--<input type="text" id="quantity_store6_286950">-->
-									<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
+									<div class="counter">
+										<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
+										<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
+										<input type="hidden" value="0">
+										<input type="hidden" value="11">
+										<input type="hidden" value="0">
+										<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									</div>
 									<!--add class inCar-->
 									<!--add title="Удалить из корзины"-->
-									<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+									<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4"
+									    product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
 								</div>
 							</div>
 						</td>

@@ -3063,13 +3063,16 @@ ul.paging
 
 	td, th
 		+media('<tab-lg')
+			position: relative
 			display: flex
+			align-items: center
 			border-width: 0 0 1px 1px
 			flex: 1 1
 			box-sizing: border-box
 			font-size: 10px
 			line-height: 13px
 			padding: 6px 5px
+			text-align: left
 
 		+media('<mob-lg')
 			font-size: 9px
@@ -3097,6 +3100,8 @@ ul.paging
 				width: 100%
 				height: 100%
 				object-fit: contain
+				top: auto
+				left: auto
 
 		&.hovers
 			height: 30px
@@ -3108,23 +3113,34 @@ ul.paging
 
 	.discount
 		+media('<tab-lg')
-			margin: -6px 0 0 -5px
+			margin: 0
 			position: absolute
 			left: 0
 			top: 0
 
 		& + strong, & + a, & + span, & + div
-			display: block
-			margin-top: 14px
+			+media('<tab-lg')
+				display: block
+				margin-top: 14px
+
+	.tresp-val .discount
+		+media('<tab-lg')
+			margin: -6px 0 0 -5px
 
 	.orderCount
 		+media('<tab-lg')
 			display: flex
 			align-items: center
-			width: 100%
+			width: auto
+
+			.authorized &
+				margin-left: auto
 
 			& > *
 				margin: 0 6px 0 0
+
+			& > .cartBtn
+				margin-right: 0
 
 	.currentCount
 		&.mob-hide
@@ -3142,12 +3158,8 @@ ul.paging
 				width: 100%
 				border: 1px solid #b3b3b3
 
-	.cartBtn
-		+media('<mob-lg')
-			margin-right: 0
-
-	// table responsive type 1. Легковые шины
-	&.table-mob--1
+	// table responsive car-tires. Легковые шины
+	&.table-mob--car-tires
 		+media('<tab-lg')
 
 			td, th
@@ -3158,9 +3170,6 @@ ul.paging
 					flex-basis: $width
 					max-width: $width
 					border-left-width: 0
-
-					img
-						width: 26px
 
 				// Фото
 				&:nth-child(2)
@@ -3238,7 +3247,7 @@ ul.paging
 						border-left-width: 0
 
 						img
-							width: 26px
+							width: auto
 
 					// Фото
 					&:nth-child(2)
@@ -3290,6 +3299,10 @@ ul.paging
 						flex-basis: $width
 						max-width: $width
 
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
 					// Остаток
 					&:nth-child(9)
 						$width: calc(113 / 320 * 100%)
@@ -3303,8 +3316,8 @@ ul.paging
 					&:nth-child(5)
 						letter-spacing: -0.05em
 
-	// table responsive type 2. Грузовые шины
-	&.table-mob--2
+	// table responsive truck-tires. Грузовые шины
+	&.table-mob--truck-tires
 		+media('<tab-lg')
 
 			td, th
@@ -3316,20 +3329,17 @@ ul.paging
 					max-width: $width
 					border-left-width: 0
 
-					img
-						width: 26px
-
 				// Типоразмер
 				&:nth-child(2)
-					$width: calc(76 / 320 * 100%)
-					order: 3
+					$width: calc(66 / 320 * 100%)
+					order: 2
 					flex-basis: $width
 					max-width: $width
 
 				// Бренд
 				&:nth-child(3)
-					$width: calc(66 / 320 * 100%)
-					order: 2
+					$width: calc(76 / 320 * 100%)
+					order: 3
 					flex-basis: $width
 					max-width: $width
 
@@ -3388,26 +3398,23 @@ ul.paging
 						max-width: $width
 						border-left-width: 0
 
-						img
-							width: 26px
-
 					// Типоразмер
 					&:nth-child(2)
-						$width: calc(65 / 320 * 100%)
-						order: 3
+						$width: calc(70 / 320 * 100%)
+						order: 2
 						flex-basis: $width
 						max-width: $width
 
 					// Бренд
 					&:nth-child(3)
 						$width: calc(50 / 320 * 100%)
-						order: 2
+						order: 3
 						flex-basis: $width
 						max-width: $width
 
 					// Модель
 					&:nth-child(4)
-						$width: calc(88 / 320 * 100%)
+						$width: calc(108 / 320 * 100%)
 						order: 7
 						flex-basis: $width
 						max-width: $width
@@ -3423,14 +3430,14 @@ ul.paging
 					// Индекс скорости
 					&:nth-child(6)
 						order: 5
-						$width: calc(60 / 320 * 100%)
+						$width: calc(55 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
 					// Применяемость
 					&:nth-child(7)
 						order: 8
-						$width: calc(123 / 320 * 100%)
+						$width: calc(108 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
@@ -3441,10 +3448,569 @@ ul.paging
 						flex-basis: $width
 						max-width: $width
 
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
 					// Остаток
 					&:nth-child(9)
-						$width: calc(109 / 320 * 100%)
+						$width: calc(104 / 320 * 100%)
 						order: 9
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive accum. Аккумуляторы
+	&.table-mob--accum
+		+media('<tab-lg')
+
+			td, th
+				// Фото
+				&:nth-child(1)
+					$width: calc(50 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Бренд
+				&:nth-child(2)
+					$width: calc(57 / 320 * 100%)
+					order: 2
+					flex-basis: $width
+					max-width: $width
+
+				// Модель
+				&:nth-child(3)
+					$width: calc(107 / 320 * 100%)
+					order: 6
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Емкость
+				&:nth-child(4)
+					$width: calc(63 / 320 * 100%)
+					order: 4
+					flex-basis: $width
+					max-width: $width
+
+				// Полярность
+				&:nth-child(5)
+					order: 5
+					$width: calc(74 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Пусковой ток
+				&:nth-child(6)
+					order: 3
+					$width: calc(76 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Тип клемм
+				&:nth-child(7)
+					order: 7
+					$width: calc(76 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Габариты (ШхГхВ)
+				&:nth-child(8)
+					order: 9
+					$width: calc(63 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Цена
+				//&:nth-child(9)
+					order: 6
+					$width: calc(52 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+					.tresp-val
+						text-align: right
+						justify-content: flex-end
+
+				// Остаток
+				&:nth-child(9)
+					$width: calc(74 / 320 * 100%)
+					order: 9
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Фото
+					&:nth-child(1)
+						$width: calc(38 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Бренд
+					&:nth-child(2)
+						$width: calc(53 / 320 * 100%)
+						order: 2
+						flex-basis: $width
+						max-width: $width
+
+					// Модель
+					&:nth-child(3)
+						$width: calc(91 / 320 * 100%)
+						order: 7
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Емкость
+					&:nth-child(4)
+						$width: calc(61 / 320 * 100%)
+						order: 3
+						flex-basis: $width
+						max-width: $width
+
+					// Полярность
+					&:nth-child(5)
+						order: 4
+						$width: calc(61 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Пусковой ток
+					&:nth-child(6)
+						order: 5
+						$width: calc(55 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Тип клемм
+					&:nth-child(7)
+						order: 8
+						$width: calc(61 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Габариты (ШхГхВ)
+					&:nth-child(8)
+						order: 9
+						$width: calc(61 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(9)
+						order: 6
+						$width: calc(52 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(10)
+						$width: calc(107 / 320 * 100%)
+						order: 10
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive rims. Легковые диски
+	&.table-mob--rims
+		+media('<tab-lg')
+
+			td, th
+				// Фото
+				&:nth-child(1)
+					$width: calc(50 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Диск
+				&:nth-child(2)
+					$width: calc(63 / 320 * 100%)
+					order: 2
+					flex-basis: $width
+					max-width: $width
+
+				// Ш х Д
+				&:nth-child(3)
+					$width: calc(57 / 320 * 100%)
+					order: 3
+					flex-basis: $width
+					max-width: $width
+
+				// PCD
+				&:nth-child(4)
+					$width: calc(53 / 320 * 100%)
+					order: 4
+					flex-basis: $width
+					max-width: $width
+
+				// ET
+				&:nth-child(5)
+					order: 5
+					$width: calc(39 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// DIA
+				&:nth-child(6)
+					order: 6
+					$width: calc(58 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Бренд
+				&:nth-child(7)
+					order: 7
+					$width: calc(113 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Модель
+				&:nth-child(8)
+					order: 8
+					$width: calc(149 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Остаток
+				&:nth-child(9)
+					$width: calc(58 / 320 * 100%)
+					order: 9
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Фото
+					&:nth-child(1)
+						$width: calc(38 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Диск
+					&:nth-child(2)
+						$width: calc(38 / 320 * 100%)
+						order: 2
+						flex-basis: $width
+						max-width: $width
+
+					// Ш х Д
+					&:nth-child(3)
+						$width: calc(52 / 320 * 100%)
+						order: 3
+						flex-basis: $width
+						max-width: $width
+
+					// PCD
+					&:nth-child(4)
+						$width: calc(43 / 320 * 100%)
+						order: 4
+						flex-basis: $width
+						max-width: $width
+
+					// ET
+					&:nth-child(5)
+						order: 5
+						$width: calc(40 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// DIA
+					&:nth-child(6)
+						order: 6
+						$width: calc(52 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Бренд
+					&:nth-child(7)
+						order: 8
+						$width: calc(76 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Модель
+					&:nth-child(8)
+						order: 9
+						$width: calc(135 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(9)
+						order: 7
+						$width: calc(57 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(10)
+						$width: calc(109 / 320 * 100%)
+						order: 10
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive spec. Шины для спецтехники
+	&.table-mob--spec
+		+media('<tab-lg')
+
+			td, th
+				// Фото
+				&:nth-child(1)
+					$width: calc(50 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Типоразмер
+				&:nth-child(2)
+					$width: calc(76 / 320 * 100%)
+					order: 3
+					flex-basis: $width
+					max-width: $width
+
+				// Бренд
+				&:nth-child(3)
+					$width: calc(65 / 320 * 100%)
+					order: 2
+					flex-basis: $width
+					max-width: $width
+
+				// Модель
+				&:nth-child(4)
+					$width: calc(115 / 320 * 100%)
+					order: 6
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Индекс нагрузки
+				&:nth-child(5)
+					order: 4
+					$width: calc(71 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Индекс скорости
+				&:nth-child(6)
+					order: 5
+					$width: calc(58 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Рисунок протектора
+				&:nth-child(7)
+					order: 7
+					$width: calc(147 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Остаток
+				&:nth-child(8)
+					$width: calc(58 / 320 * 100%)
+					order: 8
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Фото
+					&:nth-child(1)
+						$width: calc(50 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Типоразмер
+					&:nth-child(2)
+						$width: calc(53 / 320 * 100%)
+						order: 3
+						flex-basis: $width
+						max-width: $width
+
+					// Бренд
+					&:nth-child(3)
+						$width: calc(65 / 320 * 100%)
+						order: 2
+						flex-basis: $width
+						max-width: $width
+
+					// Модель
+					&:nth-child(4)
+						$width: calc(115 / 320 * 100%)
+						order: 7
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Индекс нагрузки
+					&:nth-child(5)
+						order: 4
+						$width: calc(45 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Индекс скорости
+					&:nth-child(6)
+						order: 5
+						$width: calc(61 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Рисунок протектора
+					&:nth-child(7)
+						order: 8
+						$width: calc(98 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(8)
+						order: 6
+						$width: calc(46 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(9)
+						$width: calc(107 / 320 * 100%)
+						order: 9
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive repairs. Шиноремонт
+	&.table-mob--repairs
+		+media('<tab-lg')
+
+			td, th
+				// Фото
+				&:nth-child(1)
+					$width: calc(50 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Категория
+				&:nth-child(2)
+					$width: calc(138 / 320 * 100%)
+					order: 5
+					flex-basis: $width
+					max-width: $width
+
+				// Наименование
+				&:nth-child(3)
+					$width: calc(196 / 320 * 100%)
+					order: 3
+					flex-basis: $width
+					max-width: $width
+
+				// Модель
+				&:nth-child(4)
+					$width: calc(124 / 320 * 100%)
+					order: 4
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Бренд
+				&:nth-child(5)
+					order: 2
+					$width: calc(74 / 320 * 100%)
+					flex-basis: $width
+					max-width: $width
+
+				// Остаток
+				&:nth-child(6)
+					$width: calc(58 / 320 * 100%)
+					order: 6
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Фото
+					&:nth-child(1)
+						$width: calc(38 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Категория
+					&:nth-child(2)
+						$width: calc(122 / 320 * 100%)
+						order: 6
+						flex-basis: $width
+						max-width: $width
+
+					// Наименование
+					&:nth-child(3)
+						$width: calc(122 / 320 * 100%)
+						order: 3
+						flex-basis: $width
+						max-width: $width
+
+					// Модель
+					&:nth-child(4)
+						$width: calc(91 / 320 * 100%)
+						order: 5
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Бренд
+					&:nth-child(5)
+						order: 2
+						$width: calc(53 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(6)
+						order: 4
+						$width: calc(107 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(7)
+						$width: calc(107 / 320 * 100%)
+						order: 7
 						flex-basis: $width
 						max-width: $width
 

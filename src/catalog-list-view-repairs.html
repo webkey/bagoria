@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Грузовые - Невториз</title>
+	<title>Шиноремонт - Неавториз</title>
 	<!--<meta name="viewport" content="width=device-width">-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta name="robots" content="index, follow" />
@@ -1335,8 +1335,8 @@
 					"tuning_shini": "tuning_shini"
 				};
 			</script>
-			<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <span>Каталог грузовых шин</span></div>
-			<h1>Грузовые шины
+			<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <span>Шиноремонтные материалы и крепеж дисков</span></div>
+			<h1>Шиноремонтные материалы и крепеж дисков
 				<div class="help_link">
 					<div class="help_label"><a href="/info/pravila/">Помощь</a></div>
 				</div>
@@ -1350,7 +1350,7 @@
 					<li><a href="#filter-1-3">По марке авто</a></li>
 					<li><a href="#filter-1-4">Легковые камеры</a></li>
 				</ul>
-				<div class="filterBlock" id="filter-1-1">
+				<div class="filterBlock ui-tabs-hide" id="filter-1-1">
 					<form id="filter_form1" action="/catalog/tires/car/" method="get">
 						<input type="hidden" id="chained_select_type" value="shini" />
 						<input type="hidden" name="tab" value="1" />
@@ -2154,8 +2154,7 @@
 			<!--new-->
 			<div class="currentDiscount">
 				<div class="currentDiscountIn">
-					<span class="discountText">Ваша скидка: <strong>0%</strong></span>
-					<span class="discountChange" style="display:none">
+					<span class="discountText">Ваша скидка: <strong>0%</strong></span> <span class="discountChange" style="display:none">
 		<input type="text" size="1" name="discount" class="discount_input" id="discount" value="0">
 		<input type="hidden" name="discount_tmp" id="discount_tmp" value="0"><span class="discountUnit">%</span>
 					<a id="changeDisc" class="changeLink" href="#">Сохранить</a>
@@ -2165,366 +2164,87 @@
 			<!--new end-->
 			<input type="hidden" id="displayQuantityLimit" value="20">
 			<!--new-->
-			<table id="currentOffer" class="tableOffers table-mob table-mob--truck-tires">
+			<table class="table-mob table-mob--repairs">
 				<tbody>
-					<tr class="tresp-head">
+					<tr>
+						<!--<th>Тип</th>-->
 						<th>Фото</th>
 						<!--1-->
-						<th style="width: 100px;"><strong>Типоразмер</strong></th>
-						<!--2-->
-						<th>Бренд</th>
-						<!--3-->
-						<th style="width: 130px;"><strong>Модель</strong></th>
-						<!--6-->
-						<th>Индекс нагрузки</th>
-						<!--4-->
-						<th>Индекс скорости</th>
+						<th>Категория</th>
 						<!--5-->
-						<th>Применяемость</th>
-						<!--7-->
-						<!--<th><strong>Цена</strong></th>-->
-						<!--для неавториз. нет поля цены-->
-						<th>Остаток</th>
-						<!--8-->
+						<th>Наименование</th>
+						<!--3-->
+						<th>Модель</th>
+						<!--4-->
+						<th>Бренд</th>
+						<!--2-->
+						<th>
+							<div class="mob-hide">Остаток<br>Центральный<br>склад</div>
+							<div class="mob-show">Остаток</div>
+						</th>
+						<!--6-->
 					</tr>
 					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
+						<!--<td class="center"><img src="/bitrix/templates/bagoria/i/truck.png" alt=""></td>-->
+						<td>
+							<div class="photoPreview noPhoto" title="Фото"><img src="img/repairs.webp" alt="" width="100" height="73"></div>
 						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>7,50R16C</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Росава
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=%D0%A0%D0%BE%D1%81%D0%B0%D0%B2%D0%B0&model=LTA-401">LTA-401</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								122/120 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>N</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val">
-								Универс.
-							</div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">1.562 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->>10
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_288815" id="quantity_store1_288815" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="LTA-401" product_name="7,50R16C" element_id="288815" product_price="1562085.00" store_id="1" store_quantity="24" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Росава" product_diametr="16" code_1c="19689"> В корзину </a>-->
-								</div>
+						<td>Аксессуары</td>
+						<td>Ключ для пластиковых колпачков<br>Черный</td>
+						<td>E70001</td>
+						<td>Bimecc</td>
+						<td>
+							<div class="orderCount">
+								<div class="currentCount">
+									<!--&gt;-->&gt;100</div>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
+						<!--<td class="center"><img src="/bitrix/templates/bagoria/i/truck.png" alt=""></td>-->
+						<td>
+							<div class="photoPreview noPhoto" title="Фото"><img src="img/no_photo.png" alt="" width="100" height="73"></div>
 						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>7,50R16C</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Hankook
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<div class="discount">Сниженная цена</div>
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=Hankook&model=Z59++%28%D0%B1%2F%D1%83%2C+%D0%B8%D0%B7%D0%BD%D0%BE%D1%81+50%25%29">Z59 (б/у, износ 50%)</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								124/121 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>J</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val">
-								ведущая
-							</div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">716.1 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->4
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_298438" id="quantity_store1_298438" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="Z59  (б/у, износ 50%)" product_name="7,50R16C" element_id="298438" product_price="716100.00" store_id="1" store_quantity="4" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Hankook" product_diametr="16" code_1c="30291"> В корзину </a>-->
-								</div>
+						<td>Аксессуары</td>
+						<td>Блистер 20 колпачков на болты<br>Черный</td>
+						<td>BV17-000<br>HEX17</td>
+						<td>Bimecc</td>
+						<td>
+							<div class="orderCount">
+								<div class="currentCount">
+									<!--&gt;-->23</div>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
+						<!--<td class="center"><img src="/bitrix/templates/bagoria/i/truck.png" alt=""></td>-->
+						<td>
+							<div class="photoPreview noPhoto" title="Фото"><img src="img/no_photo.png" alt="" width="100" height="73"></div>
 						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>215/75R17,5</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Белшина
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=%D0%91%D0%B5%D0%BB%D1%88%D0%B8%D0%BD%D0%B0&model=%D0%91%D0%B5%D0%BB-169">Бел-169</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								126/124 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val">
-								Универс.
-							</div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">1 268,79 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->10
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_288821" id="quantity_store1_288821" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="Бел-169" product_name="215/75R17,5" element_id="288821" product_price="1268179.00" store_id="1" store_quantity="10" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Белшина" product_diametr="17,5" code_1c="29177"> В корзину </a>-->
-								</div>
+						<td>Аксессуары</td>
+						<td>Блистер 20 колпачков на болты<br>Хром</td>
+						<td>BV17-000CR<br>HEX17</td>
+						<td>Bimecc</td>
+						<td>
+							<div class="orderCount">
+								<div class="currentCount">
+									<!--&gt;-->&gt;100</div>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
+						<!--<td class="center"><img src="/bitrix/templates/bagoria/i/truck.png" alt=""></td>-->
+						<td>
+							<div class="photoPreview" title="Фото"><img src="img/repairs.webp" alt=""></div>
 						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>215/75R17,5</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Кама
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=%D0%9A%D0%B0%D0%BC%D0%B0&model=NF+202">NF 202</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								126/124 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val">
-								рулевая
-							</div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">1 967,63 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->8
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_288824" id="quantity_store1_288824" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="NF 202" product_name="215/75R17,5" element_id="288824" product_price="1967625.00" store_id="1" store_quantity="8" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Кама" product_diametr="17,5" code_1c="23307"> В корзину </a>-->
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
-						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>215/75R17,5</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Кама
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=%D0%9A%D0%B0%D0%BC%D0%B0&model=NR+201">NR 201</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								126/124 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val">
-								ведущая
-							</div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">201.72 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->>10
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_288826" id="quantity_store1_288826" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="NR 201" product_name="215/75R17,5" element_id="288826" product_price="2017219.00" store_id="1" store_quantity="12" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Кама" product_diametr="17,5" code_1c="19463"> В корзину </a>-->
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td data-label="Фото">
-							<div class="tresp-val">
-								<div class="photoPreview" title="Фото"><img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt=""></div>
-							</div>
-						</td>
-						<td data-label="Типоразмер">
-							<div class="tresp-val">
-								<strong>215/75R17,5</strong>
-							</div>
-						</td>
-						<td data-label="Бренд">
-							<div class="tresp-val">
-								Кама
-							</div>
-						</td>
-						<td data-label="Модель" class="action">
-							<div class="tresp-val">
-								<strong><a href="/catalog/tires/truck/?view=3&tab=1&manufacturer=%D0%9A%D0%B0%D0%BC%D0%B0&model=%D0%9A%D0%B0%D0%BC%D0%B0-202">Кама-202</a> </strong>
-							</div>
-						</td>
-						<td data-label="Индекс нагрузки">
-							<div class="tresp-val">
-								124/123 <br>
-							</div>
-						</td>
-						<td data-label="Индекс скорости">
-							<div class="tresp-val">
-								<center>M</center>
-							</div>
-						</td>
-						<td data-label="Применяемость">
-							<div class="tresp-val"></div>
-						</td>
-						<!--<td data-label="Цена" class="right">
-						<div class="tresp-val">
-							<span class="cPrice">143.90 р.</span>
-						</div>
-					</td>-->
-						<td class="remainder" data-label="Остаток: Центральный склад">
-							<div class="tresp-val">
-								<div class="orderCount">
-									<div class="currentCount mob-hide">
-										<!--&gt;-->6
-									</div>
-									<!--<div class="counter">
-									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
-									<input type="text" class="quantity_288829" id="quantity_store1_288829" value="0">
-									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="В корзину" product_model="Кама-202" product_name="215/75R17,5" element_id="288829" product_price="1439041.00" store_id="1" store_quantity="6" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Кама" product_diametr="17,5" code_1c="29280"> В корзину </a>-->
-								</div>
+						<td>Болты</td>
+						<td>12 x 1,5 x 35<br>плоск. с шайбой</td>
+						<td>PZ406-9068000<br>HEX17</td>
+						<td>Bimecc</td>
+						<td>
+							<div class="orderCount">
+								<div class="currentCount">
+									<!--&gt;-->97</div>
 							</div>
 						</td>
 					</tr>

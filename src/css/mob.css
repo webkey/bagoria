@@ -3555,9 +3555,13 @@ ul.paging {
 
 @media (max-width: 1023px) {
 	.table-mob td, .table-mob th {
+		position: relative;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		border-width: 0 0 1px 1px;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1;
@@ -3566,6 +3570,7 @@ ul.paging {
 		font-size: 10px;
 		line-height: 13px;
 		padding: 6px 5px;
+		text-align: left;
 	}
 }
 
@@ -3607,6 +3612,8 @@ ul.paging {
 		height: 100%;
 		-o-object-fit: contain;
 		   object-fit: contain;
+		top: auto;
+		left: auto;
 	}
 }
 
@@ -3621,16 +3628,24 @@ ul.paging {
 
 @media (max-width: 1023px) {
 	.table-mob .discount {
-		margin: -6px 0 0 -5px;
+		margin: 0;
 		position: absolute;
 		left: 0;
 		top: 0;
 	}
 }
 
-.table-mob .discount + strong, .table-mob .discount + a, .table-mob .discount + span, .table-mob .discount + div {
-	display: block;
-	margin-top: 14px;
+@media (max-width: 1023px) {
+	.table-mob .discount + strong, .table-mob .discount + a, .table-mob .discount + span, .table-mob .discount + div {
+		display: block;
+		margin-top: 14px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-mob .tresp-val .discount {
+		margin: -6px 0 0 -5px;
+	}
 }
 
 @media (max-width: 1023px) {
@@ -3641,10 +3656,16 @@ ul.paging {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		width: 100%;
+		width: auto;
+	}
+	.authorized .table-mob .orderCount {
+		margin-left: auto;
 	}
 	.table-mob .orderCount > * {
 		margin: 0 6px 0 0;
+	}
+	.table-mob .orderCount > .cartBtn {
+		margin-right: 0;
 	}
 }
 
@@ -3667,14 +3688,8 @@ ul.paging {
 	}
 }
 
-@media (max-width: 639px) {
-	.table-mob .cartBtn {
-		margin-right: 0;
-	}
-}
-
 @media (max-width: 1023px) {
-	.table-mob.table-mob--1 td:nth-child(1), .table-mob.table-mob--1 th:nth-child(1) {
+	.table-mob.table-mob--car-tires td:nth-child(1), .table-mob.table-mob--car-tires th:nth-child(1) {
 		-webkit-box-ordinal-group: 2;
 		    -ms-flex-order: 1;
 		        order: 1;
@@ -3683,10 +3698,7 @@ ul.paging {
 		max-width: calc(51 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.table-mob.table-mob--1 td:nth-child(1) img, .table-mob.table-mob--1 th:nth-child(1) img {
-		width: 26px;
-	}
-	.table-mob.table-mob--1 td:nth-child(2), .table-mob.table-mob--1 th:nth-child(2) {
+	.table-mob.table-mob--car-tires td:nth-child(2), .table-mob.table-mob--car-tires th:nth-child(2) {
 		-webkit-box-ordinal-group: 3;
 		    -ms-flex-order: 2;
 		        order: 2;
@@ -3694,7 +3706,7 @@ ul.paging {
 		    flex-basis: calc(52 / 320 * 100%);
 		max-width: calc(52 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(3), .table-mob.table-mob--1 th:nth-child(3) {
+	.table-mob.table-mob--car-tires td:nth-child(3), .table-mob.table-mob--car-tires th:nth-child(3) {
 		-webkit-box-ordinal-group: 4;
 		    -ms-flex-order: 3;
 		        order: 3;
@@ -3702,7 +3714,7 @@ ul.paging {
 		    flex-basis: calc(92 / 320 * 100%);
 		max-width: calc(92 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(4), .table-mob.table-mob--1 th:nth-child(4) {
+	.table-mob.table-mob--car-tires td:nth-child(4), .table-mob.table-mob--car-tires th:nth-child(4) {
 		-webkit-box-ordinal-group: 5;
 		    -ms-flex-order: 4;
 		        order: 4;
@@ -3710,7 +3722,7 @@ ul.paging {
 		    flex-basis: calc(60 / 320 * 100%);
 		max-width: calc(60 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(5), .table-mob.table-mob--1 th:nth-child(5) {
+	.table-mob.table-mob--car-tires td:nth-child(5), .table-mob.table-mob--car-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 7;
 		    -ms-flex-order: 6;
 		        order: 6;
@@ -3719,7 +3731,7 @@ ul.paging {
 		    flex-basis: calc(103 / 320 * 100%);
 		max-width: calc(103 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(6), .table-mob.table-mob--1 th:nth-child(6) {
+	.table-mob.table-mob--car-tires td:nth-child(6), .table-mob.table-mob--car-tires th:nth-child(6) {
 		-webkit-box-ordinal-group: 8;
 		    -ms-flex-order: 7;
 		        order: 7;
@@ -3727,7 +3739,7 @@ ul.paging {
 		    flex-basis: calc(152 / 320 * 100%);
 		max-width: calc(152 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(7), .table-mob.table-mob--1 th:nth-child(7) {
+	.table-mob.table-mob--car-tires td:nth-child(7), .table-mob.table-mob--car-tires th:nth-child(7) {
 		-webkit-box-ordinal-group: 6;
 		    -ms-flex-order: 5;
 		        order: 5;
@@ -3735,7 +3747,7 @@ ul.paging {
 		    flex-basis: calc(65 / 320 * 100%);
 		max-width: calc(65 / 320 * 100%);
 	}
-	.table-mob.table-mob--1 td:nth-child(8), .table-mob.table-mob--1 th:nth-child(8) {
+	.table-mob.table-mob--car-tires td:nth-child(8), .table-mob.table-mob--car-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 9;
 		    -ms-flex-order: 8;
 		        order: 8;
@@ -3746,13 +3758,13 @@ ul.paging {
 }
 
 @media (max-width: 639px) {
-	.table-mob.table-mob--1 th:nth-child(5) {
+	.table-mob.table-mob--car-tires th:nth-child(5) {
 		letter-spacing: -0.05em;
 	}
 }
 
 @media (max-width: 1023px) {
-	.authorized .table-mob.table-mob--1 td:nth-child(1), .authorized .table-mob.table-mob--1 th:nth-child(1) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(1), .authorized .table-mob.table-mob--car-tires th:nth-child(1) {
 		-webkit-box-ordinal-group: 2;
 		    -ms-flex-order: 1;
 		        order: 1;
@@ -3761,10 +3773,10 @@ ul.paging {
 		max-width: calc(41 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(1) img, .authorized .table-mob.table-mob--1 th:nth-child(1) img {
-		width: 26px;
+	.authorized .table-mob.table-mob--car-tires td:nth-child(1) img, .authorized .table-mob.table-mob--car-tires th:nth-child(1) img {
+		width: auto;
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(2), .authorized .table-mob.table-mob--1 th:nth-child(2) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(2), .authorized .table-mob.table-mob--car-tires th:nth-child(2) {
 		-webkit-box-ordinal-group: 3;
 		    -ms-flex-order: 2;
 		        order: 2;
@@ -3772,7 +3784,7 @@ ul.paging {
 		    flex-basis: calc(43 / 320 * 100%);
 		max-width: calc(43 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(3), .authorized .table-mob.table-mob--1 th:nth-child(3) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(3), .authorized .table-mob.table-mob--car-tires th:nth-child(3) {
 		-webkit-box-ordinal-group: 4;
 		    -ms-flex-order: 3;
 		        order: 3;
@@ -3780,7 +3792,7 @@ ul.paging {
 		    flex-basis: calc(74 / 320 * 100%);
 		max-width: calc(74 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(4), .authorized .table-mob.table-mob--1 th:nth-child(4) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(4), .authorized .table-mob.table-mob--car-tires th:nth-child(4) {
 		-webkit-box-ordinal-group: 5;
 		    -ms-flex-order: 4;
 		        order: 4;
@@ -3788,7 +3800,7 @@ ul.paging {
 		    flex-basis: calc(49 / 320 * 100%);
 		max-width: calc(49 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(5), .authorized .table-mob.table-mob--1 th:nth-child(5) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(5), .authorized .table-mob.table-mob--car-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 8;
 		    -ms-flex-order: 7;
 		        order: 7;
@@ -3797,7 +3809,7 @@ ul.paging {
 		    flex-basis: calc(84 / 320 * 100%);
 		max-width: calc(84 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(6), .authorized .table-mob.table-mob--1 th:nth-child(6) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(6), .authorized .table-mob.table-mob--car-tires th:nth-child(6) {
 		-webkit-box-ordinal-group: 9;
 		    -ms-flex-order: 8;
 		        order: 8;
@@ -3805,7 +3817,7 @@ ul.paging {
 		    flex-basis: calc(123 / 320 * 100%);
 		max-width: calc(123 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(7), .authorized .table-mob.table-mob--1 th:nth-child(7) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(7), .authorized .table-mob.table-mob--car-tires th:nth-child(7) {
 		-webkit-box-ordinal-group: 6;
 		    -ms-flex-order: 5;
 		        order: 5;
@@ -3813,7 +3825,7 @@ ul.paging {
 		    flex-basis: calc(57 / 320 * 100%);
 		max-width: calc(57 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(8), .authorized .table-mob.table-mob--1 th:nth-child(8) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(8), .authorized .table-mob.table-mob--car-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 7;
 		    -ms-flex-order: 6;
 		        order: 6;
@@ -3821,7 +3833,13 @@ ul.paging {
 		    flex-basis: calc(56 / 320 * 100%);
 		max-width: calc(56 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--1 td:nth-child(9), .authorized .table-mob.table-mob--1 th:nth-child(9) {
+	.authorized .table-mob.table-mob--car-tires td:nth-child(8) .tresp-val, .authorized .table-mob.table-mob--car-tires th:nth-child(8) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--car-tires td:nth-child(9), .authorized .table-mob.table-mob--car-tires th:nth-child(9) {
 		-webkit-box-ordinal-group: 10;
 		    -ms-flex-order: 9;
 		        order: 9;
@@ -3832,13 +3850,13 @@ ul.paging {
 }
 
 @media (max-width: 639px) {
-	.authorized .table-mob.table-mob--1 th:nth-child(5) {
+	.authorized .table-mob.table-mob--car-tires th:nth-child(5) {
 		letter-spacing: -0.05em;
 	}
 }
 
 @media (max-width: 1023px) {
-	.table-mob.table-mob--2 td:nth-child(1), .table-mob.table-mob--2 th:nth-child(1) {
+	.table-mob.table-mob--truck-tires td:nth-child(1), .table-mob.table-mob--truck-tires th:nth-child(1) {
 		-webkit-box-ordinal-group: 2;
 		    -ms-flex-order: 1;
 		        order: 1;
@@ -3847,18 +3865,7 @@ ul.paging {
 		max-width: calc(44 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.table-mob.table-mob--2 td:nth-child(1) img, .table-mob.table-mob--2 th:nth-child(1) img {
-		width: 26px;
-	}
-	.table-mob.table-mob--2 td:nth-child(2), .table-mob.table-mob--2 th:nth-child(2) {
-		-webkit-box-ordinal-group: 4;
-		    -ms-flex-order: 3;
-		        order: 3;
-		-ms-flex-preferred-size: calc(76 / 320 * 100%);
-		    flex-basis: calc(76 / 320 * 100%);
-		max-width: calc(76 / 320 * 100%);
-	}
-	.table-mob.table-mob--2 td:nth-child(3), .table-mob.table-mob--2 th:nth-child(3) {
+	.table-mob.table-mob--truck-tires td:nth-child(2), .table-mob.table-mob--truck-tires th:nth-child(2) {
 		-webkit-box-ordinal-group: 3;
 		    -ms-flex-order: 2;
 		        order: 2;
@@ -3866,7 +3873,15 @@ ul.paging {
 		    flex-basis: calc(66 / 320 * 100%);
 		max-width: calc(66 / 320 * 100%);
 	}
-	.table-mob.table-mob--2 td:nth-child(4), .table-mob.table-mob--2 th:nth-child(4) {
+	.table-mob.table-mob--truck-tires td:nth-child(3), .table-mob.table-mob--truck-tires th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(76 / 320 * 100%);
+		    flex-basis: calc(76 / 320 * 100%);
+		max-width: calc(76 / 320 * 100%);
+	}
+	.table-mob.table-mob--truck-tires td:nth-child(4), .table-mob.table-mob--truck-tires th:nth-child(4) {
 		-webkit-box-ordinal-group: 7;
 		    -ms-flex-order: 6;
 		        order: 6;
@@ -3875,7 +3890,7 @@ ul.paging {
 		max-width: calc(110 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.table-mob.table-mob--2 td:nth-child(5), .table-mob.table-mob--2 th:nth-child(5) {
+	.table-mob.table-mob--truck-tires td:nth-child(5), .table-mob.table-mob--truck-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 5;
 		    -ms-flex-order: 4;
 		        order: 4;
@@ -3883,7 +3898,7 @@ ul.paging {
 		    flex-basis: calc(69 / 320 * 100%);
 		max-width: calc(69 / 320 * 100%);
 	}
-	.table-mob.table-mob--2 td:nth-child(6), .table-mob.table-mob--2 th:nth-child(6) {
+	.table-mob.table-mob--truck-tires td:nth-child(6), .table-mob.table-mob--truck-tires th:nth-child(6) {
 		-webkit-box-ordinal-group: 6;
 		    -ms-flex-order: 5;
 		        order: 5;
@@ -3891,7 +3906,7 @@ ul.paging {
 		    flex-basis: calc(65 / 320 * 100%);
 		max-width: calc(65 / 320 * 100%);
 	}
-	.table-mob.table-mob--2 td:nth-child(7), .table-mob.table-mob--2 th:nth-child(7) {
+	.table-mob.table-mob--truck-tires td:nth-child(7), .table-mob.table-mob--truck-tires th:nth-child(7) {
 		-webkit-box-ordinal-group: 8;
 		    -ms-flex-order: 7;
 		        order: 7;
@@ -3899,7 +3914,7 @@ ul.paging {
 		    flex-basis: calc(145 / 320 * 100%);
 		max-width: calc(145 / 320 * 100%);
 	}
-	.table-mob.table-mob--2 td:nth-child(8), .table-mob.table-mob--2 th:nth-child(8) {
+	.table-mob.table-mob--truck-tires td:nth-child(8), .table-mob.table-mob--truck-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 9;
 		    -ms-flex-order: 8;
 		        order: 8;
@@ -3910,7 +3925,7 @@ ul.paging {
 }
 
 @media (max-width: 1023px) {
-	.authorized .table-mob.table-mob--2 td:nth-child(1), .authorized .table-mob.table-mob--2 th:nth-child(1) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(1), .authorized .table-mob.table-mob--truck-tires th:nth-child(1) {
 		-webkit-box-ordinal-group: 2;
 		    -ms-flex-order: 1;
 		        order: 1;
@@ -3919,35 +3934,32 @@ ul.paging {
 		max-width: calc(38 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(1) img, .authorized .table-mob.table-mob--2 th:nth-child(1) img {
-		width: 26px;
-	}
-	.authorized .table-mob.table-mob--2 td:nth-child(2), .authorized .table-mob.table-mob--2 th:nth-child(2) {
-		-webkit-box-ordinal-group: 4;
-		    -ms-flex-order: 3;
-		        order: 3;
-		-ms-flex-preferred-size: calc(65 / 320 * 100%);
-		    flex-basis: calc(65 / 320 * 100%);
-		max-width: calc(65 / 320 * 100%);
-	}
-	.authorized .table-mob.table-mob--2 td:nth-child(3), .authorized .table-mob.table-mob--2 th:nth-child(3) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(2), .authorized .table-mob.table-mob--truck-tires th:nth-child(2) {
 		-webkit-box-ordinal-group: 3;
 		    -ms-flex-order: 2;
 		        order: 2;
+		-ms-flex-preferred-size: calc(70 / 320 * 100%);
+		    flex-basis: calc(70 / 320 * 100%);
+		max-width: calc(70 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(3), .authorized .table-mob.table-mob--truck-tires th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
 		-ms-flex-preferred-size: calc(50 / 320 * 100%);
 		    flex-basis: calc(50 / 320 * 100%);
 		max-width: calc(50 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(4), .authorized .table-mob.table-mob--2 th:nth-child(4) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(4), .authorized .table-mob.table-mob--truck-tires th:nth-child(4) {
 		-webkit-box-ordinal-group: 8;
 		    -ms-flex-order: 7;
 		        order: 7;
-		-ms-flex-preferred-size: calc(88 / 320 * 100%);
-		    flex-basis: calc(88 / 320 * 100%);
-		max-width: calc(88 / 320 * 100%);
+		-ms-flex-preferred-size: calc(108 / 320 * 100%);
+		    flex-basis: calc(108 / 320 * 100%);
+		max-width: calc(108 / 320 * 100%);
 		border-left-width: 0;
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(5), .authorized .table-mob.table-mob--2 th:nth-child(5) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(5), .authorized .table-mob.table-mob--truck-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 5;
 		    -ms-flex-order: 4;
 		        order: 4;
@@ -3955,23 +3967,23 @@ ul.paging {
 		    flex-basis: calc(58 / 320 * 100%);
 		max-width: calc(58 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(6), .authorized .table-mob.table-mob--2 th:nth-child(6) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(6), .authorized .table-mob.table-mob--truck-tires th:nth-child(6) {
 		-webkit-box-ordinal-group: 6;
 		    -ms-flex-order: 5;
 		        order: 5;
-		-ms-flex-preferred-size: calc(60 / 320 * 100%);
-		    flex-basis: calc(60 / 320 * 100%);
-		max-width: calc(60 / 320 * 100%);
+		-ms-flex-preferred-size: calc(55 / 320 * 100%);
+		    flex-basis: calc(55 / 320 * 100%);
+		max-width: calc(55 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(7), .authorized .table-mob.table-mob--2 th:nth-child(7) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(7), .authorized .table-mob.table-mob--truck-tires th:nth-child(7) {
 		-webkit-box-ordinal-group: 9;
 		    -ms-flex-order: 8;
 		        order: 8;
-		-ms-flex-preferred-size: calc(123 / 320 * 100%);
-		    flex-basis: calc(123 / 320 * 100%);
-		max-width: calc(123 / 320 * 100%);
+		-ms-flex-preferred-size: calc(108 / 320 * 100%);
+		    flex-basis: calc(108 / 320 * 100%);
+		max-width: calc(108 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(8), .authorized .table-mob.table-mob--2 th:nth-child(8) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(8), .authorized .table-mob.table-mob--truck-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 7;
 		    -ms-flex-order: 6;
 		        order: 6;
@@ -3979,13 +3991,627 @@ ul.paging {
 		    flex-basis: calc(49 / 320 * 100%);
 		max-width: calc(49 / 320 * 100%);
 	}
-	.authorized .table-mob.table-mob--2 td:nth-child(9), .authorized .table-mob.table-mob--2 th:nth-child(9) {
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(8) .tresp-val, .authorized .table-mob.table-mob--truck-tires th:nth-child(8) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--truck-tires td:nth-child(9), .authorized .table-mob.table-mob--truck-tires th:nth-child(9) {
 		-webkit-box-ordinal-group: 10;
 		    -ms-flex-order: 9;
 		        order: 9;
+		-ms-flex-preferred-size: calc(104 / 320 * 100%);
+		    flex-basis: calc(104 / 320 * 100%);
+		max-width: calc(104 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-mob.table-mob--accum td:nth-child(1), .table-mob.table-mob--accum th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(50 / 320 * 100%);
+		    flex-basis: calc(50 / 320 * 100%);
+		max-width: calc(50 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--accum td:nth-child(2), .table-mob.table-mob--accum th:nth-child(2) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(57 / 320 * 100%);
+		    flex-basis: calc(57 / 320 * 100%);
+		max-width: calc(57 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(3), .table-mob.table-mob--accum th:nth-child(3) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(107 / 320 * 100%);
+		    flex-basis: calc(107 / 320 * 100%);
+		max-width: calc(107 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--accum td:nth-child(4), .table-mob.table-mob--accum th:nth-child(4) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(63 / 320 * 100%);
+		    flex-basis: calc(63 / 320 * 100%);
+		max-width: calc(63 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(5), .table-mob.table-mob--accum th:nth-child(5) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(74 / 320 * 100%);
+		    flex-basis: calc(74 / 320 * 100%);
+		max-width: calc(74 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(6), .table-mob.table-mob--accum th:nth-child(6) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(76 / 320 * 100%);
+		    flex-basis: calc(76 / 320 * 100%);
+		max-width: calc(76 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(7), .table-mob.table-mob--accum th:nth-child(7) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(76 / 320 * 100%);
+		    flex-basis: calc(76 / 320 * 100%);
+		max-width: calc(76 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(8), .table-mob.table-mob--accum th:nth-child(8) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(63 / 320 * 100%);
+		    flex-basis: calc(63 / 320 * 100%);
+		max-width: calc(63 / 320 * 100%);
+	}
+	.table-mob.table-mob--accum td:nth-child(9), .table-mob.table-mob--accum th:nth-child(9) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(74 / 320 * 100%);
+		    flex-basis: calc(74 / 320 * 100%);
+		max-width: calc(74 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.authorized .table-mob.table-mob--accum td:nth-child(1), .authorized .table-mob.table-mob--accum th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(38 / 320 * 100%);
+		    flex-basis: calc(38 / 320 * 100%);
+		max-width: calc(38 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(2), .authorized .table-mob.table-mob--accum th:nth-child(2) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(53 / 320 * 100%);
+		    flex-basis: calc(53 / 320 * 100%);
+		max-width: calc(53 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(3), .authorized .table-mob.table-mob--accum th:nth-child(3) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(91 / 320 * 100%);
+		    flex-basis: calc(91 / 320 * 100%);
+		max-width: calc(91 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(4), .authorized .table-mob.table-mob--accum th:nth-child(4) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(61 / 320 * 100%);
+		    flex-basis: calc(61 / 320 * 100%);
+		max-width: calc(61 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(5), .authorized .table-mob.table-mob--accum th:nth-child(5) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(61 / 320 * 100%);
+		    flex-basis: calc(61 / 320 * 100%);
+		max-width: calc(61 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(6), .authorized .table-mob.table-mob--accum th:nth-child(6) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(55 / 320 * 100%);
+		    flex-basis: calc(55 / 320 * 100%);
+		max-width: calc(55 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(7), .authorized .table-mob.table-mob--accum th:nth-child(7) {
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
+		-ms-flex-preferred-size: calc(61 / 320 * 100%);
+		    flex-basis: calc(61 / 320 * 100%);
+		max-width: calc(61 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(8), .authorized .table-mob.table-mob--accum th:nth-child(8) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(61 / 320 * 100%);
+		    flex-basis: calc(61 / 320 * 100%);
+		max-width: calc(61 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(9), .authorized .table-mob.table-mob--accum th:nth-child(9) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(52 / 320 * 100%);
+		    flex-basis: calc(52 / 320 * 100%);
+		max-width: calc(52 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(9) .tresp-val, .authorized .table-mob.table-mob--accum th:nth-child(9) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--accum td:nth-child(10), .authorized .table-mob.table-mob--accum th:nth-child(10) {
+		-webkit-box-ordinal-group: 11;
+		    -ms-flex-order: 10;
+		        order: 10;
+		-ms-flex-preferred-size: calc(107 / 320 * 100%);
+		    flex-basis: calc(107 / 320 * 100%);
+		max-width: calc(107 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-mob.table-mob--rims td:nth-child(1), .table-mob.table-mob--rims th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(50 / 320 * 100%);
+		    flex-basis: calc(50 / 320 * 100%);
+		max-width: calc(50 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--rims td:nth-child(2), .table-mob.table-mob--rims th:nth-child(2) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(63 / 320 * 100%);
+		    flex-basis: calc(63 / 320 * 100%);
+		max-width: calc(63 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(3), .table-mob.table-mob--rims th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(57 / 320 * 100%);
+		    flex-basis: calc(57 / 320 * 100%);
+		max-width: calc(57 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(4), .table-mob.table-mob--rims th:nth-child(4) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(53 / 320 * 100%);
+		    flex-basis: calc(53 / 320 * 100%);
+		max-width: calc(53 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(5), .table-mob.table-mob--rims th:nth-child(5) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(39 / 320 * 100%);
+		    flex-basis: calc(39 / 320 * 100%);
+		max-width: calc(39 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(6), .table-mob.table-mob--rims th:nth-child(6) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(58 / 320 * 100%);
+		    flex-basis: calc(58 / 320 * 100%);
+		max-width: calc(58 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(7), .table-mob.table-mob--rims th:nth-child(7) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(113 / 320 * 100%);
+		    flex-basis: calc(113 / 320 * 100%);
+		max-width: calc(113 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--rims td:nth-child(8), .table-mob.table-mob--rims th:nth-child(8) {
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
+		-ms-flex-preferred-size: calc(149 / 320 * 100%);
+		    flex-basis: calc(149 / 320 * 100%);
+		max-width: calc(149 / 320 * 100%);
+	}
+	.table-mob.table-mob--rims td:nth-child(9), .table-mob.table-mob--rims th:nth-child(9) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(58 / 320 * 100%);
+		    flex-basis: calc(58 / 320 * 100%);
+		max-width: calc(58 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.authorized .table-mob.table-mob--rims td:nth-child(1), .authorized .table-mob.table-mob--rims th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(38 / 320 * 100%);
+		    flex-basis: calc(38 / 320 * 100%);
+		max-width: calc(38 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(2), .authorized .table-mob.table-mob--rims th:nth-child(2) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(38 / 320 * 100%);
+		    flex-basis: calc(38 / 320 * 100%);
+		max-width: calc(38 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(3), .authorized .table-mob.table-mob--rims th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(52 / 320 * 100%);
+		    flex-basis: calc(52 / 320 * 100%);
+		max-width: calc(52 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(4), .authorized .table-mob.table-mob--rims th:nth-child(4) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(43 / 320 * 100%);
+		    flex-basis: calc(43 / 320 * 100%);
+		max-width: calc(43 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(5), .authorized .table-mob.table-mob--rims th:nth-child(5) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(40 / 320 * 100%);
+		    flex-basis: calc(40 / 320 * 100%);
+		max-width: calc(40 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(6), .authorized .table-mob.table-mob--rims th:nth-child(6) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(52 / 320 * 100%);
+		    flex-basis: calc(52 / 320 * 100%);
+		max-width: calc(52 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(7), .authorized .table-mob.table-mob--rims th:nth-child(7) {
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
+		-ms-flex-preferred-size: calc(76 / 320 * 100%);
+		    flex-basis: calc(76 / 320 * 100%);
+		max-width: calc(76 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(8), .authorized .table-mob.table-mob--rims th:nth-child(8) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(135 / 320 * 100%);
+		    flex-basis: calc(135 / 320 * 100%);
+		max-width: calc(135 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(9), .authorized .table-mob.table-mob--rims th:nth-child(9) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(57 / 320 * 100%);
+		    flex-basis: calc(57 / 320 * 100%);
+		max-width: calc(57 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(9) .tresp-val, .authorized .table-mob.table-mob--rims th:nth-child(9) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--rims td:nth-child(10), .authorized .table-mob.table-mob--rims th:nth-child(10) {
+		-webkit-box-ordinal-group: 11;
+		    -ms-flex-order: 10;
+		        order: 10;
 		-ms-flex-preferred-size: calc(109 / 320 * 100%);
 		    flex-basis: calc(109 / 320 * 100%);
 		max-width: calc(109 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-mob.table-mob--spec td:nth-child(1), .table-mob.table-mob--spec th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(50 / 320 * 100%);
+		    flex-basis: calc(50 / 320 * 100%);
+		max-width: calc(50 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--spec td:nth-child(2), .table-mob.table-mob--spec th:nth-child(2) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(76 / 320 * 100%);
+		    flex-basis: calc(76 / 320 * 100%);
+		max-width: calc(76 / 320 * 100%);
+	}
+	.table-mob.table-mob--spec td:nth-child(3), .table-mob.table-mob--spec th:nth-child(3) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(65 / 320 * 100%);
+		    flex-basis: calc(65 / 320 * 100%);
+		max-width: calc(65 / 320 * 100%);
+	}
+	.table-mob.table-mob--spec td:nth-child(4), .table-mob.table-mob--spec th:nth-child(4) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(115 / 320 * 100%);
+		    flex-basis: calc(115 / 320 * 100%);
+		max-width: calc(115 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--spec td:nth-child(5), .table-mob.table-mob--spec th:nth-child(5) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(71 / 320 * 100%);
+		    flex-basis: calc(71 / 320 * 100%);
+		max-width: calc(71 / 320 * 100%);
+	}
+	.table-mob.table-mob--spec td:nth-child(6), .table-mob.table-mob--spec th:nth-child(6) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(58 / 320 * 100%);
+		    flex-basis: calc(58 / 320 * 100%);
+		max-width: calc(58 / 320 * 100%);
+	}
+	.table-mob.table-mob--spec td:nth-child(7), .table-mob.table-mob--spec th:nth-child(7) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(147 / 320 * 100%);
+		    flex-basis: calc(147 / 320 * 100%);
+		max-width: calc(147 / 320 * 100%);
+	}
+	.table-mob.table-mob--spec td:nth-child(8), .table-mob.table-mob--spec th:nth-child(8) {
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
+		-ms-flex-preferred-size: calc(58 / 320 * 100%);
+		    flex-basis: calc(58 / 320 * 100%);
+		max-width: calc(58 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.authorized .table-mob.table-mob--spec td:nth-child(1), .authorized .table-mob.table-mob--spec th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(50 / 320 * 100%);
+		    flex-basis: calc(50 / 320 * 100%);
+		max-width: calc(50 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(2), .authorized .table-mob.table-mob--spec th:nth-child(2) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(53 / 320 * 100%);
+		    flex-basis: calc(53 / 320 * 100%);
+		max-width: calc(53 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(3), .authorized .table-mob.table-mob--spec th:nth-child(3) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(65 / 320 * 100%);
+		    flex-basis: calc(65 / 320 * 100%);
+		max-width: calc(65 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(4), .authorized .table-mob.table-mob--spec th:nth-child(4) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(115 / 320 * 100%);
+		    flex-basis: calc(115 / 320 * 100%);
+		max-width: calc(115 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(5), .authorized .table-mob.table-mob--spec th:nth-child(5) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(45 / 320 * 100%);
+		    flex-basis: calc(45 / 320 * 100%);
+		max-width: calc(45 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(6), .authorized .table-mob.table-mob--spec th:nth-child(6) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(61 / 320 * 100%);
+		    flex-basis: calc(61 / 320 * 100%);
+		max-width: calc(61 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(7), .authorized .table-mob.table-mob--spec th:nth-child(7) {
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
+		-ms-flex-preferred-size: calc(98 / 320 * 100%);
+		    flex-basis: calc(98 / 320 * 100%);
+		max-width: calc(98 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(8), .authorized .table-mob.table-mob--spec th:nth-child(8) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(46 / 320 * 100%);
+		    flex-basis: calc(46 / 320 * 100%);
+		max-width: calc(46 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(8) .tresp-val, .authorized .table-mob.table-mob--spec th:nth-child(8) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--spec td:nth-child(9), .authorized .table-mob.table-mob--spec th:nth-child(9) {
+		-webkit-box-ordinal-group: 10;
+		    -ms-flex-order: 9;
+		        order: 9;
+		-ms-flex-preferred-size: calc(107 / 320 * 100%);
+		    flex-basis: calc(107 / 320 * 100%);
+		max-width: calc(107 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-mob.table-mob--repairs td:nth-child(1), .table-mob.table-mob--repairs th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(50 / 320 * 100%);
+		    flex-basis: calc(50 / 320 * 100%);
+		max-width: calc(50 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--repairs td:nth-child(2), .table-mob.table-mob--repairs th:nth-child(2) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(138 / 320 * 100%);
+		    flex-basis: calc(138 / 320 * 100%);
+		max-width: calc(138 / 320 * 100%);
+	}
+	.table-mob.table-mob--repairs td:nth-child(3), .table-mob.table-mob--repairs th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(196 / 320 * 100%);
+		    flex-basis: calc(196 / 320 * 100%);
+		max-width: calc(196 / 320 * 100%);
+	}
+	.table-mob.table-mob--repairs td:nth-child(4), .table-mob.table-mob--repairs th:nth-child(4) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(124 / 320 * 100%);
+		    flex-basis: calc(124 / 320 * 100%);
+		max-width: calc(124 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.table-mob.table-mob--repairs td:nth-child(5), .table-mob.table-mob--repairs th:nth-child(5) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(74 / 320 * 100%);
+		    flex-basis: calc(74 / 320 * 100%);
+		max-width: calc(74 / 320 * 100%);
+	}
+	.table-mob.table-mob--repairs td:nth-child(6), .table-mob.table-mob--repairs th:nth-child(6) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(58 / 320 * 100%);
+		    flex-basis: calc(58 / 320 * 100%);
+		max-width: calc(58 / 320 * 100%);
+	}
+}
+
+@media (max-width: 1023px) {
+	.authorized .table-mob.table-mob--repairs td:nth-child(1), .authorized .table-mob.table-mob--repairs th:nth-child(1) {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+		-ms-flex-preferred-size: calc(38 / 320 * 100%);
+		    flex-basis: calc(38 / 320 * 100%);
+		max-width: calc(38 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(2), .authorized .table-mob.table-mob--repairs th:nth-child(2) {
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(122 / 320 * 100%);
+		    flex-basis: calc(122 / 320 * 100%);
+		max-width: calc(122 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(3), .authorized .table-mob.table-mob--repairs th:nth-child(3) {
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		-ms-flex-preferred-size: calc(122 / 320 * 100%);
+		    flex-basis: calc(122 / 320 * 100%);
+		max-width: calc(122 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(4), .authorized .table-mob.table-mob--repairs th:nth-child(4) {
+		-webkit-box-ordinal-group: 6;
+		    -ms-flex-order: 5;
+		        order: 5;
+		-ms-flex-preferred-size: calc(91 / 320 * 100%);
+		    flex-basis: calc(91 / 320 * 100%);
+		max-width: calc(91 / 320 * 100%);
+		border-left-width: 0;
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(5), .authorized .table-mob.table-mob--repairs th:nth-child(5) {
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		-ms-flex-preferred-size: calc(53 / 320 * 100%);
+		    flex-basis: calc(53 / 320 * 100%);
+		max-width: calc(53 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(6), .authorized .table-mob.table-mob--repairs th:nth-child(6) {
+		-webkit-box-ordinal-group: 5;
+		    -ms-flex-order: 4;
+		        order: 4;
+		-ms-flex-preferred-size: calc(107 / 320 * 100%);
+		    flex-basis: calc(107 / 320 * 100%);
+		max-width: calc(107 / 320 * 100%);
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(6) .tresp-val, .authorized .table-mob.table-mob--repairs th:nth-child(6) .tresp-val {
+		text-align: right;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+	.authorized .table-mob.table-mob--repairs td:nth-child(7), .authorized .table-mob.table-mob--repairs th:nth-child(7) {
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(107 / 320 * 100%);
+		    flex-basis: calc(107 / 320 * 100%);
+		max-width: calc(107 / 320 * 100%);
 	}
 }
 

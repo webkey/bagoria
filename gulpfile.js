@@ -160,6 +160,9 @@ gulp.task('build', ['cleanDistFolder', 'htmlCompilation', 'copyImgToDist', 'sass
 	gulp.src('src/css/**/*')
 	.pipe(gulp.dest('dist/css'));
 
+	gulp.src('src/img/**/*.webp')
+	.pipe(gulp.dest('dist/img'));
+
 	gulp.src('src/fonts/**/*') // Переносим шрифты в продакшен
 		.pipe(gulp.dest('dist/fonts'));
 

@@ -1,6 +1,6 @@
 @@include('_tpl_layout_head.html', {
-	"title": "Легковые - Неавториз",
-	"pageClass": "inside floatSidebar location-none"
+	"title": "Аккумуляторы - Авториз",
+	"pageClass": "inside floatSidebar location-none authorized"
 })
 
 	@@include('_tpl_layout_header.html')
@@ -321,8 +321,8 @@
 			chained_props['tires_car'] = {"vendor": "mark", "car": "model", "year": "year", "modification": "modification"};
 			chained_props_alt['tires_car'] = {"zavod_shini": "zavod_shini", "zamen_shini": "zamen_shini", "tuning_shini": "tuning_shini"};
 		</script>
-		<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <span>Каталог легковых шин</span></div>
-		<h1>Легковые шины
+		<div id="breadcrumb" class="breadcrumbs pleft"><a href="/">Главная</a> &raquo; <span>Аккумуляторы</span></div>
+		<h1>Аккумуляторы
 			<div class="help_link">
 				<div class="help_label"><a href="/info/pravila/">Помощь</a></div>
 			</div>
@@ -337,7 +337,7 @@
 				<li><a href="#filter-1-3">По марке авто</a></li>
 				<li><a href="#filter-1-4">Легковые камеры</a></li>
 			</ul>
-			<div class="filterBlock" id="filter-1-1">
+			<div class="filterBlock ui-tabs-hide" id="filter-1-1">
 				<form id="filter_form1" action="/catalog/tires/car/" method="get">
 					<input type="hidden" id="chained_select_type" value="shini" />
 					<input type="hidden" name="tab" value="1" />
@@ -1150,8 +1150,7 @@
 		<!--new-->
 		<div class="currentDiscount">
 			<div class="currentDiscountIn">
-				<span class="discountText">Ваша скидка: <strong>0%</strong></span>
-				<span class="discountChange" style="display:none">
+				<span class="discountText">Ваша скидка: <strong>0%</strong></span> <span class="discountChange" style="display:none">
 		<input type="text" size="1" name="discount" class="discount_input" id="discount" value="0">
 		<input type="hidden" name="discount_tmp" id="discount_tmp" value="0"><span class="discountUnit">%</span>
 		<a id="changeDisc" class="changeLink" href="#">Сохранить</a>
@@ -1164,28 +1163,23 @@
 
 		<!--new-->
 		<!--<table id="currentOffer" class="tableOffers table-zoom-js">-->
-		<table id="currentOffer" class="tableOffers table-mob table-mob--car-tires">
+		<table class="table-mob table-mob--accum">
 			<tbody>
 				<tr class="tresp-head">
-					<th>Тип</th><!--1-->
-					<th>Фото</th><!--2-->
-					<th style="width: 100px;"><strong>Типоразмер</strong></th><!--3-->
-					<th>Индекс</th><!--4-->
-					<!--<th>Бренд</th>-->
-					<th>Производитель</th><!--6-->
+					<th>Фото</th><!--1-->
+					<th><strong>Бренд</strong></th><!--2-->
 					<th><strong>Модель</strong></th><!--7-->
-					<th>Сезон</th><!--5-->
-					<!--<th><strong>Цена, руб</strong></th>-->
-					<!--<th><strong>Цена</strong></th>--><!--Цены нет для неавторизованных пользователей-->
-					<!--<th>Остаток<br>Центральный<br>склад</th>-->
-					<!--<th>Остаток<br>Минск</th>-->
-					<th>Остаток</th><!--8-->
+					<th>Емкость</th><!--3-->
+					<th>Полярность</th><!--4-->
+					<th>Пусковой ток</th><!--5-->
+					<th>Тип клемм</th><!--8-->
+					<th>Габариты (ШхГхВ)</th><!--9-->
+
+					<th><strong>Цена</strong></th><!--6-->
+					<th>Остаток</th><!--10-->
 				</tr>
 
 				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
 					<td data-label="Фото">
 						<div class="tresp-val">
 							<div class="photoPreview" title="Фото">
@@ -1193,73 +1187,52 @@
 							</div>
 						</div>
 					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/70R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">71T</div>
-					</td>
 					<td data-label="Бренд">
-						<div class="tresp-val">Imperial</div>
+						<div class="tresp-val">AAA</div>
 					</td>
-					<td data-label="Модель" class="action">
+					<td data-label="Модель">
 						<div class="tresp-val">
 							<div class="discount">Сниженная цена</div>
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=EcoDriver+2++RADIAL+109&id=286950">EcoDriver 2 RADIAL 109</a></strong>
+							<a href="/catalog/battery/?view=3&amp;manufacturer=AAA&amp;model=Pronta"><b>Pronta</b></a>
 						</div>
 					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
+					<td data-label="Емкость">
+						<div class="tresp-val">44Ah</div>
 					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
+					<td data-label="Полярность">
+						<div class="tresp-val">обратная R+</div>
+					</td>
+					<td data-label="Пусковой ток">
+						<div class="tresp-val">390A</div>
+					</td>
+					<td data-label="Тип клемм">
+						<div class="tresp-val">конус стандарт</div>
+					</td>
+					<td data-label="Габариты (ШхГхВ)">
+						<div class="tresp-val">175 x175 x190</div>
+					</td>
 
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
+					<td data-label="Цена, руб">
+						<div class="tresp-val"><span class="cPrice">41.6 руб.</span></div>
+					</td>
+
+					<td class="remainder" data-label="Остаток">
 						<div class="tresp-val">
 							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+								<div class="currentCount mob-hide">
+									>10
 								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286950_001">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+								<div class="counter">
+									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
+									<input type="text" class="quantity_288815" id="quantity_store1_288815" value="0">
+									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
+								</div>
+								<a href="#" class="cartBtn" title="В корзину" product_model="LTA-401" product_name="7,50R16C" element_id="288815" product_price="1562085.00" store_id="1" store_quantity="24" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Росава" product_diametr="16" code_1c="19689"> В корзину </a>
 							</div>
 						</div>
 					</td>
-					<!--change end-->
 				</tr>
 				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
 					<td data-label="Фото">
 						<div class="tresp-val">
 							<div class="photoPreview" title="Фото">
@@ -1267,460 +1240,50 @@
 							</div>
 						</div>
 					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/70R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">71T</div>
-					</td>
 					<td data-label="Бренд">
-						<div class="tresp-val">Sava</div>
+						<div class="tresp-val">AAA</div>
 					</td>
-					<td data-label="Модель" class="action">
+					<td data-label="Модель">
 						<div class="tresp-val">
 							<div class="discount">Сниженная цена</div>
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Sava&model=EFFECTA%2B&id=286951">EFFECTA+</a></strong>
+							<a href="/catalog/battery/?view=3&amp;manufacturer=AAA&amp;model=Pronta"><b>Pronta</b></a>
 						</div>
 					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
+					<td data-label="Емкость">
+						<div class="tresp-val">44Ah</div>
 					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">460 334 руб.</span></div>
-					</td>-->
+					<td data-label="Полярность">
+						<div class="tresp-val">обратная R+</div>
+					</td>
+					<td data-label="Пусковой ток">
+						<div class="tresp-val">390A</div>
+					</td>
+					<td data-label="Тип клемм">
+						<div class="tresp-val">конус стандарт</div>
+					</td>
+					<td data-label="Габариты (ШхГхВ)">
+						<div class="tresp-val">175 x175 x190</div>
+					</td>
 
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
+					<td data-label="Цена, руб">
+						<div class="tresp-val"><span class="cPrice">41.6 руб.</span></div>
+					</td>
+
+					<td class="remainder" data-label="Остаток">
 						<div class="tresp-val">
 							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+								<div class="currentCount mob-hide">
+									>10
 								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286951">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286951_002">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
-							</div>
-						</div>
-					</td>
-					<!--change end-->
-				</tr>
-				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
-					<td data-label="Фото">
-						<div class="tresp-val">
-							<div class="photoPreview" title="Фото">
-								<img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt="">
-							</div>
-						</div>
-					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/80R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">75T</div>
-					</td>
-					<td data-label="Бренд">
-						<div class="tresp-val">Matador</div>
-					</td>
-					<td data-label="Модель" class="action">
-						<div class="tresp-val">
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Matador&model=MP+16+Stella+2&id=296586">MP 16 Stella 2</a></strong>
-						</div>
-					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
-					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">496 272 руб.</span></div>
-					</td>-->
-
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
 								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
+									<a href="#" class="minus js-counter css-counter" act="desc">–</a>
+									<input type="text" class="quantity_288815" id="quantity_store1_288815_2" value="0">
+									<a href="#" class="plus js-counter css-counter" act="inc">+</a>
 								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286952">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286952_003">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
+								<a href="#" class="cartBtn" title="В корзину" product_model="LTA-401" product_name="7,50R16C" element_id="288815" product_price="1562085.00" store_id="1" store_quantity="24" section_name="Шины" subsection_name="Грузовые" product_category="Грузовые" brand_name="Росава" product_diametr="16" code_1c="19689"> В корзину </a>
 							</div>
 						</div>
 					</td>
-					<!--change end-->
-				</tr>
-			</tbody>
-		</table>
-		<!--new end-->
-
-		<!--new-->
-		<!--<table id="currentOffer" class="tableOffers table-zoom-js">-->
-		<table id="currentOffer2" class="tableOffers table-mob table-mob--car-tires">
-			<tbody>
-				<tr class="tresp-head">
-					<th>Тип</th>
-					<th>Фото</th>
-					<th style="width: 100px;"><strong>Типоразмер</strong></th>
-					<th>Индекс</th>
-					<!--<th>Бренд</th>-->
-					<th>Производитель</th>
-					<th><strong>Модель</strong></th>
-					<th>Сезон</th>
-					<!--<th><strong>Цена, руб</strong></th>-->
-					<!--<th><strong>Цена</strong></th>--><!--Цены нет для неавторизованных пользователей-->
-					<!--<th>Остаток<br>Центральный<br>склад</th>-->
-					<!--<th>Остаток<br>Минск</th>-->
-					<th>Остаток</th>
-				</tr>
-
-				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
-					<td data-label="Фото">
-						<div class="tresp-val">
-							<div class="photoPreview" title="Фото">
-								<img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt="">
-							</div>
-						</div>
-					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/70R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">71T</div>
-					</td>
-					<td data-label="Бренд">
-						<div class="tresp-val">Imperial</div>
-					</td>
-					<td data-label="Модель" class="action">
-						<div class="tresp-val">
-							<div class="discount">Сниженная цена</div>
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=EcoDriver+2++RADIAL+109&id=286950">EcoDriver 2 RADIAL 109</a></strong>
-						</div>
-					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
-					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
-
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286950_004">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
-							</div>
-						</div>
-					</td>
-					<!--change end-->
-				</tr>
-				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
-					<td data-label="Фото">
-						<div class="tresp-val">
-							<div class="photoPreview" title="Фото">
-								<img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt="">
-							</div>
-						</div>
-					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/70R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">71T</div>
-					</td>
-					<td data-label="Бренд">
-						<div class="tresp-val">Imperial</div>
-					</td>
-					<td data-label="Модель" class="action">
-						<div class="tresp-val">
-							<div class="discount">Сниженная цена</div>
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Imperial&model=EcoDriver+2++RADIAL+109&id=286950">EcoDriver 2 RADIAL 109</a></strong>
-						</div>
-					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
-					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">416 462 руб.</span></div>
-					</td>-->
-
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286950">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286950">0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286950_005">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
-							</div>
-						</div>
-					</td>
-					<!--change end-->
-				</tr>
-				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
-					<td data-label="Фото">
-						<div class="tresp-val">
-							<div class="photoPreview" title="Фото">
-								<img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt="">
-							</div>
-						</div>
-					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/70R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">71T</div>
-					</td>
-					<td data-label="Бренд">
-						<div class="tresp-val">Sava</div>
-					</td>
-					<td data-label="Модель" class="action">
-						<div class="tresp-val">
-							<div class="discount">Сниженная цена</div>
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Sava&model=EFFECTA%2B&id=286951">EFFECTA+</a></strong>
-						</div>
-					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
-					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">460 334 руб.</span></div>
-					</td>-->
-
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286951">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286951">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286951_006">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
-							</div>
-						</div>
-					</td>
-					<!--change end-->
-				</tr>
-				<tr>
-					<td data-label="Тип" class="center">
-						<div class="tresp-val"><img src="i/car.png" alt=""></div>
-					</td>
-					<td data-label="Фото">
-						<div class="tresp-val">
-							<div class="photoPreview" title="Фото">
-								<img src="upload/iblock/3f60df4aa31b8a2b4fee6019bcb6736c.jpg" alt="">
-							</div>
-						</div>
-					</td>
-					<td data-label="Типоразмер">
-						<div class="tresp-val"><strong>145/80R13</strong></div>
-					</td>
-					<td data-label="Индекс">
-						<div class="tresp-val">75T</div>
-					</td>
-					<td data-label="Бренд">
-						<div class="tresp-val">Matador</div>
-					</td>
-					<td data-label="Модель" class="action">
-						<div class="tresp-val">
-							<strong><a href="/catalog/tires/car/?view=3&manufacturer=Matador&model=MP+16+Stella+2&id=296586">MP 16 Stella 2</a></strong>
-						</div>
-					</td>
-					<td data-label="Сезон" class="center">
-						<div class="tresp-val"><img src="i/summer.png" alt="Лето"></div>
-					</td>
-					<!--<td data-label="Цена, руб" class="right">
-						<div class="tresp-val"><span class="cPrice">496 272 руб.</span></div>
-					</td>-->
-
-					<!--change-->
-					<!--<td class="remainder" data-label="Остаток Центральный склад:">
-						<div class="currentCount mob-show" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount mob-hide" id="currentCount_1_286952">&lt;!&ndash;&gt;&ndash;&gt;>20</div>
-								&lt;!&ndash;<input type="text" id="quantity_store1_286950">&ndash;&gt;
-								<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>
-								<a href="#" class="cartBtn" title="Добавить в корзину" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="1" store_quantity="46" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>
-							</div>
-						</div>
-					</td>-->
-					<td class="remainder" data-label="Остаток Минск:">
-						<!--<div class="currentCount mob-show" id="currentCount_6_286952">&lt;!&ndash;&gt;&ndash;&gt;0</div>-->
-						<div class="tresp-val">
-							<div class="orderCount">
-								<div class="currentCount" id="currentCount_6_286952_007">&gt; 10</div>
-								<!--<input type="text" id="quantity_store6_286950">-->
-								<!--<div class="counter">
-									<a href="#" class="minus change_counter" act="desc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">–</a>
-									<input class="counter_input" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада" type="text" value="0">
-									<input type="hidden" value="0">
-									<input type="hidden" value="11">
-									<input type="hidden" value="0">
-									<a href="#" class="plus change_counter" act="inc" price="282.94" store_id="1" prod_id="659864" element_id="1956119" order_type="Заказ со склада">+</a>
-								</div>-->
-								<!--add class inCar-->
-								<!--add title="Удалить из корзины"-->
-								<!--<a href="#" class="cartBtn inCar" title="Удалить из корзины" product_model="EcoDriver 2  RADIAL 109" product_name="145/70R13" element_id="286950" product_price="416462.00" store_id="6" store_quantity="0" section_name="Шины" subsection_name="Легковые и 4х4" product_category="Легковые шины" brand_name="Imperial" product_diametr="13" code_1c="21888"><span class="mob-hide">Добавить в корзину</span><span class="mob-show">В корзине</span></a>-->
-							</div>
-						</div>
-					</td>
-					<!--change end-->
 				</tr>
 			</tbody>
 		</table>

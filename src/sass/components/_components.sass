@@ -378,7 +378,8 @@ ul.topNav
 
 	+media('<mob-lg')
 		width: 153px
-		left: $header-height--sm
+		left: 50%
+		margin-left: -90px
 		background-position: center
 		background-size: contain
 
@@ -386,6 +387,9 @@ ul.topNav
 
 /* login
 .enterLink
+	i
+		display: none
+
 	+media('<tab-lg')
 		position: relative
 		float: right
@@ -393,19 +397,37 @@ ul.topNav
 		right: auto
 		background-image: url(../../i/login.png)
 		background-repeat: no-repeat
-		background-position: center
+		background-position: center 31%
 		background-color: transparent
 		background-size: 20px
 		padding: 0
 		+size($header-height--lg)
+		font-family: pf_dintext_probold, sans-serif
 		+font(0, 0)
 
 		&:hover
 			background-color: transparent
 			background-position: center
 
+		i
+			display: block
+			position: absolute
+			left: 50%
+			bottom: 13px
+			width: 100px
+			margin-left: -50px
+			font-style: normal
+			font-size: 12px
+			line-height: 1
+			text-transform: uppercase
+			color: $base-color
+			text-align: center
+
 	+media('<mob-lg')
-		+size($header-height--sm)
+		+size(70px, $header-height--sm)
+
+		i
+			bottom: 5px
 
 a.userLink
 	+media('<tab-lg')
@@ -543,15 +565,22 @@ a.cardLink
 	+size($header-height--lg)
 	background-color: $bg-color-base
 
-	+media('<tab-lg')
-		display: block
-
-	+media('<mob-lg')
-		+size($header-height--sm)
-
 	& > span
-		+hide-text
+		//+hide-text
+		display: none
 		white-space: normal
+		position: absolute
+		left: 50%
+		bottom: 13px
+		width: 100px
+		margin-left: -50px
+		font-family: pf_dintext_probold, sans-serif
+		font-size: 12px
+		line-height: 1
+		font-style: normal
+		text-transform: uppercase
+		color: $base-color
+		text-align: center
 
 	// крест
 	&::before, &::after
@@ -567,7 +596,7 @@ a.cardLink
 		left: 50%
 		top: 50%
 		+menu-btn-line
-		+margin($top: -#{round($btn-menu-lines-height*0.5)}, $left: -#{round($btn-menu-lines-width*0.5)})
+		+margin($top: -11px, $left: -#{round($btn-menu-lines-width*0.5)})
 
 		&::before, &::after
 			+pseudo()
@@ -626,6 +655,21 @@ a.cardLink
 
 				&::before, &::after
 					background-color: $bg-color-base
+
+	+media('<tab-lg')
+		display: block
+
+		& > span
+			display: block
+
+	+media('<mob-lg')
+		+size($header-height--sm)
+
+		& > span
+			bottom: 5px
+
+		& > i
+			margin-top: -7px
 
 /* button menu end
 
@@ -3089,7 +3133,7 @@ ul.paging
 			align-items: center
 			width: 100%
 
-	.photoPreview
+	//.photoPreview
 		+media('<tab-lg')
 			background: none
 			height: 30px
@@ -3103,13 +3147,13 @@ ul.paging
 				top: auto
 				left: auto
 
-		&.hovers
-			height: 30px
-			width: 30px
+			&.hovers
+				height: 30px
+				width: 30px
 
-		&:hover
-			img
-				display: block
+			&:hover
+				img
+					display: block
 
 	.discount
 		+media('<tab-lg')
@@ -3345,11 +3389,10 @@ ul.paging
 
 				// Модель
 				&:nth-child(4)
-					$width: calc(110 / 320 * 100%)
-					order: 6
+					$width: calc(145 / 320 * 100%)
+					order: 7
 					flex-basis: $width
 					max-width: $width
-					border-left-width: 0
 
 				// Индекс нагрузки
 				&:nth-child(5)
@@ -3360,17 +3403,18 @@ ul.paging
 
 				// Индекс скорости
 				&:nth-child(6)
-					order: 5
 					$width: calc(65 / 320 * 100%)
+					order: 5
 					flex-basis: $width
 					max-width: $width
 
 				// Применяемость
 				&:nth-child(7)
-					order: 7
-					$width: calc(145 / 320 * 100%)
+					$width: calc(110 / 320 * 100%)
+					order: 6
 					flex-basis: $width
 					max-width: $width
+					border-left-width: 0
 
 				// Цена
 				//&:nth-child(8)
@@ -3415,10 +3459,9 @@ ul.paging
 					// Модель
 					&:nth-child(4)
 						$width: calc(108 / 320 * 100%)
-						order: 7
+						order: 8
 						flex-basis: $width
 						max-width: $width
-						border-left-width: 0
 
 					// Индекс нагрузки
 					&:nth-child(5)
@@ -3436,10 +3479,11 @@ ul.paging
 
 					// Применяемость
 					&:nth-child(7)
-						order: 8
 						$width: calc(108 / 320 * 100%)
+						order: 7
 						flex-basis: $width
 						max-width: $width
+						border-left-width: 0
 
 					// Цена
 					&:nth-child(8)
@@ -4245,6 +4289,42 @@ ul.paging
 
 /* photoPreview
 .photoPreview
+	+media('<tab-lg')
+		user-select: none
+		-webkit-tap-highlight-color: transparent
+
+		.touch &:hover
+			background-position: 0 0
+
+			&::after
+				display: none
+
+			img
+				display: none
+
+		.touch &.hovers
+			background-position: 0 -13px
+
+			&::after
+				display: block
+
+			img
+				display: block
+
+			.close
+				display: block
+
+	.close
+		display: none
+
+		+media('<tab-lg')
+			position: absolute
+			left: 42px
+			top: -70px
+			font-size: 24px
+			z-index: 5
+
+//.photoPreview
 	+media('<tab-lg')
 		user-select: none
 		z-index: auto

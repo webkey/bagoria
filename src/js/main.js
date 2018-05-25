@@ -2493,10 +2493,25 @@ $(function () {
 			return false;
 		});
 	} else {
+		$.each($photoPreview, function () {
+			$(this).append('<div class="close">x</div>')
+		});
+
 		$photoPreview.on('click', function () {
-			$(this).toggleClass('hovers');
-		})
+			if($(this).hasClass('hovers')){
+				$(this).removeClass('hovers');
+				return;
+			}
+
+			$photoPreview.removeClass('hovers');
+			$(this).addClass('hovers');
+		});
 	}
+
+	$photoPreview.on('click', '.close', function (e) {
+		e.stopPropagation();
+		$(this).closest($photoPreview).removeClass('hovers');
+	});
 	// new end
 
 	if($.browser.version <= 15.0 && $.browser.opera == true){

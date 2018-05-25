@@ -719,7 +719,8 @@ html.menu-is-open {
 @media (max-width: 639px) {
 	.logo {
 		width: 153px;
-		left: 50px;
+		left: 50%;
+		margin-left: -90px;
 		background-position: center;
 		background-size: contain;
 	}
@@ -727,6 +728,10 @@ html.menu-is-open {
 
 /* logo end */
 /* login */
+.enterLink i {
+	display: none;
+}
+
 @media (max-width: 1023px) {
 	.enterLink {
 		position: relative;
@@ -735,12 +740,13 @@ html.menu-is-open {
 		right: auto;
 		background-image: url(../i/login.png);
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center 31%;
 		background-color: transparent;
 		background-size: 20px;
 		padding: 0;
 		width: 70px;
 		height: 70px;
+		font-family: pf_dintext_probold, sans-serif;
 		font-size: 0;
 		line-height: 0;
 	}
@@ -748,12 +754,29 @@ html.menu-is-open {
 		background-color: transparent;
 		background-position: center;
 	}
+	.enterLink i {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 13px;
+		width: 100px;
+		margin-left: -50px;
+		font-style: normal;
+		font-size: 12px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: #1a59b9;
+		text-align: center;
+	}
 }
 
 @media (max-width: 639px) {
 	.enterLink {
-		width: 50px;
+		width: 70px;
 		height: 50px;
+	}
+	.enterLink i {
+		bottom: 5px;
 	}
 }
 
@@ -899,38 +922,21 @@ a.cardLink {
 	background-color: white;
 }
 
-@media (max-width: 1023px) {
-	.btn-menu {
-		display: block;
-	}
-}
-
-@media (max-width: 639px) {
-	.btn-menu {
-		width: 50px;
-		height: 50px;
-	}
-}
-
 .btn-menu > span {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+	display: none;
 	white-space: normal;
-}
-
-.btn-menu > span:active, .btn-menu > span:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
+	position: absolute;
+	left: 50%;
+	bottom: 13px;
+	width: 100px;
+	margin-left: -50px;
+	font-family: pf_dintext_probold, sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	font-style: normal;
+	text-transform: uppercase;
+	color: #1a59b9;
+	text-align: center;
 }
 
 .btn-menu::before, .btn-menu::after {
@@ -954,7 +960,7 @@ a.cardLink {
 	width: 22px;
 	height: 3px;
 	background-color: #1a59b9;
-	margin-top: -2px;
+	margin-top: -11px;
 	margin-left: -11px;
 }
 
@@ -1019,6 +1025,28 @@ a.cardLink {
 .btn-menu.menu-is-open > i::after {
 	-webkit-transform: translate(0, -7px) translateZ(0);
 	        transform: translate(0, -7px) translateZ(0);
+}
+
+@media (max-width: 1023px) {
+	.btn-menu {
+		display: block;
+	}
+	.btn-menu > span {
+		display: block;
+	}
+}
+
+@media (max-width: 639px) {
+	.btn-menu {
+		width: 50px;
+		height: 50px;
+	}
+	.btn-menu > span {
+		bottom: 5px;
+	}
+	.btn-menu > i {
+		margin-top: -7px;
+	}
 }
 
 /* button menu end */
@@ -3601,32 +3629,6 @@ ul.paging {
 }
 
 @media (max-width: 1023px) {
-	.table-mob .photoPreview {
-		background: none;
-		height: 30px;
-		width: 30px;
-	}
-	.table-mob .photoPreview img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		-o-object-fit: contain;
-		   object-fit: contain;
-		top: auto;
-		left: auto;
-	}
-}
-
-.table-mob .photoPreview.hovers {
-	height: 30px;
-	width: 30px;
-}
-
-.table-mob .photoPreview:hover img {
-	display: block;
-}
-
-@media (max-width: 1023px) {
 	.table-mob .discount {
 		margin: 0;
 		position: absolute;
@@ -3882,13 +3884,12 @@ ul.paging {
 		max-width: calc(76 / 320 * 100%);
 	}
 	.table-mob.table-mob--truck-tires td:nth-child(4), .table-mob.table-mob--truck-tires th:nth-child(4) {
-		-webkit-box-ordinal-group: 7;
-		    -ms-flex-order: 6;
-		        order: 6;
-		-ms-flex-preferred-size: calc(110 / 320 * 100%);
-		    flex-basis: calc(110 / 320 * 100%);
-		max-width: calc(110 / 320 * 100%);
-		border-left-width: 0;
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
+		-ms-flex-preferred-size: calc(145 / 320 * 100%);
+		    flex-basis: calc(145 / 320 * 100%);
+		max-width: calc(145 / 320 * 100%);
 	}
 	.table-mob.table-mob--truck-tires td:nth-child(5), .table-mob.table-mob--truck-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 5;
@@ -3907,12 +3908,13 @@ ul.paging {
 		max-width: calc(65 / 320 * 100%);
 	}
 	.table-mob.table-mob--truck-tires td:nth-child(7), .table-mob.table-mob--truck-tires th:nth-child(7) {
-		-webkit-box-ordinal-group: 8;
-		    -ms-flex-order: 7;
-		        order: 7;
-		-ms-flex-preferred-size: calc(145 / 320 * 100%);
-		    flex-basis: calc(145 / 320 * 100%);
-		max-width: calc(145 / 320 * 100%);
+		-webkit-box-ordinal-group: 7;
+		    -ms-flex-order: 6;
+		        order: 6;
+		-ms-flex-preferred-size: calc(110 / 320 * 100%);
+		    flex-basis: calc(110 / 320 * 100%);
+		max-width: calc(110 / 320 * 100%);
+		border-left-width: 0;
 	}
 	.table-mob.table-mob--truck-tires td:nth-child(8), .table-mob.table-mob--truck-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 9;
@@ -3951,13 +3953,12 @@ ul.paging {
 		max-width: calc(50 / 320 * 100%);
 	}
 	.authorized .table-mob.table-mob--truck-tires td:nth-child(4), .authorized .table-mob.table-mob--truck-tires th:nth-child(4) {
-		-webkit-box-ordinal-group: 8;
-		    -ms-flex-order: 7;
-		        order: 7;
+		-webkit-box-ordinal-group: 9;
+		    -ms-flex-order: 8;
+		        order: 8;
 		-ms-flex-preferred-size: calc(108 / 320 * 100%);
 		    flex-basis: calc(108 / 320 * 100%);
 		max-width: calc(108 / 320 * 100%);
-		border-left-width: 0;
 	}
 	.authorized .table-mob.table-mob--truck-tires td:nth-child(5), .authorized .table-mob.table-mob--truck-tires th:nth-child(5) {
 		-webkit-box-ordinal-group: 5;
@@ -3976,12 +3977,13 @@ ul.paging {
 		max-width: calc(55 / 320 * 100%);
 	}
 	.authorized .table-mob.table-mob--truck-tires td:nth-child(7), .authorized .table-mob.table-mob--truck-tires th:nth-child(7) {
-		-webkit-box-ordinal-group: 9;
-		    -ms-flex-order: 8;
-		        order: 8;
+		-webkit-box-ordinal-group: 8;
+		    -ms-flex-order: 7;
+		        order: 7;
 		-ms-flex-preferred-size: calc(108 / 320 * 100%);
 		    flex-basis: calc(108 / 320 * 100%);
 		max-width: calc(108 / 320 * 100%);
+		border-left-width: 0;
 	}
 	.authorized .table-mob.table-mob--truck-tires td:nth-child(8), .authorized .table-mob.table-mob--truck-tires th:nth-child(8) {
 		-webkit-box-ordinal-group: 7;
@@ -4893,32 +4895,42 @@ ul.paging {
 		   -moz-user-select: none;
 		    -ms-user-select: none;
 		        user-select: none;
-		z-index: auto;
-		margin: 0;
+		-webkit-tap-highlight-color: transparent;
 	}
-	.photoPreview::after {
-		content: none !important;
+	.touch .photoPreview:hover {
+		background-position: 0 0;
 	}
-	.photoPreview img {
-		position: relative;
-		top: auto;
-		left: auto;
-		border: none;
-		box-shadow: none;
-		padding: 0;
-		max-width: 100%;
-		height: auto;
-	}
-	.photoPreview:hover img {
+	.touch .photoPreview:hover::after {
 		display: none;
 	}
-	.photoPreview.hovers {
-		height: auto;
-		width: auto;
-		background: none;
+	.touch .photoPreview:hover img {
+		display: none;
 	}
-	.photoPreview.hovers img, .photoPreview.hovers:hover img {
+	.touch .photoPreview.hovers {
+		background-position: 0 -13px;
+	}
+	.touch .photoPreview.hovers::after {
 		display: block;
+	}
+	.touch .photoPreview.hovers img {
+		display: block;
+	}
+	.touch .photoPreview.hovers .close {
+		display: block;
+	}
+}
+
+.photoPreview .close {
+	display: none;
+}
+
+@media (max-width: 1023px) {
+	.photoPreview .close {
+		position: absolute;
+		left: 42px;
+		top: -70px;
+		font-size: 24px;
+		z-index: 5;
 	}
 }
 

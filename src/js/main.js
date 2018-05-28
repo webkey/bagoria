@@ -2877,7 +2877,6 @@ $(function () {
 	});
 
 	$(document).on('mouseup', function (e) {
-		console.log("$(e.target).closest('#findOutPriceBox').length: ", $(e.target).closest('#findOutPriceBox').length);
 		if ($(e.target).closest('#findOutPriceBox').length) return;
 		$('.btn-close-findOutPriceBox').remove();
 		e.stopPropagation();

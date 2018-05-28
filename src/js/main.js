@@ -2868,6 +2868,21 @@ $(function () {
 		});
 	});
 
+	var closeBtnTpl = $('<div class="btn-close btn-close-findOutPriceBox"></div>');
+	$('#callme').on('click', function (e) {
+		e.preventDefault();
+		if($('.btn-close-findOutPriceBox').length === 0){
+			closeBtnTpl.clone().insertAfter($('#findOutPriceBox'));
+		}
+	});
+
+	$(document).on('mouseup', function (e) {
+		console.log("$(e.target).closest('#findOutPriceBox').length: ", $(e.target).closest('#findOutPriceBox').length);
+		if ($(e.target).closest('#findOutPriceBox').length) return;
+		$('.btn-close-findOutPriceBox').remove();
+		e.stopPropagation();
+	});
+
 });
 
 

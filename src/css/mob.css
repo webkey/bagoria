@@ -409,6 +409,10 @@ html.menu-is-open {
 		box-shadow: none;
 		outline: none;
 	}
+	.wrapper select:disabled {
+		background-color: #ededed;
+		color: #b9b9b9;
+	}
 }
 
 @media (max-width: 639px) {
@@ -5609,8 +5613,9 @@ ul.fSizes + .btn-close {
 @media (max-width: 1023px) {
 	.findOutPriceBox {
 		box-sizing: border-box;
-		height: 400px !important;
+		height: auto !important;
 		margin-top: -183px !important;
+		z-index: 999999;
 	}
 	.findOutPriceBox .priceBoxSize {
 		width: 100% !important;
@@ -5622,7 +5627,7 @@ ul.fSizes + .btn-close {
 		top: 30px !important;
 		left: 20px !important;
 		width: calc(100% - 40px) !important;
-		height: calc(100% - 60px) !important;
+		height: auto !important;
 		padding: 30px 15px !important;
 		margin: 0 !important;
 		box-sizing: border-box;
@@ -5635,16 +5640,32 @@ ul.fSizes + .btn-close {
 	display: none;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 1023px) {
 	.findOutPriceBox + .btn-close {
 		display: block;
 		position: fixed;
+		z-index: 999999;
 		right: 22px;
 		top: 32px;
-		z-index: 99999;
 		width: 40px;
 		height: 40px;
 	}
+}
+
+@media (max-width: 1023px) {
+	.findOutPriceBG {
+		z-index: 999999;
+	}
+}
+
+.findOutPriceBox .priceBoxWarn {
+	float: right;
+	width: 120px;
+	margin-left: 0;
+}
+
+.findOutPriceBoxGroup {
+	margin: 40px 0;
 }
 
 /* findOutPriceBox end */

@@ -141,6 +141,10 @@ html
 		box-shadow: none
 		outline: none
 
+		&:disabled
+			background-color: #ededed
+			color: #b9b9b9
+
 	+media('<mob-lg')
 		+padding-horizontal(9px)
 		font-size: 12px
@@ -4882,8 +4886,10 @@ ul.fSizes
 
 	+media('<tab-lg')
 		box-sizing: border-box
-		height: 400px !important
+		//height: 400px !important
+		height: auto !important
 		margin-top: -183px !important
+		z-index: 999999
 
 		.priceBoxSize
 			width: 100% !important
@@ -4892,7 +4898,8 @@ ul.fSizes
 		top: 30px !important
 		left: 20px !important
 		width: calc(100% - 40px) !important
-		height: calc(100% - 60px) !important
+		//height: calc(100% - 60px) !important
+		height: auto !important
 		padding: 30px 15px !important
 		margin: 0 !important
 		box-sizing: border-box
@@ -4902,14 +4909,27 @@ ul.fSizes
 	& + .btn-close
 		display: none
 
-		+media('<mob-lg')
+		+media('<tab-lg')
 			display: block
 			position: fixed
+			//display: none
+			z-index: 999999
 			right: 22px
 			top: 32px
-			z-index: 99999
 			+size(40px)
 
+.findOutPriceBG
+	+media('<tab-lg')
+		z-index: 999999
+
+.findOutPriceBox
+	.priceBoxWarn
+		float: right
+		width: 120px
+		margin-left: 0
+
+.findOutPriceBoxGroup
+	margin: 40px 0
 
 /* findOutPriceBox end
 

@@ -55,15 +55,9 @@
 			<a id="findOutPriceBoxSend" class="btn">Отправить</a><span id="priceBoxWarn" class="priceBoxWarn">Заполнены не все поля!</span>
 		</div>
 		<script>
-			/*add*/var closeBtnTpl = $('<div class="btn-close btn-close-findOutPriceBox"></div>');
 			$('#callme').click(function () {
 				$('#findOutPriceBG').show();
 				$('#findOutPriceBox').show();
-				/*add*/
-				if($('.btn-close-findOutPriceBox').length === 0){
-					closeBtnTpl.clone().insertAfter($('#findOutPriceBox'));
-				}
-				/*add end*/
 			});
 			$('#findOutPriceBoxSend').click(function () {
 				var product = $('#priceBoxSize option:selected').val() + ' ' + $('#callme').attr('rel');
@@ -92,7 +86,6 @@
 				if ($(e.target).closest('#findOutPriceBox').length) return;
 				$('#findOutPriceBG').hide();
 				$('#findOutPriceBox').hide();
-				/*add*/$('.btn-close-findOutPriceBox').remove();
 				e.stopPropagation();
 			});
 		</script>

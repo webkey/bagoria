@@ -412,7 +412,7 @@ ul.topNav
 
 		&:hover
 			background-color: transparent
-			background-position: center
+			background-position: center 31%
 
 		i
 			display: block
@@ -734,13 +734,16 @@ a.btn, .btn
 			color: white
 			white-space: nowrap
 			text-transform: uppercase
-			border-radius: 0
+			/* border-radius: 0 */
 			text-shadow: none
 			box-shadow: none
 			border: none
 			box-sizing: border-box
 			cursor: pointer
 			background-color: #00a6eb
+
+			text-shadow: 0 -1px 0 #0074a4
+			box-shadow: inset 0 -2px 0 #003b71
 
 		&:hover
 			box-shadow: none
@@ -767,6 +770,9 @@ a.btn, .btn
 				text-shadow: none
 				box-shadow: none
 				min-width: 240px
+
+				text-shadow: 0 -1px 0 #43a047
+				box-shadow: inset 0 -2px 0 #1b5e20
 
 			+media('<mob-lg')
 				min-width: 0
@@ -1663,7 +1669,8 @@ ul.fNav
 		margin-left: 0
 		width: 100%
 		height: 70px
-		z-index: 1
+		//z-index: 1
+		z-index: 99999
 		padding: 5px $layout-space--lg
 		background-color: $base-color-alt
 
@@ -3571,7 +3578,7 @@ ul.paging
 
 					// Модель
 					&:nth-child(4)
-						$width: calc(108 / 320 * 100%)
+						$width: calc(98 / 320 * 100%)
 						order: 8
 						flex-basis: $width
 						max-width: $width
@@ -3579,14 +3586,14 @@ ul.paging
 					// Индекс нагрузки
 					&:nth-child(5)
 						order: 4
-						$width: calc(58 / 320 * 100%)
+						$width: calc(48 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
 					// Индекс скорости
 					&:nth-child(6)
 						order: 5
-						$width: calc(55 / 320 * 100%)
+						$width: calc(45 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
@@ -3601,7 +3608,7 @@ ul.paging
 					// Цена
 					&:nth-child(8)
 						order: 6
-						$width: calc(49 / 320 * 100%)
+						$width: calc(69 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
@@ -3611,7 +3618,7 @@ ul.paging
 
 					// Остаток
 					&:nth-child(9)
-						$width: calc(104 / 320 * 100%)
+						$width: calc(114 / 320 * 100%)
 						order: 9
 						flex-basis: $width
 						max-width: $width
@@ -4191,7 +4198,7 @@ ul.paging
 			td, th
 				// Фото
 				&:nth-child(1)
-					$width: calc(50 / 320 * 100%)
+					$width: calc(40 / 320 * 100%)
 					order: 1
 					flex-basis: $width
 					max-width: $width
@@ -4213,7 +4220,7 @@ ul.paging
 
 				// Модель
 				&:nth-child(4)
-					$width: calc(115 / 320 * 100%)
+					$width: calc(105 / 320 * 100%)
 					order: 6
 					flex-basis: $width
 					max-width: $width
@@ -4229,7 +4236,7 @@ ul.paging
 				// Индекс скорости
 				&:nth-child(6)
 					order: 5
-					$width: calc(58 / 320 * 100%)
+					$width: calc(68 / 320 * 100%)
 					flex-basis: $width
 					max-width: $width
 
@@ -4242,7 +4249,7 @@ ul.paging
 
 				// Остаток
 				&:nth-child(8)
-					$width: calc(58 / 320 * 100%)
+					$width: calc(68 / 320 * 100%)
 					order: 8
 					flex-basis: $width
 					max-width: $width
@@ -4253,7 +4260,7 @@ ul.paging
 				td, th
 					// Фото
 					&:nth-child(1)
-						$width: calc(50 / 320 * 100%)
+						$width: calc(40 / 320 * 100%)
 						order: 1
 						flex-basis: $width
 						max-width: $width
@@ -4261,21 +4268,21 @@ ul.paging
 
 					// Типоразмер
 					&:nth-child(2)
-						$width: calc(53 / 320 * 100%)
+						$width: calc(63 / 320 * 100%)
 						order: 3
 						flex-basis: $width
 						max-width: $width
 
 					// Бренд
 					&:nth-child(3)
-						$width: calc(65 / 320 * 100%)
+						$width: calc(45 / 320 * 100%)
 						order: 2
 						flex-basis: $width
 						max-width: $width
 
 					// Модель
 					&:nth-child(4)
-						$width: calc(115 / 320 * 100%)
+						$width: calc(85 / 320 * 100%)
 						order: 7
 						flex-basis: $width
 						max-width: $width
@@ -4284,28 +4291,28 @@ ul.paging
 					// Индекс нагрузки
 					&:nth-child(5)
 						order: 4
-						$width: calc(45 / 320 * 100%)
+						$width: calc(55 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
 					// Индекс скорости
 					&:nth-child(6)
 						order: 5
-						$width: calc(61 / 320 * 100%)
+						$width: calc(51 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
 					// Рисунок протектора
 					&:nth-child(7)
 						order: 8
-						$width: calc(98 / 320 * 100%)
+						$width: calc(118 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
 					// Цена
 					&:nth-child(8)
 						order: 6
-						$width: calc(46 / 320 * 100%)
+						$width: calc(66 / 320 * 100%)
 						flex-basis: $width
 						max-width: $width
 
@@ -4315,7 +4322,7 @@ ul.paging
 
 					// Остаток
 					&:nth-child(9)
-						$width: calc(107 / 320 * 100%)
+						$width: calc(117 / 320 * 100%)
 						order: 9
 						flex-basis: $width
 						max-width: $width
@@ -4423,6 +4430,208 @@ ul.paging
 					// Остаток
 					&:nth-child(7)
 						$width: calc(107 / 320 * 100%)
+						order: 7
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive multipack. table-mob--multipack
+	&.table-mob--multipack
+		+media('<tab-lg')
+			td, th
+				// Наименование
+				&:nth-child(1)
+					$width: calc(180 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Примечание
+				&:nth-child(2)
+					$width: calc(140 / 320 * 100%)
+					order: 2
+					flex-basis: $width
+					max-width: $width
+
+				// Бренд
+				&:nth-child(3)
+					$width: calc(90 / 320 * 100%)
+					order: 3
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// PCD
+				&:nth-child(4)
+					$width: calc(90 / 320 * 100%)
+					order: 4
+					flex-basis: $width
+					max-width: $width
+
+				// Остаток
+				&:nth-child(5)
+					$width: calc(140 / 320 * 100%)
+					order: 5
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Наименование
+					&:nth-child(1)
+						$width: calc(180 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Примечание
+					&:nth-child(2)
+						$width: calc(120 / 320 * 100%)
+						order: 4
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Бренд
+					&:nth-child(3)
+						$width: calc(60 / 320 * 100%)
+						order: 5
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 1px
+
+					// PCD
+					&:nth-child(4)
+						$width: calc(60 / 320 * 100%)
+						order: 2
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(5)
+						order: 3
+						$width: calc(80 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(6)
+						$width: calc(140 / 320 * 100%)
+						order: 6
+						flex-basis: $width
+						max-width: $width
+
+	// table responsive spec-camera. table-mob--spec-camera
+	&.table-mob--spec-camera
+		+media('<tab-lg')
+			td, th
+				// Фото
+				&:nth-child(1)
+					$width: calc(100 / 320 * 100%)
+					order: 1
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Категория
+				&:nth-child(2)
+					$width: calc(100 / 320 * 100%)
+					order: 2
+					flex-basis: $width
+					max-width: $width
+
+				// Типоразмер
+				&:nth-child(3)
+					$width: calc(120 / 320 * 100%)
+					order: 3
+					flex-basis: $width
+					max-width: $width
+
+				// Бренд
+				&:nth-child(4)
+					$width: calc(100 / 320 * 100%)
+					order: 4
+					flex-basis: $width
+					max-width: $width
+					border-left-width: 0
+
+				// Модель
+				&:nth-child(5)
+					$width: calc(100 / 320 * 100%)
+					order: 5
+					flex-basis: $width
+					max-width: $width
+
+				// Остаток
+				&:nth-child(6)
+					$width: calc(120 / 320 * 100%)
+					order: 6
+					flex-basis: $width
+					max-width: $width
+
+		// вид для авторизованых пользователей
+		.authorized &
+			+media('<tab-lg')
+				td, th
+					// Фото
+					&:nth-child(1)
+						$width: calc(80 / 320 * 100%)
+						order: 1
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Категория
+					&:nth-child(2)
+						$width: calc(80 / 320 * 100%)
+						order: 2
+						flex-basis: $width
+						max-width: $width
+
+					// Типоразмер
+					&:nth-child(3)
+						$width: calc(80 / 320 * 100%)
+						order: 5
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 0
+
+					// Бренд
+					&:nth-child(4)
+						$width: calc(80 / 320 * 100%)
+						order: 6
+						flex-basis: $width
+						max-width: $width
+						border-left-width: 1px
+
+					// Модель
+					&:nth-child(5)
+						$width: calc(70 / 320 * 100%)
+						order: 3
+						flex-basis: $width
+						max-width: $width
+
+					// Цена
+					&:nth-child(6)
+						order: 4
+						$width: calc(90 / 320 * 100%)
+						flex-basis: $width
+						max-width: $width
+
+						.tresp-val
+							text-align: right
+							justify-content: flex-end
+
+					// Остаток
+					&:nth-child(7)
+						$width: calc(160 / 320 * 100%)
 						order: 7
 						flex-basis: $width
 						max-width: $width
@@ -4661,6 +4870,7 @@ ul.paging
 	+media('<tab-lg')
 		user-select: none
 		-webkit-tap-highlight-color: transparent
+		margin: 0
 
 		.touch &:hover
 			background-position: 0 0
@@ -4685,13 +4895,15 @@ ul.paging
 
 	.close
 		display: none
+		position: absolute
+		left: 42px
+		top: -70px
+		font-size: 24px
+		z-index: 5
 
+	&.noPhoto .close
 		+media('<tab-lg')
-			position: absolute
-			left: 42px
-			top: -70px
-			font-size: 24px
-			z-index: 5
+			top: -42px
 
 //.photoPreview
 	+media('<tab-lg')

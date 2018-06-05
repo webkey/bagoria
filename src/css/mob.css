@@ -1175,7 +1175,7 @@ a.cardLink {
 
 @media (max-width: 1023px) and (max-width: 639px) {
 	a.btn.callme, a.btn#callme, a.btn.callme-js, .btn.callme, .btn#callme, .btn.callme-js {
-		min-width: 0;
+		min-width: 280px;
 	}
 }
 
@@ -3029,6 +3029,7 @@ ul.fTabs li:first-child, ul.fTabs li.ui-tabs-active:first-child, ul.cartTabs li:
 	ul.view li:not(.view__title).current {
 		border-color: #ffbf14;
 		background-color: #ffbf14;
+		border-bottom-color: #e6e6e6;
 		padding: 8px 12px;
 		position: relative;
 		z-index: 1;

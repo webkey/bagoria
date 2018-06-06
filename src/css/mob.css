@@ -2371,9 +2371,11 @@ a.mark.active:after {
 	height: auto;
 }
 
-.counter {
-	margin-right: 0;
-	margin-bottom: 5px;
+@media (max-width: 1023px) {
+	.counter {
+		margin-right: 0;
+		margin-bottom: 5px;
+	}
 }
 
 .counter input[type="text"] {

@@ -2882,6 +2882,12 @@ $(function () {
 		e.stopPropagation();
 	});
 
+	// wrap table to table-mob-wrap
+	var tableMob = $('.table-mob');
+
+	$.each(tableMob, function () {
+		$(this).wrap('<div class="table-mob-wrap"></div>');
+	})
 });
 
 

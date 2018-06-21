@@ -387,6 +387,14 @@ ul.topNav
 		margin-left: -90px
 		background-position: center
 		background-size: contain
+	+media('<mob-md')
+		left: 80px
+		margin-left: 0
+	+media('<400px')
+		left: 60px
+		width: 130px
+	+media('<360px')
+		width: 110px
 
 /* logo end
 
@@ -396,10 +404,13 @@ ul.topNav
 		display: none
 
 	+media('<tab-lg')
-		position: relative
-		float: right
-		top: auto
-		right: auto
+		//position: relative
+		//float: right
+		//top: auto
+		//right: auto
+		position: absolute
+		right: 70px
+		top: 0
 		background-image: url(../../i/login.png)
 		background-repeat: no-repeat
 		background-position: center 31%
@@ -429,36 +440,69 @@ ul.topNav
 			text-align: center
 
 	+media('<mob-lg')
-		+size(70px, $header-height--sm)
+		//+size(70px, $header-height--sm)
+		+size($header-height--sm)
+		right: $header-height--sm
 
 		i
 			bottom: 5px
 
 a.userLink
+	i
+		display: none
+
 	+media('<tab-lg')
-		position: relative
-		float: right
-		top: auto !important
-		right: auto
+		//position: relative
+		//float: right
+		//top: auto !important
+		//right: auto
+		position: absolute
+		top: 0 !important
+		right: 70px
 		background-image: url(../../i/login.png)
 		background-repeat: no-repeat
-		background-position: center
+		//background-position: center
+		background-position: center 31%
 		background-color: transparent
+		background-size: 20px
 		margin: 0
 		padding: 0
 		+size($header-height--lg)
+		font-family: pf_dintext_probold, sans-serif
 		+font(0, 0)
+
+		i
+			display: block
+			position: absolute
+			left: 50%
+			bottom: 13px
+			width: 100px
+			margin-left: -50px
+			font-style: normal
+			font-size: 12px
+			line-height: 1
+			text-transform: uppercase
+			color: $base-color
+			text-align: center
 
 	+media('<mob-lg')
 		+size($header-height--sm)
 		//display: none !important
+		//+size(70px, $header-height--sm)
+		right: $header-height--sm
+
+		i
+			bottom: 5px
 
 a.userLogout
 	+media('<tab-lg')
-		position: relative
-		float: right
-		top: auto !important
-		right: auto
+		//position: relative
+		//float: right
+		//top: auto !important
+		//right: auto
+		position: absolute
+		top: 0 !important
+		right: $header-height--lg * 2
 		background-image: url(../../i/logout.svg)
 		background-repeat: no-repeat
 		background-position: center
@@ -472,6 +516,8 @@ a.userLogout
 
 	+media('<mob-lg')
 		+size($header-height--sm)
+		//right: calc(70px + #{$header-height--sm})
+		right: $header-height--sm * 2
 
 a.cardLink
 	display: none
@@ -479,9 +525,12 @@ a.cardLink
 	+media('<tab-lg')
 		display: block
 		float: right
-		position: relative
-		top: auto !important
-		right: auto
+		//position: relative
+		//top: auto !important
+		//right: auto
+		position: absolute
+		right: 0
+		top: 0 !important
 		background-image: url(../../i/cart.svg)
 		background-repeat: no-repeat
 		background-position: center
@@ -495,7 +544,7 @@ a.cardLink
 
 	+media('<mob-lg')
 		+size($header-height--sm)
-		display: none !important
+		//display: none !important
 
 /* login end
 
@@ -1569,7 +1618,7 @@ a.mark
 .news.extra
 	+media('<tab-lg')
 		background-color: #607384
-		
+
 		.title
 			color: #a0bdd7
 
@@ -1748,10 +1797,12 @@ ul.fNav
 				display: inline
 
 		.caption
-			padding-left: 30px
-			background: url(../../i/cart-black.svg) no-repeat
-			background-repeat: no-repeat
-			background-position: 0 center
+			//padding-left: 30px
+			//background: url(../../i/cart-black.svg) no-repeat
+			//background-repeat: no-repeat
+			//background-position: 0 center
+			padding-left: 0
+			background: none
 			background-size: 22px
 			font-size: 16px
 			min-height: 18px
@@ -3076,12 +3127,14 @@ ul.paging
 
 /* table mobile
 .table-mob
-	+media('<tab-lg')
+	//+media('<tab-lg')
+	+media('<mob-lg')
 		display: block
 		box-sizing: border-box
 
 	&, .content &
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			width: auto !important
 			//+margin-horizontal(-#{round($layout-space--lg)})
 
@@ -3092,17 +3145,20 @@ ul.paging
 				margin-top: $layout-space--sm
 
 	tbody, tfoot, thead, tr
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			display: block
 			position: relative
 			box-sizing: border-box
 
 	tr, td, th
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			border: 1px solid #7ab7e0
 
 	tr
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			display: flex
 			flex-wrap: wrap
 			background-color: white
@@ -3116,12 +3172,14 @@ ul.paging
 					background-color: #e5f5ff
 
 	th
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			strong, b
 				font-weight: normal
 
 	td, th
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			position: relative
 			display: flex
 			align-items: center
@@ -3142,7 +3200,8 @@ ul.paging
 				font-weight: normal
 
 	.tresp-val
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			position: relative
 			display: flex
 			align-items: center
@@ -3171,23 +3230,27 @@ ul.paging
 					display: block
 
 	.discount
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			margin: 0
 			position: absolute
 			left: 0
 			top: 0
 
 		& + strong, & + a, & + span, & + div
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				display: block
 				margin-top: 14px
 
 	.tresp-val .discount
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			margin: -6px 0 0 -5px
 
 	.orderCount
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			display: flex
 			align-items: center
 			width: auto
@@ -3203,11 +3266,13 @@ ul.paging
 
 	.currentCount
 		&.mob-hide
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				display: block
 
 	.counter
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			width: 30px
 
 			a
@@ -3219,7 +3284,8 @@ ul.paging
 
 	// table responsive car-tires. Легковые шины
 	&.table-mob--car-tires
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Тип
@@ -3295,7 +3361,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Тип
 					&:nth-child(1)
@@ -3377,7 +3444,8 @@ ul.paging
 
 	// table responsive car-tires. Легковые камеры
 	&.table-mob--car-camera
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Тип
@@ -3426,7 +3494,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Тип
 					&:nth-child(1)
@@ -3484,7 +3553,8 @@ ul.paging
 
 	// table responsive truck-tires. Грузовые шины
 	&.table-mob--truck-tires
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Фото
@@ -3554,7 +3624,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -3627,7 +3698,8 @@ ul.paging
 
 	// table responsive truck-rims. Грузовые диски
 	&.table-mob--truck-rims
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Типоразмер
@@ -3683,7 +3755,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Типоразмер
 					&:nth-child(1)
@@ -3749,7 +3822,8 @@ ul.paging
 
 	// table responsive truck-camera. Грузовые камеры
 	&.table-mob--truck-camera
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Типоразмер
@@ -3783,7 +3857,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Типоразмер
 					&:nth-child(1)
@@ -3827,7 +3902,8 @@ ul.paging
 
 	// table responsive truck-bands. Ободные ленты
 	&.table-mob--truck-bands
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Типоразмер
@@ -3851,7 +3927,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Типоразмер
 					&:nth-child(1)
@@ -3884,7 +3961,8 @@ ul.paging
 
 	// table responsive accum. Аккумуляторы
 	&.table-mob--accum
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Фото
@@ -3965,7 +4043,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -4045,7 +4124,8 @@ ul.paging
 
 	// table responsive rims. Легковые диски
 	&.table-mob--rims
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Фото
@@ -4115,7 +4195,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -4195,7 +4276,8 @@ ul.paging
 
 	// table responsive spec. Шины для спецтехники
 	&.table-mob--spec
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 
 			td, th
 				// Фото
@@ -4258,7 +4340,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -4331,7 +4414,8 @@ ul.paging
 
 	// table responsive repairs. Шиноремонт
 	&.table-mob--repairs
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			td, th
 				// Фото
 				&:nth-child(1)
@@ -4379,7 +4463,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -4438,7 +4523,8 @@ ul.paging
 
 	// table responsive multipack. table-mob--multipack
 	&.table-mob--multipack
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			td, th
 				// Наименование
 				&:nth-child(1)
@@ -4479,7 +4565,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Наименование
 					&:nth-child(1)
@@ -4532,7 +4619,8 @@ ul.paging
 
 	// table responsive spec-camera. table-mob--spec-camera
 	&.table-mob--spec-camera
-		+media('<tab-lg')
+		//+media('<tab-lg')
+		+media('<mob-lg')
 			td, th
 				// Фото
 				&:nth-child(1)
@@ -4580,7 +4668,8 @@ ul.paging
 
 		// вид для авторизованых пользователей
 		.authorized &
-			+media('<tab-lg')
+			//+media('<tab-lg')
+			+media('<mob-lg')
 				td, th
 					// Фото
 					&:nth-child(1)
@@ -4637,6 +4726,21 @@ ul.paging
 						order: 7
 						flex-basis: $width
 						max-width: $width
+
+.table-mob-wrap
+	position: relative
+	overflow: auto
+	max-width: 100%
+	-webkit-overflow-scrolling: touch
+	margin-bottom: 30px
+
+	+media('<mob-lg')
+		overflow: visible
+
+	.table-mob
+		margin-bottom: 0
+		width: auto
+		min-width: 100%
 
 /* table mobile end
 
@@ -5017,7 +5121,12 @@ ul.paging
 			+font-alt-bold
 
 	+media('<mob-lg')
-		margin: $layout-space--sm -#{round($layout-space--sm + 1)} 0
+		margin: #{$layout-space--sm - 5} -#{round($layout-space--sm + 1)} 0
+
+	& > span
+		+media('<mob-lg')
+			margin-top: 5px
+			margin-right: 10px
 
 .cardProductTabs
 	+media('<tab-lg')
@@ -5060,10 +5169,11 @@ ul.paging
 			margin-left: 0
 
 .discountText
+	//+media('<tab-lg')
 	+display-inline-block-middle
 	margin-right: 5px
 
-	+media('<mob-lg')
+	//+media('<mob-lg')
 		display: block
 		margin-bottom: 10px
 
@@ -5158,7 +5268,8 @@ $timeline-block-size--sm: 44px
 			display: block
 
 		img
-			width: auto
+			//width: auto
+			width: 100%
 
 	+media('<tab-md')
 		width: 33.3%

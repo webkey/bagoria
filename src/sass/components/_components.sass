@@ -502,7 +502,8 @@ a.userLogout
 		//right: auto
 		position: absolute
 		top: 0 !important
-		right: $header-height--lg * 2
+		//right: $header-height--lg * 2
+		right: 0
 		background-image: url(../../i/logout.svg)
 		background-repeat: no-repeat
 		background-position: center
@@ -517,7 +518,7 @@ a.userLogout
 	+media('<mob-lg')
 		+size($header-height--sm)
 		//right: calc(70px + #{$header-height--sm})
-		right: $header-height--sm * 2
+		//right: $header-height--sm * 2
 
 a.cardLink
 	display: none
@@ -529,7 +530,7 @@ a.cardLink
 		//top: auto !important
 		//right: auto
 		position: absolute
-		right: 0
+		right: $header-height * 2
 		top: 0 !important
 		background-image: url(../../i/cart.svg)
 		background-repeat: no-repeat
@@ -545,6 +546,7 @@ a.cardLink
 	+media('<mob-lg')
 		+size($header-height--sm)
 		//display: none !important
+		right: $header-height--sm * 2
 
 /* login end
 
@@ -2261,24 +2263,48 @@ select.chained_select_db.forward_select
 .catalog_sort_by
 
 	+media('<tab-lg')
-		//margin-top: 0
+		display: block !important
 		margin-bottom: $bottom-space
 		margin-top: 0
-		display: block !important
-		width: auto
-		max-width: calc(50% - #{round($grid-space--lg/2)})
+		line-height: 1
 
 	+media('<tab-md')
 		display: block !important
 		max-width: none
 
 	+media('<mob-lg')
-		margin: $layout-space--sm 0 0
+		margin: -1px -#{round($layout-space--sm + 1)}
+
+	.select
+		display: inline-block
+		vertical-align: top
+		line-height: 1
+
+		&::before
+			display: none
+			content: ""
+			position: absolute
+			right: 12px
+			top: 50%
+			margin-top: -2px
+			+triangle('bottom', black, 4px)
+
+		+media('<tab-lg')
+			position: relative
+
+			&::before
+				display: block
+
+		+media('<tab-md')
+			display: block
+
+	& > span, & > select
+		+media('<tab-lg')
+
 
 	& > span
 		+media('<tab-lg')
-			display: block
-			margin-bottom: 5px
+			display: none
 
 		+media('<mob-lg')
 			margin: $layout-space--sm 0 0
@@ -2286,10 +2312,42 @@ select.chained_select_db.forward_select
 			&:first-child
 				margin-top: 0
 
-	select
+	& select
+		+media('<tab-lg')
+			display: inline-block
+			white-space: nowrap
+			text-indent: 0
+			text-overflow: ''
+			outline: none
+			border-radius: 0
+			cursor: pointer
+			vertical-align: top
+			width: auto
+			height: 40px
+			padding: 9px 35px 9px 14px
+			font-size: 14px
+			line-height: 20px
+			color: #000
+			border: 1px solid $border-color
+			box-sizing: border-box
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+			-webkit-focus-ring-color: rgba(255, 255, 255, 0)
+			outline: none
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+
+			&[disabled]
+				cursor: default
+
+		+media('<tab-md')
+			display: block
+			width: 100%
+			font-size: 12px
+
 		+media('<mob-lg')
-			width: calc(100% + #{($layout-space--sm + 1)*2})
-			margin: $layout-space--sm -#{round($layout-space--sm + 1)} 0
+			//width: calc(100% + #{($layout-space--sm + 1)*2})
+			//margin: $layout-space--sm -#{round($layout-space--sm + 1)} 0
 
 /* catalog_sort_by end
 
@@ -2372,6 +2430,11 @@ ul.view
 				padding: 8px 12px
 				position: relative
 				z-index: 1
+
+.pagination
+	+media('<tab-lg')
+		.pagination-top &
+			display: none
 
 ul.paging
 	margin: 0 180px

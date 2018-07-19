@@ -2887,7 +2887,38 @@ $(function () {
 
 	$.each(tableMob, function () {
 		$(this).wrap('<div class="table-mob-wrap"></div>');
-	})
+	});
+
+	// sorting
+	var $select = $('select', $('.catalog_sort_by'));
+
+	$.each($select, function () {
+		$(this).wrap('<div class="select"></div>');
+	});
+
+	function changeSelect(select) {
+		var $option = $('option', select);
+		$.each($option, function () {
+			var $thisOption = $(this);
+			$thisOption.show().text($thisOption.attr('data-content'));
+		});
+
+		var $selectedOption = $('option:selected', select);
+		var text = $selectedOption.text();
+		$selectedOption.attr('data-content', text).text('Сортировать: ' + text).hide();
+	}
+
+	if(window.innerWidth < 1024) {
+		$.each($select, function () {
+			var $curSelect = $(this);
+			changeSelect($curSelect);
+		});
+
+		$select.on('change', function () {
+			var curSelect = $(this);
+			changeSelect(curSelect);
+		})
+	}
 });
 
 

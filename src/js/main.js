@@ -1696,7 +1696,7 @@ $(document).ready(function(){
 	var closeBtnTpl = $('<div class="btn-close btn-close-fSizes"></div>');
 	
 	// Size's select
-	$('ul.fSizes>li>span').click(function(){
+	$('ul.fSizes>li>span').on('click', function(){
 		$(this).parent('li').siblings('li.active').removeClass('active');
 		$(this).parent('li').toggleClass('active');
 		if($('.btn-close-fSizes').length === 0){
@@ -1704,7 +1704,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('ul.fSizes ul a').click(function(){
+	$('ul.fSizes ul a').click('click', function(){
 	
 		text = $(this).text();
 		size = text;
@@ -1732,7 +1732,7 @@ $(document).ready(function(){
 		$("input[type=hidden][name=chosenSize]").val(size);
 		return false;
 	});
-	$(document).click(function(e){
+	$(document).on('mousedown touchstart vmousedown', function(e){
 		if(!$(e.target).parents('ul.fSizes').length){
 			$('ul.fSizes>li.active').removeClass('active');
 			$('.btn-close-fSizes').remove();

@@ -889,7 +889,6 @@ a.cardLink {
 		display: block;
 		float: right;
 		position: absolute;
-		right: 100px;
 		top: 0 !important;
 		background-image: url(../i/cart.svg);
 		background-repeat: no-repeat;
@@ -6342,7 +6341,7 @@ ul.tabs li {
 		box-sizing: border-box;
 		font-size: 18px;
 		line-height: 24px;
-		z-index: 999;
+		z-index: 999999;
 		overflow-x: hidden;
 		overflow-y: auto;
 		box-shadow: 0 0 0 50px rgba(0, 0, 0, 0.5);
@@ -6364,9 +6363,10 @@ ul.fSizes + .btn-close {
 		position: fixed;
 		right: 22px;
 		top: 32px;
-		z-index: 9999;
+		z-index: 999999;
 		width: 40px;
 		height: 40px;
+		cursor: pointer;
 	}
 }
 
